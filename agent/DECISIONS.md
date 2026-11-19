@@ -4,7 +4,25 @@ One line per significant choice, with date and reason. Never edit a past decisio
 
 | # | Date | Decision | Reason | Decided by | Status | Supersedes |
 |---|---|---|---|---|---|---|
-| | | | | | | |
+| 1 | 2026-11-19 | **Library strategy (Day 1.4):** (a) The Base is its own clean Figma file; no project or client work is ever done in it. (b) Projects either consume it as a team library or start from a copy of it; which one is decided after the Day 6.2 test (options a/b/c). (c) In a project copy, tokens may be changed freely (via a theme file in `tokens/themes/`); components may be changed only through a deviation ticket (SPEC 6.8 / `agent/DEVIATION_TICKET.md`). | Projects may want their own adapted Base. Restricting copies to token changes keeps code as plain PrimeNG + theme preset, keeps `MAPPING.md` valid, and keeps copies close enough to receive Base fixes and support Stage 3. | Witoon | confirmed | — |
+| 2 | 2026-11-19 | **Direction of truth:** code → Figma. `tokens/tokens.json`, generated from the PrimeNG Aura preset, is the source; Figma variables are generated from it and never edited by hand without updating the source. | Developers ship the code, so it is what users see; one direction prevents drift. Every later step (update procedure, mapping, sync) assumes this direction. | Witoon | confirmed | — |
+| 3 | 2026-11-19 | **Versioning:** semantic versioning for the Base library (patch = visual fixes, minor = additive, major = renames/removals, per SPEC 6.7), with a changelog entry on page `00 Cover` for every publish. | Consumers (library users or project copies) need to know whether an update is safe to accept. | Witoon | confirmed | — |
+| 4 | 2026-11-19 | **Token folder layout:** `tokens/base/` holds Aura defaults; `tokens/themes/` holds override files that change values only (no renames, no new structure). | Per-project branding becomes a small file of values applied on top of a neutral Base; tested on Day 6.1. | Witoon | confirmed | — |
+| 5 | 2026-11-19 | **System owner / naming freeze:** Witoon is the system owner. Approves Level 2-3 deviations and any rename of a published component, property, value or variable (a breaking change, major version). | A single named approver is needed so deviations and renames go through one gate. | Witoon | confirmed | — |
+| 6 | 2026-11-19 | **Deviation policy:** adopt Levels 0-3 (SPEC 6.8). The Base is Level 0 only (`Deviation = none`). Level 0-1 need designer + developer agreement; Level 2-3 also need the system owner. Ticket template: `agent/DEVIATION_TICKET.md`. | Keeps the Figma-to-PrimeNG mapping honest when projects need more than PrimeNG offers. | Witoon | confirmed | — |
+| 7 | 2026-11-19 | **Figma Full seat:** held by the UX/UI team. The agent writes to Figma through this team's Full seat. | Dev seats are read-only outside drafts, so the agent needs a Full seat to write to the Base file. Name the specific person before Day 4. | Witoon | superseded by #14 | — |
+| 8 | 2026-11-19 | **Sakai page templates:** out of scope for the pilot; they will live in the Centralized DS (Stage 3), not the Base. | Templates are shared patterns built from components, not PrimeNG vendor components, so they don't belong in a brand-neutral Base. | Witoon | confirmed | — |
+| 9 | 2026-11-19 | **Storybook location:** installed inside the Angular app (`app/sakai-ng/.storybook`, stories in `app/sakai-ng/src/stories/`). The root `storybook/` folder is kept for notes/docs only. | Storybook must share the app's exact theme, styles and dependencies; a separate project would drift from Sakai. | Witoon | confirmed | — |
+| 10 | 2026-11-19 | **Storybook theme parity:** `.storybook/preview.ts` mirrors `src/app.config.ts` (Aura, `.app-dark`, zoneless); global styles listed in `angular.json` storybook targets. Verified: Button, InputText computed styles identical to Sakai in Light and Dark. | PILOT_CHECKLIST 2.1 MUST: Storybook must render exactly like Sakai. Any change to `app.config.ts` must be copied to `preview.ts`. | Claude (Day 2.1) | confirmed | — |
+| 11 | 2026-11-19 | **Dependency security update (before any screenshots):** Angular runtime packages 21.0.6 → 21.2.26 and `@angular/cdk` → 21.2.14; PrimeNG stays 21.0.2, `@primeuix/themes` stays 2.0.2. Removed unused test tooling (karma, karma-*, jasmine-core, @types/jasmine), the `test` target/script and `tsconfig.spec.json` (no spec files existed). npm audit: 58 → 29 (critical 6 → 0, high 17 → 2); runtime-only: 9 → 5 moderate (all in `primeclt`/esbuild dev server, no fix available). Remaining highs are in eslint 5 (unused; incompatible with the repo's `eslint.config.js`). | Angular 21.0.6 had high-severity XSS/DoS advisories. Updating before Day 2.3 keeps the version freeze intact: no screenshots exist yet. Verified: Sakai and Storybook rendering pixel-identical before/after. `npm audit fix --force` rejected (would install breaking majors). | Witoon | confirmed | — |
+| 12 | 2026-11-19 | **Story structure (Day 2.2):** per component one `Playground` story (args = PrimeNG inputs, 1:1) plus matrix stories (Button: severity×size, severity×style, icons, states; InputText: state×variant, pSize×variant, fluid, label+helper pattern; Tag: severity×form, long value). Every rendered instance sits in a `[data-cell]` box for the capture script. Toolbar adds Theme (light/dark) and Surface (card/ground). | Input names and values verified against installed PrimeNG 21.0.2 type definitions, not docs. | Claude (Day 2.2) | confirmed | — |
+| 13 | 2026-11-19 | **Interaction state capture:** hover/focus/active produced by real mouse and keyboard input (Playwright) during capture; no pseudo-state addon, no hand-added classes. Method and naming in `screenshots/README.md`. | PrimeNG Aura uses real `:hover` / `:active` / `:focus-visible` rules and injects styles at runtime; real input is the only faithful method. Verified working on Day 2.2. | Witoon | confirmed | — |
+| 14 | 2026-11-19 | **Figma Full seat holder:** Witoon holds the Full seat the agent writes with. | Named person required before Day 4 (Dev seats are read-only outside drafts). | Witoon | confirmed | #7 |
+| 15 | 2026-11-19 | **Root font size for Figma:** px values in Figma are converted at **1rem = 14px**, matching Sakai (`html { font-size: 14px }`) and the screenshots. Token export (Day 3) must record this conversion base. | Figma must match what the app and the reference screenshots actually render (default Button 32.8px tall). | Witoon | confirmed | — |
+| 16 | 2026-11-19 | **Tag default severity in Figma:** value `none` = severity not set in code (renders the primary color). PrimeNG 21 Tag accepts no `primary` value. Mapping row records `none` → attribute omitted. | SPEC forbids inventing PrimeNG values; `none` states the code truth honestly. | Witoon | confirmed | — |
+| 17 | 2026-11-19 | **InputText size property:** Figma property is `Size` (values `small` / `base` / `large`); the mapping row notes that the PrimeNG input is `pSize`. | Readable and consistent with Button's `Size`; the code name is preserved in MAPPING.md / MAPPING.csv (`primeng_input = pSize`). Recorded exception to SPEC 4.2 exact-name rule. | Witoon | confirmed | — |
+| 18 | 2026-11-19 | **Label + helper text:** not part of InputText in Figma. Built as a `Form row` pattern on page `03 Patterns`, composed from an InputText instance plus label and helper text. | Mirrors code: `pInputText` is only the input; label and helper are separate elements. | Witoon | confirmed | — |
+| 19 | 2026-11-19 | **Screenshot pixel ratio:** device pixel ratio 2; images are placed in Figma at 50% for 1:1 comparison. | Sharp enough to check 1px borders and focus rings. | Witoon | confirmed | — |
 
 ---
 
@@ -12,17 +30,23 @@ One line per significant choice, with date and reason. Never edit a past decisio
 
 | Topic | Proposed (from PILOT_CHECKLIST 1.4) | Confirmed? | Decided by | Date |
 |---|---|---|---|---|
-| Direction of truth | code → Figma; `tokens.json` (from PrimeNG preset) is the source | ☐ | | |
-| Library strategy | Base in its own Figma file, published as a team library; no client work | ☐ | | |
-| Versioning scheme | SemVer (SPEC 6.7), changelog on `00 Cover` | ☐ | | |
-| Naming freeze / rename approver | Renames after first publish are breaking; approver: `[name]` | ☐ | | |
-| Token folder layout | `tokens/base/` (Aura defaults), `tokens/themes/` (overrides) | ☐ | | |
-| Sakai page templates | Out of PoC scope; later home: `[Centralized DS?]` | ☐ | | |
-| Deviation policy / system owner | Levels 0-3 (SPEC 6.8); Base = Level 0 only; system owner: `[name]` | ☐ | | |
-| Figma Full seat holder | `[name]` | ☐ | | |
+| Direction of truth | code → Figma; `tokens.json` (from PrimeNG preset) is the source | ☑ see #2 | Witoon | 2026-11-19 |
+| Library strategy | Base in its own clean file; projects use it as a library **or** a copy (decided Day 6.2); copies change tokens freely, components only via deviation ticket | ☑ see #1 | Witoon | 2026-11-19 |
+| Versioning scheme | SemVer (SPEC 6.7), changelog on `00 Cover` | ☑ see #3 | Witoon | 2026-11-19 |
+| Naming freeze / rename approver | Renames after first publish are breaking; approver: Witoon | ☑ see #5 | Witoon | 2026-11-19 |
+| Token folder layout | `tokens/base/` (Aura defaults), `tokens/themes/` (overrides) | ☑ see #4 | Witoon | 2026-11-19 |
+| Sakai page templates | Out of PoC scope; later home: Centralized DS | ☑ see #8 | Witoon | 2026-11-19 |
+| Deviation policy / system owner | Levels 0-3 (SPEC 6.8); Base = Level 0 only; system owner: Witoon | ☑ see #5, #6 | Witoon | 2026-11-19 |
+| Figma Full seat holder | Witoon (UX/UI team) | ☑ see #14 | Witoon | 2026-11-19 |
 
 ## Open questions
 
 | # | Question | Raised | Owner | Resolved in decision # |
 |---|---|---|---|---|
-| 1 | How is a client brand applied on top of the library? (Day 6.2: a / b / c) | Day 1 | | |
+| 1 | How is a client brand applied on top of the library, and do projects use the library or a copy? (Day 6.2: a / b / c; see #1) | Day 1 | Witoon | |
+| 2 | Which person on the UX/UI team holds the Full seat the agent will use? | Day 1 | UX/UI team | #14 |
+| 3 | Sakai uses a 14px root font size (PrimeNG default docs assume 16px). Should Figma px values be converted at 1rem = 14px (match Sakai) or 16px (match PrimeNG docs)? Must be decided before Day 3 tokens. | Day 2 | Witoon | #15 |
+| 4 | Tag has no `primary` severity in PrimeNG 21 (not setting it renders primary). What is the Figma `Severity` value for "not set"? (Button uses `primary`; SPEC forbids inventing values.) | Day 2 | Witoon | #16 |
+| 5 | InputText's size input is named `pSize`, not `size`. Figma property: `PSize` (exact PrimeNG name, per SPEC 4.2) or `Size` with a documented note? | Day 2 | Witoon | #17 |
+| 6 | Label + helper text is not part of `pInputText`. Build it in Figma as a pattern (`03 Patterns`, form row) rather than inside InputText? | Day 2 | Witoon | #18 |
+| 7 | Screenshot device pixel ratio: 2 (sharp, place at 50% in Figma) or 1 (1 px = 1 Figma px)? | Day 2 | Witoon | #19 |
