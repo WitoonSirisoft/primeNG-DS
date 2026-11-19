@@ -39,4 +39,5 @@ Source: `app/sakai-ng/package.json` (declared ranges) and `app/sakai-ng/node_mod
 |---|---|
 | Node.js | 22 (pinned in `.nvmrc` / `.node-version`; Angular 21 requires ^20.19 \|\| ^22.12 \|\| >=24) — exact: `[run: node -v]` |
 | npm | `[run: npm -v]` |
+| Playwright (screenshot capture) | 1.65.1 (uses its bundled Chromium) |
 | Storybook (`storybook`, `@storybook/angular-vite`) | 10.6.7 (Vite builder, `@analogjs/vite-plugin-angular` 2.9.7, `vite` 8.3.8) |

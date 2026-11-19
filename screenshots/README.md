@@ -3,6 +3,23 @@
 Reference images of every PrimeNG state the Figma agent will be asked to build. They are the **visual source of truth** (SPEC section 2, priority 3). If a state has no image here, the agent must report it, not invent it.
 
 Source stories: `app/sakai-ng/src/stories/` (Storybook, `npm run storybook` in `app/sakai-ng`).
+Capture script: `app/sakai-ng/scripts/capture-screenshots.mjs`.
+
+## 0. How to (re)capture
+
+Run on **one machine only** (the designated Mac), so font rendering is identical across all images.
+
+```bash
+cd app/sakai-ng
+nvm use                              # Node 22
+npx playwright install chromium      # first time only (Playwright's own Chromium)
+npm run capture                      # builds Storybook, then captures ~892 images (~3-5 min)
+```
+
+- Output: `screenshots/<component>/*.png`, plus `screenshots/manifest.json` and `manifest.csv` (every file with its story, args, state, mode and CSS-pixel size).
+- The script **stops** if the Lato web font doesn't load (it needs internet access to fonts.cdnfonts.com). Never use `--allow-missing-font` for real references.
+- Partial run: `node scripts/capture-screenshots.mjs --only=tag` (needs a built Storybook; does not rewrite the manifests).
+- Re-capture everything whenever PrimeNG, the theme, Sakai styles or `.storybook/preview.ts` change, and commit the images together with that change.
 
 ---
 
@@ -59,7 +76,28 @@ inputtext/inputtext__variant-filled__psize-base__content-placeholder__state-focu
 tag/tag__severity-none__icon-no__rounded-yes__light.png
 ```
 
-## 4. Related decisions (agent/DECISIONS.md)
+## 4. What is captured (capture plan in the script)
+
+| Component | Sets | Images |
+|---|---|---|
+| Button | severity × size (solid); severity × style (outlined, text, raised, rounded); disabled per severity × style; icon-only per size × style; icon positions; loading; badge; link; plain. Interactive sets in default/hover/focus/active | 690 |
+| InputText | variant × pSize × content (empty, placeholder, value) in default/hover/focus; disabled; readonly; invalid (placeholder, value) in default/hover/focus; fluid; Form row pattern (default, invalid) | 146 |
+| Tag | severity (7, incl. `none`) × icon × rounded | 56 |
+
+All in Light and Dark. Total 892.
+
+## 5. PrimeNG behaviours the images show (do not "fix" these in Figma)
+
+Found while verifying the capture (Day 2.3). Each is real Aura CSS, confirmed in the theme source:
+
+- **InputText invalid loses its red border on hover and focus.** `.p-inputtext:enabled:hover/focus` is more specific than `.p-inputtext.p-invalid`, so the hover/focus border wins. The invalid placeholder stays red.
+- **Raised Button loses its shadow when focused.** The focus-visible `box-shadow` replaces the raised shadow.
+- **Link Button looks the same on hover and active.** Aura's link `hoverColor` and `activeColor` are both `{primary.color}`; hover adds the underline.
+- **Readonly InputText looks identical to default.** Aura has no readonly style.
+- **Disabled InputText looks the same in `filled` and `outlined`.**
+- **Plain text Button matches the contrast text Button in Dark mode** (same color tokens).
+
+## 6. Related decisions (agent/DECISIONS.md)
 
 - Tag with no severity = `severity-none`, which is also its Figma value (#16).
 - InputText size is named `psize` in file names (code name); the Figma property is `Size` (#17).

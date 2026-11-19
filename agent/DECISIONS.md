@@ -23,6 +23,7 @@ One line per significant choice, with date and reason. Never edit a past decisio
 | 17 | 2026-11-19 | **InputText size property:** Figma property is `Size` (values `small` / `base` / `large`); the mapping row notes that the PrimeNG input is `pSize`. | Readable and consistent with Button's `Size`; the code name is preserved in MAPPING.md / MAPPING.csv (`primeng_input = pSize`). Recorded exception to SPEC 4.2 exact-name rule. | Witoon | confirmed | — |
 | 18 | 2026-11-19 | **Label + helper text:** not part of InputText in Figma. Built as a `Form row` pattern on page `03 Patterns`, composed from an InputText instance plus label and helper text. | Mirrors code: `pInputText` is only the input; label and helper are separate elements. | Witoon | confirmed | — |
 | 19 | 2026-11-19 | **Screenshot pixel ratio:** device pixel ratio 2; images are placed in Figma at 50% for 1:1 comparison. | Sharp enough to check 1px borders and focus rings. | Witoon | confirmed | — |
+| 20 | 2026-11-19 | **Screenshot capture (Day 2.3):** captured by `app/sakai-ng/scripts/capture-screenshots.mjs` (`npm run capture`) with Playwright's bundled Chromium, on Witoon's Mac only. 892 images (Button 690, InputText 146, Tag 56) plus `manifest.json` / `manifest.csv`. The script refuses to run if Lato doesn't load. | Lato comes from fonts.cdnfonts.com, which the agent environments can't reach; one machine keeps font rendering identical across all references. Script verified end-to-end on Day 2.3 (all 892 captured, states and args confirmed). | Witoon | confirmed | — |
 
 ---
 
