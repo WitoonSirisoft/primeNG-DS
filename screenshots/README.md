@@ -90,7 +90,10 @@ All in Light and Dark. Total 892.
 
 Found while verifying the capture (Day 2.3). Each is real Aura CSS, confirmed in the theme source:
 
-- **InputText invalid loses its red border on hover and focus.** `.p-inputtext:enabled:hover/focus` is more specific than `.p-inputtext.p-invalid`, so the hover/focus border wins. The invalid placeholder stays red.
+- **InputText invalid: hover and focus depend on how the field is marked invalid** (re-verified Day 3 in Storybook, the Sakai app and these screenshots):
+  - **`[invalid]` input** (class `p-invalid`, used in these screenshots): the red border is **replaced** by the normal hover border on hover and the normal focus (primary) border on focus. `.p-inputtext:enabled:hover/focus` (specificity 0,3,0) beats `.p-inputtext.p-invalid` (0,2,0). The invalid placeholder stays red.
+  - **Angular form validation** (classes `ng-invalid ng-dirty`): the red border **stays** on hover and focus. `.p-inputtext.ng-invalid.ng-dirty` (0,3,0) comes after the hover/focus rules and wins. An invalid but untouched control (`ng-invalid` without `ng-dirty`) shows no red at all.
+  - Which one Figma follows is open question #11 in agent/DECISIONS.md.
 - **Raised Button loses its shadow when focused.** The focus-visible `box-shadow` replaces the raised shadow.
 - **Link Button looks the same on hover and active.** Aura's link `hoverColor` and `activeColor` are both `{primary.color}`; hover adds the underline.
 - **Readonly InputText looks identical to default.** Aura has no readonly style.

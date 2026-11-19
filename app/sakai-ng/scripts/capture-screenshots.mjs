@@ -192,6 +192,10 @@ async function captureEntry(context, base, entry, mode) {
                 await page.keyboard.press('Tab');
                 const ok = await target.evaluate((e) => e.matches(':focus-visible') || e.contains(document.activeElement));
                 if (!ok) throw new Error('keyboard focus did not land on the component');
+                // Tabbing into a text input selects its text; put the caret at the end so the reference shows no selection
+                await target.evaluate((e) => {
+                    if (typeof e.setSelectionRange === 'function' && typeof e.value === 'string') e.setSelectionRange(e.value.length, e.value.length);
+                });
             }
             if (state === 'active') {
                 const b = await target.boundingBox();

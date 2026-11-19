@@ -1,12 +1,14 @@
 {
   "extends": "../tsconfig.app.json",
   "compilerOptions": {
+    // Sakai's tsconfig.json sets rootDir to ./src; Storybook config files live outside src, so widen it here only
+    "rootDir": "..",
     "types": ["node"],
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "moduleResolution": "bundler"
   },
   "exclude": ["../src/test.ts", "../src/**/*.spec.ts"],
-  "include": ["../src/**/*.ts", "../src/**/*.stories.*", "./preview.ts"],
+  "include": ["../src/**/*.ts", "../src/**/*.stories.*", "./preview.ts", "./main.ts"],
   "files": ["./typings.d.ts"]
 }
