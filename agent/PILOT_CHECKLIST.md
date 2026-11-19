@@ -16,12 +16,12 @@
 
 | Day | Focus | Owner |
 |---|---|---|
-| 1 | Prerequisites, repo, Sakai running | `[Dev]` |
-| 2 | Storybook and reference screenshots | `[Dev]` |
-| 3 | Tokens JSON and spec | `[Dev + Designer]` |
-| 4 | Figma connection and variables | `[Designer + Dev]` |
-| 5 | Build components and review | `[Designer]` |
-| 6 | Theming, library and reproducibility tests; final decision | `[Designer + Dev + Lead]` |
+| 1 | Prerequisites, repo, Sakai running | Witoon |
+| 2 | Storybook and reference screenshots | Witoon |
+| 3 | Tokens JSON and spec | Witoon |
+| 4 | Figma connection and variables | Witoon |
+| 5 | Build components and review | Witoon |
+| 6 | Theming, library and reproducibility tests; final decision | Witoon |
 
 ---
 
@@ -120,7 +120,7 @@ For each pilot component, write one "matrix" story showing all combinations.
 ### 3.1 Export tokens
 
 - ☐ Locate the Aura preset values (primitive, semantic, and component tokens for Button, InputText, Tag)
-- ☐ Write a small script (or have the agent write one, then **review it**) that outputs `tokens/tokens.json` with three groups: `primitives`, `semantic` (Light and Dark), `components`
+- ☐ Write a small script (or have the agent write one, then **review it**) that outputs `tokens/base/tokens.json` with three groups: `primitives`, `semantic` (Light and Dark), `components`
 - ☐ Resolve aliases carefully: keep component tokens pointing to semantic tokens and semantic tokens pointing to primitives, rather than flattening everything into raw values
 - ☐ Add `tokens/README.md` explaining the naming rule (dot paths in code to slash groups in Figma)
 
@@ -158,7 +158,7 @@ For each pilot component, write one "matrix" story showing all combinations.
 **MUST:** these are what you will use on Day 6 to prove the Base is themable.
 **CONCERN:** some Aura component tokens may point at values that cannot be changed through the semantic or primitive layers. Note every axis that can't be themed; each is a finding for the Base.
 
-**OUTPUT (end of day 3):** `tokens/tokens.json`, validated; `SPEC.md` finalized; empty `MAPPING.md`.
+**OUTPUT (end of day 3):** `tokens/base/tokens.json`, validated; `SPEC.md` finalized; empty `MAPPING.md`.
 
 ---
 
@@ -185,7 +185,7 @@ For each pilot component, write one "matrix" story showing all combinations.
 
 ### 4.3 Create variables only
 
-- ☐ Give the agent `tokens/tokens.json` and `SPEC.md` and this scoped task:
+- ☐ Give the agent `tokens/base/tokens.json` and `SPEC.md` and this scoped task:
   *"Create the variable collections Primitives, Semantic (Light/Dark modes) and Components from tokens.json in this file. Do not create any components. Report counts per collection and any tokens you could not create."*
 - ☐ Have the **designer** review in Figma: collection names, modes, alias links, 10 spot-checked values vs. Storybook
 - ☐ Fix errors by correcting `tokens.json` or `SPEC.md` and re-running (not by patching variables by hand, unless you also update the source)
@@ -316,7 +316,7 @@ Carry over the Day 5 table, and add:
 
 ### 6.4 Final decision
 
-**Themability gates everything.** Scale up only if the theme-swap tests pass with no more than `[2]` unthemed elements **and** the re-run update test passes. If they don't, fix the Base tokens and spec before adding more components. A Base that cannot be themed blocks Stages 2 and 3, however good it looks.
+**Themability gates everything.** Scale up only if the theme-swap tests pass with no more than `2` unthemed elements **and** the re-run update test passes. If they don't, fix the Base tokens and spec before adding more components. A Base that cannot be themed blocks Stages 2 and 3, however good it looks.
 
 | Result | Decision |
 |---|---|

@@ -3,7 +3,7 @@
 > **Audience:** the AI agent that builds the Figma design system, and the humans reviewing its work.
 > **Rule zero:** if this spec and your assumptions disagree, this spec wins. If this spec is silent or unclear, **stop and ask**; do not guess.
 
-Items in `[brackets]` are placeholders to fill in before the first run.
+All placeholders were filled on 2026-11-19 (v0.4, see section 13). Decisions behind them are logged in `agent/DECISIONS.md`.
 
 ---
 
@@ -49,15 +49,15 @@ When sources conflict, higher wins.
 
 | Priority | Source | Used for |
 |---|---|---|
-| 1 | `tokens/tokens.json` | All variable names and values |
-| 2 | PrimeNG component source and docs in `[path or version]` | Inputs, allowed values, structure, states |
-| 3 | `screenshots/` (rendered Storybook, per component/state) | Visual appearance, spacing, proportions |
+| 1 | `tokens/base/tokens.json` (format and naming rule: `tokens/README.md`) | All variable names and values |
+| 2 | PrimeNG component source in `app/sakai-ng/node_modules/primeng` (21.0.2; type definitions in `types/`), then docs for that version | Inputs, allowed values, structure, states |
+| 3 | `screenshots/` (rendered Storybook, per component/state; method, naming and manifest: `screenshots/README.md`) | Visual appearance, spacing, proportions |
 | 4 | Sakai (`app/`) | Page layouts, shell, real-world usage |
 | 5 | This spec | Figma-side conventions |
 
 **Never** invent a value that exists in a higher source. If a value is missing from `tokens.json`, report it; do not hardcode it.
 
-**Versions in use:** PrimeNG `[version]`, Angular `[version]`, preset `Aura`. Verify every input name and allowed value against the installed version. Names change between major versions (for example, severity values).
+**Versions in use:** PrimeNG `21.0.2`, Angular `21.2.26`, `@primeuix/themes` `2.0.2`, preset `Aura` (full list: `VERSIONS.md`). Sakai renders at a 14px root font size; Figma px values use 1rem = 14px. Verify every input name and allowed value against the installed version. Names change between major versions (for example, severity values).
 
 ---
 
@@ -86,7 +86,7 @@ Pages:
 
 - Format: `ComponentName` in PascalCase, matching the PrimeNG component without the `p-` prefix.
   - `p-button` becomes `Button`; `p-inputtext` (pInputText) becomes `InputText`; `p-tag` becomes `Tag`.
-- Component description field (in Figma): `PrimeNG: <p-button> | Story: [url] | Version: [x.y.z]`
+- Component description field (in Figma): `PrimeNG: <p-button> | Story: <Storybook story id, e.g. components-button--playground> | Version: <Base library version, e.g. 0.1.0>`
 
 ### 4.2 Variant properties
 
@@ -94,7 +94,7 @@ Property names match the PrimeNG input name, in **Title Case** for the Figma pro
 
 | PrimeNG input | Figma property | Values |
 |---|---|---|
-| `severity` | `Severity` | `primary`, `secondary`, `success`, `info`, `warn`, `danger`, `help`, `contrast` (verify against installed version) |
+| `severity` | `Severity` | Button: `primary`, `secondary`, `success`, `info`, `warn`, `danger`, `help`, `contrast`. Tag: `none`, `secondary`, `success`, `info`, `warn`, `danger`, `contrast` (verified against 21.0.2; see exceptions below) |
 | `size` | `Size` | `small`, `base`, `large` (use `base` for the default, which has no attribute in code) |
 | `disabled` | `Disabled` | boolean |
 | `loading` | `Loading` | boolean |
@@ -107,6 +107,11 @@ Property names match the PrimeNG input name, in **Title Case** for the Figma pro
 - Boolean inputs become **boolean component properties**, not variant values called `true/false` unless a boolean property is technically impossible.
 - Text content uses **text properties** (`Label`, `Placeholder`, `Helper text`), not manual layer edits.
 - Icons use **instance swap properties** (`Icon`, `Icon position`), defaulting to the PrimeIcons set.
+
+**Recorded exceptions (approved, DECISIONS #16, #17):**
+- **InputText size:** Figma property `Size` (`small`, `base`, `large`); the PrimeNG input is `pSize`. The mapping row records `primeng_input = pSize`.
+- **Tag severity `none`:** PrimeNG 21 Tag has no `primary` value; not setting severity renders the primary color. Figma value `none` = attribute omitted in code.
+- **Label and helper text** are not part of InputText; they form the `Form row` pattern on `03 Patterns` (DECISIONS #18).
 
 ### 4.3 Layers
 
@@ -134,7 +139,7 @@ If a component's combinations multiply into an unmanageable matrix:
 | `Components` | Component-specific tokens (`button.padding-x`, `inputtext.border-radius`) | `Light`, `Dark` where values differ |
 
 **Rules:**
-- Variable names mirror token paths in `tokens.json` exactly. Slash grouping in Figma matches dot paths in code (`primary.color` becomes `primary/color`). Record the mapping rule in `tokens/README.md`.
+- Variable names mirror token paths in `tokens.json` exactly. Slash grouping in Figma matches dot paths in code (`primary.color` becomes `primary/color`). The full mapping rule (kebab-case keys, component `root` dropped, CSS variable name) is in `tokens/README.md`. Use each dimension token's `px` value (1rem = 14px).
 - Component tokens alias **semantic** tokens; semantic tokens alias **primitives**. Primitives never alias anything.
 - Create tokens **before** any component. Components are built only after tokens are reviewed and approved.
 - If a token needed by a component is absent from `tokens.json`, **do not create a lookalike**. Add it to the "Missing tokens" report (section 9).
@@ -195,7 +200,7 @@ Build and verify these where the PrimeNG component supports them: `default`, `ho
 ### 6.5 Accessibility minimums
 
 - Text-to-background contrast follows WCAG AA (4.5:1 body text, 3:1 large text and UI boundaries) in **both** Light and Dark modes. Report failures; do not alter tokens to fix them.
-- Interactive minimum target size: note any component below `[24x24px / 44x44px]` in the documentation frame.
+- Interactive minimum target size: note any component below `24x24px` (WCAG 2.2 AA) in the documentation frame.
 
 ### 6.6 Built to be extended
 
@@ -234,7 +239,7 @@ Projects will sometimes need things PrimeNG does not do out of the box. The mapp
 - **Code discipline:** prefer wrapper components over `::ng-deep` or global CSS overrides. Wrappers map cleanly to a Figma component and survive PrimeNG upgrades far better.
 - **Compose, don't redraw:** Level 2-3 Figma components are built from Base instances wherever possible, so token changes still flow through them.
 - **Promotion:** a deviation used in 2 or more projects is a candidate for the Centralized DS, built as one proper component in Figma and code together.
-- **Track the ratio:** per project, count components by `Deviation` value. If more than `[25]%` are `structural` or `custom`, review whether the project still benefits from the system.
+- **Track the ratio:** per project, count components by `Deviation` value. If more than `25%` are `structural` or `custom`, review whether the project still benefits from the system.
 
 ---
 
@@ -261,7 +266,7 @@ Projects will sometimes need things PrimeNG does not do out of the box. The mapp
 Follow in order. Do not skip steps. Work in **small steps**, inspecting and validating as you go.
 
 1. **Inspect.** Read the PrimeNG component source and docs, its story, and its screenshots. List: inputs, allowed values, states, sub-parts, tokens used.
-2. **Plan.** Write a short plan (see format below) and **wait for approval** if the component has more than `[N]` variants or any ambiguity.
+2. **Plan.** Write a short plan (see format below) and **wait for approval**. During the pilot this applies to **every** component (N = 0), whatever its variant count or ambiguity.
 3. **Check tokens.** Confirm every needed token exists as a variable. List missing ones.
 4. **Build in Sandbox.** Start with the base variant, then add axes one at a time.
 5. **Bind.** Bind all values to variables; run the literal-value scan.
@@ -275,7 +280,7 @@ Follow in order. Do not skip steps. Work in **small steps**, inspecting and vali
 For each variant/state:
 - Place the Figma component beside the matching screenshot at the same scale.
 - Check: overall size, padding, border width and radius, font size/weight, color, icon size and position, shadow.
-- Record any visible difference. Differences under about `[1px / 1-2%]` can be noted; larger ones must be fixed or flagged.
+- Record any visible difference. Differences under about `1px or 2%` can be noted; larger ones must be fixed or flagged. Screenshots are captured at 2x: place them at 50% before measuring.
 
 ### 8.2 Plan format
 
@@ -403,8 +408,9 @@ Date:
 
 | Date | Change | Reason |
 |---|---|---|
-| `[date]` | Initial version | Pilot start |
-| `[date]` | v0.2: added end-goal context (section 0), theming contract (5.3), extensibility and versioning (6.6, 6.7), extra definition-of-done items | Base must serve as foundation for Custom and Centralized stages |
-| `[date]` | v0.3: added deviation classification (6.8), `deviation` mapping columns, deviation ticket template (section 12) | Development may need changes beyond PrimeNG's original structure |
+| before 2026-11-19 | Initial version | Pilot start |
+| before 2026-11-19 | v0.2: added end-goal context (section 0), theming contract (5.3), extensibility and versioning (6.6, 6.7), extra definition-of-done items | Base must serve as foundation for Custom and Centralized stages |
+| before 2026-11-19 | v0.3: added deviation classification (6.8), `deviation` mapping columns, deviation ticket template (section 12) | Development may need changes beyond PrimeNG's original structure |
+| 2026-11-19 | v0.4: filled all placeholders (versions, paths, thresholds); token file moved to `tokens/base/tokens.json`; recorded naming exceptions (InputText `Size`/`pSize`, Tag `none`, Form row pattern); 14px rem base; screenshot method and tolerance at 2x | Pilot Day 3.3 (DECISIONS #15–#22) |
 
 > **Maintenance rule:** every recurring mistake the agent makes becomes a new rule in this file. Fix the spec, not just the output.

@@ -1,0 +1,182 @@
+{
+  "$description": "Test brand A: indigo, sharp corners, roomy spacing, serif font.",
+  "$metadata": {
+    "theme": "test-brand-a",
+    "base": "tokens/base/tokens.json",
+    "purpose": "Pilot Day 6 theme-swap test. Not a client brand.",
+    "rules": "Values only: every path must already exist in base/tokens.json with the same shape (single value or {light, dark}). No renames, no new tokens (SPEC 5.3).",
+    "axes": {
+      "primary": "indigo",
+      "surface": "stone (light) / stone (dark)",
+      "radius": "sharp: every radius 0",
+      "density": "roomy (about +33%)",
+      "fontFamily": "Georgia, 'Times New Roman', serif"
+    },
+    "notThemableByTokens": [
+      {
+        "axis": "font family",
+        "wanted": "Georgia, 'Times New Roman', serif",
+        "reason": "Aura has no font-family token; Sakai sets Lato in CSS (tokens/README 5.3). Expected Day 6 finding."
+      },
+      {
+        "axis": "severity colors",
+        "reason": "success/info/warn/danger/help component tokens reference primitive palettes directly (tokens/README 5.1); they do not follow this theme."
+      },
+      {
+        "axis": "literal component values",
+        "reason": "button.rounded-border-radius (2rem), button.icon-only-width, tag.padding, tag.font-size are literals in component tokens (tokens/README 5.3)."
+      }
+    ]
+  },
+  "primitives": {
+    "border-radius": {
+      "none": {
+        "$value": "0"
+      },
+      "xs": {
+        "$value": "0"
+      },
+      "sm": {
+        "$value": "0"
+      },
+      "md": {
+        "$value": "0"
+      },
+      "lg": {
+        "$value": "0"
+      },
+      "xl": {
+        "$value": "0"
+      }
+    }
+  },
+  "semantic": {
+    "primary": {
+      "50": {
+        "$value": "{indigo.50}"
+      },
+      "100": {
+        "$value": "{indigo.100}"
+      },
+      "200": {
+        "$value": "{indigo.200}"
+      },
+      "300": {
+        "$value": "{indigo.300}"
+      },
+      "400": {
+        "$value": "{indigo.400}"
+      },
+      "500": {
+        "$value": "{indigo.500}"
+      },
+      "600": {
+        "$value": "{indigo.600}"
+      },
+      "700": {
+        "$value": "{indigo.700}"
+      },
+      "800": {
+        "$value": "{indigo.800}"
+      },
+      "900": {
+        "$value": "{indigo.900}"
+      },
+      "950": {
+        "$value": "{indigo.950}"
+      }
+    },
+    "surface": {
+      "50": {
+        "$value": {
+          "light": "{stone.50}",
+          "dark": "{stone.50}"
+        }
+      },
+      "100": {
+        "$value": {
+          "light": "{stone.100}",
+          "dark": "{stone.100}"
+        }
+      },
+      "200": {
+        "$value": {
+          "light": "{stone.200}",
+          "dark": "{stone.200}"
+        }
+      },
+      "300": {
+        "$value": {
+          "light": "{stone.300}",
+          "dark": "{stone.300}"
+        }
+      },
+      "400": {
+        "$value": {
+          "light": "{stone.400}",
+          "dark": "{stone.400}"
+        }
+      },
+      "500": {
+        "$value": {
+          "light": "{stone.500}",
+          "dark": "{stone.500}"
+        }
+      },
+      "600": {
+        "$value": {
+          "light": "{stone.600}",
+          "dark": "{stone.600}"
+        }
+      },
+      "700": {
+        "$value": {
+          "light": "{stone.700}",
+          "dark": "{stone.700}"
+        }
+      },
+      "800": {
+        "$value": {
+          "light": "{stone.800}",
+          "dark": "{stone.800}"
+        }
+      },
+      "900": {
+        "$value": {
+          "light": "{stone.900}",
+          "dark": "{stone.900}"
+        }
+      },
+      "950": {
+        "$value": {
+          "light": "{stone.950}",
+          "dark": "{stone.950}"
+        }
+      }
+    },
+    "form-field": {
+      "padding-x": {
+        "$value": "1rem"
+      },
+      "padding-y": {
+        "$value": "0.75rem"
+      },
+      "sm": {
+        "padding-x": {
+          "$value": "0.875rem"
+        },
+        "padding-y": {
+          "$value": "0.5rem"
+        }
+      },
+      "lg": {
+        "padding-x": {
+          "$value": "1.25rem"
+        },
+        "padding-y": {
+          "$value": "0.875rem"
+        }
+      }
+    }
+  }
+}
