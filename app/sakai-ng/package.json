@@ -10,7 +10,8 @@
         "storybook": "ng run sakai-ng:storybook",
         "build-storybook": "ng run sakai-ng:build-storybook",
         "capture": "npm run build-storybook && node scripts/capture-screenshots.mjs",
-        "tokens": "node scripts/export-tokens.mjs"
+        "tokens": "node scripts/export-tokens.mjs",
+        "figma:plan": "node scripts/figma-variables.mjs && node scripts/figma-verify.mjs"
     },
     "private": true,
     "dependencies": {

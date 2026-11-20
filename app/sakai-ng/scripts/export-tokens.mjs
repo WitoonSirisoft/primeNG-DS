@@ -3,6 +3,7 @@
  * Token export: PILOT_CHECKLIST Day 3.1.
  * Reads the INSTALLED Aura preset (@primeuix/themes) and writes tokens/base/tokens.json
  * with three collections (primitives, semantic, components) and the alias structure preserved.
+ * Typography (font-family, typography.*) comes from Sakai's layout SCSS, because Aura has no font tokens.
  * Naming and format rules: tokens/README.md. Figma px conversion: 1rem = 14px (DECISIONS #15).
  *
  * Usage (from app/sakai-ng):  npm run tokens   |   node scripts/export-tokens.mjs [--out=<file>] [--components=button,inputtext,tag]
@@ -67,6 +68,44 @@ for (const c of COMPONENTS) {
     components[c] = collect(c, Aura.components[c], { dropRoot: true });
 }
 
+// ---------- Sakai typography (not in Aura: Aura has no font tokens; DECISIONS #28) ----------
+// Parsed from the Sakai layout SCSS so a Sakai update is picked up on re-run. Fails loudly if a rule moves.
+const SAKAI_CORE = 'src/assets/layout/_core.scss';
+const SAKAI_TYPO = 'src/assets/layout/_typography.scss';
+const sakaiSource = {}; // path -> "file: selector { prop }"
+async function sakaiTypography() {
+    const files = { [SAKAI_CORE]: await readFile(join(APP, SAKAI_CORE), 'utf8'), [SAKAI_TYPO]: await readFile(join(APP, SAKAI_TYPO), 'utf8') };
+    const decl = (file, selector, prop) => {
+        const sel = selector.split(',').map((x) => x.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join(',\\s*');
+        // every top-level rule whose selector list is exactly `selector` (a grouped `h5,\nh6 {` is not `h6 {`)
+        const blocks = [...files[file].matchAll(new RegExp(`(?:^|\\n)(?<!,\\r?\\n)${sel}\\s*\\{([^}]*)`, 'g'))];
+        const m = blocks.map((b) => b[1].match(new RegExp(`(?:^|[;\\s])${prop}\\s*:\\s*([^;]+);`))).find(Boolean);
+        if (!m) throw new Error(`Sakai typography: "${selector} { ${prop} }" not found in ${file}. Sakai changed; update export-tokens.mjs.`);
+        return m[1].trim();
+    };
+    const t = {};
+    const add = (path, value, src) => ((t[path] = { common: value }), (sakaiSource[path] = src));
+    const family = decl(SAKAI_CORE, 'body', 'font-family'); // 'Lato', sans-serif
+    const families = family.split(',').map((f) => f.trim().replace(/^['"]|['"]$/g, ''));
+    add('font-family', families[0], `${SAKAI_CORE}: body { font-family: ${family} }`);
+    const rootSize = decl(SAKAI_CORE, 'html', 'font-size');
+    if (rootSize !== `${ROOT_FONT_PX}px`) throw new Error(`Sakai html font-size is ${rootSize}, but ROOT_FONT_PX is ${ROOT_FONT_PX} (DECISIONS #15)`);
+    add('typography.base.font-size', rootSize, `${SAKAI_CORE}: html { font-size }`);
+    add('typography.base.line-height', decl(SAKAI_CORE, 'html', 'line-height'), `${SAKAI_CORE}: html { line-height } (inherited by all component text)`);
+    add('typography.base.font-weight', '400', 'browser default (Sakai sets no body font-weight)');
+    add('typography.paragraph.line-height', decl(SAKAI_TYPO, 'p', 'line-height'), `${SAKAI_TYPO}: p { line-height }`);
+    const H = 'h1, h2, h3, h4, h5, h6';
+    add('typography.heading.font-weight', decl(SAKAI_TYPO, H, 'font-weight'), `${SAKAI_TYPO}: h1-h6 { font-weight }`);
+    add('typography.heading.line-height', decl(SAKAI_TYPO, H, 'line-height'), `${SAKAI_TYPO}: h1-h6 { line-height }`);
+    for (const h of ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']) add(`typography.heading.${h}.font-size`, decl(SAKAI_TYPO, h, 'font-size'), `${SAKAI_TYPO}: ${h} { font-size }`);
+    return { tokens: t, fallback: families.slice(1).join(', ') };
+}
+const sakai = await sakaiTypography();
+for (const [p, v] of Object.entries(sakai.tokens)) {
+    if (semantic[p]) throw new Error(`Sakai typography token ${p} clashes with an Aura semantic token`);
+    semantic[p] = v;
+}
+
 // ---------- path index for alias resolution ----------
 const index = new Map(); // dotted -> { collection, path }
 const register = (collection, tokens) => {
@@ -112,6 +151,8 @@ function typeOf(path, resolved) {
     const leaf = path.split('.').pop();
     if (/shadow/.test(path)) return 'shadow';
     if (/font-weight/.test(path)) return 'fontWeight';
+    if (/font-family/.test(path)) return 'fontFamily';
+    if (/line-height/.test(path)) return 'number';
     if (/opacity/.test(path)) return 'number';
     if (/duration/.test(path)) return 'duration';
     if (/(^|-)style$/.test(leaf)) return 'strokeStyle';
@@ -152,7 +193,9 @@ function build(collection, tokens) {
         const raw = modes ? Object.fromEntries(modes.map((m) => [m, rewrite(t[m], path)])) : rewrite(t.common, path);
         const resolved = Object.fromEntries(MODES.map((m) => [m, resolveValue(path, m)]));
         const type = typeOf(path, resolved.light ?? resolved.dark);
-        const ext = { cssVar: cssVar(path) };
+        const ext = sakaiSource[path]
+            ? { cssVar: null, source: 'sakai', sakai: sakaiSource[path], ...(path === 'font-family' && sakai.fallback ? { fallback: sakai.fallback } : {}) }
+            : { cssVar: cssVar(path) };
         if (type === 'dimension') {
             const px = Object.fromEntries(MODES.map((m) => [m, toPx(resolved[m])]));
             ext.px = JSON.stringify(px.light) === JSON.stringify(px.dark) ? px.light : px;
@@ -180,7 +223,7 @@ const out = {
     $description: 'PrimeNG Aura design tokens for the Base design system. Generated by app/sakai-ng/scripts/export-tokens.mjs. Do not edit by hand; change the preset or the script and re-run.',
     $metadata: {
         generated: new Date().toISOString(),
-        source: '@primeuix/themes/aura',
+        source: '@primeuix/themes/aura (+ Sakai layout SCSS for font-family and typography.*, marked source: "sakai")',
         versions: await versions(),
         rootFontSizePx: ROOT_FONT_PX,
         modes: MODES,

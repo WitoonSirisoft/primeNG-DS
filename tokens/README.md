@@ -5,7 +5,7 @@ Direction of truth: code → Figma (DECISIONS #2). Never edit `tokens.json` by h
 
 | File | What it is |
 |---|---|
-| `base/tokens.json` | Aura defaults exported from the installed `@primeuix/themes` (generated) |
+| `base/tokens.json` | Aura defaults exported from the installed `@primeuix/themes`, plus Sakai typography (generated) |
 | `themes/*.json` | Override files: change **values only**, never names or structure (DECISIONS #4) |
 
 Regenerate (from `app/sakai-ng`): `npm run tokens`. Re-run after any PrimeNG / `@primeuix/themes` update and commit the result with that update.
@@ -17,10 +17,10 @@ Regenerate (from `app/sakai-ng`): `npm run tokens`. Re-run after any PrimeNG / `
 | Collection (Figma) | JSON key | Modes | Tokens | Contents |
 |---|---|---|---|---|
 | `Primitives` | `primitives` | none | 248 | 22 color palettes (50–950) + 6 border radii |
-| `Semantic` | `semantic` | Light, Dark | 144 | primary, surface, text, content, form-field, focus-ring, highlight, overlay, list, navigation, mask, … |
+| `Semantic` | `semantic` | Light, Dark | 157 | primary, surface, text, content, form-field, focus-ring, highlight, overlay, list, navigation, mask, …, and 13 Sakai typography tokens (section 3.1) |
 | `Components` | `components` | Light, Dark | 225 | `button` (175), `inputtext` (29), `tag` (21) |
 
-Total: **617** tokens. Only the 3 pilot components are exported (Aura has 88); add more with `--components=`.
+Total: **630** tokens (617 from Aura + 13 from Sakai CSS). Only the 3 pilot components are exported (Aura has 88); add more with `--components=`.
 
 ## 2. Naming rule (code ↔ JSON ↔ Figma ↔ CSS)
 
@@ -60,10 +60,26 @@ Rules:
 
 - `$value` is one value (same in every mode) or `{ "light": …, "dark": … }`.
 - **Aliases** are `{path}`. Create them as **Figma variable aliases**, never as copied values (PILOT_CHECKLIST 3.1 MUST).
-- `$type`: `color`, `dimension`, `shadow`, `duration`, `fontWeight`, `number`, `strokeStyle`.
+- `$type`: `color`, `dimension`, `shadow`, `duration`, `fontWeight`, `fontFamily`, `number`, `strokeStyle`.
 - `px` exists on every `dimension`; a list (e.g. `[3.5, 7]`) means a multi-value token (see 5.2).
 - `composite: true` marks a value Figma cannot store as a single variable (see 5.2).
 - `$metadata` holds versions, counts, the px base and the findings below.
+
+### 3.1 Typography tokens (from Sakai CSS, DECISIONS #28)
+
+Aura has no font tokens: Sakai sets the font in plain CSS. The export script **parses** Sakai's `src/assets/layout/_core.scss` and `_typography.scss` (it fails loudly if a rule moves), so these stay generated, never hand-edited. They are marked `"source": "sakai"`, carry the CSS rule they came from in `"sakai"`, and have `"cssVar": null` (there is no `--p-` variable; code changes them in the SCSS, not the preset).
+
+| Token | Value | px | From |
+|---|---|---|---|
+| `font-family` | `Lato` (`fallback`: `sans-serif`) | | `body { font-family }` |
+| `typography.base.font-size` | `14px` | 14 | `html { font-size }` (= 1rem, DECISIONS #15) |
+| `typography.base.font-weight` | `400` | | browser default (Sakai sets none) |
+| `typography.base.line-height` | `1.2` | | `html { line-height }`, inherited by all component text |
+| `typography.paragraph.line-height` | `1.5` | | `p { line-height }` |
+| `typography.heading.font-weight` / `.line-height` | `700` / `1.5` | | `h1–h6` |
+| `typography.heading.h1`…`h6.font-size` | `2.5rem` `2rem` `1.75rem` `1.5rem` `1.25rem` `1rem` | 35 28 24.5 21 17.5 14 | `h1`…`h6` |
+
+Component text sizes and weights stay Aura tokens (`button.sm/lg.font-size`, `button.label.font-weight`, `inputtext.sm/lg.font-size`, `tag.font-size`, `tag.font-weight`). The base Button and InputText size is a literal `1rem` in PrimeNG CSS, so their text styles use `typography.base.font-size`. All values were checked against `getComputedStyle` in Sakai and Storybook (2026-11-20).
 
 ## 4. Validation (Day 3.2)
 
@@ -83,7 +99,7 @@ Effect: these colors **cannot be re-themed through the Semantic layer**. Changin
 - **8 multi-value paddings**: e.g. `tag.padding` = `0.25rem 0.5rem` (`px: [3.5, 7]`). Figma needs separate vertical and horizontal numbers.
 
 ### 5.3 Theming axes with no token (input for Day 3.4 and Day 6)
-- **Font family: no token in Aura.** Sakai sets `Lato` in plain CSS (`_core.scss`). The font axis can't be themed through tokens.
+- **Font family: no token in Aura.** Sakai sets `Lato` in plain CSS (`_core.scss`). **Resolved for Figma** by the `font-family` token from Sakai CSS (section 3.1, DECISIONS #28): a theme can override it and every text style follows. In code it is still changed in Sakai's SCSS, not in the PrimeNG preset.
 - **Spacing / density: no global spacing scale.** Density is controlled by `form-field.padding-*`, `form-field.sm/lg.*`, `list.*`, `navigation.*` and per-component tokens (e.g. `button.gap`, `button.icon-only-width`, `tag.padding`).
 - **Radius:** themable via `border-radius.*` primitives, but `button.rounded-border-radius` (`2rem`), `button.icon-only-width` and Tag `font-size` / `padding` are literal values in component tokens.
 
@@ -100,6 +116,40 @@ Same shape as `base/tokens.json`, containing **only the tokens they override, va
 | `themes/test-brand-b.json` | orange | neutral | very rounded (about 3x) | compact (about −33%) | Courier New, monospace | 34 |
 
 Both are pilot test themes for the Day 6 theme-swap test, not client brands. Each lists in `$metadata.notThemableByTokens` what it **cannot** change, so Day 6 can tell expected gaps from real defects:
-- font family (no token, section 5.3),
+- font family: now a token (section 3.1), but neither file overrides it yet: Georgia and Courier New are not available in Figma (open question #12),
 - severity colors success / info / warn / danger / help (section 5.1),
 - literal component values such as `button.rounded-border-radius`, `button.icon-only-width`, `tag.padding`, `tag.font-size` (section 5.3).
+
+## 7. Figma variables (Day 4)
+
+Figma is generated from `base/tokens.json` by a re-runnable procedure; never edit variables by hand without changing the source (DECISIONS #2).
+
+```bash
+cd app/sakai-ng
+npm run figma:plan        # writes tokens/figma/plan.json + tokens/figma/calls/*.js
+```
+Then run the files in `tokens/figma/calls/` **in order** with the Figma MCP `use_figma` tool on the Base file (`PrimeNG-Sakai`, key `s014qvCap64VIeEJe6Lq3K`): `01-primitives`, `02-semantic`, `03-components`, `04-effect-styles`, `05-text-styles`, then `99-verify` (read-only check of variables and text styles).
+The script overwrites call files in place and never deletes; if it prints `Stale call files`, delete those by hand and don't run them.
+Each call **upserts by name**: creates what is missing, updates what changed, reports `created / updated / unchanged`, never duplicates and never deletes (variables not in the plan are reported as `extra` by 99-verify). Re-running with unchanged tokens reports everything `unchanged`.
+A theme is applied the same way: `node scripts/figma-variables.mjs --theme=../../tokens/themes/test-brand-a.json` (Day 6, on a duplicate of the Base file).
+
+| Figma | Contents | Modes | Count |
+|---|---|---|---|
+| Collection `Primitives` | palettes + radius (hidden from pickers: scopes `[]`) | `Value` | 248 |
+| Collection `Semantic` | aliases to Primitives / Semantic, plus typography | `Light`, `Dark` | 163 |
+| Collection `Components` | aliases to Semantic (and to Primitives where Aura does, 5.1) | `Light`, `Dark` | 244 |
+| Effect styles | shadow tokens that are not `none` | — | 7 |
+| Text styles | `Heading/H1`–`H6`, `Body/Paragraph`, `Body/Base`, `Button/Label sm/base/lg`, `InputText/Text sm/base/lg`, `Tag/Label` (spec: `app/sakai-ng/scripts/text-styles.mjs`) | — | 15 |
+
+**Rules beyond the naming rule (section 2), DECISIONS #24:**
+- **color-mix** (`color-mix(in srgb, {x}, transparent N%)`): the color variable **aliases `{x}`**; a FLOAT variable `<name>-opacity` holds `1 - N%` per mode (1 where that mode has no mix). In components, put the color on its own background layer and bind the **layer opacity** to `<name>-opacity`. A color that aliases a color-mix token gets its own `-opacity` aliasing the source's (e.g. `list/option/selected-background-opacity` → `highlight/background-opacity`).
+- **Multi-value paddings**: `a b` → `<name>-y`, `<name>-x`; `a b c d` → `-top`, `-right`, `-bottom`, `-left` (CSS shorthand order). No CSS variable exists for these, so they have no code syntax; their description names the source variable.
+- **Shadows** → effect styles named like the token (`button/raised-shadow`); `none` shadows have no style (11 skipped).
+- **Types**: color → COLOR; dimension / font weight / opacity / duration (seconds) → FLOAT; focus-ring style → STRING. Scopes are set per role (backgrounds → fills, `*-color` → text + shape fill, borders and focus rings → stroke, radius, gap, size, font size/weight, opacity); durations and offsets are hidden.
+- **Typography**: `font-family` → STRING (scope font family); font sizes and weights → FLOAT (scopes font size / font weight); line heights are CSS ratios → hidden FLOAT (Figma would read a bound number as px). **Text styles** bind font family, size and weight to those variables, and set line height as a percent (`1.5` → 150%) and letter spacing 0. Font style comes from the weight: 400 Regular, 500 Medium, 700 Bold. Each style's description names its CSS selector and tokens. Sakai typography variables have no code syntax; their description names the SCSS rule.
+- **Code syntax**: every variable with a CSS variable has WEB syntax `var(--p-…)`.
+- **Modes**: `Semantic` and `Components` each have `Light`/`Dark`. To preview Dark on a frame, set **both** collections to `Dark`.
+
+**Verified (Day 4.3, 4.4):** all 642 variables resolve to exactly the values in `tokens.json` in both modes (99-verify: 642/642, 0 mismatches). Update test: changing `primary.500` and re-running all calls updated exactly 1 variable in place (same ID, still an alias, change visible through `primary/color` and `button/primary/background`), created 0, left 641 variables and 7 effect styles unchanged; then restored.
+
+**Typography added (2026-11-20, DECISIONS #28):** 13 variables created in `Semantic` and 15 text styles created; a re-run of `05-text-styles` reported 15 unchanged. 99-verify: **655/655 variables** in both modes and **15/15 text styles** (family, style, size, line height, bindings), 0 extra, 0 missing.
