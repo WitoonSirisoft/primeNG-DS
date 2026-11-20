@@ -20,7 +20,7 @@ const arg = (n, d) => {
     return a ? a.slice(n.length + 3) : d;
 };
 const OUT = resolve(APP, arg('out', '../../tokens/base/tokens.json'));
-const COMPONENTS = arg('components', 'button,inputtext,tag').split(',');
+const COMPONENTS = arg('components', 'button,inputtext,tag,badge').split(',');
 const ROOT_FONT_PX = 14; // DECISIONS #15
 const MODES = ['light', 'dark'];
 

@@ -81,6 +81,21 @@ for (const { col, path, v } of rows) {
     else if (t === 'strokeStyle' || t === 'fontFamily') lines.push(`${C[col]}|${name}|S|${res.light}|${res.dark}`);
 }
 
+// derived focus-ring radius (DECISIONS #34), from resolved values
+{
+    const v = (p) => { const r = rows.find((x) => x.path === p).v.$extensions.primeng.resolved; return r && typeof r === 'object' ? r : { light: r, dark: r }; };
+    for (const [name, base] of [['button/focus-ring-radius', 'button.border-radius'], ['button/rounded-focus-ring-radius', 'button.rounded-border-radius']]) {
+        const val = (m) => +(px(v(base)[m])[0] + px(v('button.focus-ring.offset')[m])[0] + px(v('button.focus-ring.width')[m])[0]).toFixed(4);
+        lines.push(`C|${name}|F|${val('light')}|${val('dark')}`);
+    }
+}
+{
+    const v = (p) => { const r = rows.find((x) => x.path === p).v.$extensions.primeng.resolved; return r && typeof r === 'object' ? r : { light: r, dark: r }; };
+    for (const [name, size] of [['button/line-height', 'typography.base.font-size'], ['button/sm/line-height', 'button.sm.font-size'], ['button/lg/line-height', 'button.lg.font-size']]) {
+        const val = (m) => +(px(v(size)[m])[0] * Number(v('typography.base.line-height')[m])).toFixed(4);
+        lines.push(`C|${name}|F|${val('light')}|${val('dark')}`);
+    }
+}
 // text styles: expected values from the browser-resolved values, independent of the generator
 const byPath = new Map(rows.map((r) => [r.path, r.v]));
 const resOf = (p) => { const r = byPath.get(p).$extensions.primeng.resolved; return r && typeof r === 'object' ? r.light : r; };

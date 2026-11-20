@@ -1,0 +1,3477 @@
+{
+  "generated": "2026-11-20T08:24:14.138Z",
+  "source": {
+    "primeicons": "7.0.0",
+    "primeng": "21.0.2",
+    "font": "primeicons/fonts/primeicons.ttf"
+  },
+  "sizePx": 14,
+  "count": 315,
+  "icons": [
+    {
+      "name": "folder-plus",
+      "source": "PrimeIcons 7.0.0 pi pi-folder-plus (U+EA05)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "b15bfa16"
+    },
+    {
+      "name": "receipt",
+      "source": "PrimeIcons 7.0.0 pi pi-receipt (U+EA06)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "d709d51b"
+    },
+    {
+      "name": "asterisk",
+      "source": "PrimeIcons 7.0.0 pi pi-asterisk (U+EA07)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "c85d0c81"
+    },
+    {
+      "name": "face-smile",
+      "source": "PrimeIcons 7.0.0 pi pi-face-smile (U+EA08)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "0bfb47fa"
+    },
+    {
+      "name": "pinterest",
+      "source": "PrimeIcons 7.0.0 pi pi-pinterest (U+EA09)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "36437454"
+    },
+    {
+      "name": "expand",
+      "source": "PrimeIcons 7.0.0 pi pi-expand (U+EA0A)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "e6c7463b"
+    },
+    {
+      "name": "pen-to-square",
+      "source": "PrimeIcons 7.0.0 pi pi-pen-to-square (U+EA0B)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "d7e8c2bb"
+    },
+    {
+      "name": "wave-pulse",
+      "source": "PrimeIcons 7.0.0 pi pi-wave-pulse (U+EA0C)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "80950b22"
+    },
+    {
+      "name": "turkish-lira",
+      "source": "PrimeIcons 7.0.0 pi pi-turkish-lira (U+EA0D)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "238118b8"
+    },
+    {
+      "name": "spinner-dotted",
+      "source": "PrimeIcons 7.0.0 pi pi-spinner-dotted (U+EA0E)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "88279ce1"
+    },
+    {
+      "name": "crown",
+      "source": "PrimeIcons 7.0.0 pi pi-crown (U+EA0F)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "b8ce9979"
+    },
+    {
+      "name": "pause-circle",
+      "source": "PrimeIcons 7.0.0 pi pi-pause-circle (U+EA10)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "a330890a"
+    },
+    {
+      "name": "warehouse",
+      "source": "PrimeIcons 7.0.0 pi pi-warehouse (U+EA11)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "dac71768"
+    },
+    {
+      "name": "objects-column",
+      "source": "PrimeIcons 7.0.0 pi pi-objects-column (U+EA12)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "5ddf09a4"
+    },
+    {
+      "name": "clipboard",
+      "source": "PrimeIcons 7.0.0 pi pi-clipboard (U+EA13)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "9c081dfa"
+    },
+    {
+      "name": "play-circle",
+      "source": "PrimeIcons 7.0.0 pi pi-play-circle (U+EA14)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "d87e8cc2"
+    },
+    {
+      "name": "venus",
+      "source": "PrimeIcons 7.0.0 pi pi-venus (U+EA15)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "4350faee"
+    },
+    {
+      "name": "cart-minus",
+      "source": "PrimeIcons 7.0.0 pi pi-cart-minus (U+EA16)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "c29e4a44"
+    },
+    {
+      "name": "file-plus",
+      "source": "PrimeIcons 7.0.0 pi pi-file-plus (U+EA17)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "bf6b388e"
+    },
+    {
+      "name": "microchip",
+      "source": "PrimeIcons 7.0.0 pi pi-microchip (U+EA18)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "d1de4c2d"
+    },
+    {
+      "name": "twitch",
+      "source": "PrimeIcons 7.0.0 pi pi-twitch (U+EA19)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "3c1754df"
+    },
+    {
+      "name": "building-columns",
+      "source": "PrimeIcons 7.0.0 pi pi-building-columns (U+EA1A)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "01a8ffa4"
+    },
+    {
+      "name": "file-check",
+      "source": "PrimeIcons 7.0.0 pi pi-file-check (U+EA1B)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "b7e564c8"
+    },
+    {
+      "name": "microchip-ai",
+      "source": "PrimeIcons 7.0.0 pi pi-microchip-ai (U+EA1C)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "eee7a14a"
+    },
+    {
+      "name": "trophy",
+      "source": "PrimeIcons 7.0.0 pi pi-trophy (U+EA1D)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "c8b4f381"
+    },
+    {
+      "name": "barcode",
+      "source": "PrimeIcons 7.0.0 pi pi-barcode (U+EA1E)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "2bba0fe0"
+    },
+    {
+      "name": "file-arrow-up",
+      "source": "PrimeIcons 7.0.0 pi pi-file-arrow-up (U+EA1F)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "00e2988e"
+    },
+    {
+      "name": "mars",
+      "source": "PrimeIcons 7.0.0 pi pi-mars (U+EA20)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "a10db27d"
+    },
+    {
+      "name": "tiktok",
+      "source": "PrimeIcons 7.0.0 pi pi-tiktok (U+EA21)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "4eb5b6c6"
+    },
+    {
+      "name": "arrow-up-right-and-arrow-down-left-from-center",
+      "source": "PrimeIcons 7.0.0 pi pi-arrow-up-right-and-arrow-down-left-from-center (U+EA22)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "0a762639"
+    },
+    {
+      "name": "ethereum",
+      "source": "PrimeIcons 7.0.0 pi pi-ethereum (U+EA23)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "a2513005"
+    },
+    {
+      "name": "list-check",
+      "source": "PrimeIcons 7.0.0 pi pi-list-check (U+EA24)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "5bbe23c4"
+    },
+    {
+      "name": "thumbtack",
+      "source": "PrimeIcons 7.0.0 pi pi-thumbtack (U+EA25)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "b545288e"
+    },
+    {
+      "name": "arrow-down-left-and-arrow-up-right-to-center",
+      "source": "PrimeIcons 7.0.0 pi pi-arrow-down-left-and-arrow-up-right-to-center (U+EA26)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "5c4a126f"
+    },
+    {
+      "name": "equals",
+      "source": "PrimeIcons 7.0.0 pi pi-equals (U+EA27)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "c18b643b"
+    },
+    {
+      "name": "lightbulb",
+      "source": "PrimeIcons 7.0.0 pi pi-lightbulb (U+EA28)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "23ac5dd2"
+    },
+    {
+      "name": "star-half",
+      "source": "PrimeIcons 7.0.0 pi pi-star-half (U+EA29)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "5c76b0ca"
+    },
+    {
+      "name": "address-book",
+      "source": "PrimeIcons 7.0.0 pi pi-address-book (U+EA2A)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "2eba92e4"
+    },
+    {
+      "name": "chart-scatter",
+      "source": "PrimeIcons 7.0.0 pi pi-chart-scatter (U+EA2B)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "671c4f75"
+    },
+    {
+      "name": "indian-rupee",
+      "source": "PrimeIcons 7.0.0 pi pi-indian-rupee (U+EA2C)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "fc35105e"
+    },
+    {
+      "name": "star-half-fill",
+      "source": "PrimeIcons 7.0.0 pi pi-star-half-fill (U+EA2D)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "de3b71c8"
+    },
+    {
+      "name": "cart-arrow-down",
+      "source": "PrimeIcons 7.0.0 pi pi-cart-arrow-down (U+EA2E)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "701332e7"
+    },
+    {
+      "name": "calendar-clock",
+      "source": "PrimeIcons 7.0.0 pi pi-calendar-clock (U+EA2F)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "659798de"
+    },
+    {
+      "name": "sort-up-fill",
+      "source": "PrimeIcons 7.0.0 pi pi-sort-up-fill (U+EA30)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "1c54b99f"
+    },
+    {
+      "name": "sparkles",
+      "source": "PrimeIcons 7.0.0 pi pi-sparkles (U+EA31)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "240e896f"
+    },
+    {
+      "name": "bullseye",
+      "source": "PrimeIcons 7.0.0 pi pi-bullseye (U+EA32)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "6a393c6e"
+    },
+    {
+      "name": "sort-down-fill",
+      "source": "PrimeIcons 7.0.0 pi pi-sort-down-fill (U+EA33)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "5cc176fd"
+    },
+    {
+      "name": "graduation-cap",
+      "source": "PrimeIcons 7.0.0 pi pi-graduation-cap (U+EA34)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "fd9f1448"
+    },
+    {
+      "name": "hammer",
+      "source": "PrimeIcons 7.0.0 pi pi-hammer (U+EA35)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "571eb782"
+    },
+    {
+      "name": "bell-slash",
+      "source": "PrimeIcons 7.0.0 pi pi-bell-slash (U+EA36)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "837b7cca"
+    },
+    {
+      "name": "gauge",
+      "source": "PrimeIcons 7.0.0 pi pi-gauge (U+EA37)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "05a045bd"
+    },
+    {
+      "name": "shop",
+      "source": "PrimeIcons 7.0.0 pi pi-shop (U+EA38)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "60eeffeb"
+    },
+    {
+      "name": "headphones",
+      "source": "PrimeIcons 7.0.0 pi pi-headphones (U+EA39)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "56beecb3"
+    },
+    {
+      "name": "eraser",
+      "source": "PrimeIcons 7.0.0 pi pi-eraser (U+EA04)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "25515227"
+    },
+    {
+      "name": "stopwatch",
+      "source": "PrimeIcons 7.0.0 pi pi-stopwatch (U+EA01)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "a8aa7692"
+    },
+    {
+      "name": "verified",
+      "source": "PrimeIcons 7.0.0 pi pi-verified (U+EA02)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "2e943218"
+    },
+    {
+      "name": "delete-left",
+      "source": "PrimeIcons 7.0.0 pi pi-delete-left (U+EA03)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "07425f73"
+    },
+    {
+      "name": "hourglass",
+      "source": "PrimeIcons 7.0.0 pi pi-hourglass (U+E9FE)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "f333e7c6"
+    },
+    {
+      "name": "truck",
+      "source": "PrimeIcons 7.0.0 pi pi-truck (U+EA00)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "1aeaefa0"
+    },
+    {
+      "name": "wrench",
+      "source": "PrimeIcons 7.0.0 pi pi-wrench (U+E9FF)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "62b42099"
+    },
+    {
+      "name": "microphone",
+      "source": "PrimeIcons 7.0.0 pi pi-microphone (U+E9FA)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "72d01681"
+    },
+    {
+      "name": "megaphone",
+      "source": "PrimeIcons 7.0.0 pi pi-megaphone (U+E9FB)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "7ddc416d"
+    },
+    {
+      "name": "arrow-right-arrow-left",
+      "source": "PrimeIcons 7.0.0 pi pi-arrow-right-arrow-left (U+E9FC)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "d2113823"
+    },
+    {
+      "name": "bitcoin",
+      "source": "PrimeIcons 7.0.0 pi pi-bitcoin (U+E9FD)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "9fc59a65"
+    },
+    {
+      "name": "file-edit",
+      "source": "PrimeIcons 7.0.0 pi pi-file-edit (U+E9F6)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "de935e61"
+    },
+    {
+      "name": "language",
+      "source": "PrimeIcons 7.0.0 pi pi-language (U+E9F7)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "b6d4166d"
+    },
+    {
+      "name": "file-export",
+      "source": "PrimeIcons 7.0.0 pi pi-file-export (U+E9F8)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "7278dfd0"
+    },
+    {
+      "name": "file-import",
+      "source": "PrimeIcons 7.0.0 pi pi-file-import (U+E9F9)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "7861643b"
+    },
+    {
+      "name": "file-word",
+      "source": "PrimeIcons 7.0.0 pi pi-file-word (U+E9F1)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "69db7528"
+    },
+    {
+      "name": "gift",
+      "source": "PrimeIcons 7.0.0 pi pi-gift (U+E9F2)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "18c87ba4"
+    },
+    {
+      "name": "cart-plus",
+      "source": "PrimeIcons 7.0.0 pi pi-cart-plus (U+E9F3)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "3e970873"
+    },
+    {
+      "name": "thumbs-down-fill",
+      "source": "PrimeIcons 7.0.0 pi pi-thumbs-down-fill (U+E9F4)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "0d17bc1f"
+    },
+    {
+      "name": "thumbs-up-fill",
+      "source": "PrimeIcons 7.0.0 pi pi-thumbs-up-fill (U+E9F5)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "7decbc88"
+    },
+    {
+      "name": "arrows-alt",
+      "source": "PrimeIcons 7.0.0 pi pi-arrows-alt (U+E9F0)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "89216353"
+    },
+    {
+      "name": "calculator",
+      "source": "PrimeIcons 7.0.0 pi pi-calculator (U+E9EF)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "8eff19ab"
+    },
+    {
+      "name": "sort-alt-slash",
+      "source": "PrimeIcons 7.0.0 pi pi-sort-alt-slash (U+E9EE)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "3ab899ab"
+    },
+    {
+      "name": "arrows-h",
+      "source": "PrimeIcons 7.0.0 pi pi-arrows-h (U+E9EC)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "4dd8fce7"
+    },
+    {
+      "name": "arrows-v",
+      "source": "PrimeIcons 7.0.0 pi pi-arrows-v (U+E9ED)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "dff45279"
+    },
+    {
+      "name": "pound",
+      "source": "PrimeIcons 7.0.0 pi pi-pound (U+E9EB)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "b6ffd21d"
+    },
+    {
+      "name": "prime",
+      "source": "PrimeIcons 7.0.0 pi pi-prime (U+E9EA)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "eee09e7e"
+    },
+    {
+      "name": "chart-pie",
+      "source": "PrimeIcons 7.0.0 pi pi-chart-pie (U+E9E9)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "8d912f66"
+    },
+    {
+      "name": "reddit",
+      "source": "PrimeIcons 7.0.0 pi pi-reddit (U+E9E8)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "a77437cb"
+    },
+    {
+      "name": "code",
+      "source": "PrimeIcons 7.0.0 pi pi-code (U+E9E7)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "97a9c7cd"
+    },
+    {
+      "name": "sync",
+      "source": "PrimeIcons 7.0.0 pi pi-sync (U+E9E6)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "48ffd172"
+    },
+    {
+      "name": "shopping-bag",
+      "source": "PrimeIcons 7.0.0 pi pi-shopping-bag (U+E9E5)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "170defd4"
+    },
+    {
+      "name": "server",
+      "source": "PrimeIcons 7.0.0 pi pi-server (U+E9E4)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "5f481849"
+    },
+    {
+      "name": "database",
+      "source": "PrimeIcons 7.0.0 pi pi-database (U+E9E3)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "d8e82c35"
+    },
+    {
+      "name": "hashtag",
+      "source": "PrimeIcons 7.0.0 pi pi-hashtag (U+E9E2)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "7f37760b"
+    },
+    {
+      "name": "bookmark-fill",
+      "source": "PrimeIcons 7.0.0 pi pi-bookmark-fill (U+E9DF)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "e93bbddf"
+    },
+    {
+      "name": "filter-fill",
+      "source": "PrimeIcons 7.0.0 pi pi-filter-fill (U+E9E0)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "fd968682"
+    },
+    {
+      "name": "heart-fill",
+      "source": "PrimeIcons 7.0.0 pi pi-heart-fill (U+E9E1)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "cd6a5503"
+    },
+    {
+      "name": "flag-fill",
+      "source": "PrimeIcons 7.0.0 pi pi-flag-fill (U+E9DE)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "f631bc6e"
+    },
+    {
+      "name": "circle",
+      "source": "PrimeIcons 7.0.0 pi pi-circle (U+E9DC)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "fb69c1b5"
+    },
+    {
+      "name": "circle-fill",
+      "source": "PrimeIcons 7.0.0 pi pi-circle-fill (U+E9DD)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "299c9943"
+    },
+    {
+      "name": "bolt",
+      "source": "PrimeIcons 7.0.0 pi pi-bolt (U+E9DB)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "34539a7e"
+    },
+    {
+      "name": "history",
+      "source": "PrimeIcons 7.0.0 pi pi-history (U+E9DA)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "0f86f4ca"
+    },
+    {
+      "name": "box",
+      "source": "PrimeIcons 7.0.0 pi pi-box (U+E9D9)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "72c3f8e7"
+    },
+    {
+      "name": "at",
+      "source": "PrimeIcons 7.0.0 pi pi-at (U+E9D8)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "bc6ee53f"
+    },
+    {
+      "name": "arrow-up-right",
+      "source": "PrimeIcons 7.0.0 pi pi-arrow-up-right (U+E9D4)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "fce20884"
+    },
+    {
+      "name": "arrow-up-left",
+      "source": "PrimeIcons 7.0.0 pi pi-arrow-up-left (U+E9D5)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "a422dfe2"
+    },
+    {
+      "name": "arrow-down-left",
+      "source": "PrimeIcons 7.0.0 pi pi-arrow-down-left (U+E9D6)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "2a936a7d"
+    },
+    {
+      "name": "arrow-down-right",
+      "source": "PrimeIcons 7.0.0 pi pi-arrow-down-right (U+E9D7)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "2259f159"
+    },
+    {
+      "name": "telegram",
+      "source": "PrimeIcons 7.0.0 pi pi-telegram (U+E9D3)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "2ebbe687"
+    },
+    {
+      "name": "stop-circle",
+      "source": "PrimeIcons 7.0.0 pi pi-stop-circle (U+E9D2)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "67e39717"
+    },
+    {
+      "name": "stop",
+      "source": "PrimeIcons 7.0.0 pi pi-stop (U+E9D1)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "23038764"
+    },
+    {
+      "name": "whatsapp",
+      "source": "PrimeIcons 7.0.0 pi pi-whatsapp (U+E9D0)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "b906b7e4"
+    },
+    {
+      "name": "building",
+      "source": "PrimeIcons 7.0.0 pi pi-building (U+E9CF)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "943f985a"
+    },
+    {
+      "name": "qrcode",
+      "source": "PrimeIcons 7.0.0 pi pi-qrcode (U+E9CE)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "ef76b5a6"
+    },
+    {
+      "name": "car",
+      "source": "PrimeIcons 7.0.0 pi pi-car (U+E9CD)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "4c184cd7"
+    },
+    {
+      "name": "instagram",
+      "source": "PrimeIcons 7.0.0 pi pi-instagram (U+E9CC)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "f676cf23"
+    },
+    {
+      "name": "linkedin",
+      "source": "PrimeIcons 7.0.0 pi pi-linkedin (U+E9CB)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "79b6a3dd"
+    },
+    {
+      "name": "send",
+      "source": "PrimeIcons 7.0.0 pi pi-send (U+E9CA)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "23e761b6"
+    },
+    {
+      "name": "slack",
+      "source": "PrimeIcons 7.0.0 pi pi-slack (U+E9C9)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "fb296f7b"
+    },
+    {
+      "name": "sun",
+      "source": "PrimeIcons 7.0.0 pi pi-sun (U+E9C8)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "4b6b810b"
+    },
+    {
+      "name": "moon",
+      "source": "PrimeIcons 7.0.0 pi pi-moon (U+E9C7)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "4ce89c87"
+    },
+    {
+      "name": "vimeo",
+      "source": "PrimeIcons 7.0.0 pi pi-vimeo (U+E9C6)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "cb31e71c"
+    },
+    {
+      "name": "youtube",
+      "source": "PrimeIcons 7.0.0 pi pi-youtube (U+E9C5)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "3a13ab3b"
+    },
+    {
+      "name": "flag",
+      "source": "PrimeIcons 7.0.0 pi pi-flag (U+E9C4)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "c602dcfc"
+    },
+    {
+      "name": "wallet",
+      "source": "PrimeIcons 7.0.0 pi pi-wallet (U+E9C3)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "640f97e5"
+    },
+    {
+      "name": "map",
+      "source": "PrimeIcons 7.0.0 pi pi-map (U+E9C2)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "d81fc104"
+    },
+    {
+      "name": "link",
+      "source": "PrimeIcons 7.0.0 pi pi-link (U+E9C1)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "447e3cfd"
+    },
+    {
+      "name": "credit-card",
+      "source": "PrimeIcons 7.0.0 pi pi-credit-card (U+E9BF)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "f2c35419"
+    },
+    {
+      "name": "discord",
+      "source": "PrimeIcons 7.0.0 pi pi-discord (U+E9C0)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "45e22fb2"
+    },
+    {
+      "name": "percentage",
+      "source": "PrimeIcons 7.0.0 pi pi-percentage (U+E9BE)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "1521daf4"
+    },
+    {
+      "name": "euro",
+      "source": "PrimeIcons 7.0.0 pi pi-euro (U+E9BD)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "859edc7f"
+    },
+    {
+      "name": "book",
+      "source": "PrimeIcons 7.0.0 pi pi-book (U+E9BA)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "35f65389"
+    },
+    {
+      "name": "shield",
+      "source": "PrimeIcons 7.0.0 pi pi-shield (U+E9B9)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "2f872e78"
+    },
+    {
+      "name": "paypal",
+      "source": "PrimeIcons 7.0.0 pi pi-paypal (U+E9BB)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "058bb395"
+    },
+    {
+      "name": "amazon",
+      "source": "PrimeIcons 7.0.0 pi pi-amazon (U+E9BC)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "bba60d5b"
+    },
+    {
+      "name": "phone",
+      "source": "PrimeIcons 7.0.0 pi pi-phone (U+E9B8)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "0a2b9358"
+    },
+    {
+      "name": "filter-slash",
+      "source": "PrimeIcons 7.0.0 pi pi-filter-slash (U+E9B7)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "fea7dceb"
+    },
+    {
+      "name": "facebook",
+      "source": "PrimeIcons 7.0.0 pi pi-facebook (U+E9B4)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "540ef853"
+    },
+    {
+      "name": "github",
+      "source": "PrimeIcons 7.0.0 pi pi-github (U+E9B5)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "124c622d"
+    },
+    {
+      "name": "twitter",
+      "source": "PrimeIcons 7.0.0 pi pi-twitter (U+E9B6)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "15596558"
+    },
+    {
+      "name": "step-backward-alt",
+      "source": "PrimeIcons 7.0.0 pi pi-step-backward-alt (U+E9AC)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "01950c14"
+    },
+    {
+      "name": "step-forward-alt",
+      "source": "PrimeIcons 7.0.0 pi pi-step-forward-alt (U+E9AD)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "704e0653"
+    },
+    {
+      "name": "forward",
+      "source": "PrimeIcons 7.0.0 pi pi-forward (U+E9AE)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "34bf114a"
+    },
+    {
+      "name": "backward",
+      "source": "PrimeIcons 7.0.0 pi pi-backward (U+E9AF)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "432d7c37"
+    },
+    {
+      "name": "fast-backward",
+      "source": "PrimeIcons 7.0.0 pi pi-fast-backward (U+E9B0)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "77450fb6"
+    },
+    {
+      "name": "fast-forward",
+      "source": "PrimeIcons 7.0.0 pi pi-fast-forward (U+E9B1)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "96d9bc80"
+    },
+    {
+      "name": "pause",
+      "source": "PrimeIcons 7.0.0 pi pi-pause (U+E9B2)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "ccb569d6"
+    },
+    {
+      "name": "play",
+      "source": "PrimeIcons 7.0.0 pi pi-play (U+E9B3)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "13e2819e"
+    },
+    {
+      "name": "compass",
+      "source": "PrimeIcons 7.0.0 pi pi-compass (U+E9AB)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "52245852"
+    },
+    {
+      "name": "id-card",
+      "source": "PrimeIcons 7.0.0 pi pi-id-card (U+E9AA)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "1f4149da"
+    },
+    {
+      "name": "ticket",
+      "source": "PrimeIcons 7.0.0 pi pi-ticket (U+E9A9)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "23a971f3"
+    },
+    {
+      "name": "file-o",
+      "source": "PrimeIcons 7.0.0 pi pi-file-o (U+E9A8)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "0c191691"
+    },
+    {
+      "name": "reply",
+      "source": "PrimeIcons 7.0.0 pi pi-reply (U+E9A7)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "54cd88e0"
+    },
+    {
+      "name": "directions-alt",
+      "source": "PrimeIcons 7.0.0 pi pi-directions-alt (U+E9A5)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "c1ce8314"
+    },
+    {
+      "name": "directions",
+      "source": "PrimeIcons 7.0.0 pi pi-directions (U+E9A6)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "a327d6d5"
+    },
+    {
+      "name": "thumbs-up",
+      "source": "PrimeIcons 7.0.0 pi pi-thumbs-up (U+E9A3)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "2f93e52f"
+    },
+    {
+      "name": "thumbs-down",
+      "source": "PrimeIcons 7.0.0 pi pi-thumbs-down (U+E9A4)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "ffaa82eb"
+    },
+    {
+      "name": "sort-numeric-down-alt",
+      "source": "PrimeIcons 7.0.0 pi pi-sort-numeric-down-alt (U+E996)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "702cf2a2"
+    },
+    {
+      "name": "sort-numeric-up-alt",
+      "source": "PrimeIcons 7.0.0 pi pi-sort-numeric-up-alt (U+E997)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "e781ca92"
+    },
+    {
+      "name": "sort-alpha-down-alt",
+      "source": "PrimeIcons 7.0.0 pi pi-sort-alpha-down-alt (U+E998)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "55d88c70"
+    },
+    {
+      "name": "sort-alpha-up-alt",
+      "source": "PrimeIcons 7.0.0 pi pi-sort-alpha-up-alt (U+E999)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "d4fe365f"
+    },
+    {
+      "name": "sort-numeric-down",
+      "source": "PrimeIcons 7.0.0 pi pi-sort-numeric-down (U+E99A)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "ba17c5bc"
+    },
+    {
+      "name": "sort-numeric-up",
+      "source": "PrimeIcons 7.0.0 pi pi-sort-numeric-up (U+E99B)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "ea782f84"
+    },
+    {
+      "name": "sort-alpha-down",
+      "source": "PrimeIcons 7.0.0 pi pi-sort-alpha-down (U+E99C)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "cf691c8f"
+    },
+    {
+      "name": "sort-alpha-up",
+      "source": "PrimeIcons 7.0.0 pi pi-sort-alpha-up (U+E99D)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "7fb08ae9"
+    },
+    {
+      "name": "sort-alt",
+      "source": "PrimeIcons 7.0.0 pi pi-sort-alt (U+E99E)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "538c280c"
+    },
+    {
+      "name": "sort-amount-up",
+      "source": "PrimeIcons 7.0.0 pi pi-sort-amount-up (U+E99F)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "1e9b7d1c"
+    },
+    {
+      "name": "sort-amount-down",
+      "source": "PrimeIcons 7.0.0 pi pi-sort-amount-down (U+E9A0)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "a52684ba"
+    },
+    {
+      "name": "sort-amount-down-alt",
+      "source": "PrimeIcons 7.0.0 pi pi-sort-amount-down-alt (U+E9A1)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "0709f06a"
+    },
+    {
+      "name": "sort-amount-up-alt",
+      "source": "PrimeIcons 7.0.0 pi pi-sort-amount-up-alt (U+E9A2)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "df7c4117"
+    },
+    {
+      "name": "palette",
+      "source": "PrimeIcons 7.0.0 pi pi-palette (U+E995)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "6a0fecfd"
+    },
+    {
+      "name": "undo",
+      "source": "PrimeIcons 7.0.0 pi pi-undo (U+E994)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "bd8e7ccb"
+    },
+    {
+      "name": "desktop",
+      "source": "PrimeIcons 7.0.0 pi pi-desktop (U+E993)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "23030814"
+    },
+    {
+      "name": "sliders-v",
+      "source": "PrimeIcons 7.0.0 pi pi-sliders-v (U+E991)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "3bb80efd"
+    },
+    {
+      "name": "sliders-h",
+      "source": "PrimeIcons 7.0.0 pi pi-sliders-h (U+E992)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "29a7eafc"
+    },
+    {
+      "name": "search-plus",
+      "source": "PrimeIcons 7.0.0 pi pi-search-plus (U+E98F)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "27ed2046"
+    },
+    {
+      "name": "search-minus",
+      "source": "PrimeIcons 7.0.0 pi pi-search-minus (U+E990)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "7259efe6"
+    },
+    {
+      "name": "file-excel",
+      "source": "PrimeIcons 7.0.0 pi pi-file-excel (U+E98E)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "b4187c98"
+    },
+    {
+      "name": "file-pdf",
+      "source": "PrimeIcons 7.0.0 pi pi-file-pdf (U+E98D)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "8991c0b7"
+    },
+    {
+      "name": "check-square",
+      "source": "PrimeIcons 7.0.0 pi pi-check-square (U+E98C)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "acc17767"
+    },
+    {
+      "name": "chart-line",
+      "source": "PrimeIcons 7.0.0 pi pi-chart-line (U+E98B)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "2335eaf6"
+    },
+    {
+      "name": "user-edit",
+      "source": "PrimeIcons 7.0.0 pi pi-user-edit (U+E98A)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "06f08f6d"
+    },
+    {
+      "name": "exclamation-circle",
+      "source": "PrimeIcons 7.0.0 pi pi-exclamation-circle (U+E989)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "11889536"
+    },
+    {
+      "name": "android",
+      "source": "PrimeIcons 7.0.0 pi pi-android (U+E985)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "d19f133a"
+    },
+    {
+      "name": "google",
+      "source": "PrimeIcons 7.0.0 pi pi-google (U+E986)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "b5cdee3f"
+    },
+    {
+      "name": "apple",
+      "source": "PrimeIcons 7.0.0 pi pi-apple (U+E987)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "6d39d0ac"
+    },
+    {
+      "name": "microsoft",
+      "source": "PrimeIcons 7.0.0 pi pi-microsoft (U+E988)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "f2ae1108"
+    },
+    {
+      "name": "heart",
+      "source": "PrimeIcons 7.0.0 pi pi-heart (U+E984)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "800972dc"
+    },
+    {
+      "name": "mobile",
+      "source": "PrimeIcons 7.0.0 pi pi-mobile (U+E982)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "58f2acf2"
+    },
+    {
+      "name": "tablet",
+      "source": "PrimeIcons 7.0.0 pi pi-tablet (U+E983)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "b3369865"
+    },
+    {
+      "name": "key",
+      "source": "PrimeIcons 7.0.0 pi pi-key (U+E981)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "69c0d18c"
+    },
+    {
+      "name": "shopping-cart",
+      "source": "PrimeIcons 7.0.0 pi pi-shopping-cart (U+E980)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "47b46b4a"
+    },
+    {
+      "name": "comments",
+      "source": "PrimeIcons 7.0.0 pi pi-comments (U+E97E)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "8ae54f9e"
+    },
+    {
+      "name": "comment",
+      "source": "PrimeIcons 7.0.0 pi pi-comment (U+E97F)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "c6c334b4"
+    },
+    {
+      "name": "briefcase",
+      "source": "PrimeIcons 7.0.0 pi pi-briefcase (U+E97D)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "33fead12"
+    },
+    {
+      "name": "bell",
+      "source": "PrimeIcons 7.0.0 pi pi-bell (U+E97C)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "49e5c3a4"
+    },
+    {
+      "name": "paperclip",
+      "source": "PrimeIcons 7.0.0 pi pi-paperclip (U+E97B)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "2e5026c2"
+    },
+    {
+      "name": "share-alt",
+      "source": "PrimeIcons 7.0.0 pi pi-share-alt (U+E97A)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "0265d47a"
+    },
+    {
+      "name": "envelope",
+      "source": "PrimeIcons 7.0.0 pi pi-envelope (U+E979)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "38c9af3a"
+    },
+    {
+      "name": "volume-down",
+      "source": "PrimeIcons 7.0.0 pi pi-volume-down (U+E976)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "57a0fe29"
+    },
+    {
+      "name": "volume-up",
+      "source": "PrimeIcons 7.0.0 pi pi-volume-up (U+E977)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "057b020f"
+    },
+    {
+      "name": "volume-off",
+      "source": "PrimeIcons 7.0.0 pi pi-volume-off (U+E978)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "595abb5e"
+    },
+    {
+      "name": "eject",
+      "source": "PrimeIcons 7.0.0 pi pi-eject (U+E975)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "b4d432fc"
+    },
+    {
+      "name": "money-bill",
+      "source": "PrimeIcons 7.0.0 pi pi-money-bill (U+E974)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "78b6cc78"
+    },
+    {
+      "name": "images",
+      "source": "PrimeIcons 7.0.0 pi pi-images (U+E973)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "471fb537"
+    },
+    {
+      "name": "image",
+      "source": "PrimeIcons 7.0.0 pi pi-image (U+E972)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "810afee8"
+    },
+    {
+      "name": "sign-in",
+      "source": "PrimeIcons 7.0.0 pi pi-sign-in (U+E970)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "f37943de"
+    },
+    {
+      "name": "sign-out",
+      "source": "PrimeIcons 7.0.0 pi pi-sign-out (U+E971)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "1a1e769c"
+    },
+    {
+      "name": "wifi",
+      "source": "PrimeIcons 7.0.0 pi pi-wifi (U+E96F)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "d87a598a"
+    },
+    {
+      "name": "sitemap",
+      "source": "PrimeIcons 7.0.0 pi pi-sitemap (U+E96E)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "2b2cdaca"
+    },
+    {
+      "name": "chart-bar",
+      "source": "PrimeIcons 7.0.0 pi pi-chart-bar (U+E96D)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "52ac6b23"
+    },
+    {
+      "name": "camera",
+      "source": "PrimeIcons 7.0.0 pi pi-camera (U+E96C)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "14d6b688"
+    },
+    {
+      "name": "dollar",
+      "source": "PrimeIcons 7.0.0 pi pi-dollar (U+E96B)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "75ec1db0"
+    },
+    {
+      "name": "lock-open",
+      "source": "PrimeIcons 7.0.0 pi pi-lock-open (U+E96A)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "0cd84878"
+    },
+    {
+      "name": "table",
+      "source": "PrimeIcons 7.0.0 pi pi-table (U+E969)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "9db00902"
+    },
+    {
+      "name": "map-marker",
+      "source": "PrimeIcons 7.0.0 pi pi-map-marker (U+E968)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "2d044081"
+    },
+    {
+      "name": "list",
+      "source": "PrimeIcons 7.0.0 pi pi-list (U+E967)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "3354616f"
+    },
+    {
+      "name": "eye-slash",
+      "source": "PrimeIcons 7.0.0 pi pi-eye-slash (U+E965)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "5b5a2612"
+    },
+    {
+      "name": "eye",
+      "source": "PrimeIcons 7.0.0 pi pi-eye (U+E966)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "fccae280"
+    },
+    {
+      "name": "folder-open",
+      "source": "PrimeIcons 7.0.0 pi pi-folder-open (U+E964)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "4ab69b2e"
+    },
+    {
+      "name": "folder",
+      "source": "PrimeIcons 7.0.0 pi pi-folder (U+E963)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "b69b572e"
+    },
+    {
+      "name": "video",
+      "source": "PrimeIcons 7.0.0 pi pi-video (U+E962)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "4d6b6704"
+    },
+    {
+      "name": "inbox",
+      "source": "PrimeIcons 7.0.0 pi pi-inbox (U+E961)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "47b1d20f"
+    },
+    {
+      "name": "lock",
+      "source": "PrimeIcons 7.0.0 pi pi-lock (U+E95F)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "29a52287"
+    },
+    {
+      "name": "unlock",
+      "source": "PrimeIcons 7.0.0 pi pi-unlock (U+E960)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "88d16e9f"
+    },
+    {
+      "name": "tags",
+      "source": "PrimeIcons 7.0.0 pi pi-tags (U+E95D)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "3794eb02"
+    },
+    {
+      "name": "tag",
+      "source": "PrimeIcons 7.0.0 pi pi-tag (U+E95E)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "e34ea267"
+    },
+    {
+      "name": "power-off",
+      "source": "PrimeIcons 7.0.0 pi pi-power-off (U+E95C)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "5d7c62c1"
+    },
+    {
+      "name": "save",
+      "source": "PrimeIcons 7.0.0 pi pi-save (U+E95B)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "2fd980d2"
+    },
+    {
+      "name": "question-circle",
+      "source": "PrimeIcons 7.0.0 pi pi-question-circle (U+E959)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "77b8e210"
+    },
+    {
+      "name": "question",
+      "source": "PrimeIcons 7.0.0 pi pi-question (U+E95A)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "392b2dc8"
+    },
+    {
+      "name": "copy",
+      "source": "PrimeIcons 7.0.0 pi pi-copy (U+E957)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "8b836879"
+    },
+    {
+      "name": "file",
+      "source": "PrimeIcons 7.0.0 pi pi-file (U+E958)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "3f56b209"
+    },
+    {
+      "name": "clone",
+      "source": "PrimeIcons 7.0.0 pi pi-clone (U+E955)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "e56480e7"
+    },
+    {
+      "name": "calendar-times",
+      "source": "PrimeIcons 7.0.0 pi pi-calendar-times (U+E952)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "4dd52b9d"
+    },
+    {
+      "name": "calendar-minus",
+      "source": "PrimeIcons 7.0.0 pi pi-calendar-minus (U+E953)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "4c48706a"
+    },
+    {
+      "name": "calendar-plus",
+      "source": "PrimeIcons 7.0.0 pi pi-calendar-plus (U+E954)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "dbe6ca5b"
+    },
+    {
+      "name": "ellipsis-v",
+      "source": "PrimeIcons 7.0.0 pi pi-ellipsis-v (U+E950)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "a7fc7272"
+    },
+    {
+      "name": "ellipsis-h",
+      "source": "PrimeIcons 7.0.0 pi pi-ellipsis-h (U+E951)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "e8842e31"
+    },
+    {
+      "name": "bookmark",
+      "source": "PrimeIcons 7.0.0 pi pi-bookmark (U+E94E)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "15a1e1a1"
+    },
+    {
+      "name": "globe",
+      "source": "PrimeIcons 7.0.0 pi pi-globe (U+E94F)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "3ef9e952"
+    },
+    {
+      "name": "replay",
+      "source": "PrimeIcons 7.0.0 pi pi-replay (U+E94D)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "20f7ac8b"
+    },
+    {
+      "name": "filter",
+      "source": "PrimeIcons 7.0.0 pi pi-filter (U+E94C)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "ba450a57"
+    },
+    {
+      "name": "print",
+      "source": "PrimeIcons 7.0.0 pi pi-print (U+E94B)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "5ba7e843"
+    },
+    {
+      "name": "align-right",
+      "source": "PrimeIcons 7.0.0 pi pi-align-right (U+E946)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "4f709630"
+    },
+    {
+      "name": "align-left",
+      "source": "PrimeIcons 7.0.0 pi pi-align-left (U+E947)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "0441928c"
+    },
+    {
+      "name": "align-center",
+      "source": "PrimeIcons 7.0.0 pi pi-align-center (U+E948)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "20dd95fd"
+    },
+    {
+      "name": "align-justify",
+      "source": "PrimeIcons 7.0.0 pi pi-align-justify (U+E949)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "baa7c6d4"
+    },
+    {
+      "name": "cog",
+      "source": "PrimeIcons 7.0.0 pi pi-cog (U+E94A)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "03ed7e3f"
+    },
+    {
+      "name": "cloud-download",
+      "source": "PrimeIcons 7.0.0 pi pi-cloud-download (U+E943)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "3af63c9c"
+    },
+    {
+      "name": "cloud-upload",
+      "source": "PrimeIcons 7.0.0 pi pi-cloud-upload (U+E944)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "e2fba5f1"
+    },
+    {
+      "name": "cloud",
+      "source": "PrimeIcons 7.0.0 pi pi-cloud (U+E945)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "2d9d2df3"
+    },
+    {
+      "name": "pencil",
+      "source": "PrimeIcons 7.0.0 pi pi-pencil (U+E942)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "8e963847"
+    },
+    {
+      "name": "users",
+      "source": "PrimeIcons 7.0.0 pi pi-users (U+E941)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "34f46716"
+    },
+    {
+      "name": "clock",
+      "source": "PrimeIcons 7.0.0 pi pi-clock (U+E940)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "fec13dea"
+    },
+    {
+      "name": "user-minus",
+      "source": "PrimeIcons 7.0.0 pi pi-user-minus (U+E93E)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "e1436242"
+    },
+    {
+      "name": "user-plus",
+      "source": "PrimeIcons 7.0.0 pi pi-user-plus (U+E93F)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "8f7111ab"
+    },
+    {
+      "name": "trash",
+      "source": "PrimeIcons 7.0.0 pi pi-trash (U+E93D)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "fe84efa3"
+    },
+    {
+      "name": "external-link",
+      "source": "PrimeIcons 7.0.0 pi pi-external-link (U+E93C)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "10f477c4"
+    },
+    {
+      "name": "window-maximize",
+      "source": "PrimeIcons 7.0.0 pi pi-window-maximize (U+E93B)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "b929b246"
+    },
+    {
+      "name": "window-minimize",
+      "source": "PrimeIcons 7.0.0 pi pi-window-minimize (U+E93A)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "d6b83f39"
+    },
+    {
+      "name": "refresh",
+      "source": "PrimeIcons 7.0.0 pi pi-refresh (U+E938)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "26f37122"
+    },
+    {
+      "name": "user",
+      "source": "PrimeIcons 7.0.0 pi pi-user (U+E939)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "b4d591ad"
+    },
+    {
+      "name": "exclamation-triangle",
+      "source": "PrimeIcons 7.0.0 pi pi-exclamation-triangle (U+E922)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "6e36a03a"
+    },
+    {
+      "name": "calendar",
+      "source": "PrimeIcons 7.0.0 pi pi-calendar (U+E927)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "8bc35e28"
+    },
+    {
+      "name": "chevron-circle-left",
+      "source": "PrimeIcons 7.0.0 pi pi-chevron-circle-left (U+E928)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "c957a1be"
+    },
+    {
+      "name": "chevron-circle-down",
+      "source": "PrimeIcons 7.0.0 pi pi-chevron-circle-down (U+E929)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "bb95ff9d"
+    },
+    {
+      "name": "chevron-circle-right",
+      "source": "PrimeIcons 7.0.0 pi pi-chevron-circle-right (U+E92A)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "a937e380"
+    },
+    {
+      "name": "chevron-circle-up",
+      "source": "PrimeIcons 7.0.0 pi pi-chevron-circle-up (U+E92B)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "a51fb048"
+    },
+    {
+      "name": "angle-double-down",
+      "source": "PrimeIcons 7.0.0 pi pi-angle-double-down (U+E92C)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "1e5c84e6"
+    },
+    {
+      "name": "angle-double-left",
+      "source": "PrimeIcons 7.0.0 pi pi-angle-double-left (U+E92D)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "7ef35d6d"
+    },
+    {
+      "name": "angle-double-right",
+      "source": "PrimeIcons 7.0.0 pi pi-angle-double-right (U+E92E)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "5d27ccdb"
+    },
+    {
+      "name": "angle-double-up",
+      "source": "PrimeIcons 7.0.0 pi pi-angle-double-up (U+E92F)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "3881cc0b"
+    },
+    {
+      "name": "angle-down",
+      "source": "PrimeIcons 7.0.0 pi pi-angle-down (U+E930)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "1ac85ea2"
+    },
+    {
+      "name": "angle-left",
+      "source": "PrimeIcons 7.0.0 pi pi-angle-left (U+E931)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "70a8c19a"
+    },
+    {
+      "name": "angle-right",
+      "source": "PrimeIcons 7.0.0 pi pi-angle-right (U+E932)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "5aaa1376"
+    },
+    {
+      "name": "angle-up",
+      "source": "PrimeIcons 7.0.0 pi pi-angle-up (U+E933)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "61c50ce9"
+    },
+    {
+      "name": "upload",
+      "source": "PrimeIcons 7.0.0 pi pi-upload (U+E934)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "ecc45a08"
+    },
+    {
+      "name": "download",
+      "source": "PrimeIcons 7.0.0 pi pi-download (U+E956)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "4498053d"
+    },
+    {
+      "name": "ban",
+      "source": "PrimeIcons 7.0.0 pi pi-ban (U+E935)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "7ae56934"
+    },
+    {
+      "name": "star-fill",
+      "source": "PrimeIcons 7.0.0 pi pi-star-fill (U+E936)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "6e28b151"
+    },
+    {
+      "name": "star",
+      "source": "PrimeIcons 7.0.0 pi pi-star (U+E937)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "51d8b31a"
+    },
+    {
+      "name": "chevron-left",
+      "source": "PrimeIcons 7.0.0 pi pi-chevron-left (U+E900)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "2c14d7f1"
+    },
+    {
+      "name": "chevron-right",
+      "source": "PrimeIcons 7.0.0 pi pi-chevron-right (U+E901)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "a59ae807"
+    },
+    {
+      "name": "chevron-down",
+      "source": "PrimeIcons 7.0.0 pi pi-chevron-down (U+E902)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "0de36a73"
+    },
+    {
+      "name": "chevron-up",
+      "source": "PrimeIcons 7.0.0 pi pi-chevron-up (U+E903)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "38be5ec9"
+    },
+    {
+      "name": "caret-left",
+      "source": "PrimeIcons 7.0.0 pi pi-caret-left (U+E904)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "510440f2"
+    },
+    {
+      "name": "caret-right",
+      "source": "PrimeIcons 7.0.0 pi pi-caret-right (U+E905)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "5ef411b9"
+    },
+    {
+      "name": "caret-down",
+      "source": "PrimeIcons 7.0.0 pi pi-caret-down (U+E906)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "a756c322"
+    },
+    {
+      "name": "caret-up",
+      "source": "PrimeIcons 7.0.0 pi pi-caret-up (U+E907)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "fe4d8f49"
+    },
+    {
+      "name": "search",
+      "source": "PrimeIcons 7.0.0 pi pi-search (U+E908)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "cf09e663"
+    },
+    {
+      "name": "check",
+      "source": "PrimeIcons 7.0.0 pi pi-check (U+E909)",
+      "vb": [
+        1088,
+        1024
+      ],
+      "width": 14.875,
+      "height": 14,
+      "hash": "9ee195cc"
+    },
+    {
+      "name": "check-circle",
+      "source": "PrimeIcons 7.0.0 pi pi-check-circle (U+E90A)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "d54e9f51"
+    },
+    {
+      "name": "times",
+      "source": "PrimeIcons 7.0.0 pi pi-times (U+E90B)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "784883f0"
+    },
+    {
+      "name": "times-circle",
+      "source": "PrimeIcons 7.0.0 pi pi-times-circle (U+E90C)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "ba6221f6"
+    },
+    {
+      "name": "plus",
+      "source": "PrimeIcons 7.0.0 pi pi-plus (U+E90D)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "3c5aa991"
+    },
+    {
+      "name": "plus-circle",
+      "source": "PrimeIcons 7.0.0 pi pi-plus-circle (U+E90E)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "362e739e"
+    },
+    {
+      "name": "minus",
+      "source": "PrimeIcons 7.0.0 pi pi-minus (U+E90F)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "87238d97"
+    },
+    {
+      "name": "minus-circle",
+      "source": "PrimeIcons 7.0.0 pi pi-minus-circle (U+E910)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "f223259b"
+    },
+    {
+      "name": "circle-on",
+      "source": "PrimeIcons 7.0.0 pi pi-circle-on (U+E911)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "52d6b745"
+    },
+    {
+      "name": "circle-off",
+      "source": "PrimeIcons 7.0.0 pi pi-circle-off (U+E912)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "a4f5457f"
+    },
+    {
+      "name": "sort-down",
+      "source": "PrimeIcons 7.0.0 pi pi-sort-down (U+E913)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "d1e86224"
+    },
+    {
+      "name": "sort-up",
+      "source": "PrimeIcons 7.0.0 pi pi-sort-up (U+E914)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "39507f9c"
+    },
+    {
+      "name": "sort",
+      "source": "PrimeIcons 7.0.0 pi pi-sort (U+E915)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "a5b7b278"
+    },
+    {
+      "name": "step-backward",
+      "source": "PrimeIcons 7.0.0 pi pi-step-backward (U+E916)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "66f395db"
+    },
+    {
+      "name": "step-forward",
+      "source": "PrimeIcons 7.0.0 pi pi-step-forward (U+E917)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "34b06b62"
+    },
+    {
+      "name": "th-large",
+      "source": "PrimeIcons 7.0.0 pi pi-th-large (U+E918)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "0559bc95"
+    },
+    {
+      "name": "arrow-down",
+      "source": "PrimeIcons 7.0.0 pi pi-arrow-down (U+E919)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "70e01c04"
+    },
+    {
+      "name": "arrow-left",
+      "source": "PrimeIcons 7.0.0 pi pi-arrow-left (U+E91A)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "640dd807"
+    },
+    {
+      "name": "arrow-right",
+      "source": "PrimeIcons 7.0.0 pi pi-arrow-right (U+E91B)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "3416b104"
+    },
+    {
+      "name": "arrow-up",
+      "source": "PrimeIcons 7.0.0 pi pi-arrow-up (U+E91C)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "dfe64726"
+    },
+    {
+      "name": "bars",
+      "source": "PrimeIcons 7.0.0 pi pi-bars (U+E91D)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "73e2ae92"
+    },
+    {
+      "name": "arrow-circle-down",
+      "source": "PrimeIcons 7.0.0 pi pi-arrow-circle-down (U+E91E)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "c7496f4e"
+    },
+    {
+      "name": "arrow-circle-left",
+      "source": "PrimeIcons 7.0.0 pi pi-arrow-circle-left (U+E91F)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "6bf027cb"
+    },
+    {
+      "name": "arrow-circle-right",
+      "source": "PrimeIcons 7.0.0 pi pi-arrow-circle-right (U+E920)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "48e13e9c"
+    },
+    {
+      "name": "arrow-circle-up",
+      "source": "PrimeIcons 7.0.0 pi pi-arrow-circle-up (U+E921)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "a21cc5aa"
+    },
+    {
+      "name": "info",
+      "source": "PrimeIcons 7.0.0 pi pi-info (U+E923)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "88a1ff1c"
+    },
+    {
+      "name": "info-circle",
+      "source": "PrimeIcons 7.0.0 pi pi-info-circle (U+E924)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "4f546b03"
+    },
+    {
+      "name": "home",
+      "source": "PrimeIcons 7.0.0 pi pi-home (U+E925)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "14440e82"
+    },
+    {
+      "name": "spinner",
+      "source": "PrimeIcons 7.0.0 pi pi-spinner (U+E926)",
+      "vb": [
+        1024,
+        1024
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "0ed6a016"
+    },
+    {
+      "name": "primeng-spinner",
+      "source": "PrimeNG 21.0.2 SpinnerIcon (Button loading icon)",
+      "vb": [
+        14,
+        14
+      ],
+      "width": 14,
+      "height": 14,
+      "hash": "02bc2ed9"
+    }
+  ]
+}

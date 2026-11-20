@@ -268,6 +268,29 @@ for (const l of leaves) {
     add(col, { name, type: ftype, scope: scopeKey(col, path, ftype), values: out, codeSyntax: css, description: desc });
 }
 
+// ---------- derived: focus-ring corner radius (DECISIONS #34) ----------
+// The browser draws `outline: <width> solid; outline-offset: <offset>` around a rounded box with radius + offset + width.
+{
+    const num = (p, m) => { const l = leaves.find((x) => x.path === p); if (!l) throw new Error(`Derived focus radius: ${p} missing`); const r = l.node.$extensions.primeng.resolved; return dims(r && typeof r === 'object' ? r[m.toLowerCase()] : r)[0]; };
+    for (const [name, base] of [['button.focus-ring-radius', 'button.border-radius'], ['button.rounded-focus-ring-radius', 'button.rounded-border-radius']]) {
+        if (known.has(name)) throw new Error(`Derived name clash ${name}`);
+        const values = Object.fromEntries(MODES.components.map((m) => [m, r4(num(base, m) + num('button.focus-ring.offset', m) + num('button.focus-ring.width', m))]));
+        add('components', { name: fname(name), type: 'FLOAT', scope: 'r', values, codeSyntax: null, description: `Derived (no CSS variable): ${base} + button.focus-ring.offset + button.focus-ring.width. Radius of the focus outline as the browser draws it.` });
+        plan.derived.push({ token: base, derived: name, rule: 'focus-ring radius' });
+    }
+}
+// derived: label line height in px per size = font-size × typography.base.line-height (PrimeNG keeps it on icon-only
+// buttons with a hidden ::after nbsp; Figma keeps it with an icon slot bound to this height). DECISIONS #34.
+{
+    const res = (p, m) => { const l = leaves.find((x) => x.path === p); if (!l) throw new Error(`Derived line height: ${p} missing`); const r = l.node.$extensions.primeng.resolved; return r && typeof r === 'object' ? r[m.toLowerCase()] : r; };
+    for (const [name, size] of [['button.line-height', 'typography.base.font-size'], ['button.sm.line-height', 'button.sm.font-size'], ['button.lg.line-height', 'button.lg.font-size']]) {
+        if (known.has(name)) throw new Error(`Derived name clash ${name}`);
+        const values = Object.fromEntries(MODES.components.map((m) => [m, r4(dims(res(size, m))[0] * Number(res('typography.base.line-height', m)))]));
+        add('components', { name: fname(name), type: 'FLOAT', scope: 'h', values, codeSyntax: null, description: `Derived (no CSS variable): ${size} × typography.base.line-height, in px. Height of the label line; keeps icon-only buttons as tall as in code.` });
+        plan.derived.push({ token: size, derived: name, rule: 'label line height' });
+    }
+}
+
 // ---------- colors that alias a color-mix token inherit its opacity (as an alias to the source's -opacity) ----------
 for (let changed = true; changed; ) {
     changed = false;
@@ -434,7 +457,7 @@ for (const c of calls) if (c.code.length > 50000) throw new Error(`${c.file} is 
 await mkdir(join(OUT, 'calls'), { recursive: true });
 for (const c of calls) await writeFile(join(OUT, 'calls', c.file), c.code + '\n');
 // overwrite in place (no delete); flag generated files this run no longer produces (99-verify.js is figma-verify.mjs's)
-const stale = (await readdir(join(OUT, 'calls'))).filter((f) => /^\d\d-.*\.js$/.test(f) && f !== '99-verify.js' && !calls.some((c) => c.file === f));
+const stale = (await readdir(join(OUT, 'calls'))).filter((f) => /^\d\d-.*\.js$/.test(f) && f !== '99-verify.js' && !f.startsWith('06-icons') && !calls.some((c) => c.file === f));
 if (stale.length) console.warn(`Stale call files (not produced by this run, do NOT run them; delete by hand): ${stale.join(', ')}`);
 const summary = {
     generated: new Date().toISOString(),

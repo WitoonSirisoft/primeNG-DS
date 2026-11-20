@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-20T07:12:08.924Z",
+  "generated": "2026-11-20T08:39:20.148Z",
   "source": {
     "tokens": "tokens/base/tokens.json",
     "theme": null
@@ -7,10 +7,10 @@
   "counts": {
     "Primitives": 248,
     "Semantic": 163,
-    "Components": 244,
+    "Components": 280,
     "effectStyles": 7,
     "textStyles": 15,
-    "derived": 51,
+    "derived": 58,
     "skipped": 11
   },
   "calls": [
@@ -24,7 +24,7 @@
     },
     {
       "file": "calls/03-components-1.js",
-      "chars": 39479
+      "chars": 43183
     },
     {
       "file": "calls/04-effect-styles.js",
@@ -9526,6 +9526,462 @@
           },
           "codeSyntax": "--p-tag-warn-color",
           "description": ""
+        },
+        {
+          "name": "badge/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "border-radius/md"
+            },
+            "Dark": {
+              "a": "border-radius/md"
+            }
+          },
+          "codeSyntax": "--p-badge-border-radius",
+          "description": ""
+        },
+        {
+          "name": "badge/contrast/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/950"
+            },
+            "Dark": {
+              "a": "surface/0"
+            }
+          },
+          "codeSyntax": "--p-badge-contrast-background",
+          "description": ""
+        },
+        {
+          "name": "badge/contrast/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/0"
+            },
+            "Dark": {
+              "a": "surface/950"
+            }
+          },
+          "codeSyntax": "--p-badge-contrast-color",
+          "description": ""
+        },
+        {
+          "name": "badge/danger/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "red/500"
+            },
+            "Dark": {
+              "a": "red/400"
+            }
+          },
+          "codeSyntax": "--p-badge-danger-background",
+          "description": ""
+        },
+        {
+          "name": "badge/danger/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/0"
+            },
+            "Dark": {
+              "a": "red/950"
+            }
+          },
+          "codeSyntax": "--p-badge-danger-color",
+          "description": ""
+        },
+        {
+          "name": "badge/dot/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": "--p-badge-dot-size",
+          "description": ""
+        },
+        {
+          "name": "badge/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": 10.5,
+            "Dark": 10.5
+          },
+          "codeSyntax": "--p-badge-font-size",
+          "description": ""
+        },
+        {
+          "name": "badge/font-weight",
+          "type": "FLOAT",
+          "scope": "fw",
+          "values": {
+            "Light": 700,
+            "Dark": 700
+          },
+          "codeSyntax": "--p-badge-font-weight",
+          "description": ""
+        },
+        {
+          "name": "badge/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 21,
+            "Dark": 21
+          },
+          "codeSyntax": "--p-badge-height",
+          "description": ""
+        },
+        {
+          "name": "badge/info/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "sky/500"
+            },
+            "Dark": {
+              "a": "sky/400"
+            }
+          },
+          "codeSyntax": "--p-badge-info-background",
+          "description": ""
+        },
+        {
+          "name": "badge/info/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/0"
+            },
+            "Dark": {
+              "a": "sky/950"
+            }
+          },
+          "codeSyntax": "--p-badge-info-color",
+          "description": ""
+        },
+        {
+          "name": "badge/lg/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": 12.25,
+            "Dark": 12.25
+          },
+          "codeSyntax": "--p-badge-lg-font-size",
+          "description": ""
+        },
+        {
+          "name": "badge/lg/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 24.5,
+            "Dark": 24.5
+          },
+          "codeSyntax": "--p-badge-lg-height",
+          "description": ""
+        },
+        {
+          "name": "badge/lg/min-width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 24.5,
+            "Dark": 24.5
+          },
+          "codeSyntax": "--p-badge-lg-min-width",
+          "description": ""
+        },
+        {
+          "name": "badge/min-width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 21,
+            "Dark": 21
+          },
+          "codeSyntax": "--p-badge-min-width",
+          "description": ""
+        },
+        {
+          "name": "badge/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-badge-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "badge/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-badge-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "badge/primary/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "primary/color"
+            },
+            "Dark": {
+              "a": "primary/color"
+            }
+          },
+          "codeSyntax": "--p-badge-primary-background",
+          "description": ""
+        },
+        {
+          "name": "badge/primary/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "primary/contrast-color"
+            },
+            "Dark": {
+              "a": "primary/contrast-color"
+            }
+          },
+          "codeSyntax": "--p-badge-primary-color",
+          "description": ""
+        },
+        {
+          "name": "badge/secondary/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/100"
+            },
+            "Dark": {
+              "a": "surface/800"
+            }
+          },
+          "codeSyntax": "--p-badge-secondary-background",
+          "description": ""
+        },
+        {
+          "name": "badge/secondary/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/600"
+            },
+            "Dark": {
+              "a": "surface/300"
+            }
+          },
+          "codeSyntax": "--p-badge-secondary-color",
+          "description": ""
+        },
+        {
+          "name": "badge/sm/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": 8.75,
+            "Dark": 8.75
+          },
+          "codeSyntax": "--p-badge-sm-font-size",
+          "description": ""
+        },
+        {
+          "name": "badge/sm/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 17.5,
+            "Dark": 17.5
+          },
+          "codeSyntax": "--p-badge-sm-height",
+          "description": ""
+        },
+        {
+          "name": "badge/sm/min-width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 17.5,
+            "Dark": 17.5
+          },
+          "codeSyntax": "--p-badge-sm-min-width",
+          "description": ""
+        },
+        {
+          "name": "badge/success/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "green/500"
+            },
+            "Dark": {
+              "a": "green/400"
+            }
+          },
+          "codeSyntax": "--p-badge-success-background",
+          "description": ""
+        },
+        {
+          "name": "badge/success/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/0"
+            },
+            "Dark": {
+              "a": "green/950"
+            }
+          },
+          "codeSyntax": "--p-badge-success-color",
+          "description": ""
+        },
+        {
+          "name": "badge/warn/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "orange/500"
+            },
+            "Dark": {
+              "a": "orange/400"
+            }
+          },
+          "codeSyntax": "--p-badge-warn-background",
+          "description": ""
+        },
+        {
+          "name": "badge/warn/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/0"
+            },
+            "Dark": {
+              "a": "orange/950"
+            }
+          },
+          "codeSyntax": "--p-badge-warn-color",
+          "description": ""
+        },
+        {
+          "name": "badge/xl/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": "--p-badge-xl-font-size",
+          "description": ""
+        },
+        {
+          "name": "badge/xl/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 28,
+            "Dark": 28
+          },
+          "codeSyntax": "--p-badge-xl-height",
+          "description": ""
+        },
+        {
+          "name": "badge/xl/min-width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 28,
+            "Dark": 28
+          },
+          "codeSyntax": "--p-badge-xl-min-width",
+          "description": ""
+        },
+        {
+          "name": "button/focus-ring-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": 9,
+            "Dark": 9
+          },
+          "codeSyntax": null,
+          "description": "Derived (no CSS variable): button.border-radius + button.focus-ring.offset + button.focus-ring.width. Radius of the focus outline as the browser draws it."
+        },
+        {
+          "name": "button/rounded-focus-ring-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": 31,
+            "Dark": 31
+          },
+          "codeSyntax": null,
+          "description": "Derived (no CSS variable): button.rounded-border-radius + button.focus-ring.offset + button.focus-ring.width. Radius of the focus outline as the browser draws it."
+        },
+        {
+          "name": "button/line-height",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": 16.8,
+            "Dark": 16.8
+          },
+          "codeSyntax": null,
+          "description": "Derived (no CSS variable): typography.base.font-size × typography.base.line-height, in px. Height of the label line; keeps icon-only buttons as tall as in code."
+        },
+        {
+          "name": "button/sm/line-height",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": 14.7,
+            "Dark": 14.7
+          },
+          "codeSyntax": null,
+          "description": "Derived (no CSS variable): button.sm.font-size × typography.base.line-height, in px. Height of the label line; keeps icon-only buttons as tall as in code."
+        },
+        {
+          "name": "button/lg/line-height",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": 18.9,
+            "Dark": 18.9
+          },
+          "codeSyntax": null,
+          "description": "Derived (no CSS variable): button.lg.font-size × typography.base.line-height, in px. Height of the label line; keeps icon-only buttons as tall as in code."
         }
       ]
     },
@@ -10033,6 +10489,41 @@
         "token": "tag.warn.background",
         "derived": "tag.warn.background-opacity",
         "rule": "color-mix opacity"
+      },
+      {
+        "token": "badge.padding",
+        "derived": "badge.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "badge.padding",
+        "derived": "badge.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "button.border-radius",
+        "derived": "button.focus-ring-radius",
+        "rule": "focus-ring radius"
+      },
+      {
+        "token": "button.rounded-border-radius",
+        "derived": "button.rounded-focus-ring-radius",
+        "rule": "focus-ring radius"
+      },
+      {
+        "token": "typography.base.font-size",
+        "derived": "button.line-height",
+        "rule": "label line height"
+      },
+      {
+        "token": "button.sm.font-size",
+        "derived": "button.sm.line-height",
+        "rule": "label line height"
+      },
+      {
+        "token": "button.lg.font-size",
+        "derived": "button.lg.line-height",
+        "rule": "label line height"
       },
       {
         "token": "list.option.selected-background",
