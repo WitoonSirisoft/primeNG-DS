@@ -70,7 +70,8 @@ for (const { name, cp } of entries) {
     if (!g || g.index === 0) throw new Error(`pi-${name}: no glyph for U+${cp.toString(16)}`);
     const d = encode(g.getPath(0, asc, upem)); // font units, y down
     if (!d) throw new Error(`pi-${name}: empty glyph`);
-    icons.push({ name, source: `PrimeIcons ${pkg.version} pi pi-${name} (U+${cp.toString(16).toUpperCase()})`, vb: [g.advanceWidth, upem], width: r3((g.advanceWidth * SIZE) / upem), height: SIZE, d });
+    const bb = g.getPath(0, asc, upem).getBoundingBox(); // glyphs may overhang their advance box (e.g. user-plus by 0.71px), as in the browser
+    icons.push({ name, source: `PrimeIcons ${pkg.version} pi pi-${name} (U+${cp.toString(16).toUpperCase()})`, vb: [g.advanceWidth, upem], width: r3((g.advanceWidth * SIZE) / upem), height: SIZE, d, at: [r3((bb.x1 * SIZE) / upem), r3((bb.y1 * SIZE) / upem)] });
 }
 // PrimeNG SpinnerIcon (Button loading icon): its own 14x14 SVG path
 const spin = await readFile(join(NM, 'primeng/fesm2022/primeng-icons-spinner.mjs'), 'utf8');
@@ -125,7 +126,8 @@ for (const [n, c] of chunks.entries()) {
     files.push(`${f} (${c.length} icons, ${code.length} chars)`);
 }
 // ---------- import route: one SVG sheet the designer drags into Figma, + a short converter call ----------
-// Each icon is <g id="<name>__<hash>"> with an invisible 'bounds' rect (the 14px icon box) and its glyph scaled to px.
+// Each icon is <g id="<name>__<hash>" transform="translate(x y)"> with an invisible 'bounds' rect (the 14px icon box) and its glyph scaled to px.
+// Figma's SVG import drops the invisible (fill=none) bounds rect, so the converter locates each box from sheet origin + translate instead.
 const COLS = 20, CELL = 24;
 const groups = icons.map((i, n) => {
     const x = (n % COLS) * CELL, y = Math.floor(n / COLS) * CELL;
@@ -134,12 +136,14 @@ const groups = icons.map((i, n) => {
 });
 const SW = COLS * CELL, SH = Math.ceil(icons.length / COLS) * CELL;
 await writeFile(join(OUT, 'icons/icons-sheet.svg'), `<svg xmlns="http://www.w3.org/2000/svg" width="${SW}" height="${SH}" viewBox="0 0 ${SW} ${SH}">\n${groups.join('\n')}\n</svg>\n`);
-const SHEET = { version: pkg.version, icons: icons.map((i) => [i.name, i.hash, i.width, i.height, i.source]) };
+const SHEET = { version: pkg.version, sheet: [SW, SH], icons: icons.map((i, n) => [i.name, i.hash, i.width, i.height, i.source, (n % COLS) * CELL, Math.floor(n / COLS) * CELL, i.at || null]) };
 const SHEET_CODE = `const page=figma.root.children.find(p=>p.name==='01 Foundations');if(!page)return {error:'page 01 Foundations missing'};await figma.setCurrentPageAsync(page);
 const tv=(await figma.variables.getLocalVariablesAsync('COLOR')).find(v=>v.name==='text/color');if(!tv)return {error:'variable text/color missing'};
 const want=new Map(D.icons.map(i=>[i[0],i]));const RX=/^([a-z0-9-]+)__([0-9a-f]{8})$/;
 const sheet=page.children.find(n=>'children' in n&&n.findAll&&n.findAll(c=>RX.test(c.name)).length>50);
 if(!sheet)return {error:'Imported sheet not found on 01 Foundations. Drag tokens/figma/icons/icons-sheet.svg onto the page first.'};
+if(Math.abs(sheet.width-D.sheet[0])>0.01||Math.abs(sheet.height-D.sheet[1])>0.01)return {error:'Sheet is '+sheet.width+'x'+sheet.height+', expected '+D.sheet.join('x')+' (imported scaled?). Re-import at 100%.'};
+const ox=sheet.absoluteTransform[0][2],oy=sheet.absoluteTransform[1][2];
 let host=page.findChild(n=>n.type==='FRAME'&&n.name==='Icons');
 if(!host){host=figma.createFrame();host.name='Icons';page.appendChild(host);host.layoutMode='HORIZONTAL';host.layoutWrap='WRAP';host.itemSpacing=16;host.counterAxisSpacing=16;host.paddingTop=host.paddingBottom=host.paddingLeft=host.paddingRight=24;host.primaryAxisSizingMode='FIXED';host.counterAxisSizingMode='AUTO';host.resize(960,100);host.fills=[];}
 const existing=new Map(host.children.filter(n=>n.type==='COMPONENT'&&n.name.startsWith('Icon/')).map(c=>[c.name.slice(5),c]));
@@ -147,10 +151,11 @@ let created=0,updated=0,unchanged=0;const errors=[];
 for(const g of sheet.findAll(c=>RX.test(c.name))){const [,name,hash]=g.name.match(RX);const spec=want.get(name);
 if(!spec){errors.push(name+': not in this generator run');continue;}if(spec[1]!==hash){errors.push(name+': sheet is from another run (hash differs); regenerate');continue;}
 let comp=existing.get(name);const tag='hash:'+hash;if(comp&&comp.description.includes(tag)){unchanged++;continue;}
-const b=g.findOne(c=>c.name==='bounds');const vecs=g.findAll(c=>c.type==='VECTOR'||c.type==='BOOLEAN_OPERATION');if(!b||!vecs.length){errors.push(name+': bad group');continue;}
-const bx=b.absoluteTransform[0][2],by=b.absoluteTransform[1][2];
+const vecs=g.findAll(c=>c.type==='VECTOR'||c.type==='BOOLEAN_OPERATION');if(!vecs.length){errors.push(name+': no vector in group');continue;}
+const bx=ox+spec[5],by=oy+spec[6];
 const shape=vecs.length>1?figma.flatten(vecs):(vecs[0].type==='VECTOR'?vecs[0]:figma.flatten(vecs));
 const sx=shape.absoluteTransform[0][2]-bx,sy=shape.absoluteTransform[1][2]-by;
+const at=spec[7];if(at?(Math.abs(sx-at[0])>0.05||Math.abs(sy-at[1])>0.05):(sx<-0.05||sy<-0.05||sx+shape.width>spec[2]+0.05||sy+shape.height>spec[3]+0.05)){errors.push(name+': glyph at '+[sx,sy].map(v=>v.toFixed(2))+', expected '+(at||'inside box'));continue;}
 if(!comp){comp=figma.createComponent();host.appendChild(comp);comp.name='Icon/'+name;created++;existing.set(name,comp);}else{for(const c of [...comp.children])c.remove();updated++;}
 comp.resize(spec[2],spec[3]);comp.fills=[];comp.clipsContent=false;comp.appendChild(shape);shape.x=sx;shape.y=sy;shape.name='Shape';
 shape.constraints={horizontal:'SCALE',vertical:'SCALE'};shape.strokes=[];

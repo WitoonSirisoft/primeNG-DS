@@ -6,7 +6,7 @@ Regenerate (from `app/sakai-ng`): `npm run figma:icons`.
 
 | File | What |
 |---|---|
-| `icons-sheet.svg` | All 315 icons, one `<g id="<name>__<hash>">` each (glyph + invisible 14px `bounds` box) |
+| `icons-sheet.svg` | All 315 icons, one `<g id="<name>__<hash>" transform="translate(x y)">` each (glyph + invisible 14px `bounds` box; Figma drops that box on import, so the converter uses sheet origin + translate) |
 | `manifest.json` | Name, source, box size, hash per icon |
 | `../calls/06-icons-from-sheet.js` | Converts the imported sheet into `Icon/<name>` components (upsert, skips unchanged) |
 | `../calls/06-icons-N.js` | Alternative: same result without an import, paths sent in the calls (6 large calls) |
@@ -23,3 +23,7 @@ Regenerate (from `app/sakai-ng`): `npm run figma:icons`.
 4. Expected result: `iconComponentsNow: 315`, `errors: []`.
 
 If the result says *hash differs*, the sheet came from an older run: re-run `npm run figma:icons` and import the new sheet.
+
+Checks in the converter: the sheet must be exactly 480×384 (not scaled), and each glyph must sit where the font puts it
+(±0.05px). Some glyphs overhang their box, as in the browser (e.g. `user-plus` 0.71px right, `volume-up` 0.18px left).
+First import on 2026-11-23: 315/315 components (`bounds` box dropped by Figma → converter fixed the same day).

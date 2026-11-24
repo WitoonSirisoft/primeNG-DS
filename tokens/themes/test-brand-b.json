@@ -10,12 +10,12 @@
       "surface": "neutral (light) / neutral (dark)",
       "radius": "very rounded: about 3x",
       "density": "compact (about -33%)",
-      "fontFamily": "'Courier New', monospace"
+      "fontFamily": "'IBM Plex Sans Thai', sans-serif"
     },
     "notThemableByTokens": [
       {
         "axis": "font family",
-        "wanted": "'Courier New', monospace",
+        "wanted": "'IBM Plex Sans Thai', sans-serif",
         "reason": "Aura has no font-family token; Sakai sets Lato in CSS (tokens/README 5.3). Expected Day 6 finding."
       },
       {

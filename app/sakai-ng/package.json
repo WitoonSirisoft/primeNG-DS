@@ -12,7 +12,10 @@
         "capture": "npm run build-storybook && node scripts/capture-screenshots.mjs",
         "tokens": "node scripts/export-tokens.mjs",
         "figma:plan": "node scripts/figma-variables.mjs && node scripts/figma-verify.mjs",
-        "figma:icons": "node scripts/figma-icons.mjs"
+        "figma:icons": "node scripts/figma-icons.mjs",
+        "figma:button": "node scripts/figma-button.mjs",
+        "figma:inputtext": "node scripts/figma-inputtext.mjs",
+        "figma:tag": "node scripts/figma-tag.mjs"
     },
     "private": true,
     "dependencies": {

@@ -1,1 +1,6 @@
-figma_component,figma_property,figma_values,primeng_selector,primeng_input,design_only,deviation,deviation_ticket
+
+Tag,Severity,"none, secondary, success, info, warn, danger, contrast",<p-tag>,"severity (none = attribute omitted, #55)",no,none,
+Tag,Rounded,"false, true",<p-tag>,rounded,no,none,
+Tag,Value,text,<p-tag>,value,no,none,
+Tag,Show icon,boolean,<p-tag>,icon (set = shown),no,none,
+Tag,Icon,instance swap (Icon/*),<p-tag>,icon (pi pi-…),no,none,

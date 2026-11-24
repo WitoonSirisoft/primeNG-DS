@@ -215,7 +215,7 @@ for (const l of leaves) {
         if (opacity) {
             const oname = `${path}-opacity`;
             if (known.has(oname)) throw new Error(`Derived name clash ${oname}`);
-            add(col, { name: fname(oname), type: 'FLOAT', scope: 'op', values: opacity, codeSyntax: null, description: `Derived from ${css}: opacity of the color-mix per mode (1 = no mix).` });
+            add(col, { name: fname(oname), type: 'FLOAT', scope: 'op', values: opacity, codeSyntax: null, description: `Derived from ${css}: opacity of the color-mix per mode (100 = no mix).` });
             plan.derived.push({ token: path, derived: oname, rule: 'color-mix opacity' });
         }
         continue;
@@ -344,6 +344,15 @@ plan.textStyles = TEXT_STYLES.map((t) => {
     };
 });
 
+// ---------- opacity in percent (DECISIONS #41) ----------
+// Figma applies a variable bound to layer opacity as a PERCENT (0-100); CSS opacity is a fraction (0-1). Like rem -> px,
+// OPACITY-scoped variables are written x100 (0.6 -> 60). Aliases stay aliases (their target is converted too).
+for (const vars of Object.values(plan.collections)) for (const v of vars) {
+    if (v.type !== 'FLOAT' || v.scope !== 'op') continue;
+    for (const m of Object.keys(v.values)) if (typeof v.values[m] === 'number') v.values[m] = r4(v.values[m] * 100);
+    v.description = `${v.description ? v.description + ' ' : ''}Percent in Figma (CSS fraction x100).`.trim();
+}
+
 // ---------- order: alias targets inside a collection come first (so chunks never point forward) ----------
 for (const col of Object.keys(plan.collections)) {
     const list = plan.collections[col];
@@ -390,9 +399,9 @@ const planNames=new Set(D.vars.map(x=>x[0]));
 return {collection:D.col,chunk:D.chunk,modes:col.modes.map(m=>m.name),newCollection:newCol,inPlan:D.vars.length,created,updated,unchanged,collectionTotal:col.variableIds.length,errors,duplicateNames:dup.slice(0,10)};`;
 
 const EFFECTS = `const styles=await figma.getLocalEffectStylesAsync();const byName=new Map(styles.map(s=>[s.name,s]));let created=0,updated=0,unchanged=0;const ids=[];
-for(const [n,fx,desc] of D.styles){let s=byName.get(n);let isNew=false;if(!s){s=figma.createEffectStyle();s.name=n;created++;isNew=true;}
-const effects=fx.map(e=>({type:e[0],offset:{x:e[1],y:e[2]},radius:e[3],spread:e[4],color:{r:e[5][0],g:e[5][1],b:e[5][2],a:e[5][3]},visible:true,blendMode:'NORMAL'}));
-const same=JSON.stringify(s.effects.map(e=>[e.type,e.offset.x,e.offset.y,e.radius,e.spread||0,Math.round(e.color.a*1e4)/1e4,Math.round(e.color.r*1e4)/1e4]))===JSON.stringify(effects.map(e=>[e.type,e.offset.x,e.offset.y,e.radius,e.spread,Math.round(e.color.a*1e4)/1e4,Math.round(e.color.r*1e4)/1e4]));
+for(const [n,fx,desc,behind] of D.styles){let s=byName.get(n);let isNew=false;if(!s){s=figma.createEffectStyle();s.name=n;created++;isNew=true;}
+const effects=fx.map(e=>({type:e[0],offset:{x:e[1],y:e[2]},radius:e[3],spread:e[4],color:{r:e[5][0],g:e[5][1],b:e[5][2],a:e[5][3]},visible:true,blendMode:'NORMAL',...(e[0]==='DROP_SHADOW'?{showShadowBehindNode:!!behind}:{})}));
+const same=JSON.stringify(s.effects.map(e=>[e.type,e.offset.x,e.offset.y,e.radius,e.spread||0,!!e.showShadowBehindNode,Math.round(e.color.a*1e4)/1e4,Math.round(e.color.r*1e4)/1e4]))===JSON.stringify(effects.map(e=>[e.type,e.offset.x,e.offset.y,e.radius,e.spread,!!e.showShadowBehindNode,Math.round(e.color.a*1e4)/1e4,Math.round(e.color.r*1e4)/1e4]));
 let ch=false;if(!same){s.effects=effects;ch=true;}if(s.description!==desc){s.description=desc;ch=true;}ids.push(s.id);if(!isNew){ch?updated++:unchanged++;}}
 return {effectStyles:D.styles.length,created,updated,unchanged,styleIds:ids};`;
 
@@ -446,7 +455,10 @@ for (const col of Object.keys(plan.collections)) {
     }
     flush();
 }
-const styleRows = plan.effectStyles.map((s) => [s.name, s.effects.map((e) => [e.type, e.x, e.y, e.blur, e.spread, e.color]), s.description]);
+// Shadows drawn on elements that can be see-through (outlined/text buttons) need Figma's 'show behind transparent areas',
+// or Figma draws no shadow at all (CSS box-shadow still draws around a transparent element). DECISIONS #40.
+const SHOW_BEHIND = new Set([]); // #40 used it for button/raised-shadow; superseded by #42 (Raised is solid-only in Figma)
+const styleRows = plan.effectStyles.map((s) => [s.name, s.effects.map((e) => [e.type, e.x, e.y, e.blur, e.spread, e.color]), s.description, SHOW_BEHIND.has(s.name)]);
 calls.push({ file: `${String(calls.length + 1).padStart(2, '0')}-effect-styles.js`, code: `const D=${JSON.stringify({ styles: styleRows })};\n${EFFECTS}` });
 
 const textRows = plan.textStyles.map((t) => [t.name, t.family, t.style, t.size, t.lineHeightPercent, t.bind, t.description]);
@@ -457,7 +469,7 @@ for (const c of calls) if (c.code.length > 50000) throw new Error(`${c.file} is 
 await mkdir(join(OUT, 'calls'), { recursive: true });
 for (const c of calls) await writeFile(join(OUT, 'calls', c.file), c.code + '\n');
 // overwrite in place (no delete); flag generated files this run no longer produces (99-verify.js is figma-verify.mjs's)
-const stale = (await readdir(join(OUT, 'calls'))).filter((f) => /^\d\d-.*\.js$/.test(f) && f !== '99-verify.js' && !f.startsWith('06-icons') && !calls.some((c) => c.file === f));
+const stale = (await readdir(join(OUT, 'calls'))).filter((f) => /^\d\d-.*\.js$/.test(f) && f !== '99-verify.js' && !f.startsWith('06-icons') && !f.startsWith('07-button') && !f.startsWith('07-badge') && !f.startsWith('08-inputtext') && !f.startsWith('09-tag') && !calls.some((c) => c.file === f));
 if (stale.length) console.warn(`Stale call files (not produced by this run, do NOT run them; delete by hand): ${stale.join(', ')}`);
 const summary = {
     generated: new Date().toISOString(),

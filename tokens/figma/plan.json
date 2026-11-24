@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-20T08:39:20.148Z",
+  "generated": "2026-11-23T08:57:45.957Z",
   "source": {
     "tokens": "tokens/base/tokens.json",
     "theme": null
@@ -20,18 +20,22 @@
     },
     {
       "file": "calls/02-semantic-1.js",
-      "chars": 21543
+      "chars": 21736
     },
     {
       "file": "calls/03-components-1.js",
-      "chars": 43183
+      "chars": 43734
     },
     {
-      "file": "calls/04-effect-styles.js",
-      "chars": 2139
+      "file": "calls/04-components-2.js",
+      "chars": 3659
     },
     {
-      "file": "calls/05-text-styles.js",
+      "file": "calls/05-effect-styles.js",
+      "chars": 2299
+    },
+    {
+      "file": "calls/06-text-styles.js",
       "chars": 6951
     }
   ],
@@ -3962,11 +3966,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 0.6,
-            "Dark": 0.6
+            "Light": 60,
+            "Dark": 60
           },
           "codeSyntax": "--p-disabled-opacity",
-          "description": ""
+          "description": "Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "primary/500",
@@ -4665,11 +4669,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.16
+            "Light": 100,
+            "Dark": 16
           },
           "codeSyntax": null,
-          "description": "Derived from --p-highlight-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-highlight-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "primary/700",
@@ -4739,11 +4743,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.24
+            "Light": 100,
+            "Dark": 24
           },
           "codeSyntax": null,
-          "description": "Derived from --p-highlight-focus-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-highlight-focus-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "primary/800",
@@ -5965,7 +5969,7 @@
             }
           },
           "codeSyntax": null,
-          "description": "Derived: opacity of list/option/selected-background, inherited from the color-mix token it aliases."
+          "description": "Derived: opacity of list/option/selected-background, inherited from the color-mix token it aliases. Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "list/option/selected-focus-background-opacity",
@@ -5980,7 +5984,7 @@
             }
           },
           "codeSyntax": null,
-          "description": "Derived: opacity of list/option/selected-focus-background, inherited from the color-mix token it aliases."
+          "description": "Derived: opacity of list/option/selected-focus-background, inherited from the color-mix token it aliases. Percent in Figma (CSS fraction x100)."
         }
       ],
       "components": [
@@ -6896,11 +6900,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.16
+            "Light": 100,
+            "Dark": 16
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-outlined-danger-active-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-outlined-danger-active-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/outlined/danger/border-color",
@@ -6952,11 +6956,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.04
+            "Light": 100,
+            "Dark": 4
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-outlined-danger-hover-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-outlined-danger-hover-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/outlined/help/active-background",
@@ -6978,11 +6982,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.16
+            "Light": 100,
+            "Dark": 16
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-outlined-help-active-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-outlined-help-active-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/outlined/help/border-color",
@@ -7034,11 +7038,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.04
+            "Light": 100,
+            "Dark": 4
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-outlined-help-hover-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-outlined-help-hover-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/outlined/info/active-background",
@@ -7060,11 +7064,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.16
+            "Light": 100,
+            "Dark": 16
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-outlined-info-active-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-outlined-info-active-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/outlined/info/border-color",
@@ -7116,11 +7120,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.04
+            "Light": 100,
+            "Dark": 4
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-outlined-info-hover-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-outlined-info-hover-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/outlined/plain/active-background",
@@ -7202,11 +7206,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.16
+            "Light": 100,
+            "Dark": 16
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-outlined-primary-active-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-outlined-primary-active-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/outlined/primary/border-color",
@@ -7258,11 +7262,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.04
+            "Light": 100,
+            "Dark": 4
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-outlined-primary-hover-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-outlined-primary-hover-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/outlined/secondary/active-background",
@@ -7350,11 +7354,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.16
+            "Light": 100,
+            "Dark": 16
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-outlined-success-active-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-outlined-success-active-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/outlined/success/border-color",
@@ -7406,11 +7410,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.04
+            "Light": 100,
+            "Dark": 4
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-outlined-success-hover-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-outlined-success-hover-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/outlined/warn/active-background",
@@ -7432,11 +7436,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.16
+            "Light": 100,
+            "Dark": 16
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-outlined-warn-active-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-outlined-warn-active-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/outlined/warn/border-color",
@@ -7488,11 +7492,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.04
+            "Light": 100,
+            "Dark": 4
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-outlined-warn-hover-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-outlined-warn-hover-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/padding-x",
@@ -8115,11 +8119,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.16
+            "Light": 100,
+            "Dark": 16
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-text-danger-active-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-text-danger-active-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/text/danger/color",
@@ -8156,11 +8160,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.04
+            "Light": 100,
+            "Dark": 4
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-text-danger-hover-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-text-danger-hover-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/text/help/active-background",
@@ -8182,11 +8186,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.16
+            "Light": 100,
+            "Dark": 16
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-text-help-active-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-text-help-active-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/text/help/color",
@@ -8223,11 +8227,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.04
+            "Light": 100,
+            "Dark": 4
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-text-help-hover-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-text-help-hover-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/text/info/active-background",
@@ -8249,11 +8253,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.16
+            "Light": 100,
+            "Dark": 16
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-text-info-active-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-text-info-active-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/text/info/color",
@@ -8290,11 +8294,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.04
+            "Light": 100,
+            "Dark": 4
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-text-info-hover-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-text-info-hover-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/text/plain/active-background",
@@ -8361,11 +8365,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.16
+            "Light": 100,
+            "Dark": 16
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-text-primary-active-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-text-primary-active-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/text/primary/color",
@@ -8402,11 +8406,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.04
+            "Light": 100,
+            "Dark": 4
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-text-primary-hover-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-text-primary-hover-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/text/secondary/active-background",
@@ -8473,11 +8477,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.16
+            "Light": 100,
+            "Dark": 16
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-text-success-active-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-text-success-active-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/text/success/color",
@@ -8514,11 +8518,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.04
+            "Light": 100,
+            "Dark": 4
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-text-success-hover-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-text-success-hover-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/text/warn/active-background",
@@ -8540,11 +8544,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.16
+            "Light": 100,
+            "Dark": 16
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-text-warn-active-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-text-warn-active-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/text/warn/color",
@@ -8581,11 +8585,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.04
+            "Light": 100,
+            "Dark": 4
           },
           "codeSyntax": null,
-          "description": "Derived from --p-button-text-warn-hover-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-button-text-warn-hover-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "button/transition-duration",
@@ -9231,11 +9235,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.16
+            "Light": 100,
+            "Dark": 16
           },
           "codeSyntax": null,
-          "description": "Derived from --p-tag-danger-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-tag-danger-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "tag/danger/color",
@@ -9316,11 +9320,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.16
+            "Light": 100,
+            "Dark": 16
           },
           "codeSyntax": null,
-          "description": "Derived from --p-tag-info-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-tag-info-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "tag/info/color",
@@ -9379,11 +9383,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.16
+            "Light": 100,
+            "Dark": 16
           },
           "codeSyntax": null,
-          "description": "Derived from --p-tag-primary-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-tag-primary-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "tag/primary/color",
@@ -9465,11 +9469,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.16
+            "Light": 100,
+            "Dark": 16
           },
           "codeSyntax": null,
-          "description": "Derived from --p-tag-success-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-tag-success-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "tag/success/color",
@@ -9506,11 +9510,11 @@
           "type": "FLOAT",
           "scope": "op",
           "values": {
-            "Light": 1,
-            "Dark": 0.16
+            "Light": 100,
+            "Dark": 16
           },
           "codeSyntax": null,
-          "description": "Derived from --p-tag-warn-background: opacity of the color-mix per mode (1 = no mix)."
+          "description": "Derived from --p-tag-warn-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
         },
         {
           "name": "tag/warn/color",

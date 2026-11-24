@@ -1,5 +1,5 @@
 {
-  "$description": "Test brand A: indigo, sharp corners, roomy spacing, serif font.",
+  "$description": "Test brand A: indigo, sharp corners, roomy spacing, Kanit font.",
   "$metadata": {
     "theme": "test-brand-a",
     "base": "tokens/base/tokens.json",
@@ -10,12 +10,12 @@
       "surface": "stone (light) / stone (dark)",
       "radius": "sharp: every radius 0",
       "density": "roomy (about +33%)",
-      "fontFamily": "Georgia, 'Times New Roman', serif"
+      "fontFamily": "Kanit, sans-serif"
     },
     "notThemableByTokens": [
       {
         "axis": "font family",
-        "wanted": "Georgia, 'Times New Roman', serif",
+        "wanted": "Kanit, sans-serif",
         "reason": "Aura has no font-family token; Sakai sets Lato in CSS (tokens/README 5.3). Expected Day 6 finding."
       },
       {

@@ -71,12 +71,12 @@ for (const { col, path, v } of rows) {
             op.push(mm ? +(1 - parseFloat(mm[2]) / 100).toFixed(4) : 1);
         }
         lines.push(`${C[col]}|${name}|C|${vals[0]}|${vals[1]}`);
-        if (op.some((o) => o !== 1)) lines.push(`${C[col]}|${name}-opacity|F|${op[0]}|${op[1]}`);
+        if (op.some((o) => o !== 1)) lines.push(`${C[col]}|${name}-opacity|F|${+(op[0] * 100).toFixed(4)}|${+(op[1] * 100).toFixed(4)}`); // percent in Figma (#41)
     } else if (t === 'dimension') {
         const l = px(res.light), d = px(res.dark);
         if (l.length === 1) lines.push(`${C[col]}|${name}|F|${l[0]}|${d[0]}`);
         else (l.length === 2 ? ['y', 'x'] : ['top', 'right', 'bottom', 'left']).forEach((s, i) => lines.push(`${C[col]}|${name}-${s}|F|${l[i]}|${d[i]}`));
-    } else if (t === 'fontWeight' || t === 'number') lines.push(`${C[col]}|${name}|F|${Number(res.light)}|${Number(res.dark)}`);
+    } else if (t === 'fontWeight' || t === 'number') { const k = /opacity/.test(name.split('/').pop()) ? 100 : 1; lines.push(`${C[col]}|${name}|F|${+(Number(res.light) * k).toFixed(4)}|${+(Number(res.dark) * k).toFixed(4)}`); } // opacity: percent in Figma (#41)
     else if (t === 'duration') lines.push(`${C[col]}|${name}|F|${sec(res.light)}|${sec(res.dark)}`);
     else if (t === 'strokeStyle' || t === 'fontFamily') lines.push(`${C[col]}|${name}|S|${res.light}|${res.dark}`);
 }
