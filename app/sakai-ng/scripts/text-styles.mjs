@@ -26,7 +26,17 @@ export const TEXT_STYLES = [
     { name: 'InputText/Text sm', ...BASE, size: 'inputtext.sm.font-size', weight: 'typography.base.font-weight', css: '.p-inputtext-sm' },
     { name: 'InputText/Text base', ...BASE, size: 'typography.base.font-size', weight: 'typography.base.font-weight', css: '.p-inputtext (PrimeNG CSS font-size: 1rem literal, no token)' },
     { name: 'InputText/Text lg', ...BASE, size: 'inputtext.lg.font-size', weight: 'typography.base.font-weight', css: '.p-inputtext-lg' },
-    { name: 'Tag/Label', ...BASE, size: 'tag.font-size', weight: 'tag.font-weight', css: '.p-tag' }
+    { name: 'Tag/Label', ...BASE, size: 'tag.font-size', weight: 'tag.font-weight', css: '.p-tag' },
+    { name: 'Textarea/Text sm', ...BASE, size: 'textarea.sm.font-size', weight: 'typography.base.font-weight', css: '.p-textarea-sm' },
+    { name: 'Textarea/Text base', ...BASE, size: 'typography.base.font-size', weight: 'typography.base.font-weight', css: '.p-textarea (PrimeNG CSS font-size: 1rem literal, no token)' },
+    { name: 'Textarea/Text lg', ...BASE, size: 'textarea.lg.font-size', weight: 'typography.base.font-weight', css: '.p-textarea-lg' },
+    { name: 'Select/Text sm', ...BASE, size: 'select.sm.font-size', weight: 'typography.base.font-weight', css: '.p-select-sm .p-select-label' },
+    { name: 'Select/Text base', ...BASE, size: 'typography.base.font-size', weight: 'typography.base.font-weight', css: '.p-select-label, .p-select-option (PrimeNG CSS font-size: 1rem literal, no token)' },
+    { name: 'Select/Text lg', ...BASE, size: 'select.lg.font-size', weight: 'typography.base.font-weight', css: '.p-select-lg .p-select-label' },
+    { name: 'Select/Group', ...BASE, size: 'typography.base.font-size', weight: 'select.option-group.font-weight', css: '.p-select-option-group' },
+    { name: 'Message/Text sm', ...BASE, size: 'message.text.sm.font-size', weight: 'message.text.font-weight', css: '.p-message-sm .p-message-text' },
+    { name: 'Message/Text base', ...BASE, size: 'message.text.font-size', weight: 'message.text.font-weight', css: '.p-message-text' },
+    { name: 'Message/Text lg', ...BASE, size: 'message.text.lg.font-size', weight: 'message.text.font-weight', css: '.p-message-lg .p-message-text' }
 ];
 /** Figma font style for a CSS weight (Lato in Figma: Thin, Light, Regular, Medium, SemiBold, Bold, ExtraBold, Black). */
 export const WEIGHT_STYLE = { 100: 'Thin', 300: 'Light', 400: 'Regular', 500: 'Medium', 600: 'SemiBold', 700: 'Bold', 800: 'ExtraBold', 900: 'Black' };

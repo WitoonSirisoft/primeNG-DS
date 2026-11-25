@@ -8,7 +8,7 @@
  *   node scripts/capture-screenshots.mjs [options]
  *
  * Options:
- *   --only=button,inputtext,tag   capture only these components
+ *   --only=button,inputtext,tag   capture only these components (merged into the existing manifest)
  *   --out=<dir>                   output root (default: ../../screenshots)
  *   --static=<dir>                built Storybook (default: storybook-static)
  *   --concurrency=<n>             parallel pages (default: 4)
@@ -123,6 +123,106 @@ function tagPlan() {
     return p;
 }
 
+
+// ---- Batch 1 (scale-up, DECISIONS #60). Same naming rules: <component>__<prop>-<value>__...__state-<s>__<mode>.png
+const FIELD = ['default', 'hover', 'focus'];
+const pl = (component, story, args, name, states, cell) => ({ component, story: `components-${story}--playground`, args, name: [component, ...name], states, ...(cell ? { cell } : {}) });
+function textareaPlan() {
+    const p = [];
+    for (const variant of ['outlined', 'filled']) {
+        for (const pSize of SIZES) p.push(pl('textarea', 'textarea', { variant, pSize, value: '', placeholder: 'Placeholder' }, [`variant-${variant}`, `psize-${pSize}`, 'content-placeholder'], FIELD));
+        p.push(pl('textarea', 'textarea', { variant, pSize: 'base', value: 'Text value' }, [`variant-${variant}`, 'psize-base', 'content-value'], FIELD));
+        p.push(pl('textarea', 'textarea', { variant, pSize: 'base', value: 'Text value', disabled: true }, [`variant-${variant}`, 'psize-base', 'content-value'], ['disabled']));
+        p.push(pl('textarea', 'textarea', { variant, pSize: 'base', value: '', placeholder: 'Placeholder', invalid: true }, [`variant-${variant}`, 'psize-base', 'content-placeholder', 'invalid'], FIELD));
+    }
+    return p;
+}
+function passwordPlan() {
+    const p = [];
+    for (const variant of ['outlined', 'filled']) for (const size of SIZES) p.push(pl('password', 'password', { variant, size }, [`variant-${variant}`, `size-${size}`, 'content-placeholder'], FIELD));
+    p.push(pl('password', 'password', { value: 'secret12', toggleMask: true }, ['variant-outlined', 'size-base', 'content-value', 'togglemask'], ['default']));
+    p.push(pl('password', 'password', { invalid: true }, ['variant-outlined', 'size-base', 'content-placeholder', 'invalid'], ['default']));
+    p.push(pl('password', 'password', { disabled: true }, ['variant-outlined', 'size-base', 'content-placeholder'], ['disabled']));
+    for (const [strength, value] of [['weak', 'abc'], ['medium', 'abc12345'], ['strong', 'Abc!12345']])
+        p.push({ ...pl('password', 'password', { feedback: true, value }, ['variant-outlined', 'size-base', `feedback-${strength}`], ['open'], 'playground'), story: 'components-password--open' });
+    return p;
+}
+function iconfieldPlan() {
+    const p = [];
+    for (const iconPosition of ['left', 'right']) for (const pSize of SIZES) p.push(pl('iconfield', 'iconfield', { iconPosition, pSize }, [`iconposition-${iconPosition}`, `psize-${pSize}`, 'variant-outlined'], FIELD));
+    p.push(pl('iconfield', 'iconfield', { variant: 'filled' }, ['iconposition-left', 'psize-base', 'variant-filled'], ['default']));
+    p.push(pl('iconfield', 'iconfield', { disabled: true }, ['iconposition-left', 'psize-base', 'variant-outlined'], ['disabled']));
+    return p;
+}
+function inputnumberPlan() {
+    const p = [];
+    for (const variant of ['outlined', 'filled']) for (const size of SIZES) p.push(pl('inputnumber', 'inputnumber', { variant, size }, [`variant-${variant}`, `size-${size}`, 'buttons-none'], FIELD));
+    for (const layout of ['stacked', 'horizontal', 'vertical'])
+        for (const size of SIZES) p.push(pl('inputnumber', 'inputnumber', { showButtons: true, buttonLayout: layout, size }, ['variant-outlined', `size-${size}`, `buttons-${layout}`], ['default', 'hover', 'focus']));
+    p.push(pl('inputnumber', 'inputnumber', { prefix: '$ ' }, ['variant-outlined', 'size-base', 'buttons-none', 'prefix'], ['default']));
+    p.push(pl('inputnumber', 'inputnumber', { invalid: true }, ['variant-outlined', 'size-base', 'buttons-none', 'invalid'], ['default']));
+    p.push(pl('inputnumber', 'inputnumber', { showButtons: true, disabled: true }, ['variant-outlined', 'size-base', 'buttons-stacked'], ['disabled']));
+    return p;
+}
+function choicePlan(component, story) {
+    const p = [];
+    const variants = component === 'toggleswitch' ? [null] : ['outlined', 'filled'];
+    for (const variant of variants)
+        for (const size of SIZES)
+            for (const checked of [false, true]) {
+                const v = variant ? { variant } : {};
+                const vn = variant ? [`variant-${variant}`] : [];
+                p.push(pl(component, story, { ...v, size, checked }, [...vn, `size-${size}`, `checked-${checked ? 'yes' : 'no'}`], ['default', 'hover', 'focus']));
+                if (size === 'base') {
+                    p.push(pl(component, story, { ...v, size, checked, disabled: true }, [...vn, 'size-base', `checked-${checked ? 'yes' : 'no'}`], ['disabled']));
+                    p.push(pl(component, story, { ...v, size, checked, invalid: true }, [...vn, 'size-base', `checked-${checked ? 'yes' : 'no'}`, 'invalid'], ['default']));
+                }
+            }
+    if (component === 'checkbox') p.push(pl('checkbox', 'checkbox', { indeterminate: true }, ['variant-outlined', 'size-base', 'checked-indeterminate'], ['default']));
+    return p;
+}
+function selectPlan() {
+    const p = [];
+    for (const variant of ['outlined', 'filled'])
+        for (const size of SIZES)
+            for (const selected of [false, true]) p.push(pl('select', 'select', { variant, size, selected }, [`variant-${variant}`, `size-${size}`, `content-${selected ? 'value' : 'placeholder'}`], FIELD));
+    p.push(pl('select', 'select', { selected: true, showClear: true }, ['variant-outlined', 'size-base', 'content-value', 'showclear'], ['default']));
+    p.push(pl('select', 'select', { invalid: true }, ['variant-outlined', 'size-base', 'content-placeholder', 'invalid'], ['default']));
+    p.push(pl('select', 'select', { disabled: true }, ['variant-outlined', 'size-base', 'content-placeholder'], ['disabled']));
+    for (const checkmark of [false, true])
+        p.push({ ...pl('select', 'select', { selected: true, checkmark }, ['variant-outlined', 'size-base', 'content-value', `checkmark-${checkmark ? 'yes' : 'no'}`], ['open'], 'playground'), story: 'components-select--open' });
+    // Group C panel extras (#74): filter, option groups, empty message
+    p.push({ ...pl('select', 'select', { selected: true, filter: true }, ['variant-outlined', 'size-base', 'content-value', 'filter'], ['open'], 'playground'), story: 'components-select--open' });
+    p.push({ ...pl('select', 'select', { selected: true, grouped: true }, ['variant-outlined', 'size-base', 'content-value', 'grouped'], ['open'], 'playground'), story: 'components-select--open' });
+    p.push({ ...pl('select', 'select', { empty: true }, ['variant-outlined', 'size-base', 'content-placeholder', 'empty'], ['open'], 'playground'), story: 'components-select--open' });
+    return p;
+}
+function messagePlan() {
+    const p = [];
+    for (const severity of ['success', 'info', 'warn', 'error', 'secondary', 'contrast'])
+        for (const variant of ['default', 'outlined', 'simple']) p.push(pl('message', 'message', { severity, variant }, [`severity-${severity}`, `variant-${variant}`, 'size-base'], ['static']));
+    for (const size of ['small', 'large']) p.push(pl('message', 'message', { severity: 'info', size }, ['severity-info', 'variant-default', `size-${size}`], ['static']));
+    p.push(pl('message', 'message', { severity: 'info', closable: true }, ['severity-info', 'variant-default', 'size-base', 'closable'], ['static']));
+    p.push(pl('message', 'message', { severity: 'info', icon: 'pi pi-info-circle' }, ['severity-info', 'variant-default', 'size-base', 'icon'], ['static']));
+    return p;
+}
+function datepickerPlan() {
+    const p = [];
+    for (const icon of ['none', 'input', 'button'])
+        for (const size of SIZES) p.push(pl('datepicker', 'datepicker', { icon, size }, [`icon-${icon}`, `size-${size}`, 'variant-outlined', 'content-placeholder'], FIELD));
+    p.push(pl('datepicker', 'datepicker', { icon: 'button', selected: true }, ['icon-button', 'size-base', 'variant-outlined', 'content-value'], ['default']));
+    p.push(pl('datepicker', 'datepicker', { icon: 'input', variant: 'filled' }, ['icon-input', 'size-base', 'variant-filled', 'content-placeholder'], ['default']));
+    p.push(pl('datepicker', 'datepicker', { icon: 'button', invalid: true }, ['icon-button', 'size-base', 'variant-outlined', 'content-placeholder', 'invalid'], ['default']));
+    p.push(pl('datepicker', 'datepicker', { icon: 'button', disabled: true }, ['icon-button', 'size-base', 'variant-outlined', 'content-placeholder'], ['disabled']));
+    // panel (inline day view): static, plus hover on one date (the 10th) and on the next-month arrow
+    p.push({ ...pl('datepicker', 'datepicker', {}, ['panel', 'dayview'], ['default'], 'playground'), story: 'components-datepicker--panel' });
+    p.push({ ...pl('datepicker', 'datepicker', {}, ['panel', 'dayview', 'date-10'], ['hover'], 'playground'), story: 'components-datepicker--panel', hoverSel: 'td:not(.p-datepicker-other-month) span:text-is("10")' });
+    p.push({ ...pl('datepicker', 'datepicker', {}, ['panel', 'dayview', 'next'], ['hover'], 'playground'), story: 'components-datepicker--panel', hoverSel: '.p-datepicker-next-button' });
+    return p;
+}
+const PLANS = { button: buttonPlan, inputtext: inputtextPlan, tag: tagPlan, textarea: textareaPlan, password: passwordPlan, iconfield: iconfieldPlan, inputnumber: inputnumberPlan,
+    checkbox: () => choicePlan('checkbox', 'checkbox'), radiobutton: () => choicePlan('radiobutton', 'radiobutton'), toggleswitch: () => choicePlan('toggleswitch', 'toggleswitch'), select: selectPlan, message: messagePlan, datepicker: datepickerPlan };
+
 // ---------------------------------------------------------------------------
 // Storybook URL building. Arg values: '!undefined' / '!true' / '!false' are Storybook URL specials.
 // ---------------------------------------------------------------------------
@@ -165,6 +265,8 @@ function serve(root) {
 // ---------------------------------------------------------------------------
 // Capture one plan entry in one mode.
 // ---------------------------------------------------------------------------
+const ROOTS = '.p-button, .p-inputtext, .p-tag, .p-textarea, .p-select, .p-inputnumber, .p-checkbox, .p-radiobutton, .p-toggleswitch, .p-password, .p-iconfield, .p-message, .p-datepicker'; // component roots (outer first in document order)
+const rootSel = (cell) => ROOTS.split(', ').map((r) => `${cell} ${r}`).join(', ');
 const FREEZE_CSS = '*,*::before,*::after{animation-play-state:paused!important;animation-delay:0s!important;transition:none!important;caret-color:transparent!important}';
 
 async function captureEntry(context, base, entry, mode) {
@@ -174,20 +276,24 @@ async function captureEntry(context, base, entry, mode) {
     try {
         await page.goto(storyUrl(base, entry.story, entry.args, mode), { waitUntil: 'load' });
         const cellSel = `[data-cell="${entry.cell ?? 'playground'}"]`;
-        await page.waitForSelector(`${cellSel} .p-button, ${cellSel} .p-inputtext, ${cellSel} .p-tag`, { timeout: 15000 });
+        await page.waitForSelector(rootSel(cellSel), { timeout: 15000 });
         await page.evaluate(() => document.fonts.ready);
         const lato = await page.evaluate(() => [...document.fonts].some((f) => /lato/i.test(f.family) && f.status === 'loaded') && document.fonts.check('14px Lato'));
         if (!lato && !ALLOW_MISSING_FONT) throw new Error('Lato did not load (fonts.cdnfonts.com unreachable?). Refusing to capture invalid references.');
+        // let finite enter animations (e.g. p-message fade-in) finish before freezing; infinite ones (spinner) are skipped
+        await page.evaluate(() => Promise.race([Promise.all(document.getAnimations().filter((a) => a.effect?.getTiming().iterations !== Infinity).map((a) => a.finished.catch(() => {}))), new Promise((r) => setTimeout(r, 2000))]));
         await page.addStyleTag({ content: FREEZE_CSS });
         const dark = await page.evaluate(() => document.documentElement.classList.contains('app-dark'));
         if (dark !== (mode === 'dark')) throw new Error(`theme global not applied (expected ${mode})`);
 
-        const target = entry.cell ? page.locator(cellSel) : page.locator(`${cellSel} .p-button, ${cellSel} .p-inputtext, ${cellSel} .p-tag`).first();
+        const comp = page.locator(rootSel(cellSel)).first();
+        const target = entry.cell ? page.locator(cellSel) : comp;
         const files = [];
         for (const state of entry.states) {
             await page.mouse.move(0, 0);
             await page.evaluate(() => document.activeElement instanceof HTMLElement && document.activeElement.blur());
-            if (state === 'hover') await target.hover();
+            if (state === 'hover') await (entry.hoverSel ? page.locator(`${cellSel} ${entry.hoverSel}`).first() : target).hover(); // hoverSel: hover a part (e.g. one date cell)
+            if (state === 'open') { await comp.click(); await page.waitForTimeout(400); } // Select panel / Password meter, kept inside the cell (appendTo self)
             if (state === 'focus') {
                 await page.keyboard.press('Tab');
                 const ok = await target.evaluate((e) => e.matches(':focus-visible') || e.contains(document.activeElement));
@@ -220,7 +326,8 @@ async function captureEntry(context, base, entry, mode) {
 
 // ---------------------------------------------------------------------------
 async function main() {
-    const plan = [...(ONLY && !ONLY.includes('button') ? [] : buttonPlan()), ...(ONLY && !ONLY.includes('inputtext') ? [] : inputtextPlan()), ...(ONLY && !ONLY.includes('tag') ? [] : tagPlan())];
+    for (const o of ONLY || []) if (!PLANS[o]) throw new Error(`No capture plan for ${o}`);
+    const plan = Object.entries(PLANS).flatMap(([c, f]) => (ONLY && !ONLY.includes(c) ? [] : f()));
     const jobs = plan.flatMap((entry) => MODES.map((mode) => ({ entry, mode })));
     const total = jobs.reduce((n, j) => n + j.entry.states.length, 0);
     console.log(`Capture plan: ${plan.length} story setups × ${MODES.length} modes = ${jobs.length} page loads, ${total} images → ${OUT}`);
@@ -261,6 +368,14 @@ async function main() {
     srv.close();
     console.log('');
 
+    const capturedNow = results.length;
+    if (ONLY && !ALLOW_MISSING_FONT && OUT === resolve(APP, '../../screenshots')) {
+        // partial run: merge into the existing manifest (replace only the components captured now)
+        try {
+            const old = JSON.parse(await readFile(join(OUT, 'manifest.json'), 'utf8'));
+            results.push(...old.images.filter((r) => !ONLY.includes(r.file.split('/')[0])));
+        } catch {}
+    }
     results.sort((a, b) => a.file.localeCompare(b.file));
     const manifest = {
         generated: new Date().toISOString(),
@@ -269,11 +384,11 @@ async function main() {
         count: results.length,
         images: results
     };
-    if (!ONLY) await writeFile(join(OUT, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
+    if (!ONLY || OUT === resolve(APP, '../../screenshots')) await writeFile(join(OUT, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
     const csv = ['file,component,mode,state,width_css_px,height_css_px,story,args', ...results.map((r) => [r.file, r.file.split('/')[0], r.mode, r.state, r.w, r.h, r.story, JSON.stringify(JSON.stringify(r.args))].join(','))];
-    if (!ONLY) await writeFile(join(OUT, 'manifest.csv'), csv.join('\n') + '\n');
+    if (!ONLY || OUT === resolve(APP, '../../screenshots')) await writeFile(join(OUT, 'manifest.csv'), csv.join('\n') + '\n');
 
-    console.log(`Captured ${results.length} of ${total} images.`);
+    console.log(`Captured ${capturedNow} of ${total} images${results.length !== capturedNow ? ` (manifest now lists ${results.length})` : ''}.`);
     if (ALLOW_MISSING_FONT) console.log('WARNING: --allow-missing-font was used. These images are NOT valid references.');
     if (failures.length) {
         console.error(`${failures.length} failed:`);

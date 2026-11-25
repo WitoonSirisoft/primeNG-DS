@@ -10,7 +10,7 @@
  * Usage (from app/sakai-ng): npm run figma:verify [-- --tokens=<file>] [--out=<file>]
  */
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
-import { dirname, resolve } from 'node:path';
+import { dirname, resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { TEXT_STYLES, WEIGHT_STYLE } from './text-styles.mjs';
 
@@ -42,7 +42,7 @@ const hex8 = (s) => {
     }
     throw new Error(`color ${s}`);
 };
-const MIX = /^color-mix\(in srgb, (#[0-9a-f]+|rgba?\([^)]*\)), transparent (\d+(?:\.\d+)?)%\)$/i;
+const MIX = /^color-mix\(in srgb,\s*(#[0-9a-f]+|rgba?\([^)]*\)),\s*transparent\s+(\d+(?:\.\d+)?)%\)$/i; // spacing varies in Aura (message tokens have none)
 const px = (s) => s.trim().split(/\s+/).map((x) => { const m = x.match(/^(-?[\d.]+)(rem|px|em)?$/); const n = parseFloat(m[1]); return m[2] === 'rem' || m[2] === 'em' ? +(n * PX).toFixed(4) : n; });
 const sec = (s) => (s.endsWith('ms') ? parseFloat(s) / 1000 : parseFloat(s));
 
@@ -96,6 +96,23 @@ for (const { col, path, v } of rows) {
         lines.push(`C|${name}|F|${val('light')}|${val('dark')}`);
     }
 }
+// derived field paddings next to an inline icon / button (DECISIONS #61), from resolved values
+{
+    const v = (p) => { const r = rows.find((x) => x.path === p).v.$extensions.primeng.resolved; return r && typeof r === 'object' ? r : { light: r, dark: r }; };
+    const pxv = (p, m) => px(v(p)[m])[0];
+    for (const [name, f] of [['iconfield/input-padding', (m) => pxv('form-field.padding-x', m) * 2 + pxv('icon-size', m)], ['password/input-padding', (m) => pxv('form-field.padding-x', m) * 2 + pxv('icon-size', m)], ['datepicker/input-padding', (m) => pxv('form-field.padding-x', m) * 2 + pxv('icon-size', m)], ['inputnumber/stacked-input-padding', (m) => pxv('inputnumber.button.width', m) + pxv('form-field.padding-x', m)]])
+        lines.push(`C|${name}|F|${+f('light').toFixed(4)}|${+f('dark').toFixed(4)}`);
+}
+// derived Group B (DECISIONS #71): Checkbox focus-ring radius + ToggleSwitch design-only sizes, from resolved values
+{
+    const v = (p) => { const r = rows.find((x) => x.path === p).v.$extensions.primeng.resolved; return r && typeof r === 'object' ? r : { light: r, dark: r }; };
+    const pxv = (p, m) => px(v(p)[m])[0];
+    for (const [name, f] of [['checkbox/focus-ring-radius', (m) => pxv('checkbox.border-radius', m) + pxv('checkbox.focus-ring.offset', m) + pxv('checkbox.focus-ring.width', m)],
+        ['select/option/check-padding-left', (m) => { const d = px(v('select.option.padding')[m]); return d[Math.min(1, d.length - 1)] + pxv('select.checkmark.gutter-start', m); }],
+        ['toggleswitch/sm/width', (m) => pxv('toggleswitch.width', m) - 7], ['toggleswitch/sm/height', (m) => pxv('toggleswitch.height', m) - 3.5], ['toggleswitch/sm/handle-size', (m) => pxv('toggleswitch.handle.size', m) - 3.5],
+        ['toggleswitch/lg/width', (m) => pxv('toggleswitch.width', m) + 7], ['toggleswitch/lg/height', (m) => pxv('toggleswitch.height', m) + 3.5], ['toggleswitch/lg/handle-size', (m) => pxv('toggleswitch.handle.size', m) + 3.5]])
+        lines.push(`C|${name}|F|${+f('light').toFixed(4)}|${+f('dark').toFixed(4)}`);
+}
 // text styles: expected values from the browser-resolved values, independent of the generator
 const byPath = new Map(rows.map((r) => [r.path, r.v]));
 const resOf = (p) => { const r = byPath.get(p).$extensions.primeng.resolved; return r && typeof r === 'object' ? r.light : r; };
@@ -121,7 +138,13 @@ const bv=['fontFamily','fontSize','fontWeight'].map(k=>{const x=s.boundVariables
 const got=[s.fontName.family,s.fontName.style,s.fontSize,s.lineHeight.unit==='PERCENT'?Math.round(s.lineHeight.value*1e4)/1e4:s.lineHeight.unit,bv];
 if(got[0]===f&&got[1]===st&&Math.abs(got[2]-Number(sz))<1e-4&&Math.abs(Number(got[3])-Number(lh))<1e-3&&got[4]===b)tsOk++;else tsBad.push(n+' exp '+[f,st,sz,lh,b].join(' ')+' got '+got.join(' '));}
 return {expected:EXP.split('\\n').length,figmaVariables:all.length,match:ok,mismatchCount:mism.length,mismatches:mism.slice(0,30),missing,extra,wrongCollection:wrongCol,effectStyles:effects,textStyles:{expected:TS.split('\\n').length,match:tsOk,problems:tsBad}};`;
-if (code.length > 50000) throw new Error(`verify code is ${code.length} chars (limit 50,000)`);
 await mkdir(dirname(OUT), { recursive: true });
-await writeFile(OUT, code + '\n');
-console.log(`Verify call → ${OUT} (${lines.length} expected variables, ${code.length} chars)`);
+// Expected values + fingerprint (FNV-1a over sorted lines, floats to 3 decimals): compare with the same fingerprint computed in Figma
+// (agent/HANDOFF.md §9). Cheap check that works at any size; the full call below is only written while it fits in one call.
+const fl = (t, v) => (t === 'F' ? String(Number(Number(v).toFixed(3))) : v);
+const fp = lines.map((l) => { const [c, n, t, a, b2] = l.split('|'); return [c, n, t, fl(t, a), fl(t, b2)].join('|'); }).sort();
+let h = 2166136261; for (const ch of fp.join('\n')) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619) >>> 0; }
+await writeFile(join(dirname(OUT), '..', 'expected-values.txt'), `# ${lines.length} variables, fingerprint ${h.toString(16)}\n` + lines.join('\n') + '\n');
+console.log(`Expected values → tokens/figma/expected-values.txt (${lines.length} variables, fingerprint ${h.toString(16)})`);
+if (code.length > 50000) { console.warn(`Full verify call skipped: ${code.length} chars (limit 50,000). Use the fingerprint check.`); }
+else { await writeFile(OUT, code + '\n'); console.log(`Verify call → ${OUT} (${lines.length} expected variables, ${code.length} chars)`); }

@@ -32,7 +32,7 @@ if(SET==='main'){
 }
 for(const it of out){if(it.spin===undefined)it.spin=it.l?1:0;}
 return out;}
-const pg=figma.root.children.find(p=>p.name==='99 Sandbox');await figma.setCurrentPageAsync(pg);
+const pg=figma.root.children.find(p=>p.name==='02 Components');await figma.setCurrentPageAsync(pg);
 const VB={};for(const v of await figma.variables.getLocalVariablesAsync())VB[v.name]=v;
 const ALL=variants(D.A,D.on,n=>!!VB[n],D.set);const IT=ALL.slice(D.from,D.to);
 const set=pg.findOne(n=>n.type==='COMPONENT_SET'&&n.name===D.setName);if(!set)throw new Error('No set '+D.setName);

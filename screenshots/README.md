@@ -18,7 +18,8 @@ npm run capture                      # builds Storybook, then captures ~892 imag
 
 - Output: `screenshots/<component>/*.png`, plus `screenshots/manifest.json` and `manifest.csv` (every file with its story, args, state, mode and CSS-pixel size).
 - The script **stops** if the Lato web font doesn't load (it needs internet access to fonts.cdnfonts.com). Never use `--allow-missing-font` for real references.
-- Partial run: `node scripts/capture-screenshots.mjs --only=tag` (needs a built Storybook; does not rewrite the manifests).
+- Partial run: `node scripts/capture-screenshots.mjs --only=tag` (needs a built Storybook; merges those components into the existing manifests).
+- Finite enter animations (e.g. Message fade-in) are allowed to finish before animations are frozen.
 - Re-capture everything whenever PrimeNG, the theme, Sakai styles or `.storybook/preview.ts` change, and commit the images together with that change.
 
 ---
@@ -67,6 +68,9 @@ screenshots/<component>/<component>__<prop>-<value>__...__state-<state>__<mode>.
   - Button: `severity`, `size`, `style` (solid/outlined/text/raised/rounded), extras (`icon`, `iconpos`, `icononly`, `badge`, `loading`, `link`, `plain`), `state`, `mode`
   - InputText: `variant`, `psize`, `content` (empty/placeholder/value), extras (`invalid`, `readonly`, `fluid`), `state`, `mode`
   - Tag: `severity`, `icon`, `rounded`, `mode`
+  - Batch 1 (2026-11-24, #60): Textarea `variant`, `psize`, `content`, extras (`invalid`) · Password `variant`, `size`, `content` or `feedback-<weak|medium|strong>`, extras (`togglemask`, `invalid`) · IconField `iconposition`, `psize`, `variant` · InputNumber `variant`, `size`, `buttons-<none|stacked|horizontal|vertical>`, extras (`prefix`, `invalid`) · Checkbox / RadioButton `variant`, `size`, `checked-<yes|no|indeterminate>`, extras (`invalid`) · ToggleSwitch `size`, `checked`, extras (`invalid`) · Select `variant`, `size`, `content`, extras (`showclear`, `invalid`, `checkmark-<yes|no>`) · Message `severity`, `variant` (`default` = not set), `size`, extras (`closable`, `icon`)
+  - DatePicker (#65): field `icon-<none|input|button>`, `size`, `variant`, `content`, extras (`invalid`) · panel `panel__dayview` (+ `date-10` / `next` hover). The panel is November 2026 (selected 18, dates before the 3rd disabled); **today** is the capture machine's date, so the today highlight only shows when captured in November 2026.
+  - State `open` (Select panel, Password strength meter): the component is clicked and the whole cell is captured; the overlay stays inside the cell (`appendTo="self"`).
 - `<mode>` = `light` | `dark`.
 
 Examples:

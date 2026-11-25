@@ -46,7 +46,7 @@ Long value "Waiting for approval from finance" + Icon/user: 211 × 22, single li
 - Fix rounds needed (designer review): _pending review_ · agent-side fix rounds: 0 (1 retry)
 - Unbound values found at first scan: 0 · States missing or wrong at first pass: 0
 - Figma properties matching PrimeNG inputs: 100%
-- Visual match (1–5): **5** (Witoon, 2026-11-24) · Designer review time: _designer_ · Estimated hand-build time: _designer_
+- Visual match (1–5): **5** (Witoon, 2026-11-24) · Designer review time: **2–5 min** · Estimated hand-build time: **< 1 h** (Witoon, 2026-11-24)
 
 ## Needs human decision
 1. ~~Review gate~~ → approved 2026-11-24, visual 5.

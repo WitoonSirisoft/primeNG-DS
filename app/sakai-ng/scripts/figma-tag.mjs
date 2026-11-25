@@ -12,6 +12,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { SYNC, WRAP } from './lib/figma-sync.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(HERE, '../../../tokens/figma');
@@ -67,7 +68,8 @@ set.description=D.desc;
 const want={'Value':['TEXT','Tag'],'Show icon':['BOOLEAN',false],'Icon':['INSTANCE_SWAP',IC.id]};
 const K={};for(const k in set.componentPropertyDefinitions)K[k.split('#')[0]]=k;
 for(const n of D.props)if(!K[n])K[n]=set.addComponentProperty(n,want[n][0],want[n][1]);
-async function build(c,it){CUR=c;for(const k of [...c.children])k.remove();
+${SYNC}${WRAP}async function build0(c,it){CUR=c; // update in place (#68): build() in lib/figma-sync.mjs keeps old layers and syncs
+
  c.layoutMode='HORIZONTAL';c.primaryAxisAlignItems='CENTER';c.counterAxisAlignItems='CENTER';c.primaryAxisSizingMode='AUTO';c.counterAxisSizingMode='AUTO';c.clipsContent=false;c.fills=[];c.strokes=[];
  for(const k of ['paddingTop','paddingBottom'])c.setBoundVariable(k,V(D.F.py));for(const k of ['paddingLeft','paddingRight'])c.setBoundVariable(k,V(D.F.px));
  c.setBoundVariable('itemSpacing',V(D.F.gap));rad(c,V(it.rd));
@@ -77,12 +79,12 @@ async function build(c,it){CUR=c;for(const k of [...c.children])k.remove();
  i.visible=false; // property default before the absolute layer is sized
  const bg=figma.createRectangle();bg.name='Background';c.appendChild(bg);bg.layoutPositioning='ABSOLUTE';bg.resize(c.width,c.height);bg.x=0;bg.y=0;bg.constraints={horizontal:'STRETCH',vertical:'STRETCH'};c.insertChild(0,bg);
  rad(bg,V(it.rd));bg.fills=[paint(V(it.bg))];if(it.bo)bg.setBoundVariable('opacity',V(it.bo));else{bg.setBoundVariable('opacity',null);bg.opacity=1;} // Dark: color-mix 16% → layer opacity
- t.componentPropertyReferences={characters:K['Value']};i.componentPropertyReferences={visible:K['Show icon'],mainComponent:K['Icon']};
+ REF(t,{characters:K['Value']});REF(i,{visible:K['Show icon'],mainComponent:K['Icon']});
  c.x=it.x;c.y=it.y;}
 const byName={};for(const c of set.children)byName[c.name]=c;
 for(const it of IT){let c=byName[it.n];if(c){ids.rebuilt.push(c.id);}else{c=figma.createComponent();c.name=it.n;set.appendChild(c);ids.created.push(c.id);}await build(c,it);}
 let mx=0,my=0;for(const c of set.children){mx=Math.max(mx,c.x+c.width);my=Math.max(my,c.y+c.height);}set.resizeWithoutConstraints(mx+24,my+24);
-return {set:set.id,of:IT.length,created:ids.created.length,rebuilt:ids.rebuilt.length,variantsInSet:set.children.length};`;
+return {sync:SY,set:set.id,of:IT.length,created:ids.created.length,rebuilt:ids.rebuilt.length,variantsInSet:set.children.length};`;
 
 const VERIFY = `${COMMON}
 const set=pg.findOne(n=>n.type==='COMPONENT_SET'&&n.name===D.setName);if(!set)throw new Error('No set '+D.setName);

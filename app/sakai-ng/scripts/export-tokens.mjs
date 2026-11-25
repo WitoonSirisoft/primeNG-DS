@@ -20,7 +20,7 @@ const arg = (n, d) => {
     return a ? a.slice(n.length + 3) : d;
 };
 const OUT = resolve(APP, arg('out', '../../tokens/base/tokens.json'));
-const COMPONENTS = arg('components', 'button,inputtext,tag,badge').split(',');
+const COMPONENTS = arg('components', 'button,inputtext,tag,badge,textarea,select,inputnumber,checkbox,radiobutton,toggleswitch,password,iconfield,message,datepicker').split(','); // batch 1 added 2026-11-24 (#60)
 const ROOT_FONT_PX = 14; // DECISIONS #15
 const MODES = ['light', 'dark'];
 

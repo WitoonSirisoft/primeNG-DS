@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-23T08:57:45.957Z",
+  "generated": "2026-11-25T04:26:49.815Z",
   "source": {
     "tokens": "tokens/base/tokens.json",
     "theme": null
@@ -7,11 +7,11 @@
   "counts": {
     "Primitives": 248,
     "Semantic": 163,
-    "Components": 280,
-    "effectStyles": 7,
-    "textStyles": 15,
-    "derived": 58,
-    "skipped": 11
+    "Components": 680,
+    "effectStyles": 23,
+    "textStyles": 25,
+    "derived": 127,
+    "skipped": 27
   },
   "calls": [
     {
@@ -24,19 +24,23 @@
     },
     {
       "file": "calls/03-components-1.js",
-      "chars": 43734
+      "chars": 43802
     },
     {
       "file": "calls/04-components-2.js",
-      "chars": 3659
+      "chars": 43830
     },
     {
-      "file": "calls/05-effect-styles.js",
-      "chars": 2299
+      "file": "calls/05-components-3.js",
+      "chars": 11523
     },
     {
-      "file": "calls/06-text-styles.js",
-      "chars": 6951
+      "file": "calls/06-effect-styles.js",
+      "chars": 4937
+    },
+    {
+      "file": "calls/07-text-styles.js",
+      "chars": 10355
     }
   ],
   "plan": {
@@ -9933,6 +9937,5411 @@
           "description": ""
         },
         {
+          "name": "textarea/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "form-field/background"
+            },
+            "Dark": {
+              "a": "form-field/background"
+            }
+          },
+          "codeSyntax": "--p-textarea-background",
+          "description": ""
+        },
+        {
+          "name": "textarea/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/border-color"
+            },
+            "Dark": {
+              "a": "form-field/border-color"
+            }
+          },
+          "codeSyntax": "--p-textarea-border-color",
+          "description": ""
+        },
+        {
+          "name": "textarea/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "form-field/border-radius"
+            },
+            "Dark": {
+              "a": "form-field/border-radius"
+            }
+          },
+          "codeSyntax": "--p-textarea-border-radius",
+          "description": ""
+        },
+        {
+          "name": "textarea/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "form-field/color"
+            },
+            "Dark": {
+              "a": "form-field/color"
+            }
+          },
+          "codeSyntax": "--p-textarea-color",
+          "description": ""
+        },
+        {
+          "name": "textarea/disabled-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "form-field/disabled-background"
+            },
+            "Dark": {
+              "a": "form-field/disabled-background"
+            }
+          },
+          "codeSyntax": "--p-textarea-disabled-background",
+          "description": ""
+        },
+        {
+          "name": "textarea/disabled-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "form-field/disabled-color"
+            },
+            "Dark": {
+              "a": "form-field/disabled-color"
+            }
+          },
+          "codeSyntax": "--p-textarea-disabled-color",
+          "description": ""
+        },
+        {
+          "name": "textarea/filled-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "form-field/filled-background"
+            },
+            "Dark": {
+              "a": "form-field/filled-background"
+            }
+          },
+          "codeSyntax": "--p-textarea-filled-background",
+          "description": ""
+        },
+        {
+          "name": "textarea/filled-focus-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "form-field/filled-focus-background"
+            },
+            "Dark": {
+              "a": "form-field/filled-focus-background"
+            }
+          },
+          "codeSyntax": "--p-textarea-filled-focus-background",
+          "description": ""
+        },
+        {
+          "name": "textarea/filled-hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "form-field/filled-hover-background"
+            },
+            "Dark": {
+              "a": "form-field/filled-hover-background"
+            }
+          },
+          "codeSyntax": "--p-textarea-filled-hover-background",
+          "description": ""
+        },
+        {
+          "name": "textarea/focus-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/focus-border-color"
+            },
+            "Dark": {
+              "a": "form-field/focus-border-color"
+            }
+          },
+          "codeSyntax": "--p-textarea-focus-border-color",
+          "description": ""
+        },
+        {
+          "name": "textarea/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/focus-ring/color"
+            },
+            "Dark": {
+              "a": "form-field/focus-ring/color"
+            }
+          },
+          "codeSyntax": "--p-textarea-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "textarea/focus-ring/offset",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "form-field/focus-ring/offset"
+            },
+            "Dark": {
+              "a": "form-field/focus-ring/offset"
+            }
+          },
+          "codeSyntax": "--p-textarea-focus-ring-offset",
+          "description": ""
+        },
+        {
+          "name": "textarea/focus-ring/style",
+          "type": "STRING",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "form-field/focus-ring/style"
+            },
+            "Dark": {
+              "a": "form-field/focus-ring/style"
+            }
+          },
+          "codeSyntax": "--p-textarea-focus-ring-style",
+          "description": ""
+        },
+        {
+          "name": "textarea/focus-ring/width",
+          "type": "FLOAT",
+          "scope": "sw",
+          "values": {
+            "Light": {
+              "a": "form-field/focus-ring/width"
+            },
+            "Dark": {
+              "a": "form-field/focus-ring/width"
+            }
+          },
+          "codeSyntax": "--p-textarea-focus-ring-width",
+          "description": ""
+        },
+        {
+          "name": "textarea/hover-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/hover-border-color"
+            },
+            "Dark": {
+              "a": "form-field/hover-border-color"
+            }
+          },
+          "codeSyntax": "--p-textarea-hover-border-color",
+          "description": ""
+        },
+        {
+          "name": "textarea/invalid-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/invalid-border-color"
+            },
+            "Dark": {
+              "a": "form-field/invalid-border-color"
+            }
+          },
+          "codeSyntax": "--p-textarea-invalid-border-color",
+          "description": ""
+        },
+        {
+          "name": "textarea/invalid-placeholder-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "form-field/invalid-placeholder-color"
+            },
+            "Dark": {
+              "a": "form-field/invalid-placeholder-color"
+            }
+          },
+          "codeSyntax": "--p-textarea-invalid-placeholder-color",
+          "description": ""
+        },
+        {
+          "name": "textarea/lg/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": {
+              "a": "form-field/lg/font-size"
+            },
+            "Dark": {
+              "a": "form-field/lg/font-size"
+            }
+          },
+          "codeSyntax": "--p-textarea-lg-font-size",
+          "description": ""
+        },
+        {
+          "name": "textarea/lg/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "form-field/lg/padding-x"
+            },
+            "Dark": {
+              "a": "form-field/lg/padding-x"
+            }
+          },
+          "codeSyntax": "--p-textarea-lg-padding-x",
+          "description": ""
+        },
+        {
+          "name": "textarea/lg/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "form-field/lg/padding-y"
+            },
+            "Dark": {
+              "a": "form-field/lg/padding-y"
+            }
+          },
+          "codeSyntax": "--p-textarea-lg-padding-y",
+          "description": ""
+        },
+        {
+          "name": "textarea/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "form-field/padding-x"
+            },
+            "Dark": {
+              "a": "form-field/padding-x"
+            }
+          },
+          "codeSyntax": "--p-textarea-padding-x",
+          "description": ""
+        },
+        {
+          "name": "textarea/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "form-field/padding-y"
+            },
+            "Dark": {
+              "a": "form-field/padding-y"
+            }
+          },
+          "codeSyntax": "--p-textarea-padding-y",
+          "description": ""
+        },
+        {
+          "name": "textarea/placeholder-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "form-field/placeholder-color"
+            },
+            "Dark": {
+              "a": "form-field/placeholder-color"
+            }
+          },
+          "codeSyntax": "--p-textarea-placeholder-color",
+          "description": ""
+        },
+        {
+          "name": "textarea/sm/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": {
+              "a": "form-field/sm/font-size"
+            },
+            "Dark": {
+              "a": "form-field/sm/font-size"
+            }
+          },
+          "codeSyntax": "--p-textarea-sm-font-size",
+          "description": ""
+        },
+        {
+          "name": "textarea/sm/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "form-field/sm/padding-x"
+            },
+            "Dark": {
+              "a": "form-field/sm/padding-x"
+            }
+          },
+          "codeSyntax": "--p-textarea-sm-padding-x",
+          "description": ""
+        },
+        {
+          "name": "textarea/sm/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "form-field/sm/padding-y"
+            },
+            "Dark": {
+              "a": "form-field/sm/padding-y"
+            }
+          },
+          "codeSyntax": "--p-textarea-sm-padding-y",
+          "description": ""
+        },
+        {
+          "name": "textarea/transition-duration",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "form-field/transition-duration"
+            },
+            "Dark": {
+              "a": "form-field/transition-duration"
+            }
+          },
+          "codeSyntax": "--p-textarea-transition-duration",
+          "description": "Seconds. Not used by static Figma components; kept for code parity."
+        },
+        {
+          "name": "select/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "form-field/background"
+            },
+            "Dark": {
+              "a": "form-field/background"
+            }
+          },
+          "codeSyntax": "--p-select-background",
+          "description": ""
+        },
+        {
+          "name": "select/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/border-color"
+            },
+            "Dark": {
+              "a": "form-field/border-color"
+            }
+          },
+          "codeSyntax": "--p-select-border-color",
+          "description": ""
+        },
+        {
+          "name": "select/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "form-field/border-radius"
+            },
+            "Dark": {
+              "a": "form-field/border-radius"
+            }
+          },
+          "codeSyntax": "--p-select-border-radius",
+          "description": ""
+        },
+        {
+          "name": "select/checkmark/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "list/option/color"
+            },
+            "Dark": {
+              "a": "list/option/color"
+            }
+          },
+          "codeSyntax": "--p-select-checkmark-color",
+          "description": ""
+        },
+        {
+          "name": "select/checkmark/gutter-end",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 5.25,
+            "Dark": 5.25
+          },
+          "codeSyntax": "--p-select-checkmark-gutter-end",
+          "description": ""
+        },
+        {
+          "name": "select/checkmark/gutter-start",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": -5.25,
+            "Dark": -5.25
+          },
+          "codeSyntax": "--p-select-checkmark-gutter-start",
+          "description": ""
+        },
+        {
+          "name": "select/clear-icon/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "form-field/icon-color"
+            },
+            "Dark": {
+              "a": "form-field/icon-color"
+            }
+          },
+          "codeSyntax": "--p-select-clear-icon-color",
+          "description": ""
+        },
+        {
+          "name": "select/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "form-field/color"
+            },
+            "Dark": {
+              "a": "form-field/color"
+            }
+          },
+          "codeSyntax": "--p-select-color",
+          "description": ""
+        },
+        {
+          "name": "select/disabled-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "form-field/disabled-background"
+            },
+            "Dark": {
+              "a": "form-field/disabled-background"
+            }
+          },
+          "codeSyntax": "--p-select-disabled-background",
+          "description": ""
+        },
+        {
+          "name": "select/disabled-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "form-field/disabled-color"
+            },
+            "Dark": {
+              "a": "form-field/disabled-color"
+            }
+          },
+          "codeSyntax": "--p-select-disabled-color",
+          "description": ""
+        },
+        {
+          "name": "select/dropdown/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "form-field/icon-color"
+            },
+            "Dark": {
+              "a": "form-field/icon-color"
+            }
+          },
+          "codeSyntax": "--p-select-dropdown-color",
+          "description": ""
+        },
+        {
+          "name": "select/dropdown/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 35,
+            "Dark": 35
+          },
+          "codeSyntax": "--p-select-dropdown-width",
+          "description": ""
+        },
+        {
+          "name": "select/empty-message/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "list/option/padding-y"
+            },
+            "Dark": {
+              "a": "list/option/padding-y"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-select-empty-message-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "select/empty-message/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "list/option/padding-x"
+            },
+            "Dark": {
+              "a": "list/option/padding-x"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-select-empty-message-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "select/filled-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "form-field/filled-background"
+            },
+            "Dark": {
+              "a": "form-field/filled-background"
+            }
+          },
+          "codeSyntax": "--p-select-filled-background",
+          "description": ""
+        },
+        {
+          "name": "select/filled-focus-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "form-field/filled-focus-background"
+            },
+            "Dark": {
+              "a": "form-field/filled-focus-background"
+            }
+          },
+          "codeSyntax": "--p-select-filled-focus-background",
+          "description": ""
+        },
+        {
+          "name": "select/filled-hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "form-field/filled-hover-background"
+            },
+            "Dark": {
+              "a": "form-field/filled-hover-background"
+            }
+          },
+          "codeSyntax": "--p-select-filled-hover-background",
+          "description": ""
+        },
+        {
+          "name": "select/focus-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/focus-border-color"
+            },
+            "Dark": {
+              "a": "form-field/focus-border-color"
+            }
+          },
+          "codeSyntax": "--p-select-focus-border-color",
+          "description": ""
+        },
+        {
+          "name": "select/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/focus-ring/color"
+            },
+            "Dark": {
+              "a": "form-field/focus-ring/color"
+            }
+          },
+          "codeSyntax": "--p-select-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "select/focus-ring/offset",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "form-field/focus-ring/offset"
+            },
+            "Dark": {
+              "a": "form-field/focus-ring/offset"
+            }
+          },
+          "codeSyntax": "--p-select-focus-ring-offset",
+          "description": ""
+        },
+        {
+          "name": "select/focus-ring/style",
+          "type": "STRING",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "form-field/focus-ring/style"
+            },
+            "Dark": {
+              "a": "form-field/focus-ring/style"
+            }
+          },
+          "codeSyntax": "--p-select-focus-ring-style",
+          "description": ""
+        },
+        {
+          "name": "select/focus-ring/width",
+          "type": "FLOAT",
+          "scope": "sw",
+          "values": {
+            "Light": {
+              "a": "form-field/focus-ring/width"
+            },
+            "Dark": {
+              "a": "form-field/focus-ring/width"
+            }
+          },
+          "codeSyntax": "--p-select-focus-ring-width",
+          "description": ""
+        },
+        {
+          "name": "select/hover-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/hover-border-color"
+            },
+            "Dark": {
+              "a": "form-field/hover-border-color"
+            }
+          },
+          "codeSyntax": "--p-select-hover-border-color",
+          "description": ""
+        },
+        {
+          "name": "select/invalid-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/invalid-border-color"
+            },
+            "Dark": {
+              "a": "form-field/invalid-border-color"
+            }
+          },
+          "codeSyntax": "--p-select-invalid-border-color",
+          "description": ""
+        },
+        {
+          "name": "select/invalid-placeholder-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "form-field/invalid-placeholder-color"
+            },
+            "Dark": {
+              "a": "form-field/invalid-placeholder-color"
+            }
+          },
+          "codeSyntax": "--p-select-invalid-placeholder-color",
+          "description": ""
+        },
+        {
+          "name": "select/lg/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": {
+              "a": "form-field/lg/font-size"
+            },
+            "Dark": {
+              "a": "form-field/lg/font-size"
+            }
+          },
+          "codeSyntax": "--p-select-lg-font-size",
+          "description": ""
+        },
+        {
+          "name": "select/lg/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "form-field/lg/padding-x"
+            },
+            "Dark": {
+              "a": "form-field/lg/padding-x"
+            }
+          },
+          "codeSyntax": "--p-select-lg-padding-x",
+          "description": ""
+        },
+        {
+          "name": "select/lg/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "form-field/lg/padding-y"
+            },
+            "Dark": {
+              "a": "form-field/lg/padding-y"
+            }
+          },
+          "codeSyntax": "--p-select-lg-padding-y",
+          "description": ""
+        },
+        {
+          "name": "select/list/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "list/gap"
+            },
+            "Dark": {
+              "a": "list/gap"
+            }
+          },
+          "codeSyntax": "--p-select-list-gap",
+          "description": ""
+        },
+        {
+          "name": "select/list/header/padding-top",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "list/header/padding-top"
+            },
+            "Dark": {
+              "a": "list/header/padding-top"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-select-list-header-padding (4-value shorthand, top)."
+        },
+        {
+          "name": "select/list/header/padding-right",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "list/header/padding-right"
+            },
+            "Dark": {
+              "a": "list/header/padding-right"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-select-list-header-padding (4-value shorthand, right)."
+        },
+        {
+          "name": "select/list/header/padding-bottom",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "list/header/padding-bottom"
+            },
+            "Dark": {
+              "a": "list/header/padding-bottom"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-select-list-header-padding (4-value shorthand, bottom)."
+        },
+        {
+          "name": "select/list/header/padding-left",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "list/header/padding-left"
+            },
+            "Dark": {
+              "a": "list/header/padding-left"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-select-list-header-padding (4-value shorthand, left)."
+        },
+        {
+          "name": "select/list/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "list/padding-y"
+            },
+            "Dark": {
+              "a": "list/padding-y"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-select-list-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "select/list/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "list/padding-x"
+            },
+            "Dark": {
+              "a": "list/padding-x"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-select-list-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "select/option-group/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "list/option-group/background"
+            },
+            "Dark": {
+              "a": "list/option-group/background"
+            }
+          },
+          "codeSyntax": "--p-select-option-group-background",
+          "description": ""
+        },
+        {
+          "name": "select/option-group/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "list/option-group/color"
+            },
+            "Dark": {
+              "a": "list/option-group/color"
+            }
+          },
+          "codeSyntax": "--p-select-option-group-color",
+          "description": ""
+        },
+        {
+          "name": "select/option-group/font-weight",
+          "type": "FLOAT",
+          "scope": "fw",
+          "values": {
+            "Light": {
+              "a": "list/option-group/font-weight"
+            },
+            "Dark": {
+              "a": "list/option-group/font-weight"
+            }
+          },
+          "codeSyntax": "--p-select-option-group-font-weight",
+          "description": ""
+        },
+        {
+          "name": "select/option-group/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "list/option-group/padding-y"
+            },
+            "Dark": {
+              "a": "list/option-group/padding-y"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-select-option-group-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "select/option-group/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "list/option-group/padding-x"
+            },
+            "Dark": {
+              "a": "list/option-group/padding-x"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-select-option-group-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "select/option/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "list/option/border-radius"
+            },
+            "Dark": {
+              "a": "list/option/border-radius"
+            }
+          },
+          "codeSyntax": "--p-select-option-border-radius",
+          "description": ""
+        },
+        {
+          "name": "select/option/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "list/option/color"
+            },
+            "Dark": {
+              "a": "list/option/color"
+            }
+          },
+          "codeSyntax": "--p-select-option-color",
+          "description": ""
+        },
+        {
+          "name": "select/option/focus-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "list/option/focus-background"
+            },
+            "Dark": {
+              "a": "list/option/focus-background"
+            }
+          },
+          "codeSyntax": "--p-select-option-focus-background",
+          "description": ""
+        },
+        {
+          "name": "select/option/focus-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "list/option/focus-color"
+            },
+            "Dark": {
+              "a": "list/option/focus-color"
+            }
+          },
+          "codeSyntax": "--p-select-option-focus-color",
+          "description": ""
+        },
+        {
+          "name": "select/option/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "list/option/padding-y"
+            },
+            "Dark": {
+              "a": "list/option/padding-y"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-select-option-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "select/option/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "list/option/padding-x"
+            },
+            "Dark": {
+              "a": "list/option/padding-x"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-select-option-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "select/option/selected-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "list/option/selected-background"
+            },
+            "Dark": {
+              "a": "list/option/selected-background"
+            }
+          },
+          "codeSyntax": "--p-select-option-selected-background",
+          "description": "Aliases a color-mix token. Apply with layer opacity bound to select/option/selected-background-opacity."
+        },
+        {
+          "name": "select/option/selected-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "list/option/selected-color"
+            },
+            "Dark": {
+              "a": "list/option/selected-color"
+            }
+          },
+          "codeSyntax": "--p-select-option-selected-color",
+          "description": ""
+        },
+        {
+          "name": "select/option/selected-focus-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "list/option/selected-focus-background"
+            },
+            "Dark": {
+              "a": "list/option/selected-focus-background"
+            }
+          },
+          "codeSyntax": "--p-select-option-selected-focus-background",
+          "description": "Aliases a color-mix token. Apply with layer opacity bound to select/option/selected-focus-background-opacity."
+        },
+        {
+          "name": "select/option/selected-focus-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "list/option/selected-focus-color"
+            },
+            "Dark": {
+              "a": "list/option/selected-focus-color"
+            }
+          },
+          "codeSyntax": "--p-select-option-selected-focus-color",
+          "description": ""
+        },
+        {
+          "name": "select/overlay/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "overlay/select/background"
+            },
+            "Dark": {
+              "a": "overlay/select/background"
+            }
+          },
+          "codeSyntax": "--p-select-overlay-background",
+          "description": ""
+        },
+        {
+          "name": "select/overlay/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "overlay/select/border-color"
+            },
+            "Dark": {
+              "a": "overlay/select/border-color"
+            }
+          },
+          "codeSyntax": "--p-select-overlay-border-color",
+          "description": ""
+        },
+        {
+          "name": "select/overlay/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "overlay/select/border-radius"
+            },
+            "Dark": {
+              "a": "overlay/select/border-radius"
+            }
+          },
+          "codeSyntax": "--p-select-overlay-border-radius",
+          "description": ""
+        },
+        {
+          "name": "select/overlay/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "overlay/select/color"
+            },
+            "Dark": {
+              "a": "overlay/select/color"
+            }
+          },
+          "codeSyntax": "--p-select-overlay-color",
+          "description": ""
+        },
+        {
+          "name": "select/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "form-field/padding-x"
+            },
+            "Dark": {
+              "a": "form-field/padding-x"
+            }
+          },
+          "codeSyntax": "--p-select-padding-x",
+          "description": ""
+        },
+        {
+          "name": "select/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "form-field/padding-y"
+            },
+            "Dark": {
+              "a": "form-field/padding-y"
+            }
+          },
+          "codeSyntax": "--p-select-padding-y",
+          "description": ""
+        },
+        {
+          "name": "select/placeholder-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "form-field/placeholder-color"
+            },
+            "Dark": {
+              "a": "form-field/placeholder-color"
+            }
+          },
+          "codeSyntax": "--p-select-placeholder-color",
+          "description": ""
+        },
+        {
+          "name": "select/sm/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": {
+              "a": "form-field/sm/font-size"
+            },
+            "Dark": {
+              "a": "form-field/sm/font-size"
+            }
+          },
+          "codeSyntax": "--p-select-sm-font-size",
+          "description": ""
+        },
+        {
+          "name": "select/sm/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "form-field/sm/padding-x"
+            },
+            "Dark": {
+              "a": "form-field/sm/padding-x"
+            }
+          },
+          "codeSyntax": "--p-select-sm-padding-x",
+          "description": ""
+        },
+        {
+          "name": "select/sm/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "form-field/sm/padding-y"
+            },
+            "Dark": {
+              "a": "form-field/sm/padding-y"
+            }
+          },
+          "codeSyntax": "--p-select-sm-padding-y",
+          "description": ""
+        },
+        {
+          "name": "select/transition-duration",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "form-field/transition-duration"
+            },
+            "Dark": {
+              "a": "form-field/transition-duration"
+            }
+          },
+          "codeSyntax": "--p-select-transition-duration",
+          "description": "Seconds. Not used by static Figma components; kept for code parity."
+        },
+        {
+          "name": "inputnumber/button/active-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/200"
+            },
+            "Dark": {
+              "a": "surface/700"
+            }
+          },
+          "codeSyntax": "--p-inputnumber-button-active-background",
+          "description": ""
+        },
+        {
+          "name": "inputnumber/button/active-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/border-color"
+            },
+            "Dark": {
+              "a": "form-field/border-color"
+            }
+          },
+          "codeSyntax": "--p-inputnumber-button-active-border-color",
+          "description": ""
+        },
+        {
+          "name": "inputnumber/button/active-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/600"
+            },
+            "Dark": {
+              "a": "surface/200"
+            }
+          },
+          "codeSyntax": "--p-inputnumber-button-active-color",
+          "description": ""
+        },
+        {
+          "name": "inputnumber/button/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Dark": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "codeSyntax": "--p-inputnumber-button-background",
+          "description": ""
+        },
+        {
+          "name": "inputnumber/button/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/border-color"
+            },
+            "Dark": {
+              "a": "form-field/border-color"
+            }
+          },
+          "codeSyntax": "--p-inputnumber-button-border-color",
+          "description": ""
+        },
+        {
+          "name": "inputnumber/button/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "form-field/border-radius"
+            },
+            "Dark": {
+              "a": "form-field/border-radius"
+            }
+          },
+          "codeSyntax": "--p-inputnumber-button-border-radius",
+          "description": ""
+        },
+        {
+          "name": "inputnumber/button/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/400"
+            },
+            "Dark": {
+              "a": "surface/400"
+            }
+          },
+          "codeSyntax": "--p-inputnumber-button-color",
+          "description": ""
+        },
+        {
+          "name": "inputnumber/button/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/100"
+            },
+            "Dark": {
+              "a": "surface/800"
+            }
+          },
+          "codeSyntax": "--p-inputnumber-button-hover-background",
+          "description": ""
+        },
+        {
+          "name": "inputnumber/button/hover-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/border-color"
+            },
+            "Dark": {
+              "a": "form-field/border-color"
+            }
+          },
+          "codeSyntax": "--p-inputnumber-button-hover-border-color",
+          "description": ""
+        },
+        {
+          "name": "inputnumber/button/hover-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/500"
+            },
+            "Dark": {
+              "a": "surface/300"
+            }
+          },
+          "codeSyntax": "--p-inputnumber-button-hover-color",
+          "description": ""
+        },
+        {
+          "name": "inputnumber/button/vertical-padding",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "form-field/padding-y"
+            },
+            "Dark": {
+              "a": "form-field/padding-y"
+            }
+          },
+          "codeSyntax": "--p-inputnumber-button-vertical-padding",
+          "description": ""
+        },
+        {
+          "name": "inputnumber/button/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 35,
+            "Dark": 35
+          },
+          "codeSyntax": "--p-inputnumber-button-width",
+          "description": ""
+        },
+        {
+          "name": "inputnumber/transition-duration",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "transition-duration"
+            },
+            "Dark": {
+              "a": "transition-duration"
+            }
+          },
+          "codeSyntax": "--p-inputnumber-transition-duration",
+          "description": "Seconds. Not used by static Figma components; kept for code parity."
+        },
+        {
+          "name": "checkbox/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "form-field/background"
+            },
+            "Dark": {
+              "a": "form-field/background"
+            }
+          },
+          "codeSyntax": "--p-checkbox-background",
+          "description": ""
+        },
+        {
+          "name": "checkbox/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/border-color"
+            },
+            "Dark": {
+              "a": "form-field/border-color"
+            }
+          },
+          "codeSyntax": "--p-checkbox-border-color",
+          "description": ""
+        },
+        {
+          "name": "checkbox/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "border-radius/sm"
+            },
+            "Dark": {
+              "a": "border-radius/sm"
+            }
+          },
+          "codeSyntax": "--p-checkbox-border-radius",
+          "description": ""
+        },
+        {
+          "name": "checkbox/checked-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "primary/color"
+            },
+            "Dark": {
+              "a": "primary/color"
+            }
+          },
+          "codeSyntax": "--p-checkbox-checked-background",
+          "description": ""
+        },
+        {
+          "name": "checkbox/checked-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "primary/color"
+            },
+            "Dark": {
+              "a": "primary/color"
+            }
+          },
+          "codeSyntax": "--p-checkbox-checked-border-color",
+          "description": ""
+        },
+        {
+          "name": "checkbox/checked-disabled-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/border-color"
+            },
+            "Dark": {
+              "a": "form-field/border-color"
+            }
+          },
+          "codeSyntax": "--p-checkbox-checked-disabled-border-color",
+          "description": ""
+        },
+        {
+          "name": "checkbox/checked-focus-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "primary/color"
+            },
+            "Dark": {
+              "a": "primary/color"
+            }
+          },
+          "codeSyntax": "--p-checkbox-checked-focus-border-color",
+          "description": ""
+        },
+        {
+          "name": "checkbox/checked-hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "primary/hover-color"
+            },
+            "Dark": {
+              "a": "primary/hover-color"
+            }
+          },
+          "codeSyntax": "--p-checkbox-checked-hover-background",
+          "description": ""
+        },
+        {
+          "name": "checkbox/checked-hover-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "primary/hover-color"
+            },
+            "Dark": {
+              "a": "primary/hover-color"
+            }
+          },
+          "codeSyntax": "--p-checkbox-checked-hover-border-color",
+          "description": ""
+        },
+        {
+          "name": "checkbox/disabled-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "form-field/disabled-background"
+            },
+            "Dark": {
+              "a": "form-field/disabled-background"
+            }
+          },
+          "codeSyntax": "--p-checkbox-disabled-background",
+          "description": ""
+        },
+        {
+          "name": "checkbox/filled-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "form-field/filled-background"
+            },
+            "Dark": {
+              "a": "form-field/filled-background"
+            }
+          },
+          "codeSyntax": "--p-checkbox-filled-background",
+          "description": ""
+        },
+        {
+          "name": "checkbox/focus-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/border-color"
+            },
+            "Dark": {
+              "a": "form-field/border-color"
+            }
+          },
+          "codeSyntax": "--p-checkbox-focus-border-color",
+          "description": ""
+        },
+        {
+          "name": "checkbox/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "focus-ring/color"
+            },
+            "Dark": {
+              "a": "focus-ring/color"
+            }
+          },
+          "codeSyntax": "--p-checkbox-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "checkbox/focus-ring/offset",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/offset"
+            },
+            "Dark": {
+              "a": "focus-ring/offset"
+            }
+          },
+          "codeSyntax": "--p-checkbox-focus-ring-offset",
+          "description": ""
+        },
+        {
+          "name": "checkbox/focus-ring/style",
+          "type": "STRING",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/style"
+            },
+            "Dark": {
+              "a": "focus-ring/style"
+            }
+          },
+          "codeSyntax": "--p-checkbox-focus-ring-style",
+          "description": ""
+        },
+        {
+          "name": "checkbox/focus-ring/width",
+          "type": "FLOAT",
+          "scope": "sw",
+          "values": {
+            "Light": {
+              "a": "focus-ring/width"
+            },
+            "Dark": {
+              "a": "focus-ring/width"
+            }
+          },
+          "codeSyntax": "--p-checkbox-focus-ring-width",
+          "description": ""
+        },
+        {
+          "name": "checkbox/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 17.5,
+            "Dark": 17.5
+          },
+          "codeSyntax": "--p-checkbox-height",
+          "description": ""
+        },
+        {
+          "name": "checkbox/hover-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/hover-border-color"
+            },
+            "Dark": {
+              "a": "form-field/hover-border-color"
+            }
+          },
+          "codeSyntax": "--p-checkbox-hover-border-color",
+          "description": ""
+        },
+        {
+          "name": "checkbox/icon/checked-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "primary/contrast-color"
+            },
+            "Dark": {
+              "a": "primary/contrast-color"
+            }
+          },
+          "codeSyntax": "--p-checkbox-icon-checked-color",
+          "description": ""
+        },
+        {
+          "name": "checkbox/icon/checked-hover-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "primary/contrast-color"
+            },
+            "Dark": {
+              "a": "primary/contrast-color"
+            }
+          },
+          "codeSyntax": "--p-checkbox-icon-checked-hover-color",
+          "description": ""
+        },
+        {
+          "name": "checkbox/icon/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "form-field/color"
+            },
+            "Dark": {
+              "a": "form-field/color"
+            }
+          },
+          "codeSyntax": "--p-checkbox-icon-color",
+          "description": ""
+        },
+        {
+          "name": "checkbox/icon/disabled-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "form-field/disabled-color"
+            },
+            "Dark": {
+              "a": "form-field/disabled-color"
+            }
+          },
+          "codeSyntax": "--p-checkbox-icon-disabled-color",
+          "description": ""
+        },
+        {
+          "name": "checkbox/icon/lg/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": "--p-checkbox-icon-lg-size",
+          "description": ""
+        },
+        {
+          "name": "checkbox/icon/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 12.25,
+            "Dark": 12.25
+          },
+          "codeSyntax": "--p-checkbox-icon-size",
+          "description": ""
+        },
+        {
+          "name": "checkbox/icon/sm/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 10.5,
+            "Dark": 10.5
+          },
+          "codeSyntax": "--p-checkbox-icon-sm-size",
+          "description": ""
+        },
+        {
+          "name": "checkbox/invalid-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/invalid-border-color"
+            },
+            "Dark": {
+              "a": "form-field/invalid-border-color"
+            }
+          },
+          "codeSyntax": "--p-checkbox-invalid-border-color",
+          "description": ""
+        },
+        {
+          "name": "checkbox/lg/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 21,
+            "Dark": 21
+          },
+          "codeSyntax": "--p-checkbox-lg-height",
+          "description": ""
+        },
+        {
+          "name": "checkbox/lg/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 21,
+            "Dark": 21
+          },
+          "codeSyntax": "--p-checkbox-lg-width",
+          "description": ""
+        },
+        {
+          "name": "checkbox/sm/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": "--p-checkbox-sm-height",
+          "description": ""
+        },
+        {
+          "name": "checkbox/sm/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": "--p-checkbox-sm-width",
+          "description": ""
+        },
+        {
+          "name": "checkbox/transition-duration",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "form-field/transition-duration"
+            },
+            "Dark": {
+              "a": "form-field/transition-duration"
+            }
+          },
+          "codeSyntax": "--p-checkbox-transition-duration",
+          "description": "Seconds. Not used by static Figma components; kept for code parity."
+        },
+        {
+          "name": "checkbox/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 17.5,
+            "Dark": 17.5
+          },
+          "codeSyntax": "--p-checkbox-width",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "form-field/background"
+            },
+            "Dark": {
+              "a": "form-field/background"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-background",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/border-color"
+            },
+            "Dark": {
+              "a": "form-field/border-color"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-border-color",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/checked-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "primary/color"
+            },
+            "Dark": {
+              "a": "primary/color"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-checked-background",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/checked-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "primary/color"
+            },
+            "Dark": {
+              "a": "primary/color"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-checked-border-color",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/checked-disabled-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/border-color"
+            },
+            "Dark": {
+              "a": "form-field/border-color"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-checked-disabled-border-color",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/checked-focus-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "primary/color"
+            },
+            "Dark": {
+              "a": "primary/color"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-checked-focus-border-color",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/checked-hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "primary/hover-color"
+            },
+            "Dark": {
+              "a": "primary/hover-color"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-checked-hover-background",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/checked-hover-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "primary/hover-color"
+            },
+            "Dark": {
+              "a": "primary/hover-color"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-checked-hover-border-color",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/disabled-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "form-field/disabled-background"
+            },
+            "Dark": {
+              "a": "form-field/disabled-background"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-disabled-background",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/filled-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "form-field/filled-background"
+            },
+            "Dark": {
+              "a": "form-field/filled-background"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-filled-background",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/focus-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/border-color"
+            },
+            "Dark": {
+              "a": "form-field/border-color"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-focus-border-color",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "focus-ring/color"
+            },
+            "Dark": {
+              "a": "focus-ring/color"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/focus-ring/offset",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/offset"
+            },
+            "Dark": {
+              "a": "focus-ring/offset"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-focus-ring-offset",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/focus-ring/style",
+          "type": "STRING",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/style"
+            },
+            "Dark": {
+              "a": "focus-ring/style"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-focus-ring-style",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/focus-ring/width",
+          "type": "FLOAT",
+          "scope": "sw",
+          "values": {
+            "Light": {
+              "a": "focus-ring/width"
+            },
+            "Dark": {
+              "a": "focus-ring/width"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-focus-ring-width",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 17.5,
+            "Dark": 17.5
+          },
+          "codeSyntax": "--p-radiobutton-height",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/hover-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/hover-border-color"
+            },
+            "Dark": {
+              "a": "form-field/hover-border-color"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-hover-border-color",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/icon/checked-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "primary/contrast-color"
+            },
+            "Dark": {
+              "a": "primary/contrast-color"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-icon-checked-color",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/icon/checked-hover-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "primary/contrast-color"
+            },
+            "Dark": {
+              "a": "primary/contrast-color"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-icon-checked-hover-color",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/icon/disabled-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "form-field/disabled-color"
+            },
+            "Dark": {
+              "a": "form-field/disabled-color"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-icon-disabled-color",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/icon/lg/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": "--p-radiobutton-icon-lg-size",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/icon/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 10.5,
+            "Dark": 10.5
+          },
+          "codeSyntax": "--p-radiobutton-icon-size",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/icon/sm/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": "--p-radiobutton-icon-sm-size",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/invalid-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/invalid-border-color"
+            },
+            "Dark": {
+              "a": "form-field/invalid-border-color"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-invalid-border-color",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/lg/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 21,
+            "Dark": 21
+          },
+          "codeSyntax": "--p-radiobutton-lg-height",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/lg/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 21,
+            "Dark": 21
+          },
+          "codeSyntax": "--p-radiobutton-lg-width",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/sm/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": "--p-radiobutton-sm-height",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/sm/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": "--p-radiobutton-sm-width",
+          "description": ""
+        },
+        {
+          "name": "radiobutton/transition-duration",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "form-field/transition-duration"
+            },
+            "Dark": {
+              "a": "form-field/transition-duration"
+            }
+          },
+          "codeSyntax": "--p-radiobutton-transition-duration",
+          "description": "Seconds. Not used by static Figma components; kept for code parity."
+        },
+        {
+          "name": "radiobutton/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 17.5,
+            "Dark": 17.5
+          },
+          "codeSyntax": "--p-radiobutton-width",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/300"
+            },
+            "Dark": {
+              "a": "surface/700"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-background",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Dark": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "codeSyntax": "--p-toggleswitch-border-color",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": 30,
+            "Dark": 30
+          },
+          "codeSyntax": "--p-toggleswitch-border-radius",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/border-width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 1,
+            "Dark": 1
+          },
+          "codeSyntax": "--p-toggleswitch-border-width",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/checked-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "primary/color"
+            },
+            "Dark": {
+              "a": "primary/color"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-checked-background",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/checked-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Dark": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "codeSyntax": "--p-toggleswitch-checked-border-color",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/checked-hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "primary/hover-color"
+            },
+            "Dark": {
+              "a": "primary/hover-color"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-checked-hover-background",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/checked-hover-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Dark": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "codeSyntax": "--p-toggleswitch-checked-hover-border-color",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/disabled-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "form-field/disabled-background"
+            },
+            "Dark": {
+              "a": "surface/600"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-disabled-background",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "focus-ring/color"
+            },
+            "Dark": {
+              "a": "focus-ring/color"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/focus-ring/offset",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/offset"
+            },
+            "Dark": {
+              "a": "focus-ring/offset"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-focus-ring-offset",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/focus-ring/style",
+          "type": "STRING",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/style"
+            },
+            "Dark": {
+              "a": "focus-ring/style"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-focus-ring-style",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/focus-ring/width",
+          "type": "FLOAT",
+          "scope": "sw",
+          "values": {
+            "Light": {
+              "a": "focus-ring/width"
+            },
+            "Dark": {
+              "a": "focus-ring/width"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-focus-ring-width",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 3.5,
+            "Dark": 3.5
+          },
+          "codeSyntax": "--p-toggleswitch-gap",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/handle/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/0"
+            },
+            "Dark": {
+              "a": "surface/400"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-handle-background",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/handle/checked-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/0"
+            },
+            "Dark": {
+              "a": "surface/900"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-handle-checked-background",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/handle/checked-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "primary/color"
+            },
+            "Dark": {
+              "a": "primary/color"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-handle-checked-color",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/handle/checked-hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/0"
+            },
+            "Dark": {
+              "a": "surface/900"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-handle-checked-hover-background",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/handle/checked-hover-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "primary/hover-color"
+            },
+            "Dark": {
+              "a": "primary/hover-color"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-handle-checked-hover-color",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/handle/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "text/muted-color"
+            },
+            "Dark": {
+              "a": "surface/900"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-handle-color",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/handle/disabled-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "form-field/disabled-color"
+            },
+            "Dark": {
+              "a": "surface/900"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-handle-disabled-background",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/handle/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/0"
+            },
+            "Dark": {
+              "a": "surface/300"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-handle-hover-background",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/handle/hover-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "text/color"
+            },
+            "Dark": {
+              "a": "surface/800"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-handle-hover-color",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/handle/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": "--p-toggleswitch-handle-size",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 21,
+            "Dark": 21
+          },
+          "codeSyntax": "--p-toggleswitch-height",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/400"
+            },
+            "Dark": {
+              "a": "surface/600"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-hover-background",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/hover-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Dark": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "codeSyntax": "--p-toggleswitch-hover-border-color",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/invalid-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/invalid-border-color"
+            },
+            "Dark": {
+              "a": "form-field/invalid-border-color"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-invalid-border-color",
+          "description": ""
+        },
+        {
+          "name": "toggleswitch/slide-duration",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": 0.2,
+            "Dark": 0.2
+          },
+          "codeSyntax": "--p-toggleswitch-slide-duration",
+          "description": "Seconds. Not used by static Figma components; kept for code parity."
+        },
+        {
+          "name": "toggleswitch/transition-duration",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "form-field/transition-duration"
+            },
+            "Dark": {
+              "a": "form-field/transition-duration"
+            }
+          },
+          "codeSyntax": "--p-toggleswitch-transition-duration",
+          "description": "Seconds. Not used by static Figma components; kept for code parity."
+        },
+        {
+          "name": "toggleswitch/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 35,
+            "Dark": 35
+          },
+          "codeSyntax": "--p-toggleswitch-width",
+          "description": ""
+        },
+        {
+          "name": "password/content/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": "--p-password-content-gap",
+          "description": ""
+        },
+        {
+          "name": "password/icon/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "form-field/icon-color"
+            },
+            "Dark": {
+              "a": "form-field/icon-color"
+            }
+          },
+          "codeSyntax": "--p-password-icon-color",
+          "description": ""
+        },
+        {
+          "name": "password/meter/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "content/border-color"
+            },
+            "Dark": {
+              "a": "content/border-color"
+            }
+          },
+          "codeSyntax": "--p-password-meter-background",
+          "description": ""
+        },
+        {
+          "name": "password/meter/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "content/border-radius"
+            },
+            "Dark": {
+              "a": "content/border-radius"
+            }
+          },
+          "codeSyntax": "--p-password-meter-border-radius",
+          "description": ""
+        },
+        {
+          "name": "password/meter/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 10.5,
+            "Dark": 10.5
+          },
+          "codeSyntax": "--p-password-meter-height",
+          "description": ""
+        },
+        {
+          "name": "password/overlay/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "overlay/popover/background"
+            },
+            "Dark": {
+              "a": "overlay/popover/background"
+            }
+          },
+          "codeSyntax": "--p-password-overlay-background",
+          "description": ""
+        },
+        {
+          "name": "password/overlay/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "overlay/popover/border-color"
+            },
+            "Dark": {
+              "a": "overlay/popover/border-color"
+            }
+          },
+          "codeSyntax": "--p-password-overlay-border-color",
+          "description": ""
+        },
+        {
+          "name": "password/overlay/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "overlay/popover/border-radius"
+            },
+            "Dark": {
+              "a": "overlay/popover/border-radius"
+            }
+          },
+          "codeSyntax": "--p-password-overlay-border-radius",
+          "description": ""
+        },
+        {
+          "name": "password/overlay/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "overlay/popover/color"
+            },
+            "Dark": {
+              "a": "overlay/popover/color"
+            }
+          },
+          "codeSyntax": "--p-password-overlay-color",
+          "description": ""
+        },
+        {
+          "name": "password/overlay/padding",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "overlay/popover/padding"
+            },
+            "Dark": {
+              "a": "overlay/popover/padding"
+            }
+          },
+          "codeSyntax": "--p-password-overlay-padding",
+          "description": ""
+        },
+        {
+          "name": "password/strength/medium-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "amber/500"
+            },
+            "Dark": {
+              "a": "amber/400"
+            }
+          },
+          "codeSyntax": "--p-password-strength-medium-background",
+          "description": ""
+        },
+        {
+          "name": "password/strength/strong-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "green/500"
+            },
+            "Dark": {
+              "a": "green/400"
+            }
+          },
+          "codeSyntax": "--p-password-strength-strong-background",
+          "description": ""
+        },
+        {
+          "name": "password/strength/weak-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "red/500"
+            },
+            "Dark": {
+              "a": "red/400"
+            }
+          },
+          "codeSyntax": "--p-password-strength-weak-background",
+          "description": ""
+        },
+        {
+          "name": "iconfield/icon/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "form-field/icon-color"
+            },
+            "Dark": {
+              "a": "form-field/icon-color"
+            }
+          },
+          "codeSyntax": "--p-iconfield-icon-color",
+          "description": ""
+        },
+        {
+          "name": "message/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "content/border-radius"
+            },
+            "Dark": {
+              "a": "content/border-radius"
+            }
+          },
+          "codeSyntax": "--p-message-border-radius",
+          "description": ""
+        },
+        {
+          "name": "message/border-width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 1,
+            "Dark": 1
+          },
+          "codeSyntax": "--p-message-border-width",
+          "description": ""
+        },
+        {
+          "name": "message/close-button/focus-ring/offset",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/offset"
+            },
+            "Dark": {
+              "a": "focus-ring/offset"
+            }
+          },
+          "codeSyntax": "--p-message-close-button-focus-ring-offset",
+          "description": ""
+        },
+        {
+          "name": "message/close-button/focus-ring/style",
+          "type": "STRING",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/style"
+            },
+            "Dark": {
+              "a": "focus-ring/style"
+            }
+          },
+          "codeSyntax": "--p-message-close-button-focus-ring-style",
+          "description": ""
+        },
+        {
+          "name": "message/close-button/focus-ring/width",
+          "type": "FLOAT",
+          "scope": "sw",
+          "values": {
+            "Light": {
+              "a": "focus-ring/width"
+            },
+            "Dark": {
+              "a": "focus-ring/width"
+            }
+          },
+          "codeSyntax": "--p-message-close-button-focus-ring-width",
+          "description": ""
+        },
+        {
+          "name": "message/close-button/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 24.5,
+            "Dark": 24.5
+          },
+          "codeSyntax": "--p-message-close-button-height",
+          "description": ""
+        },
+        {
+          "name": "message/close-button/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 24.5,
+            "Dark": 24.5
+          },
+          "codeSyntax": "--p-message-close-button-width",
+          "description": ""
+        },
+        {
+          "name": "message/close-icon/lg/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 15.75,
+            "Dark": 15.75
+          },
+          "codeSyntax": "--p-message-close-icon-lg-size",
+          "description": ""
+        },
+        {
+          "name": "message/close-icon/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": "--p-message-close-icon-size",
+          "description": ""
+        },
+        {
+          "name": "message/close-icon/sm/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 12.25,
+            "Dark": 12.25
+          },
+          "codeSyntax": "--p-message-close-icon-sm-size",
+          "description": ""
+        },
+        {
+          "name": "message/content/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": "--p-message-content-gap",
+          "description": ""
+        },
+        {
+          "name": "message/content/lg/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 8.75,
+            "Dark": 8.75
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-message-content-lg-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "message/content/lg/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 12.25,
+            "Dark": 12.25
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-message-content-lg-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "message/content/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-message-content-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "message/content/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 10.5,
+            "Dark": 10.5
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-message-content-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "message/content/sm/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 5.25,
+            "Dark": 5.25
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-message-content-sm-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "message/content/sm/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 8.75,
+            "Dark": 8.75
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-message-content-sm-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "message/contrast/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/900"
+            },
+            "Dark": {
+              "a": "surface/0"
+            }
+          },
+          "codeSyntax": "--p-message-contrast-background",
+          "description": ""
+        },
+        {
+          "name": "message/contrast/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "surface/950"
+            },
+            "Dark": {
+              "a": "surface/100"
+            }
+          },
+          "codeSyntax": "--p-message-contrast-border-color",
+          "description": ""
+        },
+        {
+          "name": "message/contrast/close-button/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "surface/50"
+            },
+            "Dark": {
+              "a": "surface/950"
+            }
+          },
+          "codeSyntax": "--p-message-contrast-close-button-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "message/contrast/close-button/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/800"
+            },
+            "Dark": {
+              "a": "surface/100"
+            }
+          },
+          "codeSyntax": "--p-message-contrast-close-button-hover-background",
+          "description": ""
+        },
+        {
+          "name": "message/contrast/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/50"
+            },
+            "Dark": {
+              "a": "surface/950"
+            }
+          },
+          "codeSyntax": "--p-message-contrast-color",
+          "description": ""
+        },
+        {
+          "name": "message/contrast/outlined/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "surface/950"
+            },
+            "Dark": {
+              "a": "surface/0"
+            }
+          },
+          "codeSyntax": "--p-message-contrast-outlined-border-color",
+          "description": ""
+        },
+        {
+          "name": "message/contrast/outlined/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/950"
+            },
+            "Dark": {
+              "a": "surface/0"
+            }
+          },
+          "codeSyntax": "--p-message-contrast-outlined-color",
+          "description": ""
+        },
+        {
+          "name": "message/contrast/simple/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/950"
+            },
+            "Dark": {
+              "a": "surface/0"
+            }
+          },
+          "codeSyntax": "--p-message-contrast-simple-color",
+          "description": ""
+        },
+        {
+          "name": "message/error/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "red/50"
+            },
+            "Dark": {
+              "a": "red/500"
+            }
+          },
+          "codeSyntax": "--p-message-error-background",
+          "description": "Aura: --p-message-error-background uses color-mix (transparent overlay). Apply with layer opacity bound to message/error/background-opacity."
+        },
+        {
+          "name": "message/error/background-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": 95,
+            "Dark": 16
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-message-error-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "message/error/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "red/200"
+            },
+            "Dark": {
+              "a": "red/700"
+            }
+          },
+          "codeSyntax": "--p-message-error-border-color",
+          "description": "Aura: --p-message-error-border-color uses color-mix (transparent overlay). Apply with layer opacity bound to message/error/border-color-opacity."
+        },
+        {
+          "name": "message/error/border-color-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": 100,
+            "Dark": 36
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-message-error-border-color: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "message/error/close-button/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "red/600"
+            },
+            "Dark": {
+              "a": "red/500"
+            }
+          },
+          "codeSyntax": "--p-message-error-close-button-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "message/error/close-button/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "red/100"
+            },
+            "Dark": [
+              1,
+              1,
+              1,
+              0.05
+            ]
+          },
+          "codeSyntax": "--p-message-error-close-button-hover-background",
+          "description": ""
+        },
+        {
+          "name": "message/error/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "red/600"
+            },
+            "Dark": {
+              "a": "red/500"
+            }
+          },
+          "codeSyntax": "--p-message-error-color",
+          "description": ""
+        },
+        {
+          "name": "message/error/outlined/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "red/600"
+            },
+            "Dark": {
+              "a": "red/500"
+            }
+          },
+          "codeSyntax": "--p-message-error-outlined-border-color",
+          "description": ""
+        },
+        {
+          "name": "message/error/outlined/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "red/600"
+            },
+            "Dark": {
+              "a": "red/500"
+            }
+          },
+          "codeSyntax": "--p-message-error-outlined-color",
+          "description": ""
+        },
+        {
+          "name": "message/error/simple/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "red/600"
+            },
+            "Dark": {
+              "a": "red/500"
+            }
+          },
+          "codeSyntax": "--p-message-error-simple-color",
+          "description": ""
+        },
+        {
+          "name": "message/icon/lg/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 17.5,
+            "Dark": 17.5
+          },
+          "codeSyntax": "--p-message-icon-lg-size",
+          "description": ""
+        },
+        {
+          "name": "message/icon/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 15.75,
+            "Dark": 15.75
+          },
+          "codeSyntax": "--p-message-icon-size",
+          "description": ""
+        },
+        {
+          "name": "message/icon/sm/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": "--p-message-icon-sm-size",
+          "description": ""
+        },
+        {
+          "name": "message/info/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "blue/50"
+            },
+            "Dark": {
+              "a": "blue/500"
+            }
+          },
+          "codeSyntax": "--p-message-info-background",
+          "description": "Aura: --p-message-info-background uses color-mix (transparent overlay). Apply with layer opacity bound to message/info/background-opacity."
+        },
+        {
+          "name": "message/info/background-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": 95,
+            "Dark": 16
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-message-info-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "message/info/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "blue/200"
+            },
+            "Dark": {
+              "a": "blue/700"
+            }
+          },
+          "codeSyntax": "--p-message-info-border-color",
+          "description": "Aura: --p-message-info-border-color uses color-mix (transparent overlay). Apply with layer opacity bound to message/info/border-color-opacity."
+        },
+        {
+          "name": "message/info/border-color-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": 100,
+            "Dark": 36
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-message-info-border-color: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "message/info/close-button/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "blue/600"
+            },
+            "Dark": {
+              "a": "blue/500"
+            }
+          },
+          "codeSyntax": "--p-message-info-close-button-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "message/info/close-button/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "blue/100"
+            },
+            "Dark": [
+              1,
+              1,
+              1,
+              0.05
+            ]
+          },
+          "codeSyntax": "--p-message-info-close-button-hover-background",
+          "description": ""
+        },
+        {
+          "name": "message/info/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "blue/600"
+            },
+            "Dark": {
+              "a": "blue/500"
+            }
+          },
+          "codeSyntax": "--p-message-info-color",
+          "description": ""
+        },
+        {
+          "name": "message/info/outlined/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "blue/600"
+            },
+            "Dark": {
+              "a": "blue/500"
+            }
+          },
+          "codeSyntax": "--p-message-info-outlined-border-color",
+          "description": ""
+        },
+        {
+          "name": "message/info/outlined/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "blue/600"
+            },
+            "Dark": {
+              "a": "blue/500"
+            }
+          },
+          "codeSyntax": "--p-message-info-outlined-color",
+          "description": ""
+        },
+        {
+          "name": "message/info/simple/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "blue/600"
+            },
+            "Dark": {
+              "a": "blue/500"
+            }
+          },
+          "codeSyntax": "--p-message-info-simple-color",
+          "description": ""
+        },
+        {
+          "name": "message/outlined/root/border-width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 1,
+            "Dark": 1
+          },
+          "codeSyntax": "--p-message-outlined-root-border-width",
+          "description": ""
+        },
+        {
+          "name": "message/secondary/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/100"
+            },
+            "Dark": {
+              "a": "surface/800"
+            }
+          },
+          "codeSyntax": "--p-message-secondary-background",
+          "description": ""
+        },
+        {
+          "name": "message/secondary/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "surface/200"
+            },
+            "Dark": {
+              "a": "surface/700"
+            }
+          },
+          "codeSyntax": "--p-message-secondary-border-color",
+          "description": ""
+        },
+        {
+          "name": "message/secondary/close-button/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "surface/600"
+            },
+            "Dark": {
+              "a": "surface/300"
+            }
+          },
+          "codeSyntax": "--p-message-secondary-close-button-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "message/secondary/close-button/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/200"
+            },
+            "Dark": {
+              "a": "surface/700"
+            }
+          },
+          "codeSyntax": "--p-message-secondary-close-button-hover-background",
+          "description": ""
+        },
+        {
+          "name": "message/secondary/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/600"
+            },
+            "Dark": {
+              "a": "surface/300"
+            }
+          },
+          "codeSyntax": "--p-message-secondary-color",
+          "description": ""
+        },
+        {
+          "name": "message/secondary/outlined/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "surface/500"
+            },
+            "Dark": {
+              "a": "surface/400"
+            }
+          },
+          "codeSyntax": "--p-message-secondary-outlined-border-color",
+          "description": ""
+        },
+        {
+          "name": "message/secondary/outlined/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/500"
+            },
+            "Dark": {
+              "a": "surface/400"
+            }
+          },
+          "codeSyntax": "--p-message-secondary-outlined-color",
+          "description": ""
+        },
+        {
+          "name": "message/secondary/simple/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/500"
+            },
+            "Dark": {
+              "a": "surface/400"
+            }
+          },
+          "codeSyntax": "--p-message-secondary-simple-color",
+          "description": ""
+        },
+        {
+          "name": "message/simple/content/padding",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": "--p-message-simple-content-padding",
+          "description": ""
+        },
+        {
+          "name": "message/success/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "green/50"
+            },
+            "Dark": {
+              "a": "green/500"
+            }
+          },
+          "codeSyntax": "--p-message-success-background",
+          "description": "Aura: --p-message-success-background uses color-mix (transparent overlay). Apply with layer opacity bound to message/success/background-opacity."
+        },
+        {
+          "name": "message/success/background-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": 95,
+            "Dark": 16
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-message-success-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "message/success/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "green/200"
+            },
+            "Dark": {
+              "a": "green/700"
+            }
+          },
+          "codeSyntax": "--p-message-success-border-color",
+          "description": "Aura: --p-message-success-border-color uses color-mix (transparent overlay). Apply with layer opacity bound to message/success/border-color-opacity."
+        },
+        {
+          "name": "message/success/border-color-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": 100,
+            "Dark": 36
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-message-success-border-color: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "message/success/close-button/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "green/600"
+            },
+            "Dark": {
+              "a": "green/500"
+            }
+          },
+          "codeSyntax": "--p-message-success-close-button-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "message/success/close-button/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "green/100"
+            },
+            "Dark": [
+              1,
+              1,
+              1,
+              0.05
+            ]
+          },
+          "codeSyntax": "--p-message-success-close-button-hover-background",
+          "description": ""
+        },
+        {
+          "name": "message/success/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "green/600"
+            },
+            "Dark": {
+              "a": "green/500"
+            }
+          },
+          "codeSyntax": "--p-message-success-color",
+          "description": ""
+        },
+        {
+          "name": "message/success/outlined/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "green/600"
+            },
+            "Dark": {
+              "a": "green/500"
+            }
+          },
+          "codeSyntax": "--p-message-success-outlined-border-color",
+          "description": ""
+        },
+        {
+          "name": "message/success/outlined/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "green/600"
+            },
+            "Dark": {
+              "a": "green/500"
+            }
+          },
+          "codeSyntax": "--p-message-success-outlined-color",
+          "description": ""
+        },
+        {
+          "name": "message/success/simple/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "green/600"
+            },
+            "Dark": {
+              "a": "green/500"
+            }
+          },
+          "codeSyntax": "--p-message-success-simple-color",
+          "description": ""
+        },
+        {
+          "name": "message/text/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": "--p-message-text-font-size",
+          "description": ""
+        },
+        {
+          "name": "message/text/font-weight",
+          "type": "FLOAT",
+          "scope": "fw",
+          "values": {
+            "Light": 500,
+            "Dark": 500
+          },
+          "codeSyntax": "--p-message-text-font-weight",
+          "description": ""
+        },
+        {
+          "name": "message/text/lg/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": 15.75,
+            "Dark": 15.75
+          },
+          "codeSyntax": "--p-message-text-lg-font-size",
+          "description": ""
+        },
+        {
+          "name": "message/text/sm/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": 12.25,
+            "Dark": 12.25
+          },
+          "codeSyntax": "--p-message-text-sm-font-size",
+          "description": ""
+        },
+        {
+          "name": "message/transition-duration",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "transition-duration"
+            },
+            "Dark": {
+              "a": "transition-duration"
+            }
+          },
+          "codeSyntax": "--p-message-transition-duration",
+          "description": "Seconds. Not used by static Figma components; kept for code parity."
+        },
+        {
+          "name": "message/warn/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "yellow/50"
+            },
+            "Dark": {
+              "a": "yellow/500"
+            }
+          },
+          "codeSyntax": "--p-message-warn-background",
+          "description": "Aura: --p-message-warn-background uses color-mix (transparent overlay). Apply with layer opacity bound to message/warn/background-opacity."
+        },
+        {
+          "name": "message/warn/background-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": 95,
+            "Dark": 16
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-message-warn-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "message/warn/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "yellow/200"
+            },
+            "Dark": {
+              "a": "yellow/700"
+            }
+          },
+          "codeSyntax": "--p-message-warn-border-color",
+          "description": "Aura: --p-message-warn-border-color uses color-mix (transparent overlay). Apply with layer opacity bound to message/warn/border-color-opacity."
+        },
+        {
+          "name": "message/warn/border-color-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": 100,
+            "Dark": 36
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-message-warn-border-color: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "message/warn/close-button/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "yellow/600"
+            },
+            "Dark": {
+              "a": "yellow/500"
+            }
+          },
+          "codeSyntax": "--p-message-warn-close-button-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "message/warn/close-button/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "yellow/100"
+            },
+            "Dark": [
+              1,
+              1,
+              1,
+              0.05
+            ]
+          },
+          "codeSyntax": "--p-message-warn-close-button-hover-background",
+          "description": ""
+        },
+        {
+          "name": "message/warn/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "yellow/600"
+            },
+            "Dark": {
+              "a": "yellow/500"
+            }
+          },
+          "codeSyntax": "--p-message-warn-color",
+          "description": ""
+        },
+        {
+          "name": "message/warn/outlined/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "yellow/600"
+            },
+            "Dark": {
+              "a": "yellow/500"
+            }
+          },
+          "codeSyntax": "--p-message-warn-outlined-border-color",
+          "description": ""
+        },
+        {
+          "name": "message/warn/outlined/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "yellow/600"
+            },
+            "Dark": {
+              "a": "yellow/500"
+            }
+          },
+          "codeSyntax": "--p-message-warn-outlined-color",
+          "description": ""
+        },
+        {
+          "name": "message/warn/simple/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "yellow/600"
+            },
+            "Dark": {
+              "a": "yellow/500"
+            }
+          },
+          "codeSyntax": "--p-message-warn-simple-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/buttonbar/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "content/border-color"
+            },
+            "Dark": {
+              "a": "content/border-color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-buttonbar-border-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/buttonbar/padding-top",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-buttonbar-padding (4-value shorthand, top)."
+        },
+        {
+          "name": "datepicker/buttonbar/padding-right",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-buttonbar-padding (4-value shorthand, right)."
+        },
+        {
+          "name": "datepicker/buttonbar/padding-bottom",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-buttonbar-padding (4-value shorthand, bottom)."
+        },
+        {
+          "name": "datepicker/buttonbar/padding-left",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-buttonbar-padding (4-value shorthand, left)."
+        },
+        {
+          "name": "datepicker/date/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "content/color"
+            },
+            "Dark": {
+              "a": "content/color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-date-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/date/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "focus-ring/color"
+            },
+            "Dark": {
+              "a": "focus-ring/color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-date-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/date/focus-ring/offset",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/offset"
+            },
+            "Dark": {
+              "a": "focus-ring/offset"
+            }
+          },
+          "codeSyntax": "--p-datepicker-date-focus-ring-offset",
+          "description": ""
+        },
+        {
+          "name": "datepicker/date/focus-ring/style",
+          "type": "STRING",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/style"
+            },
+            "Dark": {
+              "a": "focus-ring/style"
+            }
+          },
+          "codeSyntax": "--p-datepicker-date-focus-ring-style",
+          "description": ""
+        },
+        {
+          "name": "datepicker/date/focus-ring/width",
+          "type": "FLOAT",
+          "scope": "sw",
+          "values": {
+            "Light": {
+              "a": "focus-ring/width"
+            },
+            "Dark": {
+              "a": "focus-ring/width"
+            }
+          },
+          "codeSyntax": "--p-datepicker-date-focus-ring-width",
+          "description": ""
+        },
+        {
+          "name": "datepicker/date/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 28,
+            "Dark": 28
+          },
+          "codeSyntax": "--p-datepicker-date-height",
+          "description": ""
+        },
+        {
+          "name": "datepicker/date/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "content/hover-background"
+            },
+            "Dark": {
+              "a": "content/hover-background"
+            }
+          },
+          "codeSyntax": "--p-datepicker-date-hover-background",
+          "description": ""
+        },
+        {
+          "name": "datepicker/date/hover-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "content/hover-color"
+            },
+            "Dark": {
+              "a": "content/hover-color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-date-hover-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/date/padding",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 3.5,
+            "Dark": 3.5
+          },
+          "codeSyntax": "--p-datepicker-date-padding",
+          "description": ""
+        },
+        {
+          "name": "datepicker/date/range-selected-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "highlight/background"
+            },
+            "Dark": {
+              "a": "highlight/background"
+            }
+          },
+          "codeSyntax": "--p-datepicker-date-range-selected-background",
+          "description": "Aliases a color-mix token. Apply with layer opacity bound to datepicker/date/range-selected-background-opacity."
+        },
+        {
+          "name": "datepicker/date/range-selected-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "highlight/color"
+            },
+            "Dark": {
+              "a": "highlight/color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-date-range-selected-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/date/selected-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "primary/color"
+            },
+            "Dark": {
+              "a": "primary/color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-date-selected-background",
+          "description": ""
+        },
+        {
+          "name": "datepicker/date/selected-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "primary/contrast-color"
+            },
+            "Dark": {
+              "a": "primary/contrast-color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-date-selected-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/date/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 28,
+            "Dark": 28
+          },
+          "codeSyntax": "--p-datepicker-date-width",
+          "description": ""
+        },
+        {
+          "name": "datepicker/day-view/margin-top",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-day-view-margin (4-value shorthand, top)."
+        },
+        {
+          "name": "datepicker/day-view/margin-right",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-day-view-margin (4-value shorthand, right)."
+        },
+        {
+          "name": "datepicker/day-view/margin-bottom",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-day-view-margin (4-value shorthand, bottom)."
+        },
+        {
+          "name": "datepicker/day-view/margin-left",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-day-view-margin (4-value shorthand, left)."
+        },
+        {
+          "name": "datepicker/dropdown/active-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/300"
+            },
+            "Dark": {
+              "a": "surface/600"
+            }
+          },
+          "codeSyntax": "--p-datepicker-dropdown-active-background",
+          "description": ""
+        },
+        {
+          "name": "datepicker/dropdown/active-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/border-color"
+            },
+            "Dark": {
+              "a": "form-field/border-color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-dropdown-active-border-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/dropdown/active-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/800"
+            },
+            "Dark": {
+              "a": "surface/100"
+            }
+          },
+          "codeSyntax": "--p-datepicker-dropdown-active-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/dropdown/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/100"
+            },
+            "Dark": {
+              "a": "surface/800"
+            }
+          },
+          "codeSyntax": "--p-datepicker-dropdown-background",
+          "description": ""
+        },
+        {
+          "name": "datepicker/dropdown/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/border-color"
+            },
+            "Dark": {
+              "a": "form-field/border-color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-dropdown-border-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/dropdown/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "form-field/border-radius"
+            },
+            "Dark": {
+              "a": "form-field/border-radius"
+            }
+          },
+          "codeSyntax": "--p-datepicker-dropdown-border-radius",
+          "description": ""
+        },
+        {
+          "name": "datepicker/dropdown/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/600"
+            },
+            "Dark": {
+              "a": "surface/300"
+            }
+          },
+          "codeSyntax": "--p-datepicker-dropdown-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/dropdown/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "focus-ring/color"
+            },
+            "Dark": {
+              "a": "focus-ring/color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-dropdown-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/dropdown/focus-ring/offset",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/offset"
+            },
+            "Dark": {
+              "a": "focus-ring/offset"
+            }
+          },
+          "codeSyntax": "--p-datepicker-dropdown-focus-ring-offset",
+          "description": ""
+        },
+        {
+          "name": "datepicker/dropdown/focus-ring/style",
+          "type": "STRING",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/style"
+            },
+            "Dark": {
+              "a": "focus-ring/style"
+            }
+          },
+          "codeSyntax": "--p-datepicker-dropdown-focus-ring-style",
+          "description": ""
+        },
+        {
+          "name": "datepicker/dropdown/focus-ring/width",
+          "type": "FLOAT",
+          "scope": "sw",
+          "values": {
+            "Light": {
+              "a": "focus-ring/width"
+            },
+            "Dark": {
+              "a": "focus-ring/width"
+            }
+          },
+          "codeSyntax": "--p-datepicker-dropdown-focus-ring-width",
+          "description": ""
+        },
+        {
+          "name": "datepicker/dropdown/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/200"
+            },
+            "Dark": {
+              "a": "surface/700"
+            }
+          },
+          "codeSyntax": "--p-datepicker-dropdown-hover-background",
+          "description": ""
+        },
+        {
+          "name": "datepicker/dropdown/hover-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "form-field/border-color"
+            },
+            "Dark": {
+              "a": "form-field/border-color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-dropdown-hover-border-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/dropdown/hover-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/700"
+            },
+            "Dark": {
+              "a": "surface/200"
+            }
+          },
+          "codeSyntax": "--p-datepicker-dropdown-hover-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/dropdown/lg/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 42,
+            "Dark": 42
+          },
+          "codeSyntax": "--p-datepicker-dropdown-lg-width",
+          "description": ""
+        },
+        {
+          "name": "datepicker/dropdown/sm/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 28,
+            "Dark": 28
+          },
+          "codeSyntax": "--p-datepicker-dropdown-sm-width",
+          "description": ""
+        },
+        {
+          "name": "datepicker/dropdown/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 35,
+            "Dark": 35
+          },
+          "codeSyntax": "--p-datepicker-dropdown-width",
+          "description": ""
+        },
+        {
+          "name": "datepicker/group/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "content/border-color"
+            },
+            "Dark": {
+              "a": "content/border-color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-group-border-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/group/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "overlay/popover/padding"
+            },
+            "Dark": {
+              "a": "overlay/popover/padding"
+            }
+          },
+          "codeSyntax": "--p-datepicker-group-gap",
+          "description": ""
+        },
+        {
+          "name": "datepicker/header/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "content/background"
+            },
+            "Dark": {
+              "a": "content/background"
+            }
+          },
+          "codeSyntax": "--p-datepicker-header-background",
+          "description": ""
+        },
+        {
+          "name": "datepicker/header/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "content/border-color"
+            },
+            "Dark": {
+              "a": "content/border-color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-header-border-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/header/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "content/color"
+            },
+            "Dark": {
+              "a": "content/color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-header-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/header/padding-top",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-header-padding (4-value shorthand, top)."
+        },
+        {
+          "name": "datepicker/header/padding-right",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-header-padding (4-value shorthand, right)."
+        },
+        {
+          "name": "datepicker/header/padding-bottom",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-header-padding (4-value shorthand, bottom)."
+        },
+        {
+          "name": "datepicker/header/padding-left",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-header-padding (4-value shorthand, left)."
+        },
+        {
+          "name": "datepicker/input-icon/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "form-field/icon-color"
+            },
+            "Dark": {
+              "a": "form-field/icon-color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-input-icon-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/month-view/margin-top",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-month-view-margin (4-value shorthand, top)."
+        },
+        {
+          "name": "datepicker/month-view/margin-right",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-month-view-margin (4-value shorthand, right)."
+        },
+        {
+          "name": "datepicker/month-view/margin-bottom",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-month-view-margin (4-value shorthand, bottom)."
+        },
+        {
+          "name": "datepicker/month-view/margin-left",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-month-view-margin (4-value shorthand, left)."
+        },
+        {
+          "name": "datepicker/month/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "content/border-radius"
+            },
+            "Dark": {
+              "a": "content/border-radius"
+            }
+          },
+          "codeSyntax": "--p-datepicker-month-border-radius",
+          "description": ""
+        },
+        {
+          "name": "datepicker/month/padding",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 5.25,
+            "Dark": 5.25
+          },
+          "codeSyntax": "--p-datepicker-month-padding",
+          "description": ""
+        },
+        {
+          "name": "datepicker/panel/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "content/background"
+            },
+            "Dark": {
+              "a": "content/background"
+            }
+          },
+          "codeSyntax": "--p-datepicker-panel-background",
+          "description": ""
+        },
+        {
+          "name": "datepicker/panel/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "content/border-color"
+            },
+            "Dark": {
+              "a": "content/border-color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-panel-border-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/panel/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "content/border-radius"
+            },
+            "Dark": {
+              "a": "content/border-radius"
+            }
+          },
+          "codeSyntax": "--p-datepicker-panel-border-radius",
+          "description": ""
+        },
+        {
+          "name": "datepicker/panel/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "content/color"
+            },
+            "Dark": {
+              "a": "content/color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-panel-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/panel/padding",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "overlay/popover/padding"
+            },
+            "Dark": {
+              "a": "overlay/popover/padding"
+            }
+          },
+          "codeSyntax": "--p-datepicker-panel-padding",
+          "description": ""
+        },
+        {
+          "name": "datepicker/select-month/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "content/border-radius"
+            },
+            "Dark": {
+              "a": "content/border-radius"
+            }
+          },
+          "codeSyntax": "--p-datepicker-select-month-border-radius",
+          "description": ""
+        },
+        {
+          "name": "datepicker/select-month/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "content/color"
+            },
+            "Dark": {
+              "a": "content/color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-select-month-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/select-month/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "content/hover-background"
+            },
+            "Dark": {
+              "a": "content/hover-background"
+            }
+          },
+          "codeSyntax": "--p-datepicker-select-month-hover-background",
+          "description": ""
+        },
+        {
+          "name": "datepicker/select-month/hover-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "content/hover-color"
+            },
+            "Dark": {
+              "a": "content/hover-color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-select-month-hover-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/select-month/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 3.5,
+            "Dark": 3.5
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-select-month-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datepicker/select-month/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-select-month-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datepicker/select-year/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "content/border-radius"
+            },
+            "Dark": {
+              "a": "content/border-radius"
+            }
+          },
+          "codeSyntax": "--p-datepicker-select-year-border-radius",
+          "description": ""
+        },
+        {
+          "name": "datepicker/select-year/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "content/color"
+            },
+            "Dark": {
+              "a": "content/color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-select-year-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/select-year/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "content/hover-background"
+            },
+            "Dark": {
+              "a": "content/hover-background"
+            }
+          },
+          "codeSyntax": "--p-datepicker-select-year-hover-background",
+          "description": ""
+        },
+        {
+          "name": "datepicker/select-year/hover-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "content/hover-color"
+            },
+            "Dark": {
+              "a": "content/hover-color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-select-year-hover-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/select-year/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 3.5,
+            "Dark": 3.5
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-select-year-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datepicker/select-year/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-select-year-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datepicker/time-picker/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "content/border-color"
+            },
+            "Dark": {
+              "a": "content/border-color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-time-picker-border-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/time-picker/button-gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 3.5,
+            "Dark": 3.5
+          },
+          "codeSyntax": "--p-datepicker-time-picker-button-gap",
+          "description": ""
+        },
+        {
+          "name": "datepicker/time-picker/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": "--p-datepicker-time-picker-gap",
+          "description": ""
+        },
+        {
+          "name": "datepicker/time-picker/padding-top",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-time-picker-padding (4-value shorthand, top)."
+        },
+        {
+          "name": "datepicker/time-picker/padding-right",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-time-picker-padding (4-value shorthand, right)."
+        },
+        {
+          "name": "datepicker/time-picker/padding-bottom",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-time-picker-padding (4-value shorthand, bottom)."
+        },
+        {
+          "name": "datepicker/time-picker/padding-left",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-time-picker-padding (4-value shorthand, left)."
+        },
+        {
+          "name": "datepicker/title/font-weight",
+          "type": "FLOAT",
+          "scope": "fw",
+          "values": {
+            "Light": 500,
+            "Dark": 500
+          },
+          "codeSyntax": "--p-datepicker-title-font-weight",
+          "description": ""
+        },
+        {
+          "name": "datepicker/title/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": "--p-datepicker-title-gap",
+          "description": ""
+        },
+        {
+          "name": "datepicker/today/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/200"
+            },
+            "Dark": {
+              "a": "surface/700"
+            }
+          },
+          "codeSyntax": "--p-datepicker-today-background",
+          "description": ""
+        },
+        {
+          "name": "datepicker/today/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/900"
+            },
+            "Dark": {
+              "a": "surface/0"
+            }
+          },
+          "codeSyntax": "--p-datepicker-today-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/transition-duration",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "transition-duration"
+            },
+            "Dark": {
+              "a": "transition-duration"
+            }
+          },
+          "codeSyntax": "--p-datepicker-transition-duration",
+          "description": "Seconds. Not used by static Figma components; kept for code parity."
+        },
+        {
+          "name": "datepicker/week-day/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "content/color"
+            },
+            "Dark": {
+              "a": "content/color"
+            }
+          },
+          "codeSyntax": "--p-datepicker-week-day-color",
+          "description": ""
+        },
+        {
+          "name": "datepicker/week-day/font-weight",
+          "type": "FLOAT",
+          "scope": "fw",
+          "values": {
+            "Light": 500,
+            "Dark": 500
+          },
+          "codeSyntax": "--p-datepicker-week-day-font-weight",
+          "description": ""
+        },
+        {
+          "name": "datepicker/week-day/padding",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 3.5,
+            "Dark": 3.5
+          },
+          "codeSyntax": "--p-datepicker-week-day-padding",
+          "description": ""
+        },
+        {
+          "name": "datepicker/year-view/margin-top",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-year-view-margin (4-value shorthand, top)."
+        },
+        {
+          "name": "datepicker/year-view/margin-right",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-year-view-margin (4-value shorthand, right)."
+        },
+        {
+          "name": "datepicker/year-view/margin-bottom",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-year-view-margin (4-value shorthand, bottom)."
+        },
+        {
+          "name": "datepicker/year-view/margin-left",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datepicker-year-view-margin (4-value shorthand, left)."
+        },
+        {
+          "name": "datepicker/year/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "content/border-radius"
+            },
+            "Dark": {
+              "a": "content/border-radius"
+            }
+          },
+          "codeSyntax": "--p-datepicker-year-border-radius",
+          "description": ""
+        },
+        {
+          "name": "datepicker/year/padding",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 5.25,
+            "Dark": 5.25
+          },
+          "codeSyntax": "--p-datepicker-year-padding",
+          "description": ""
+        },
+        {
           "name": "button/focus-ring-radius",
           "type": "FLOAT",
           "scope": "r",
@@ -9953,6 +15362,138 @@
           },
           "codeSyntax": null,
           "description": "Derived (no CSS variable): button.rounded-border-radius + button.focus-ring.offset + button.focus-ring.width. Radius of the focus outline as the browser draws it."
+        },
+        {
+          "name": "checkbox/focus-ring-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Derived (no CSS variable): checkbox.border-radius + checkbox.focus-ring.offset + checkbox.focus-ring.width. Radius of the focus outline as the browser draws it."
+        },
+        {
+          "name": "select/option/check-padding-left",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 5.25,
+            "Dark": 5.25
+          },
+          "codeSyntax": null,
+          "description": "Derived (no CSS variable): select.option.padding (x) + select.checkmark.gutter-start (negative). Left padding of an option row in checkmark mode (.p-select-option-check-icon margin-inline-start)."
+        },
+        {
+          "name": "toggleswitch/sm/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 28,
+            "Dark": 28
+          },
+          "codeSyntax": null,
+          "description": "Derived (no CSS variable): DESIGN-ONLY, not in Aura or code (#71): toggleswitch.width − 0.5rem."
+        },
+        {
+          "name": "toggleswitch/sm/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 17.5,
+            "Dark": 17.5
+          },
+          "codeSyntax": null,
+          "description": "Derived (no CSS variable): DESIGN-ONLY, not in Aura or code (#71): toggleswitch.height − 0.25rem."
+        },
+        {
+          "name": "toggleswitch/sm/handle-size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 10.5,
+            "Dark": 10.5
+          },
+          "codeSyntax": null,
+          "description": "Derived (no CSS variable): DESIGN-ONLY, not in Aura or code (#71): toggleswitch.handle.size − 0.25rem."
+        },
+        {
+          "name": "toggleswitch/lg/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 42,
+            "Dark": 42
+          },
+          "codeSyntax": null,
+          "description": "Derived (no CSS variable): DESIGN-ONLY, not in Aura or code (#71): toggleswitch.width + 0.5rem."
+        },
+        {
+          "name": "toggleswitch/lg/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 24.5,
+            "Dark": 24.5
+          },
+          "codeSyntax": null,
+          "description": "Derived (no CSS variable): DESIGN-ONLY, not in Aura or code (#71): toggleswitch.height + 0.25rem."
+        },
+        {
+          "name": "toggleswitch/lg/handle-size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 17.5,
+            "Dark": 17.5
+          },
+          "codeSyntax": null,
+          "description": "Derived (no CSS variable): DESIGN-ONLY, not in Aura or code (#71): toggleswitch.handle.size + 0.25rem."
+        },
+        {
+          "name": "iconfield/input-padding",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 35,
+            "Dark": 35
+          },
+          "codeSyntax": null,
+          "description": "Derived (no CSS variable): form-field.padding-x × 2 + icon-size (.p-iconfield .p-inputtext padding on the icon side)."
+        },
+        {
+          "name": "password/input-padding",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 35,
+            "Dark": 35
+          },
+          "codeSyntax": null,
+          "description": "Derived (no CSS variable): form-field.padding-x × 2 + icon-size (.p-password:has(toggle-mask) .p-password-input padding-inline-end)."
+        },
+        {
+          "name": "datepicker/input-padding",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 35,
+            "Dark": 35
+          },
+          "codeSyntax": null,
+          "description": "Derived (no CSS variable): form-field.padding-x × 2 + icon-size (.p-datepicker:has(.p-datepicker-input-icon-container) .p-datepicker-input padding-inline-end)."
+        },
+        {
+          "name": "inputnumber/stacked-input-padding",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 45.5,
+            "Dark": 45.5
+          },
+          "codeSyntax": null,
+          "description": "Derived (no CSS variable): inputnumber.button.width + form-field.padding-x (.p-inputnumber-stacked .p-inputnumber-input padding-inline-end)."
         },
         {
           "name": "button/line-height",
@@ -9986,6 +15527,51 @@
           },
           "codeSyntax": null,
           "description": "Derived (no CSS variable): button.lg.font-size × typography.base.line-height, in px. Height of the label line; keeps icon-only buttons as tall as in code."
+        },
+        {
+          "name": "datepicker/date/range-selected-background-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": {
+              "a": "highlight/background-opacity"
+            },
+            "Dark": {
+              "a": "highlight/background-opacity"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived: opacity of datepicker/date/range-selected-background, inherited from the color-mix token it aliases. Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "select/option/selected-background-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": {
+              "a": "list/option/selected-background-opacity"
+            },
+            "Dark": {
+              "a": "list/option/selected-background-opacity"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived: opacity of select/option/selected-background, inherited from the color-mix token it aliases. Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "select/option/selected-focus-background-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": {
+              "a": "list/option/selected-focus-background-opacity"
+            },
+            "Dark": {
+              "a": "list/option/selected-focus-background-opacity"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived: opacity of select/option/selected-focus-background, inherited from the color-mix token it aliases. Percent in Figma (CSS fraction x100)."
         }
       ]
     },
@@ -10200,6 +15786,349 @@
           }
         ],
         "description": "Token inputtext.shadow (--p-inputtext-shadow), alias of form-field.shadow"
+      },
+      {
+        "name": "textarea/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 1,
+            "blur": 2,
+            "spread": 0,
+            "color": [
+              0.0706,
+              0.0706,
+              0.0902,
+              0.05
+            ]
+          }
+        ],
+        "description": "Token textarea.shadow (--p-textarea-shadow), alias of form-field.shadow"
+      },
+      {
+        "name": "select/overlay/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 6,
+            "spread": -1,
+            "color": [
+              0,
+              0,
+              0,
+              0.1
+            ]
+          },
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 2,
+            "blur": 4,
+            "spread": -2,
+            "color": [
+              0,
+              0,
+              0,
+              0.1
+            ]
+          }
+        ],
+        "description": "Token select.overlay.shadow (--p-select-overlay-shadow), alias of overlay.select.shadow"
+      },
+      {
+        "name": "select/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 1,
+            "blur": 2,
+            "spread": 0,
+            "color": [
+              0.0706,
+              0.0706,
+              0.0902,
+              0.05
+            ]
+          }
+        ],
+        "description": "Token select.shadow (--p-select-shadow), alias of form-field.shadow"
+      },
+      {
+        "name": "checkbox/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 1,
+            "blur": 2,
+            "spread": 0,
+            "color": [
+              0.0706,
+              0.0706,
+              0.0902,
+              0.05
+            ]
+          }
+        ],
+        "description": "Token checkbox.shadow (--p-checkbox-shadow), alias of form-field.shadow"
+      },
+      {
+        "name": "radiobutton/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 1,
+            "blur": 2,
+            "spread": 0,
+            "color": [
+              0.0706,
+              0.0706,
+              0.0902,
+              0.05
+            ]
+          }
+        ],
+        "description": "Token radiobutton.shadow (--p-radiobutton-shadow), alias of form-field.shadow"
+      },
+      {
+        "name": "toggleswitch/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 1,
+            "blur": 2,
+            "spread": 0,
+            "color": [
+              0.0706,
+              0.0706,
+              0.0902,
+              0.05
+            ]
+          }
+        ],
+        "description": "Token toggleswitch.shadow (--p-toggleswitch-shadow), alias of form-field.shadow"
+      },
+      {
+        "name": "password/overlay/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 6,
+            "spread": -1,
+            "color": [
+              0,
+              0,
+              0,
+              0.1
+            ]
+          },
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 2,
+            "blur": 4,
+            "spread": -2,
+            "color": [
+              0,
+              0,
+              0,
+              0.1
+            ]
+          }
+        ],
+        "description": "Token password.overlay.shadow (--p-password-overlay-shadow), alias of overlay.popover.shadow"
+      },
+      {
+        "name": "message/contrast/shadow (Light)",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 8,
+            "spread": 0,
+            "color": [
+              0.0078,
+              0.0235,
+              0.0902,
+              0.04
+            ]
+          }
+        ],
+        "description": "Token message.contrast.shadow (--p-message-contrast-shadow), Light mode"
+      },
+      {
+        "name": "message/contrast/shadow (Dark)",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 8,
+            "spread": 0,
+            "color": [
+              0.0353,
+              0.0353,
+              0.0431,
+              0.04
+            ]
+          }
+        ],
+        "description": "Token message.contrast.shadow (--p-message-contrast-shadow), Dark mode"
+      },
+      {
+        "name": "message/error/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 8,
+            "spread": 0,
+            "color": [
+              0.9373,
+              0.2667,
+              0.2667,
+              0.04
+            ]
+          }
+        ],
+        "description": "Token message.error.shadow (--p-message-error-shadow)"
+      },
+      {
+        "name": "message/info/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 8,
+            "spread": 0,
+            "color": [
+              0.2314,
+              0.5098,
+              0.9647,
+              0.04
+            ]
+          }
+        ],
+        "description": "Token message.info.shadow (--p-message-info-shadow)"
+      },
+      {
+        "name": "message/secondary/shadow (Light)",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 8,
+            "spread": 0,
+            "color": [
+              0.3922,
+              0.4549,
+              0.5451,
+              0.04
+            ]
+          }
+        ],
+        "description": "Token message.secondary.shadow (--p-message-secondary-shadow), Light mode"
+      },
+      {
+        "name": "message/secondary/shadow (Dark)",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 8,
+            "spread": 0,
+            "color": [
+              0.4431,
+              0.4431,
+              0.4784,
+              0.04
+            ]
+          }
+        ],
+        "description": "Token message.secondary.shadow (--p-message-secondary-shadow), Dark mode"
+      },
+      {
+        "name": "message/success/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 8,
+            "spread": 0,
+            "color": [
+              0.1333,
+              0.7725,
+              0.3686,
+              0.04
+            ]
+          }
+        ],
+        "description": "Token message.success.shadow (--p-message-success-shadow)"
+      },
+      {
+        "name": "message/warn/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 8,
+            "spread": 0,
+            "color": [
+              0.9176,
+              0.702,
+              0.0314,
+              0.04
+            ]
+          }
+        ],
+        "description": "Token message.warn.shadow (--p-message-warn-shadow)"
+      },
+      {
+        "name": "datepicker/panel/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 6,
+            "spread": -1,
+            "color": [
+              0,
+              0,
+              0,
+              0.1
+            ]
+          },
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 2,
+            "blur": 4,
+            "spread": -2,
+            "color": [
+              0,
+              0,
+              0,
+              0.1
+            ]
+          }
+        ],
+        "description": "Token datepicker.panel.shadow (--p-datepicker-panel-shadow), alias of overlay.popover.shadow"
       }
     ],
     "skipped": [
@@ -10245,6 +16174,70 @@
       },
       {
         "token": "inputtext.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "textarea.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "select.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "checkbox.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "radiobutton.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "toggleswitch.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "toggleswitch.handle.border-radius",
+        "reason": "percent radius 50%: built as a circle in the component"
+      },
+      {
+        "token": "message.close-button.border-radius",
+        "reason": "percent radius 50%: built as a circle in the component"
+      },
+      {
+        "token": "message.contrast.close-button.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "message.error.close-button.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "message.info.close-button.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "message.secondary.close-button.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "message.success.close-button.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "message.warn.close-button.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "datepicker.date.border-radius",
+        "reason": "percent radius 50%: built as a circle in the component"
+      },
+      {
+        "token": "datepicker.date.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "datepicker.dropdown.focus-ring.shadow",
         "reason": "shadow is \"none\": no effect style needed"
       }
     ],
@@ -10505,6 +16498,276 @@
         "rule": "2-value split"
       },
       {
+        "token": "select.empty-message.padding",
+        "derived": "select.empty-message.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "select.empty-message.padding",
+        "derived": "select.empty-message.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "select.list.header.padding",
+        "derived": "select.list.header.padding-top",
+        "rule": "4-value split"
+      },
+      {
+        "token": "select.list.header.padding",
+        "derived": "select.list.header.padding-right",
+        "rule": "4-value split"
+      },
+      {
+        "token": "select.list.header.padding",
+        "derived": "select.list.header.padding-bottom",
+        "rule": "4-value split"
+      },
+      {
+        "token": "select.list.header.padding",
+        "derived": "select.list.header.padding-left",
+        "rule": "4-value split"
+      },
+      {
+        "token": "select.list.padding",
+        "derived": "select.list.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "select.list.padding",
+        "derived": "select.list.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "select.option-group.padding",
+        "derived": "select.option-group.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "select.option-group.padding",
+        "derived": "select.option-group.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "select.option.padding",
+        "derived": "select.option.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "select.option.padding",
+        "derived": "select.option.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "message.content.lg.padding",
+        "derived": "message.content.lg.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "message.content.lg.padding",
+        "derived": "message.content.lg.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "message.content.padding",
+        "derived": "message.content.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "message.content.padding",
+        "derived": "message.content.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "message.content.sm.padding",
+        "derived": "message.content.sm.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "message.content.sm.padding",
+        "derived": "message.content.sm.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "message.error.background",
+        "derived": "message.error.background-opacity",
+        "rule": "color-mix opacity"
+      },
+      {
+        "token": "message.error.border-color",
+        "derived": "message.error.border-color-opacity",
+        "rule": "color-mix opacity"
+      },
+      {
+        "token": "message.info.background",
+        "derived": "message.info.background-opacity",
+        "rule": "color-mix opacity"
+      },
+      {
+        "token": "message.info.border-color",
+        "derived": "message.info.border-color-opacity",
+        "rule": "color-mix opacity"
+      },
+      {
+        "token": "message.success.background",
+        "derived": "message.success.background-opacity",
+        "rule": "color-mix opacity"
+      },
+      {
+        "token": "message.success.border-color",
+        "derived": "message.success.border-color-opacity",
+        "rule": "color-mix opacity"
+      },
+      {
+        "token": "message.warn.background",
+        "derived": "message.warn.background-opacity",
+        "rule": "color-mix opacity"
+      },
+      {
+        "token": "message.warn.border-color",
+        "derived": "message.warn.border-color-opacity",
+        "rule": "color-mix opacity"
+      },
+      {
+        "token": "datepicker.buttonbar.padding",
+        "derived": "datepicker.buttonbar.padding-top",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.buttonbar.padding",
+        "derived": "datepicker.buttonbar.padding-right",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.buttonbar.padding",
+        "derived": "datepicker.buttonbar.padding-bottom",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.buttonbar.padding",
+        "derived": "datepicker.buttonbar.padding-left",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.day-view.margin",
+        "derived": "datepicker.day-view.margin-top",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.day-view.margin",
+        "derived": "datepicker.day-view.margin-right",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.day-view.margin",
+        "derived": "datepicker.day-view.margin-bottom",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.day-view.margin",
+        "derived": "datepicker.day-view.margin-left",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.header.padding",
+        "derived": "datepicker.header.padding-top",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.header.padding",
+        "derived": "datepicker.header.padding-right",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.header.padding",
+        "derived": "datepicker.header.padding-bottom",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.header.padding",
+        "derived": "datepicker.header.padding-left",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.month-view.margin",
+        "derived": "datepicker.month-view.margin-top",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.month-view.margin",
+        "derived": "datepicker.month-view.margin-right",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.month-view.margin",
+        "derived": "datepicker.month-view.margin-bottom",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.month-view.margin",
+        "derived": "datepicker.month-view.margin-left",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.select-month.padding",
+        "derived": "datepicker.select-month.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datepicker.select-month.padding",
+        "derived": "datepicker.select-month.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datepicker.select-year.padding",
+        "derived": "datepicker.select-year.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datepicker.select-year.padding",
+        "derived": "datepicker.select-year.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datepicker.time-picker.padding",
+        "derived": "datepicker.time-picker.padding-top",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.time-picker.padding",
+        "derived": "datepicker.time-picker.padding-right",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.time-picker.padding",
+        "derived": "datepicker.time-picker.padding-bottom",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.time-picker.padding",
+        "derived": "datepicker.time-picker.padding-left",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.year-view.margin",
+        "derived": "datepicker.year-view.margin-top",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.year-view.margin",
+        "derived": "datepicker.year-view.margin-right",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.year-view.margin",
+        "derived": "datepicker.year-view.margin-bottom",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datepicker.year-view.margin",
+        "derived": "datepicker.year-view.margin-left",
+        "rule": "4-value split"
+      },
+      {
         "token": "button.border-radius",
         "derived": "button.focus-ring-radius",
         "rule": "focus-ring radius"
@@ -10513,6 +16776,66 @@
         "token": "button.rounded-border-radius",
         "derived": "button.rounded-focus-ring-radius",
         "rule": "focus-ring radius"
+      },
+      {
+        "token": "checkbox.focus-ring-radius",
+        "derived": "checkbox.focus-ring-radius",
+        "rule": "group b"
+      },
+      {
+        "token": "select.option.check-padding-left",
+        "derived": "select.option.check-padding-left",
+        "rule": "group b"
+      },
+      {
+        "token": "toggleswitch.sm.width",
+        "derived": "toggleswitch.sm.width",
+        "rule": "group b"
+      },
+      {
+        "token": "toggleswitch.sm.height",
+        "derived": "toggleswitch.sm.height",
+        "rule": "group b"
+      },
+      {
+        "token": "toggleswitch.sm.handle-size",
+        "derived": "toggleswitch.sm.handle-size",
+        "rule": "group b"
+      },
+      {
+        "token": "toggleswitch.lg.width",
+        "derived": "toggleswitch.lg.width",
+        "rule": "group b"
+      },
+      {
+        "token": "toggleswitch.lg.height",
+        "derived": "toggleswitch.lg.height",
+        "rule": "group b"
+      },
+      {
+        "token": "toggleswitch.lg.handle-size",
+        "derived": "toggleswitch.lg.handle-size",
+        "rule": "group b"
+      },
+      {
+        "token": "iconfield.input-padding",
+        "derived": "iconfield.input-padding",
+        "rule": "field padding"
+      },
+      {
+        "token": "password.input-padding",
+        "derived": "password.input-padding",
+        "rule": "field padding"
+      },
+      {
+        "token": "datepicker.input-padding",
+        "derived": "datepicker.input-padding",
+        "rule": "field padding"
+      },
+      {
+        "token": "inputnumber.stacked-input-padding",
+        "derived": "inputnumber.stacked-input-padding",
+        "rule": "field padding"
       },
       {
         "token": "typography.base.font-size",
@@ -10537,6 +16860,21 @@
       {
         "token": "list.option.selected-focus-background",
         "derived": "list.option.selected-focus-background-opacity",
+        "rule": "inherited color-mix opacity"
+      },
+      {
+        "token": "datepicker.date.range-selected-background",
+        "derived": "datepicker.date.range-selected-background-opacity",
+        "rule": "inherited color-mix opacity"
+      },
+      {
+        "token": "select.option.selected-background",
+        "derived": "select.option.selected-background-opacity",
+        "rule": "inherited color-mix opacity"
+      },
+      {
+        "token": "select.option.selected-focus-background",
+        "derived": "select.option.selected-focus-background-opacity",
         "rule": "inherited color-mix opacity"
       }
     ],
@@ -10735,6 +17073,136 @@
           "fontWeight": "tag/font-weight"
         },
         "description": "CSS: .p-tag. Size tag/font-size (--p-tag-font-size), weight tag/font-weight (--p-tag-font-weight), line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "Textarea/Text sm",
+        "family": "Lato",
+        "style": "Regular",
+        "size": 12.25,
+        "lineHeightPercent": 120,
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "textarea/sm/font-size",
+          "fontWeight": "typography/base/font-weight"
+        },
+        "description": "CSS: .p-textarea-sm. Size textarea/sm/font-size (--p-textarea-sm-font-size), weight typography/base/font-weight, line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "Textarea/Text base",
+        "family": "Lato",
+        "style": "Regular",
+        "size": 14,
+        "lineHeightPercent": 120,
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "typography/base/font-size",
+          "fontWeight": "typography/base/font-weight"
+        },
+        "description": "CSS: .p-textarea (PrimeNG CSS font-size: 1rem literal, no token). Size typography/base/font-size, weight typography/base/font-weight, line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "Textarea/Text lg",
+        "family": "Lato",
+        "style": "Regular",
+        "size": 15.75,
+        "lineHeightPercent": 120,
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "textarea/lg/font-size",
+          "fontWeight": "typography/base/font-weight"
+        },
+        "description": "CSS: .p-textarea-lg. Size textarea/lg/font-size (--p-textarea-lg-font-size), weight typography/base/font-weight, line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "Select/Text sm",
+        "family": "Lato",
+        "style": "Regular",
+        "size": 12.25,
+        "lineHeightPercent": 120,
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "select/sm/font-size",
+          "fontWeight": "typography/base/font-weight"
+        },
+        "description": "CSS: .p-select-sm .p-select-label. Size select/sm/font-size (--p-select-sm-font-size), weight typography/base/font-weight, line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "Select/Text base",
+        "family": "Lato",
+        "style": "Regular",
+        "size": 14,
+        "lineHeightPercent": 120,
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "typography/base/font-size",
+          "fontWeight": "typography/base/font-weight"
+        },
+        "description": "CSS: .p-select-label, .p-select-option (PrimeNG CSS font-size: 1rem literal, no token). Size typography/base/font-size, weight typography/base/font-weight, line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "Select/Text lg",
+        "family": "Lato",
+        "style": "Regular",
+        "size": 15.75,
+        "lineHeightPercent": 120,
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "select/lg/font-size",
+          "fontWeight": "typography/base/font-weight"
+        },
+        "description": "CSS: .p-select-lg .p-select-label. Size select/lg/font-size (--p-select-lg-font-size), weight typography/base/font-weight, line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "Select/Group",
+        "family": "Lato",
+        "style": "SemiBold",
+        "size": 14,
+        "lineHeightPercent": 120,
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "typography/base/font-size",
+          "fontWeight": "select/option-group/font-weight"
+        },
+        "description": "CSS: .p-select-option-group. Size typography/base/font-size, weight select/option-group/font-weight (--p-select-option-group-font-weight), line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "Message/Text sm",
+        "family": "Lato",
+        "style": "Medium",
+        "size": 12.25,
+        "lineHeightPercent": 120,
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "message/text/sm/font-size",
+          "fontWeight": "message/text/font-weight"
+        },
+        "description": "CSS: .p-message-sm .p-message-text. Size message/text/sm/font-size (--p-message-text-sm-font-size), weight message/text/font-weight (--p-message-text-font-weight), line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "Message/Text base",
+        "family": "Lato",
+        "style": "Medium",
+        "size": 14,
+        "lineHeightPercent": 120,
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "message/text/font-size",
+          "fontWeight": "message/text/font-weight"
+        },
+        "description": "CSS: .p-message-text. Size message/text/font-size (--p-message-text-font-size), weight message/text/font-weight (--p-message-text-font-weight), line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "Message/Text lg",
+        "family": "Lato",
+        "style": "Medium",
+        "size": 15.75,
+        "lineHeightPercent": 120,
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "message/text/lg/font-size",
+          "fontWeight": "message/text/font-weight"
+        },
+        "description": "CSS: .p-message-lg .p-message-text. Size message/text/lg/font-size (--p-message-text-lg-font-size), weight message/text/font-weight (--p-message-text-font-weight), line-height 1.2 (typography/base/line-height)."
       }
     ]
   }

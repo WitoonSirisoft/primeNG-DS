@@ -16,6 +16,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { SYNC, WRAP } from './lib/figma-sync.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(HERE, '../../../tokens/figma');
@@ -133,7 +134,8 @@ function slot(c,name,comp,S,fg,dir){const f=figma.createAutoLayout('HORIZONTAL',
  if(dir!=='V')f.setBoundVariable('minHeight',V(S.mh)); // horizontal only: keeps icon-only height = label line; stacked it would add height (code: icon box 14)
  const i=comp.createInstance();i.name='Icon';f.appendChild(i);i.setBoundVariable('height',V(S.ih));i.setBoundVariable('width',V(S.ih)); // square icon box (#43)
  const sh=i.findOne(x=>x.name==='Shape');if(!sh)throw new Error(comp.name+': no Shape layer, icon colour cannot be set');sh.fills=[paint(V(fg))];return [f,i];}
-async function build(c,it){CUR=c;for(const k of [...c.children])k.remove();const S=it.sz,R=it.rd;
+${SYNC}${WRAP}async function build0(c,it){CUR=c; // update in place (#68): build() in lib/figma-sync.mjs keeps old layers and syncs
+const S=it.sz,R=it.rd;
  c.layoutMode=it.dir==='V'?'VERTICAL':'HORIZONTAL';c.primaryAxisAlignItems='CENTER';c.counterAxisAlignItems='CENTER';c.primaryAxisSizingMode='AUTO';c.counterAxisSizingMode='AUTO';c.clipsContent=false;c.fills=[];
  for(const k of ['paddingTop','paddingBottom'])c.setBoundVariable(k,V(S.py));for(const k of ['paddingLeft','paddingRight'])c.setBoundVariable(k,V(S.px));
  c.setBoundVariable('itemSpacing',V(D.F.gap));rad(c,V(R[0]));
@@ -149,16 +151,16 @@ async function build(c,it){CUR=c;for(const k of [...c.children])k.remove();const
  const bg=figma.createRectangle();bg.name='Background';abs(c,bg,0);c.insertChild(sh?1:0,bg);rad(bg,V(R[0]));bg.fills=it.bg?[paint(V(it.bg))]:[];if(it.bo)bg.setBoundVariable('opacity',V(it.bo));
  const fr=figma.createFrame();fr.name='Focus ring';fr.fills=[];abs(c,fr,3);fr.clipsContent=false;rad(fr,V(R[1]));
  fr.strokes=[paint(V(it.rg))];fr.strokeAlign='INSIDE';for(const k of ['strokeTopWeight','strokeBottomWeight','strokeLeftWeight','strokeRightWeight'])fr.setBoundVariable(k,V(D.F.rw));fr.visible=it.f;
- t.componentPropertyReferences={characters:K['Label'],visible:K['Show label']};if(sh)sh.componentPropertyReferences={visible:K['Raised']};
- if(bi){bi.componentPropertyReferences={visible:K['Badge']};bi.isExposedInstance=true;}
- if(it.dir==='V'){if(it.spin!==1)i1.componentPropertyReferences={mainComponent:K['Icon']};if(it.spin!==2)i2.componentPropertyReferences={mainComponent:K['Icon']};}
- else if(!it.l){s1.componentPropertyReferences={visible:K['Icon left']};i1.componentPropertyReferences={mainComponent:K['Icon']};
-  s2.componentPropertyReferences={visible:K['Icon right']};i2.componentPropertyReferences={mainComponent:K['Icon']};}
+ REF(t,{characters:K['Label'],visible:K['Show label']});if(sh)REF(sh,{visible:K['Raised']});
+ if(bi){REF(bi,{visible:K['Badge']});bi.isExposedInstance=true;}
+ if(it.dir==='V'){if(it.spin!==1)REF(i1,{mainComponent:K['Icon']});if(it.spin!==2)REF(i2,{mainComponent:K['Icon']});}
+ else if(!it.l){REF(s1,{visible:K['Icon left']});REF(i1,{mainComponent:K['Icon']});
+  REF(s2,{visible:K['Icon right']});REF(i2,{mainComponent:K['Icon']});}
  c.x=it.x;c.y=it.y;}
 const byName={};for(const c of set.children)byName[c.name]=c;
 for(const it of IT){let c=byName[it.n];if(c){ids.rebuilt.push(c.id);}else{c=figma.createComponent();c.name=it.n;set.appendChild(c);ids.created.push(c.id);}await build(c,it);}
 let mx=0,my=0;for(const c of set.children){mx=Math.max(mx,c.x+c.width);my=Math.max(my,c.y+c.height);}set.resizeWithoutConstraints(mx+24,my+24);
-return {set:set.id,range:[D.from,D.to],of:ALL.length,created:ids.created.length,rebuilt:ids.rebuilt.length,variantsInSet:set.children.length};`;
+return {sync:SY,set:set.id,range:[D.from,D.to],of:ALL.length,created:ids.created.length,rebuilt:ids.rebuilt.length,variantsInSet:set.children.length};`;
 
 const VERIFY = `${COMMON}
 const set=pg.findOne(n=>n.type==='COMPONENT_SET'&&n.name===D.setName);if(!set)throw new Error('No set '+D.setName);

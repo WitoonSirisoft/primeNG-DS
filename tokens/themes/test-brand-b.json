@@ -14,19 +14,12 @@
     },
     "notThemableByTokens": [
       {
-        "axis": "font family",
-        "wanted": "'IBM Plex Sans Thai', sans-serif",
-        "reason": "Aura has no font-family token; Sakai sets Lato in CSS (tokens/README 5.3). Expected Day 6 finding."
-      },
-      {
         "axis": "severity colors",
         "reason": "success/info/warn/danger/help component tokens reference primitive palettes directly (tokens/README 5.1); they do not follow this theme."
-      },
-      {
-        "axis": "literal component values",
-        "reason": "button.rounded-border-radius (2rem), button.icon-only-width, tag.padding, tag.font-size are literals in component tokens (tokens/README 5.3)."
       }
-    ]
+    ],
+    "fontNote": "Font is themable since DECISIONS #28 (semantic.font-family, outside Aura). Test font IBM Plex Sans Thai (#56); the CSS stack is in axes.fontFamily.",
+    "componentOverrides": "button.rounded-border-radius, tag.padding, badge.padding are fixed numbers in Aura component tokens; this theme overrides them directly so radius and density reach every component (Day 6.1, Witoon 2026-11-24)."
   },
   "primitives": {
     "border-radius": {
@@ -176,6 +169,26 @@
         "padding-y": {
           "$value": "0.375rem"
         }
+      }
+    },
+    "font-family": {
+      "$value": "IBM Plex Sans Thai"
+    }
+  },
+  "components": {
+    "button": {
+      "rounded-border-radius": {
+        "$value": "6rem"
+      }
+    },
+    "tag": {
+      "padding": {
+        "$value": "0.1667rem 0.3333rem"
+      }
+    },
+    "badge": {
+      "padding": {
+        "$value": "0 0.3333rem"
       }
     }
   }

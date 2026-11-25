@@ -71,7 +71,7 @@ const known = new Set(leaves.map((l) => l.path));
 
 // ---------- value parsing ----------
 const ALIAS = /^\{([^}]+)\}$/;
-const MIX = /^color-mix\(in srgb, \{([^}]+)\}, transparent (\d+(?:\.\d+)?)%\)$/;
+const MIX = /^color-mix\(in srgb,\s*\{([^}]+)\},\s*transparent\s+(\d+(?:\.\d+)?)%\)$/; // spacing varies in Aura (message tokens have none)
 const r4 = (x) => Math.round(x * 10000) / 10000;
 function color(s) {
     s = s.trim();
@@ -88,6 +88,8 @@ function color(s) {
         const p = m[1].split(/[\s,\/]+/).filter(Boolean).map(Number);
         return [r4(p[0] / 255), r4(p[1] / 255), r4(p[2] / 255), p[3] ?? 1];
     }
+    m = s.match(/^color-mix\(in srgb,\s*(.+?),\s*transparent\s+(\d+(?:\.\d+)?)%\)$/i);
+    if (m) { const c = color(m[1]); return [c[0], c[1], c[2], r4(c[3] * (1 - Number(m[2]) / 100))]; } // resolved shadow colours (batch 1)
     throw new Error(`Unsupported color "${s}"`);
 }
 const dims = (s) =>
@@ -161,7 +163,7 @@ const shadowFx = (s) => {
             const t = p.trim();
             const inset = /^inset\s/.test(t);
             const body = t.replace(/^inset\s+/, '');
-            const cm = body.match(/(#[0-9a-f]{3,8}|rgba?\([^)]*\)|transparent)\s*$/i);
+            const cm = body.match(/(color-mix\(in srgb,[^()]*(?:\([^)]*\))?[^()]*\)|#[0-9a-f]{3,8}|rgba?\([^)]*\)|transparent)\s*$/i);
             const col = cm ? color(cm[1]) : [0, 0, 0, 1];
             const nums = dims(body.slice(0, cm ? cm.index : undefined).trim() || '0');
             const [x, y, blur = 0, spread = 0] = nums;
@@ -229,8 +231,15 @@ for (const l of leaves) {
             const mm = v.match(ALIAS);
             if (mm) {
                 const target = leaves.find((x) => x.path === mm[1]);
-                if (target && /\s/.test(String(target.node.$value).trim())) throw new Error(`${path} aliases multi-value ${mm[1]}`);
-                outs[m] = [{ a: aliasName(mm[1]) }];
+                const tv = target && (typeof target.node.$value === 'object' ? target.node.$value[m.toLowerCase()] : target.node.$value);
+                const tn = tv ? String(tv).trim().split(/\s+/).length : 1;
+                if (tn > 1) {
+                    // alias to a multi-value token (e.g. padding "y x"): alias each part to the target's split variables
+                    const ts = tn === 2 ? ['y', 'x'] : tn === 4 ? ['top', 'right', 'bottom', 'left'] : null;
+                    if (!ts) throw new Error(`${path} aliases ${tn}-value ${mm[1]}`);
+                    aliasName(mm[1]);
+                    outs[m] = ts.map((s) => ({ a: fname(`${mm[1]}-${s}`) }));
+                } else outs[m] = [{ a: aliasName(mm[1]) }];
             } else outs[m] = dims(v);
             const n = outs[m].length;
             if (parts !== null && parts !== n) throw new Error(`${path}: different value counts per mode`);
@@ -251,6 +260,11 @@ for (const l of leaves) {
         continue;
     }
 
+    if (type === 'string' && /border-radius$/.test(path) && Object.values(vals).every((v) => /^\d+(\.\d+)?%$/.test(String(v).trim()))) {
+        // percent radius (50% = circle): Figma variables can't hold percent; the component draws the circle itself (like Badge Circle, #47)
+        plan.skipped.push({ token: path, reason: `percent radius ${Object.values(vals)[0]}: built as a circle in the component` });
+        continue;
+    }
     const conv = { fontWeight: Number, number: Number, duration: seconds, strokeStyle: String, fontFamily: String }[type];
     if (!conv) throw new Error(`No Figma rule for $type ${type} (${path})`);
     const ftype = type === 'strokeStyle' || type === 'fontFamily' ? 'STRING' : 'FLOAT';
@@ -271,7 +285,8 @@ for (const l of leaves) {
 // ---------- derived: focus-ring corner radius (DECISIONS #34) ----------
 // The browser draws `outline: <width> solid; outline-offset: <offset>` around a rounded box with radius + offset + width.
 {
-    const num = (p, m) => { const l = leaves.find((x) => x.path === p); if (!l) throw new Error(`Derived focus radius: ${p} missing`); const r = l.node.$extensions.primeng.resolved; return dims(r && typeof r === 'object' ? r[m.toLowerCase()] : r)[0]; };
+    // follow aliases through the (possibly themed) $value, per mode: a theme that changes the radius must move the ring too (Day 6.1 finding)
+    const num = (p, m) => { const l = leaves.find((x) => x.path === p); if (!l) throw new Error(`Derived focus radius: ${p} missing`); let v = l.node.$value; if (v && typeof v === 'object') v = v[m.toLowerCase()]; const mm = String(v).match(ALIAS); return mm ? num(mm[1], m) : dims(v)[0]; };
     for (const [name, base] of [['button.focus-ring-radius', 'button.border-radius'], ['button.rounded-focus-ring-radius', 'button.rounded-border-radius']]) {
         if (known.has(name)) throw new Error(`Derived name clash ${name}`);
         const values = Object.fromEntries(MODES.components.map((m) => [m, r4(num(base, m) + num('button.focus-ring.offset', m) + num('button.focus-ring.width', m))]));
@@ -279,10 +294,43 @@ for (const l of leaves) {
         plan.derived.push({ token: base, derived: name, rule: 'focus-ring radius' });
     }
 }
+// derived (Group B, DECISIONS #70/#71): Checkbox focus-ring radius (same rule as Button) and ToggleSwitch design-only sizes
+{
+    const num = (p, m, i = 0) => { const l = leaves.find((x) => x.path === p); if (!l) throw new Error(`Derived Group B: ${p} missing`); let v = l.node.$value; if (v && typeof v === 'object') v = v[m.toLowerCase()]; const mm = String(v).match(ALIAS); if (mm) return num(mm[1], m, i); const d = dims(v); return d[Math.min(i, d.length - 1)]; };
+    const STEP = 3.5; // 0.25rem
+    for (const [name, f, scope, rule] of [
+        ['checkbox.focus-ring-radius', (m) => num('checkbox.border-radius', m) + num('checkbox.focus-ring.offset', m) + num('checkbox.focus-ring.width', m), 'r', 'checkbox.border-radius + checkbox.focus-ring.offset + checkbox.focus-ring.width. Radius of the focus outline as the browser draws it'],
+        ['select.option.check-padding-left', (m) => num('select.option.padding', m, 1) + num('select.checkmark.gutter-start', m), 'g', 'select.option.padding (x) + select.checkmark.gutter-start (negative). Left padding of an option row in checkmark mode (.p-select-option-check-icon margin-inline-start)'],
+        ['toggleswitch.sm.width', (m) => num('toggleswitch.width', m) - 2 * STEP, 'wh', 'DESIGN-ONLY, not in Aura or code (#71): toggleswitch.width − 0.5rem'],
+        ['toggleswitch.sm.height', (m) => num('toggleswitch.height', m) - STEP, 'wh', 'DESIGN-ONLY, not in Aura or code (#71): toggleswitch.height − 0.25rem'],
+        ['toggleswitch.sm.handle-size', (m) => num('toggleswitch.handle.size', m) - STEP, 'wh', 'DESIGN-ONLY, not in Aura or code (#71): toggleswitch.handle.size − 0.25rem'],
+        ['toggleswitch.lg.width', (m) => num('toggleswitch.width', m) + 2 * STEP, 'wh', 'DESIGN-ONLY, not in Aura or code (#71): toggleswitch.width + 0.5rem'],
+        ['toggleswitch.lg.height', (m) => num('toggleswitch.height', m) + STEP, 'wh', 'DESIGN-ONLY, not in Aura or code (#71): toggleswitch.height + 0.25rem'],
+        ['toggleswitch.lg.handle-size', (m) => num('toggleswitch.handle.size', m) + STEP, 'wh', 'DESIGN-ONLY, not in Aura or code (#71): toggleswitch.handle.size + 0.25rem']
+    ]) {
+        if (known.has(name)) throw new Error(`Derived name clash ${name}`);
+        add('components', { name: fname(name), type: 'FLOAT', scope, values: Object.fromEntries(MODES.components.map((m) => [m, r4(f(m))])), codeSyntax: null, description: `Derived (no CSS variable): ${rule}.` });
+        plan.derived.push({ token: name, derived: name, rule: 'group b' });
+    }
+}
+// derived: padding of a field next to an inline icon or button (Group A, DECISIONS #61). Aura CSS uses base form-field values for every size.
+{
+    const num = (p, m) => { const l = leaves.find((x) => x.path === p); if (!l) throw new Error(`Derived field padding: ${p} missing`); let v = l.node.$value; if (v && typeof v === 'object') v = v[m.toLowerCase()]; const mm = String(v).match(ALIAS); return mm ? num(mm[1], m) : dims(v)[0]; };
+    for (const [name, f, rule] of [
+        ['iconfield.input-padding', (m) => num('form-field.padding-x', m) * 2 + num('icon-size', m), 'form-field.padding-x × 2 + icon-size (.p-iconfield .p-inputtext padding on the icon side)'],
+        ['password.input-padding', (m) => num('form-field.padding-x', m) * 2 + num('icon-size', m), 'form-field.padding-x × 2 + icon-size (.p-password:has(toggle-mask) .p-password-input padding-inline-end)'],
+        ['datepicker.input-padding', (m) => num('form-field.padding-x', m) * 2 + num('icon-size', m), 'form-field.padding-x × 2 + icon-size (.p-datepicker:has(.p-datepicker-input-icon-container) .p-datepicker-input padding-inline-end)'],
+        ['inputnumber.stacked-input-padding', (m) => num('inputnumber.button.width', m) + num('form-field.padding-x', m), 'inputnumber.button.width + form-field.padding-x (.p-inputnumber-stacked .p-inputnumber-input padding-inline-end)']
+    ]) {
+        if (known.has(name)) throw new Error(`Derived name clash ${name}`);
+        add('components', { name: fname(name), type: 'FLOAT', scope: 'g', values: Object.fromEntries(MODES.components.map((m) => [m, r4(f(m))])), codeSyntax: null, description: `Derived (no CSS variable): ${rule}.` });
+        plan.derived.push({ token: name, derived: name, rule: 'field padding' });
+    }
+}
 // derived: label line height in px per size = font-size × typography.base.line-height (PrimeNG keeps it on icon-only
 // buttons with a hidden ::after nbsp; Figma keeps it with an icon slot bound to this height). DECISIONS #34.
 {
-    const res = (p, m) => { const l = leaves.find((x) => x.path === p); if (!l) throw new Error(`Derived line height: ${p} missing`); const r = l.node.$extensions.primeng.resolved; return r && typeof r === 'object' ? r[m.toLowerCase()] : r; };
+    const res = (p, m) => { const l = leaves.find((x) => x.path === p); if (!l) throw new Error(`Derived line height: ${p} missing`); let v = l.node.$value; if (v && typeof v === 'object') v = v[m.toLowerCase()]; const mm = String(v).match(ALIAS); return mm ? res(mm[1], m) : v; }; // themed $value, as above
     for (const [name, size] of [['button.line-height', 'typography.base.font-size'], ['button.sm.line-height', 'button.sm.font-size'], ['button.lg.line-height', 'button.lg.font-size']]) {
         if (known.has(name)) throw new Error(`Derived name clash ${name}`);
         const values = Object.fromEntries(MODES.components.map((m) => [m, r4(dims(res(size, m))[0] * Number(res('typography.base.line-height', m)))]));
@@ -469,7 +517,7 @@ for (const c of calls) if (c.code.length > 50000) throw new Error(`${c.file} is 
 await mkdir(join(OUT, 'calls'), { recursive: true });
 for (const c of calls) await writeFile(join(OUT, 'calls', c.file), c.code + '\n');
 // overwrite in place (no delete); flag generated files this run no longer produces (99-verify.js is figma-verify.mjs's)
-const stale = (await readdir(join(OUT, 'calls'))).filter((f) => /^\d\d-.*\.js$/.test(f) && f !== '99-verify.js' && !f.startsWith('06-icons') && !f.startsWith('07-button') && !f.startsWith('07-badge') && !f.startsWith('08-inputtext') && !f.startsWith('09-tag') && !calls.some((c) => c.file === f));
+const stale = (await readdir(join(OUT, 'calls'))).filter((f) => /^\d\d-.*\.js$/.test(f) && f !== '99-verify.js' && !f.startsWith('06-icons') && !/^1[2-9]-/.test(f) && !f.startsWith('07-button') && !f.startsWith('07-badge') && !f.startsWith('08-inputtext') && !f.startsWith('09-tag') && !f.startsWith('10-theme') && !f.startsWith('10-textarea') && !f.startsWith('11-composite') && !f.startsWith('11-restore') && !calls.some((c) => c.file === f));
 if (stale.length) console.warn(`Stale call files (not produced by this run, do NOT run them; delete by hand): ${stale.join(', ')}`);
 const summary = {
     generated: new Date().toISOString(),

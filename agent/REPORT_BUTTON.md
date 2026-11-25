@@ -75,7 +75,7 @@ Long label + icon swap + badge grows at every size, never clipped · Dark mode c
 - Unbound values found at first scan: 0 paints; 4 binding defects found by verify (items 1–4)
 - States missing or wrong at first pass: disabled/loading opacity (all), outlined/text hover/active backgrounds, text border
 - Figma properties matching PrimeNG inputs: 100% of visual inputs mapped (State partly design-only)
-- Visual match (1–5): **4** (Witoon, 2026-11-24) · Designer review time: _designer_ · Estimated hand-build time: _designer_
+- Visual match (1–5): **4** (Witoon, 2026-11-24) · Designer review time: **20–30 min** · Estimated hand-build time: **4–6 h** (Witoon, 2026-11-24)
 
 ## To add later
 - `Rounded` axis on Button Plain (Sakai uses `text + rounded + plain`; deferred, #49).

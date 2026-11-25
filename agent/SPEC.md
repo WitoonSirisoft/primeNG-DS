@@ -3,7 +3,7 @@
 > **Audience:** the AI agent that builds the Figma design system, and the humans reviewing its work.
 > **Rule zero:** if this spec and your assumptions disagree, this spec wins. If this spec is silent or unclear, **stop and ask**; do not guess.
 
-All placeholders were filled on 2026-11-19 (v0.4, see section 13). Decisions behind them are logged in `agent/DECISIONS.md`.
+All placeholders were filled on 2026-11-19 (v0.4); pilot lessons added 2026-11-24 (v0.5, see section 13). Decisions behind them are logged in `agent/DECISIONS.md`.
 
 ---
 
@@ -158,14 +158,23 @@ Every one of these must be bound to a variable, never a literal:
 
 **Check:** after building, scan the component for any property still showing a raw value. Every raw value is a defect.
 
+**Figma value rules (learned in the pilot, DECISIONS #41, #42, #48):**
+- Opacity variables are stored in **percent** (CSS fraction × 100): Figma reads a bound opacity as percent.
+- CSS `transparent` is the only allowed literal paint: a solid paint at 0% opacity (Figma ignores paint opacity on bound paints). Record each use in the report.
+- A bound paint must also store its resolved colour (Figma draws strokes with the stored colour).
+- Text layers bound to a text property: set `autoRename = false` and give the layer a fixed name; **never** format such text per variant (bold, underline, size): Figma copies that formatting to every variant bound to the same property. Only the fill may differ per variant.
+- Derived variables (values with no CSS variable, e.g. focus-ring radius = radius + offset + width) are computed by the generator from the **themed** values, never from the Base's resolved values.
+
 ### 5.3 Theming contract (the Base must be brand-swappable)
 
 - **Brand-dependent values live only in Primitives and Semantic.** Components reference **component tokens**, which alias **semantic** tokens. A component must never reference a primitive directly.
 - **Themable axes** that must each be controllable through tokens: color palette (primary and neutral/surface), font family, radius scale, spacing/density. If an axis cannot be changed through tokens (hardcoded or missing token), report it as a Base defect.
-- **Theme files** (`tokens/themes/*.json`) override **values only**. They never rename variables or add structure.
+- **Theme files** (`tokens/themes/*.json`) override **values only**. They never rename variables or add structure. Where Aura stores a fixed number in a component token instead of an alias to the global scale (`button.rounded-border-radius`, `tag.padding`, `badge.padding`), the theme file overrides that component token too, so radius and density reach every component (#58).
 - The Base ships with the Aura default values, labeled as defaults. No client names, logos, or brand-specific values appear anywhere in the Base.
 - **Acceptance test:** apply a test theme by replacing Primitive/Semantic values only. Every component must restyle correctly with no manual edits.
 - **Reproducible creation:** the variable creation procedure must be re-runnable and must **update existing variables by name** rather than creating duplicates. Later sync depends on this.
+- **Theme update procedure (#57):** `npm run figma:plan -- --theme=<file> --out=<dir>`, then `node scripts/figma-theme-diff.mjs --dir=<dir>` → one call with only the changed values (`10-theme-values.js`) and its undo (`11-restore-base.js`). Never creates, renames or deletes variables. Verify with a scan of every variant and a fingerprint check.
+- **Brand on the library (#59):** one fork of the Base per client, themed by the procedure above and published as the client library; project files use only the client library. Base updates reach forks by re-running the changed generator calls (keys stay stable), then re-applying the theme. Never edit a fork by hand. Full flow: `agent/PILOT_SUMMARY.md`.
 
 ---
 
@@ -199,7 +208,7 @@ Build and verify these where the PrimeNG component supports them: `default`, `ho
 
 ### 6.5 Accessibility minimums
 
-- Text-to-background contrast follows WCAG AA (4.5:1 body text, 3:1 large text and UI boundaries) in **both** Light and Dark modes. Report failures; do not alter tokens to fix them.
+- Text-to-background contrast follows WCAG AA (4.5:1 body text, 3:1 large text and UI boundaries) in **both** Light and Dark modes. Report failures; do not alter tokens to fix them. The Base keeps Aura/Sakai colours 1:1 even where Light mode fails (#49a); the documentation frame must say that a real project theme has to fix them.
 - Interactive minimum target size: note any component below `24x24px` (WCAG 2.2 AA) in the documentation frame.
 
 ### 6.6 Built to be extended
@@ -253,7 +262,7 @@ Projects will sometimes need things PrimeNG does not do out of the box. The mapp
 - Merging unrelated components into one set
 - Inventing tokens, states, variants or values not found in sources
 - Deleting or overwriting published components without an explicit instruction
-- Working directly in `02 Components` before review
+- Working directly in `02 Components` before review, **except** for a component built by a generator that has already passed a review gate: it may be built on `02 Components` with `Status: experimental` and COMPONENTS.md status `in progress` until its own review gate (#52)
 - Changing anything outside the pages and components named in the current task
 - Renaming published components, properties, values or variables (see 6.7)
 - Referencing primitive variables directly from components
@@ -268,7 +277,8 @@ Follow in order. Do not skip steps. Work in **small steps**, inspecting and vali
 1. **Inspect.** Read the PrimeNG component source and docs, its story, and its screenshots. List: inputs, allowed values, states, sub-parts, tokens used.
 2. **Plan.** Write a short plan (see format below) and **wait for approval**. During the pilot this applies to **every** component (N = 0), whatever its variant count or ambiguity.
 3. **Check tokens.** Confirm every needed token exists as a variable. List missing ones.
-4. **Build in Sandbox.** Start with the base variant, then add axes one at a time.
+4. **Build in Sandbox** (or on `02 Components`, see section 7 exception). Build with a generator script (`app/sakai-ng/scripts/figma-<component>.mjs`): variant rules in one function, validated in Node against `tokens/figma/plan.json`, upsert by name, rebuild in place, never delete; batches of about 48 variants per call. Start with the base variant, then add axes. Review after each axis only for very large sets (several hundred variants, #39); otherwise one review gate after the full set (#52).
+   **Rebuild = update in place (#68).** A generator never clears a variant's layers. Use `scripts/lib/figma-sync.mjs`: `build0(c,it)` draws into a temporary standalone component (building inside a set is ~20x slower), property links go through `REF(node,{...})`, and the helper copies only the differences onto the real layers (match by name + type), so node IDs and designers' instance overrides survive. Give every layer a stable, unique name among its siblings.
 5. **Bind.** Bind all values to variables; run the literal-value scan.
 6. **Validate visually.** Compare each state against its screenshot (see 8.1).
 7. **Stress test.** Long text, narrow width, Dark mode, each size.
@@ -411,6 +421,8 @@ Date:
 | before 2026-11-19 | Initial version | Pilot start |
 | before 2026-11-19 | v0.2: added end-goal context (section 0), theming contract (5.3), extensibility and versioning (6.6, 6.7), extra definition-of-done items | Base must serve as foundation for Custom and Centralized stages |
 | before 2026-11-19 | v0.3: added deviation classification (6.8), `deviation` mapping columns, deviation ticket template (section 12) | Development may need changes beyond PrimeNG's original structure |
+| 2026-11-24 | v0.5: pilot lessons: Figma value rules (5.2), theme files may override Aura component literals, theme update procedure and fork-per-client brand approach (5.3), contrast note (6.5), generator workflow and `02 Components` exception (7, 8) | Pilot Day 5–6 (DECISIONS #39–#59, PILOT_SUMMARY.md) |
 | 2026-11-19 | v0.4: filled all placeholders (versions, paths, thresholds); token file moved to `tokens/base/tokens.json`; recorded naming exceptions (InputText `Size`/`pSize`, Tag `none`, Form row pattern); 14px rem base; screenshot method and tolerance at 2x | Pilot Day 3.3 (DECISIONS #15–#22) |
 
 > **Maintenance rule:** every recurring mistake the agent makes becomes a new rule in this file. Fix the spec, not just the output.
+- 2026-11-25: §8 step 4 — rebuild = update in place (#68, `scripts/lib/figma-sync.mjs`).

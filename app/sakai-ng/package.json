@@ -15,7 +15,13 @@
         "figma:icons": "node scripts/figma-icons.mjs",
         "figma:button": "node scripts/figma-button.mjs",
         "figma:inputtext": "node scripts/figma-inputtext.mjs",
-        "figma:tag": "node scripts/figma-tag.mjs"
+        "figma:tag": "node scripts/figma-tag.mjs",
+        "figma:composite": "node scripts/figma-composite.mjs",
+        "figma:textarea": "node scripts/figma-inputtext.mjs --set=textarea",
+        "figma:datepicker": "node scripts/figma-datepicker.mjs",
+        "figma:toggles": "node scripts/figma-toggles.mjs",
+        "figma:select": "node scripts/figma-select.mjs",
+        "figma:message": "node scripts/figma-message.mjs"
     },
     "private": true,
     "dependencies": {

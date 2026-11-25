@@ -61,7 +61,7 @@ Long value: width stays 172, single line, truncated · Fill in a 400 row: 400×3
 - Fix rounds needed (designer review): _pending review_ · agent-side fix rounds: 2 (above)
 - Unbound values found at first scan: 0 · States missing or wrong at first pass: 0
 - Figma properties matching PrimeNG inputs: 100% of visual inputs mapped (State/Content partly design-only)
-- Visual match (1–5): **5** (Witoon, 2026-11-24) · Designer review time: _designer_ · Estimated hand-build time: _designer_
+- Visual match (1–5): **5** (Witoon, 2026-11-24) · Designer review time: **10–15 min** · Estimated hand-build time: **2–3 h** (Witoon, 2026-11-24)
 
 ## Needs human decision
 1. ~~Long value~~ → keep "…", documented (#54).
