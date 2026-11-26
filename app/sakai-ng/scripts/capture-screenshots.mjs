@@ -266,6 +266,138 @@ function sidebarmenuPlan() {
     p.push({ ...pl('sidebarmenu', 'sidebarmenu', { active: 'login', expanded: true }, ['expanded', 'item-error'], ['hover']), hoverSel: '.layout-root-submenulist ul a >> nth=1' });
     return p;
 }
+// Extras (#102): Tooltip, Timeline, Stepper, Tree, TreeTable, DataView, Chart
+function tooltipPlan() {
+    const p = ['top', 'right', 'bottom', 'left'].map((position) => ({ ...pl('tooltip', 'tooltip', { position }, [`position-${position}`], ['hover']), hoverSel: '.p-button' }));
+    p.push({ ...pl('tooltip', 'tooltip', { position: 'top', long: true }, ['position-top', 'long'], ['hover']), hoverSel: '.p-button' });
+    return p;
+}
+function timelinePlan() {
+    const p = ['left', 'right', 'alternate'].map((align) => pl('timeline', 'timeline', { align }, ['vertical', `align-${align}`], ['static']));
+    p.push(pl('timeline', 'timeline', { align: 'left', opposite: true }, ['vertical', 'align-left', 'opposite'], ['static']));
+    p.push(pl('timeline', 'timeline', { layout: 'horizontal', align: 'top' }, ['horizontal', 'align-top'], ['static']));
+    return p;
+}
+function stepperPlan() {
+    const p = [1, 2, 3].map((active) => pl('stepper', 'stepper', { active }, ['list', `active-${active}`], ['static']));
+    p.push(pl('stepper', 'stepper', { active: 2, panels: true }, ['panels', 'active-2'], ['static']));
+    p.push({ ...pl('stepper', 'stepper', { active: 1 }, ['list', 'active-1', 'step-2'], ['hover']), hoverSel: '.p-step-header >> nth=1' });
+    return p;
+}
+function treePlan() {
+    const p = ['checkbox', 'single'].map((selection) => pl('tree', 'tree', { selection }, [`selection-${selection}`], ['static']));
+    p.push({ ...pl('tree', 'tree', { selection: 'single' }, ['selection-single', 'node-home'], ['hover']), hoverSel: '.p-tree-node-content >> nth=4' });
+    return p;
+}
+function treetablePlan() {
+    const p = [true, false].map((checkbox) => pl('treetable', 'treetable', { checkbox }, [checkbox ? 'checkbox' : 'plain'], ['static']));
+    p.push({ ...pl('treetable', 'treetable', { checkbox: false }, ['plain', 'row-3'], ['hover']), hoverSel: 'tbody tr >> nth=2' });
+    return p;
+}
+function dataviewPlan() {
+    return ['list', 'grid'].map((layout) => pl('dataview', 'dataview', { layout }, [`layout-${layout}`], ['static']));
+}
+function chartPlan() {
+    return ['line', 'bar', 'pie', 'doughnut'].map((type) => pl('chart', 'chart', { type }, [`type-${type}`], ['static']));
+}
+// Forms 2 (#101): InputGroup, SelectButton, MultiSelect, AutoComplete, FileUpload
+function inputgroupPlan() {
+    return ['icon', 'multi', 'button', 'checkbox'].map((row) => pl('inputgroup', 'inputgroup', { row }, [`row-${row}`], ['default']));
+}
+function selectbuttonPlan() {
+    const p = SIZES.map((size) => pl('selectbutton', 'selectbutton', { size }, [`size-${size}`], ['default']));
+    p.push({ ...pl('selectbutton', 'selectbutton', {}, ['size-base', 'option-2'], ['hover']), hoverSel: '.p-togglebutton >> nth=1' });
+    p.push(pl('selectbutton', 'selectbutton', { disabled: true }, ['size-base', 'disabled'], ['default']));
+    p.push(pl('selectbutton', 'selectbutton', { invalid: true }, ['size-base', 'invalid'], ['default']));
+    p.push(pl('selectbutton', 'selectbutton', { icons: true }, ['size-base', 'icons'], ['default']));
+    return p;
+}
+function multiselectPlan() {
+    const p = [];
+    for (const variant of ['outlined', 'filled'])
+        for (const size of SIZES)
+            for (const selected of [false, true]) p.push(pl('multiselect', 'multiselect', { variant, size, selected }, [`variant-${variant}`, `size-${size}`, `content-${selected ? 'chips' : 'placeholder'}`], FIELD));
+    p.push(pl('multiselect', 'multiselect', { selected: true, chip: false }, ['variant-outlined', 'size-base', 'content-comma'], ['default']));
+    p.push(pl('multiselect', 'multiselect', { selected: true, showClear: true }, ['variant-outlined', 'size-base', 'content-chips', 'showclear'], ['default']));
+    p.push(pl('multiselect', 'multiselect', { invalid: true }, ['variant-outlined', 'size-base', 'content-placeholder', 'invalid'], ['default']));
+    p.push(pl('multiselect', 'multiselect', { disabled: true }, ['variant-outlined', 'size-base', 'content-placeholder'], ['disabled']));
+    for (const filter of [false, true]) p.push({ ...pl('multiselect', 'multiselect', { selected: true, filter }, ['variant-outlined', 'size-base', 'content-chips', filter ? 'filter' : 'panel'], ['open'], 'playground'), story: 'components-multiselect--open' });
+    return p;
+}
+function autocompletePlan() {
+    const p = [];
+    for (const variant of ['outlined', 'filled'])
+        for (const size of SIZES) {
+            p.push(pl('autocomplete', 'autocomplete', { variant, size }, [`variant-${variant}`, `size-${size}`, 'content-placeholder'], FIELD));
+            p.push(pl('autocomplete', 'autocomplete', { variant, size, multiple: true, selected: true }, [`variant-${variant}`, `size-${size}`, 'content-chips'], FIELD));
+        }
+    p.push(pl('autocomplete', 'autocomplete', { dropdown: false }, ['variant-outlined', 'size-base', 'content-placeholder', 'no-dropdown'], ['default']));
+    p.push(pl('autocomplete', 'autocomplete', { invalid: true }, ['variant-outlined', 'size-base', 'content-placeholder', 'invalid'], ['default']));
+    p.push(pl('autocomplete', 'autocomplete', { disabled: true }, ['variant-outlined', 'size-base', 'content-placeholder'], ['disabled']));
+    p.push({ ...pl('autocomplete', 'autocomplete', {}, ['variant-outlined', 'size-base', 'panel'], ['default'], 'playground'), story: 'components-autocomplete--open', clickSel: '.p-autocomplete-dropdown' });
+    // (removed: hover option with a value selected — the dropdown click did not open the panel when a value is set; option hover = list tokens, same as Select Option)
+    return p;
+}
+function fileuploadPlan() {
+    const p = [pl('fileupload', 'fileupload', { mode: 'advanced' }, ['advanced', 'empty'], ['default']), pl('fileupload', 'fileupload', { mode: 'advanced', files: true }, ['advanced', 'files'], ['default']), pl('fileupload', 'fileupload', { mode: 'basic' }, ['basic'], ['default'])];
+    p.push({ ...pl('fileupload', 'fileupload', { mode: 'basic' }, ['basic'], ['hover']), hoverSel: '.p-button' });
+    return p;
+}
+// Batch 3 (#100): Sakai Card, Accordion, Divider, Avatar, Chip, Breadcrumb, Menubar
+function cardPlan() {
+    return [pl('card', 'card', { title: true }, ['title'], ['static']), pl('card', 'card', { title: false }, ['no-title'], ['static']), pl('card', 'card', { stacked: true }, ['stacked'], ['static'])];
+}
+function accordionPlan() {
+    const p = [];
+    for (const open of ['0', 'none']) p.push(pl('accordion', 'accordion', { open }, [`open-${open}`], ['default']));
+    p.push(pl('accordion', 'accordion', { open: '0', disabled: true }, ['open-0', 'disabled'], ['default']));
+    p.push({ ...pl('accordion', 'accordion', { open: '0' }, ['open-0', 'header-2'], ['hover']), hoverSel: '.p-accordionheader >> nth=1' });
+    p.push({ ...pl('accordion', 'accordion', { open: '0' }, ['open-0', 'header-1'], ['hover']), hoverSel: '.p-accordionheader >> nth=0' });
+    return p;
+}
+function dividerPlan() {
+    const p = [];
+    for (const type of ['solid', 'dashed', 'dotted']) p.push(pl('divider', 'divider', { type }, ['horizontal', `type-${type}`], ['static']));
+    for (const align of ['left', 'center', 'right']) p.push(pl('divider', 'divider', { align, content: true }, ['horizontal', 'content', `align-${align}`], ['static']));
+    p.push(pl('divider', 'divider', { layout: 'vertical' }, ['vertical'], ['static']));
+    p.push(pl('divider', 'divider', { layout: 'vertical', align: 'center', content: true }, ['vertical', 'content', 'align-center'], ['static']));
+    return p;
+}
+function avatarPlan() {
+    const p = [];
+    for (const content of ['label', 'icon']) for (const size of ['normal', 'large', 'xlarge']) for (const shape of ['square', 'circle']) p.push(pl('avatar', 'avatar', { content, size, shape }, [`content-${content}`, `size-${size}`, `shape-${shape}`], ['static']));
+    for (const size of ['normal', 'large', 'xlarge']) p.push(pl('avatar', 'avatar', { group: true, size, shape: 'circle' }, ['group', `size-${size}`], ['static']));
+    return p;
+}
+function chipPlan() {
+    const p = [];
+    for (const icon of [false, true]) for (const removable of [false, true]) p.push(pl('chip', 'chip', { icon, removable }, [icon ? 'icon' : 'label', removable ? 'removable' : 'fixed'], ['static']));
+    return p;
+}
+function breadcrumbPlan() {
+    const p = [pl('breadcrumb', 'breadcrumb', {}, ['sakai'], ['default']), pl('breadcrumb', 'breadcrumb', { icons: true }, ['icons'], ['default'])];
+    p.push({ ...pl('breadcrumb', 'breadcrumb', {}, ['sakai', 'item-2'], ['hover']), hoverSel: '.p-breadcrumb-item-link >> nth=2' });
+    p.push({ ...pl('breadcrumb', 'breadcrumb', { icons: true }, ['icons', 'item-1'], ['hover']), hoverSel: '.p-breadcrumb-item-link >> nth=1' });
+    return p;
+}
+function menubarPlan() {
+    const p = [pl('menubar', 'menubar', { search: true }, ['search'], ['default']), pl('menubar', 'menubar', { search: false }, ['plain'], ['default'])];
+    p.push({ ...pl('menubar', 'menubar', { search: false }, ['plain', 'item-quit'], ['hover']), hoverSel: '.p-menubar-root-list > .p-menubar-item >> nth=4' });
+    p.push({ ...pl('menubar', 'menubar', { search: false, tall: true }, ['open-customers'], ['hover']), clickSel: '.p-menubar-root-list > .p-menubar-item > .p-menubar-item-content >> nth=0', hoverSel: '.p-menubar-submenu .p-menubar-item-content >> nth=0' });
+    p.push(pl('menubar', 'menubar', { search: true, wide: true }, ['search', 'wide'], ['default']));
+    return p;
+}
+// Batch 2 (#98): Tabs (Sakai Panels / Menu demos)
+function tabsPlan() {
+    const p = [];
+    p.push(pl('tabs', 'tabs', { layout: 'panel' }, ['layout-panel'], ['default']));
+    p.push(pl('tabs', 'tabs', { layout: 'list' }, ['layout-list'], ['default']));
+    p.push(pl('tabs', 'tabs', { layout: 'list', icons: true, badge: true }, ['layout-list', 'icons-badge'], ['default']));
+    p.push(pl('tabs', 'tabs', { layout: 'list', disabled: true }, ['layout-list', 'disabled'], ['default']));
+    p.push({ ...pl('tabs', 'tabs', { layout: 'list' }, ['layout-list', 'tab-2'], ['hover']), hoverSel: '.p-tab >> nth=1' });
+    p.push({ ...pl('tabs', 'tabs', { layout: 'list', icons: true, badge: true }, ['layout-list', 'icons-badge', 'tab-2'], ['hover']), hoverSel: '.p-tab >> nth=1' });
+    return p;
+}
 // Batch 2 (#95): Menu (Sakai UI Kit menus)
 function menuPlan() {
     const p = [];
@@ -299,7 +431,7 @@ function datepickerPlan() {
     return p;
 }
 const PLANS = { button: buttonPlan, inputtext: inputtextPlan, tag: tagPlan, textarea: textareaPlan, password: passwordPlan, iconfield: iconfieldPlan, inputnumber: inputnumberPlan,
-    checkbox: () => choicePlan('checkbox', 'checkbox'), radiobutton: () => choicePlan('radiobutton', 'radiobutton'), toggleswitch: () => choicePlan('toggleswitch', 'toggleswitch'), select: selectPlan, message: messagePlan, datepicker: datepickerPlan, datatable: datatablePlan, paginator: paginatorPlan, toolbar: toolbarPlan, splitbutton: splitbuttonPlan, dialog: dialogPlan, confirmdialog: confirmdialogPlan, toast: toastPlan, menu: menuPlan, sidebarmenu: sidebarmenuPlan };
+    checkbox: () => choicePlan('checkbox', 'checkbox'), radiobutton: () => choicePlan('radiobutton', 'radiobutton'), toggleswitch: () => choicePlan('toggleswitch', 'toggleswitch'), select: selectPlan, message: messagePlan, datepicker: datepickerPlan, datatable: datatablePlan, paginator: paginatorPlan, toolbar: toolbarPlan, splitbutton: splitbuttonPlan, dialog: dialogPlan, confirmdialog: confirmdialogPlan, toast: toastPlan, menu: menuPlan, sidebarmenu: sidebarmenuPlan, tabs: tabsPlan, card: cardPlan, accordion: accordionPlan, divider: dividerPlan, avatar: avatarPlan, chip: chipPlan, breadcrumb: breadcrumbPlan, menubar: menubarPlan, inputgroup: inputgroupPlan, selectbutton: selectbuttonPlan, multiselect: multiselectPlan, autocomplete: autocompletePlan, fileupload: fileuploadPlan, tooltip: tooltipPlan, timeline: timelinePlan, stepper: stepperPlan, tree: treePlan, treetable: treetablePlan, dataview: dataviewPlan, chart: chartPlan };
 
 // ---------------------------------------------------------------------------
 // Storybook URL building. Arg values: '!undefined' / '!true' / '!false' are Storybook URL specials.
@@ -343,7 +475,7 @@ function serve(root) {
 // ---------------------------------------------------------------------------
 // Capture one plan entry in one mode.
 // ---------------------------------------------------------------------------
-const ROOTS = '.p-button, .p-inputtext, .p-tag, .p-textarea, .p-select, .p-inputnumber, .p-checkbox, .p-radiobutton, .p-toggleswitch, .p-password, .p-iconfield, .p-message, .p-datepicker, .p-datatable, .p-paginator, .p-toolbar, .p-splitbutton, .p-dialog, .p-toast-message, .p-menu, .layout-sidebar'; // component roots (outer first in document order)
+const ROOTS = '.p-button, .p-inputtext, .p-tag, .p-textarea, .p-select, .p-inputnumber, .p-checkbox, .p-radiobutton, .p-toggleswitch, .p-password, .p-iconfield, .p-message, .p-datepicker, .p-datatable, .p-paginator, .p-toolbar, .p-splitbutton, .p-dialog, .p-toast-message, .p-menu, .layout-sidebar, .p-tabs, .sb-capture, .card, .p-accordion, .p-divider, .p-avatar-group, .p-avatar, .p-chip, .p-breadcrumb, .p-menubar, .p-inputgroup, .p-selectbutton, .p-multiselect, .p-autocomplete, .p-fileupload, .p-timeline, .p-stepper, .p-treetable, .p-tree, .p-dataview'; // component roots (outer first in document order)
 const rootSel = (cell) => ROOTS.split(', ').map((r) => `${cell} ${r}`).join(', ');
 const FREEZE_CSS = '*,*::before,*::after{animation-play-state:paused!important;animation-delay:0s!important;transition:none!important;caret-color:transparent!important}';
 
@@ -370,6 +502,7 @@ async function captureEntry(context, base, entry, mode) {
         for (const state of entry.states) {
             await page.mouse.move(0, 0);
             await page.evaluate(() => document.activeElement instanceof HTMLElement && document.activeElement.blur());
+            if (entry.clickSel) { await page.locator(`${cellSel} ${entry.clickSel}`).first().click(); await page.waitForTimeout(300); } // clickSel: open something first (e.g. a menubar submenu, #100)
             if (state === 'hover') await (entry.hoverSel ? page.locator(`${cellSel} ${entry.hoverSel}`).first() : target).hover(); // hoverSel: hover a part (e.g. one date cell)
             if (state === 'open') { await comp.click(); await page.waitForTimeout(400); } // Select panel / Password meter, kept inside the cell (appendTo self)
             if (state === 'focus') {

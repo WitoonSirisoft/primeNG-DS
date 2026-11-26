@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-26T03:49:52.878Z",
+  "generated": "2026-11-26T10:07:27.309Z",
   "settings": {
     "viewport": {
       "width": 1280,
@@ -17,8 +17,1738 @@
     "@angular/core": "21.2.26",
     "storybook": "10.6.7"
   },
-  "count": 1686,
+  "count": 2032,
   "images": [
+    {
+      "file": "accordion/accordion__open-0__disabled__state-default__dark.png",
+      "state": "default",
+      "w": 544,
+      "h": 226.64,
+      "mode": "dark",
+      "story": "components-accordion--playground",
+      "args": {
+        "open": "0",
+        "disabled": true
+      },
+      "lato": true
+    },
+    {
+      "file": "accordion/accordion__open-0__disabled__state-default__light.png",
+      "state": "default",
+      "w": 544,
+      "h": 226.64,
+      "mode": "light",
+      "story": "components-accordion--playground",
+      "args": {
+        "open": "0",
+        "disabled": true
+      },
+      "lato": true
+    },
+    {
+      "file": "accordion/accordion__open-0__header-1__state-hover__dark.png",
+      "state": "hover",
+      "w": 544,
+      "h": 226.64,
+      "mode": "dark",
+      "story": "components-accordion--playground",
+      "args": {
+        "open": "0"
+      },
+      "lato": true
+    },
+    {
+      "file": "accordion/accordion__open-0__header-1__state-hover__light.png",
+      "state": "hover",
+      "w": 544,
+      "h": 226.64,
+      "mode": "light",
+      "story": "components-accordion--playground",
+      "args": {
+        "open": "0"
+      },
+      "lato": true
+    },
+    {
+      "file": "accordion/accordion__open-0__header-2__state-hover__dark.png",
+      "state": "hover",
+      "w": 544,
+      "h": 226.64,
+      "mode": "dark",
+      "story": "components-accordion--playground",
+      "args": {
+        "open": "0"
+      },
+      "lato": true
+    },
+    {
+      "file": "accordion/accordion__open-0__header-2__state-hover__light.png",
+      "state": "hover",
+      "w": 544,
+      "h": 226.64,
+      "mode": "light",
+      "story": "components-accordion--playground",
+      "args": {
+        "open": "0"
+      },
+      "lato": true
+    },
+    {
+      "file": "accordion/accordion__open-0__state-default__dark.png",
+      "state": "default",
+      "w": 544,
+      "h": 226.64,
+      "mode": "dark",
+      "story": "components-accordion--playground",
+      "args": {
+        "open": "0"
+      },
+      "lato": true
+    },
+    {
+      "file": "accordion/accordion__open-0__state-default__light.png",
+      "state": "default",
+      "w": 544,
+      "h": 226.64,
+      "mode": "light",
+      "story": "components-accordion--playground",
+      "args": {
+        "open": "0"
+      },
+      "lato": true
+    },
+    {
+      "file": "accordion/accordion__open-none__state-default__dark.png",
+      "state": "default",
+      "w": 544,
+      "h": 147.89,
+      "mode": "dark",
+      "story": "components-accordion--playground",
+      "args": {
+        "open": "none"
+      },
+      "lato": true
+    },
+    {
+      "file": "accordion/accordion__open-none__state-default__light.png",
+      "state": "default",
+      "w": 544,
+      "h": 147.89,
+      "mode": "light",
+      "story": "components-accordion--playground",
+      "args": {
+        "open": "none"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-base__content-chips__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 60.09,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-base__content-chips__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 60.09,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-base__content-chips__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 60.09,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-base__content-chips__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 60.09,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-base__content-chips__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 60.09,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-base__content-chips__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 60.09,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-base__content-placeholder__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-base__content-placeholder__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-base__content-placeholder__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-base__content-placeholder__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-base__content-placeholder__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-base__content-placeholder__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-large__content-chips__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 60.09,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-large__content-chips__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 60.09,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-large__content-chips__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 60.09,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-large__content-chips__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 60.09,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-large__content-chips__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 60.09,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-large__content-chips__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 60.09,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-large__content-placeholder__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 38.39,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-large__content-placeholder__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 38.39,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-large__content-placeholder__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 38.39,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-large__content-placeholder__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 38.39,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-large__content-placeholder__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 38.39,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-large__content-placeholder__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 38.39,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-small__content-chips__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 60.09,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-small__content-chips__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 60.09,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-small__content-chips__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 60.09,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-small__content-chips__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 60.09,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-small__content-chips__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 60.09,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-small__content-chips__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 60.09,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-small__content-placeholder__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 27.19,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-small__content-placeholder__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 27.19,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-small__content-placeholder__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 27.19,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-small__content-placeholder__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 27.19,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-small__content-placeholder__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 27.19,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-filled__size-small__content-placeholder__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 27.19,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__content-chips__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 60.09,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__content-chips__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 60.09,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__content-chips__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 60.09,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__content-chips__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 60.09,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__content-chips__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 60.09,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__content-chips__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 60.09,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__content-placeholder__invalid__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "invalid": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__content-placeholder__invalid__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "invalid": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__content-placeholder__no-dropdown__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "dropdown": false
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__content-placeholder__no-dropdown__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "dropdown": false
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__content-placeholder__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__content-placeholder__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__content-placeholder__state-disabled__dark.png",
+      "state": "disabled",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "disabled": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__content-placeholder__state-disabled__light.png",
+      "state": "disabled",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "disabled": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__content-placeholder__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__content-placeholder__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__content-placeholder__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__content-placeholder__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__panel__state-default__dark.png",
+      "state": "default",
+      "w": 260,
+      "h": 300,
+      "mode": "dark",
+      "story": "components-autocomplete--open",
+      "args": {},
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-base__panel__state-default__light.png",
+      "state": "default",
+      "w": 260,
+      "h": 300,
+      "mode": "light",
+      "story": "components-autocomplete--open",
+      "args": {},
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-large__content-chips__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 60.09,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-large__content-chips__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 60.09,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-large__content-chips__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 60.09,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-large__content-chips__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 60.09,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-large__content-chips__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 60.09,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-large__content-chips__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 60.09,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-large__content-placeholder__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 38.39,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-large__content-placeholder__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 38.39,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-large__content-placeholder__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 38.39,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-large__content-placeholder__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 38.39,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-large__content-placeholder__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 38.39,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-large__content-placeholder__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 38.39,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-small__content-chips__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 60.09,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-small__content-chips__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 60.09,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-small__content-chips__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 60.09,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-small__content-chips__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 60.09,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-small__content-chips__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 60.09,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-small__content-chips__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 60.09,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small",
+        "multiple": true,
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-small__content-placeholder__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 27.19,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-small__content-placeholder__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 27.19,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-small__content-placeholder__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 27.19,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-small__content-placeholder__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 27.19,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-small__content-placeholder__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 27.19,
+      "mode": "dark",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small"
+      },
+      "lato": true
+    },
+    {
+      "file": "autocomplete/autocomplete__variant-outlined__size-small__content-placeholder__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 27.19,
+      "mode": "light",
+      "story": "components-autocomplete--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-icon__size-large__shape-circle__dark.png",
+      "state": "static",
+      "w": 42,
+      "h": 42,
+      "mode": "dark",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "icon",
+        "size": "large",
+        "shape": "circle"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-icon__size-large__shape-circle__light.png",
+      "state": "static",
+      "w": 42,
+      "h": 42,
+      "mode": "light",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "icon",
+        "size": "large",
+        "shape": "circle"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-icon__size-large__shape-square__dark.png",
+      "state": "static",
+      "w": 42,
+      "h": 42,
+      "mode": "dark",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "icon",
+        "size": "large",
+        "shape": "square"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-icon__size-large__shape-square__light.png",
+      "state": "static",
+      "w": 42,
+      "h": 42,
+      "mode": "light",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "icon",
+        "size": "large",
+        "shape": "square"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-icon__size-normal__shape-circle__dark.png",
+      "state": "static",
+      "w": 28,
+      "h": 28,
+      "mode": "dark",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "icon",
+        "size": "normal",
+        "shape": "circle"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-icon__size-normal__shape-circle__light.png",
+      "state": "static",
+      "w": 28,
+      "h": 28,
+      "mode": "light",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "icon",
+        "size": "normal",
+        "shape": "circle"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-icon__size-normal__shape-square__dark.png",
+      "state": "static",
+      "w": 28,
+      "h": 28,
+      "mode": "dark",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "icon",
+        "size": "normal",
+        "shape": "square"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-icon__size-normal__shape-square__light.png",
+      "state": "static",
+      "w": 28,
+      "h": 28,
+      "mode": "light",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "icon",
+        "size": "normal",
+        "shape": "square"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-icon__size-xlarge__shape-circle__dark.png",
+      "state": "static",
+      "w": 56,
+      "h": 56,
+      "mode": "dark",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "icon",
+        "size": "xlarge",
+        "shape": "circle"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-icon__size-xlarge__shape-circle__light.png",
+      "state": "static",
+      "w": 56,
+      "h": 56,
+      "mode": "light",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "icon",
+        "size": "xlarge",
+        "shape": "circle"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-icon__size-xlarge__shape-square__dark.png",
+      "state": "static",
+      "w": 56,
+      "h": 56,
+      "mode": "dark",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "icon",
+        "size": "xlarge",
+        "shape": "square"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-icon__size-xlarge__shape-square__light.png",
+      "state": "static",
+      "w": 56,
+      "h": 56,
+      "mode": "light",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "icon",
+        "size": "xlarge",
+        "shape": "square"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-label__size-large__shape-circle__dark.png",
+      "state": "static",
+      "w": 42,
+      "h": 42,
+      "mode": "dark",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "label",
+        "size": "large",
+        "shape": "circle"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-label__size-large__shape-circle__light.png",
+      "state": "static",
+      "w": 42,
+      "h": 42,
+      "mode": "light",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "label",
+        "size": "large",
+        "shape": "circle"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-label__size-large__shape-square__dark.png",
+      "state": "static",
+      "w": 42,
+      "h": 42,
+      "mode": "dark",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "label",
+        "size": "large",
+        "shape": "square"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-label__size-large__shape-square__light.png",
+      "state": "static",
+      "w": 42,
+      "h": 42,
+      "mode": "light",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "label",
+        "size": "large",
+        "shape": "square"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-label__size-normal__shape-circle__dark.png",
+      "state": "static",
+      "w": 28,
+      "h": 28,
+      "mode": "dark",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "label",
+        "size": "normal",
+        "shape": "circle"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-label__size-normal__shape-circle__light.png",
+      "state": "static",
+      "w": 28,
+      "h": 28,
+      "mode": "light",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "label",
+        "size": "normal",
+        "shape": "circle"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-label__size-normal__shape-square__dark.png",
+      "state": "static",
+      "w": 28,
+      "h": 28,
+      "mode": "dark",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "label",
+        "size": "normal",
+        "shape": "square"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-label__size-normal__shape-square__light.png",
+      "state": "static",
+      "w": 28,
+      "h": 28,
+      "mode": "light",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "label",
+        "size": "normal",
+        "shape": "square"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-label__size-xlarge__shape-circle__dark.png",
+      "state": "static",
+      "w": 56,
+      "h": 56,
+      "mode": "dark",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "label",
+        "size": "xlarge",
+        "shape": "circle"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-label__size-xlarge__shape-circle__light.png",
+      "state": "static",
+      "w": 56,
+      "h": 56,
+      "mode": "light",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "label",
+        "size": "xlarge",
+        "shape": "circle"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-label__size-xlarge__shape-square__dark.png",
+      "state": "static",
+      "w": 56,
+      "h": 56,
+      "mode": "dark",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "label",
+        "size": "xlarge",
+        "shape": "square"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__content-label__size-xlarge__shape-square__light.png",
+      "state": "static",
+      "w": 56,
+      "h": 56,
+      "mode": "light",
+      "story": "components-avatar--playground",
+      "args": {
+        "content": "label",
+        "size": "xlarge",
+        "shape": "square"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__group__size-large__dark.png",
+      "state": "static",
+      "w": 1236,
+      "h": 42,
+      "mode": "dark",
+      "story": "components-avatar--playground",
+      "args": {
+        "group": true,
+        "size": "large",
+        "shape": "circle"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__group__size-large__light.png",
+      "state": "static",
+      "w": 1236,
+      "h": 42,
+      "mode": "light",
+      "story": "components-avatar--playground",
+      "args": {
+        "group": true,
+        "size": "large",
+        "shape": "circle"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__group__size-normal__dark.png",
+      "state": "static",
+      "w": 1236,
+      "h": 28,
+      "mode": "dark",
+      "story": "components-avatar--playground",
+      "args": {
+        "group": true,
+        "size": "normal",
+        "shape": "circle"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__group__size-normal__light.png",
+      "state": "static",
+      "w": 1236,
+      "h": 28,
+      "mode": "light",
+      "story": "components-avatar--playground",
+      "args": {
+        "group": true,
+        "size": "normal",
+        "shape": "circle"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__group__size-xlarge__dark.png",
+      "state": "static",
+      "w": 1236,
+      "h": 56,
+      "mode": "dark",
+      "story": "components-avatar--playground",
+      "args": {
+        "group": true,
+        "size": "xlarge",
+        "shape": "circle"
+      },
+      "lato": true
+    },
+    {
+      "file": "avatar/avatar__group__size-xlarge__light.png",
+      "state": "static",
+      "w": 1236,
+      "h": 56,
+      "mode": "light",
+      "story": "components-avatar--playground",
+      "args": {
+        "group": true,
+        "size": "xlarge",
+        "shape": "circle"
+      },
+      "lato": true
+    },
+    {
+      "file": "breadcrumb/breadcrumb__icons__item-1__state-hover__dark.png",
+      "state": "hover",
+      "w": 544,
+      "h": 44.8,
+      "mode": "dark",
+      "story": "components-breadcrumb--playground",
+      "args": {
+        "icons": true
+      },
+      "lato": true
+    },
+    {
+      "file": "breadcrumb/breadcrumb__icons__item-1__state-hover__light.png",
+      "state": "hover",
+      "w": 544,
+      "h": 44.8,
+      "mode": "light",
+      "story": "components-breadcrumb--playground",
+      "args": {
+        "icons": true
+      },
+      "lato": true
+    },
+    {
+      "file": "breadcrumb/breadcrumb__icons__state-default__dark.png",
+      "state": "default",
+      "w": 544,
+      "h": 44.8,
+      "mode": "dark",
+      "story": "components-breadcrumb--playground",
+      "args": {
+        "icons": true
+      },
+      "lato": true
+    },
+    {
+      "file": "breadcrumb/breadcrumb__icons__state-default__light.png",
+      "state": "default",
+      "w": 544,
+      "h": 44.8,
+      "mode": "light",
+      "story": "components-breadcrumb--playground",
+      "args": {
+        "icons": true
+      },
+      "lato": true
+    },
+    {
+      "file": "breadcrumb/breadcrumb__sakai__item-2__state-hover__dark.png",
+      "state": "hover",
+      "w": 544,
+      "h": 44.8,
+      "mode": "dark",
+      "story": "components-breadcrumb--playground",
+      "args": {},
+      "lato": true
+    },
+    {
+      "file": "breadcrumb/breadcrumb__sakai__item-2__state-hover__light.png",
+      "state": "hover",
+      "w": 544,
+      "h": 44.8,
+      "mode": "light",
+      "story": "components-breadcrumb--playground",
+      "args": {},
+      "lato": true
+    },
+    {
+      "file": "breadcrumb/breadcrumb__sakai__state-default__dark.png",
+      "state": "default",
+      "w": 544,
+      "h": 44.8,
+      "mode": "dark",
+      "story": "components-breadcrumb--playground",
+      "args": {},
+      "lato": true
+    },
+    {
+      "file": "breadcrumb/breadcrumb__sakai__state-default__light.png",
+      "state": "default",
+      "w": 544,
+      "h": 44.8,
+      "mode": "light",
+      "story": "components-breadcrumb--playground",
+      "args": {},
+      "lato": true
+    },
     {
       "file": "button/button__severity-contrast__size-base__style-outlined__state-active__dark.png",
       "state": "active",
@@ -9782,6 +11512,174 @@
       "lato": true
     },
     {
+      "file": "card/card__no-title__dark.png",
+      "state": "static",
+      "w": 544,
+      "h": 98,
+      "mode": "dark",
+      "story": "components-card--playground",
+      "args": {
+        "title": false
+      },
+      "lato": true
+    },
+    {
+      "file": "card/card__no-title__light.png",
+      "state": "static",
+      "w": 544,
+      "h": 98,
+      "mode": "light",
+      "story": "components-card--playground",
+      "args": {
+        "title": false
+      },
+      "lato": true
+    },
+    {
+      "file": "card/card__stacked__dark.png",
+      "state": "static",
+      "w": 544,
+      "h": 301,
+      "mode": "dark",
+      "story": "components-card--playground",
+      "args": {
+        "stacked": true
+      },
+      "lato": true
+    },
+    {
+      "file": "card/card__stacked__light.png",
+      "state": "static",
+      "w": 544,
+      "h": 301,
+      "mode": "light",
+      "story": "components-card--playground",
+      "args": {
+        "stacked": true
+      },
+      "lato": true
+    },
+    {
+      "file": "card/card__title__dark.png",
+      "state": "static",
+      "w": 544,
+      "h": 136.5,
+      "mode": "dark",
+      "story": "components-card--playground",
+      "args": {
+        "title": true
+      },
+      "lato": true
+    },
+    {
+      "file": "card/card__title__light.png",
+      "state": "static",
+      "w": 544,
+      "h": 136.5,
+      "mode": "light",
+      "story": "components-card--playground",
+      "args": {
+        "title": true
+      },
+      "lato": true
+    },
+    {
+      "file": "chart/chart__type-bar__dark.png",
+      "state": "static",
+      "w": 520,
+      "h": 360,
+      "mode": "dark",
+      "story": "components-chart--playground",
+      "args": {
+        "type": "bar"
+      },
+      "lato": true
+    },
+    {
+      "file": "chart/chart__type-bar__light.png",
+      "state": "static",
+      "w": 520,
+      "h": 360,
+      "mode": "light",
+      "story": "components-chart--playground",
+      "args": {
+        "type": "bar"
+      },
+      "lato": true
+    },
+    {
+      "file": "chart/chart__type-doughnut__dark.png",
+      "state": "static",
+      "w": 520,
+      "h": 360,
+      "mode": "dark",
+      "story": "components-chart--playground",
+      "args": {
+        "type": "doughnut"
+      },
+      "lato": true
+    },
+    {
+      "file": "chart/chart__type-doughnut__light.png",
+      "state": "static",
+      "w": 520,
+      "h": 360,
+      "mode": "light",
+      "story": "components-chart--playground",
+      "args": {
+        "type": "doughnut"
+      },
+      "lato": true
+    },
+    {
+      "file": "chart/chart__type-line__dark.png",
+      "state": "static",
+      "w": 520,
+      "h": 360,
+      "mode": "dark",
+      "story": "components-chart--playground",
+      "args": {
+        "type": "line"
+      },
+      "lato": true
+    },
+    {
+      "file": "chart/chart__type-line__light.png",
+      "state": "static",
+      "w": 520,
+      "h": 360,
+      "mode": "light",
+      "story": "components-chart--playground",
+      "args": {
+        "type": "line"
+      },
+      "lato": true
+    },
+    {
+      "file": "chart/chart__type-pie__dark.png",
+      "state": "static",
+      "w": 520,
+      "h": 360,
+      "mode": "dark",
+      "story": "components-chart--playground",
+      "args": {
+        "type": "pie"
+      },
+      "lato": true
+    },
+    {
+      "file": "chart/chart__type-pie__light.png",
+      "state": "static",
+      "w": 520,
+      "h": 360,
+      "mode": "light",
+      "story": "components-chart--playground",
+      "args": {
+        "type": "pie"
+      },
+      "lato": true
+    },
+    {
       "file": "checkbox/checkbox__variant-filled__size-base__checked-no__invalid__state-default__dark.png",
       "state": "default",
       "w": 17.5,
@@ -11054,6 +12952,110 @@
       "lato": true
     },
     {
+      "file": "chip/chip__icon__fixed__dark.png",
+      "state": "static",
+      "w": 82.44,
+      "h": 30.8,
+      "mode": "dark",
+      "story": "components-chip--playground",
+      "args": {
+        "icon": true,
+        "removable": false
+      },
+      "lato": true
+    },
+    {
+      "file": "chip/chip__icon__fixed__light.png",
+      "state": "static",
+      "w": 82.44,
+      "h": 30.8,
+      "mode": "light",
+      "story": "components-chip--playground",
+      "args": {
+        "icon": true,
+        "removable": false
+      },
+      "lato": true
+    },
+    {
+      "file": "chip/chip__icon__removable__dark.png",
+      "state": "static",
+      "w": 99.94,
+      "h": 30.8,
+      "mode": "dark",
+      "story": "components-chip--playground",
+      "args": {
+        "icon": true,
+        "removable": true
+      },
+      "lato": true
+    },
+    {
+      "file": "chip/chip__icon__removable__light.png",
+      "state": "static",
+      "w": 99.94,
+      "h": 30.8,
+      "mode": "light",
+      "story": "components-chip--playground",
+      "args": {
+        "icon": true,
+        "removable": true
+      },
+      "lato": true
+    },
+    {
+      "file": "chip/chip__label__fixed__dark.png",
+      "state": "static",
+      "w": 61.44,
+      "h": 30.8,
+      "mode": "dark",
+      "story": "components-chip--playground",
+      "args": {
+        "icon": false,
+        "removable": false
+      },
+      "lato": true
+    },
+    {
+      "file": "chip/chip__label__fixed__light.png",
+      "state": "static",
+      "w": 61.44,
+      "h": 30.8,
+      "mode": "light",
+      "story": "components-chip--playground",
+      "args": {
+        "icon": false,
+        "removable": false
+      },
+      "lato": true
+    },
+    {
+      "file": "chip/chip__label__removable__dark.png",
+      "state": "static",
+      "w": 78.94,
+      "h": 30.8,
+      "mode": "dark",
+      "story": "components-chip--playground",
+      "args": {
+        "icon": false,
+        "removable": true
+      },
+      "lato": true
+    },
+    {
+      "file": "chip/chip__label__removable__light.png",
+      "state": "static",
+      "w": 78.94,
+      "h": 30.8,
+      "mode": "light",
+      "story": "components-chip--playground",
+      "args": {
+        "icon": false,
+        "removable": true
+      },
+      "lato": true
+    },
+    {
       "file": "confirmdialog/confirmdialog__crud-delete__state-default__dark.png",
       "state": "default",
       "w": 450,
@@ -11278,6 +13280,54 @@
       "story": "components-datatable--playground",
       "args": {
         "size": "small"
+      },
+      "lato": true
+    },
+    {
+      "file": "dataview/dataview__layout-grid__dark.png",
+      "state": "static",
+      "w": 884,
+      "h": 440.17,
+      "mode": "dark",
+      "story": "components-dataview--playground",
+      "args": {
+        "layout": "grid"
+      },
+      "lato": true
+    },
+    {
+      "file": "dataview/dataview__layout-grid__light.png",
+      "state": "static",
+      "w": 884,
+      "h": 440.17,
+      "mode": "light",
+      "story": "components-dataview--playground",
+      "args": {
+        "layout": "grid"
+      },
+      "lato": true
+    },
+    {
+      "file": "dataview/dataview__layout-list__dark.png",
+      "state": "static",
+      "w": 884,
+      "h": 459.98,
+      "mode": "dark",
+      "story": "components-dataview--playground",
+      "args": {
+        "layout": "list"
+      },
+      "lato": true
+    },
+    {
+      "file": "dataview/dataview__layout-list__light.png",
+      "state": "static",
+      "w": 884,
+      "h": 459.98,
+      "mode": "light",
+      "story": "components-dataview--playground",
+      "args": {
+        "layout": "list"
       },
       "lato": true
     },
@@ -12272,6 +14322,306 @@
       "lato": true
     },
     {
+      "file": "divider/divider__horizontal__content__align-center__dark.png",
+      "state": "static",
+      "w": 384,
+      "h": 86.8,
+      "mode": "dark",
+      "story": "components-divider--playground",
+      "args": {
+        "align": "center",
+        "content": true
+      },
+      "lato": true
+    },
+    {
+      "file": "divider/divider__horizontal__content__align-center__light.png",
+      "state": "static",
+      "w": 384,
+      "h": 86.8,
+      "mode": "light",
+      "story": "components-divider--playground",
+      "args": {
+        "align": "center",
+        "content": true
+      },
+      "lato": true
+    },
+    {
+      "file": "divider/divider__horizontal__content__align-left__dark.png",
+      "state": "static",
+      "w": 384,
+      "h": 86.8,
+      "mode": "dark",
+      "story": "components-divider--playground",
+      "args": {
+        "align": "left",
+        "content": true
+      },
+      "lato": true
+    },
+    {
+      "file": "divider/divider__horizontal__content__align-left__light.png",
+      "state": "static",
+      "w": 384,
+      "h": 86.8,
+      "mode": "light",
+      "story": "components-divider--playground",
+      "args": {
+        "align": "left",
+        "content": true
+      },
+      "lato": true
+    },
+    {
+      "file": "divider/divider__horizontal__content__align-right__dark.png",
+      "state": "static",
+      "w": 384,
+      "h": 86.8,
+      "mode": "dark",
+      "story": "components-divider--playground",
+      "args": {
+        "align": "right",
+        "content": true
+      },
+      "lato": true
+    },
+    {
+      "file": "divider/divider__horizontal__content__align-right__light.png",
+      "state": "static",
+      "w": 384,
+      "h": 86.8,
+      "mode": "light",
+      "story": "components-divider--playground",
+      "args": {
+        "align": "right",
+        "content": true
+      },
+      "lato": true
+    },
+    {
+      "file": "divider/divider__horizontal__type-dashed__dark.png",
+      "state": "static",
+      "w": 384,
+      "h": 70,
+      "mode": "dark",
+      "story": "components-divider--playground",
+      "args": {
+        "type": "dashed"
+      },
+      "lato": true
+    },
+    {
+      "file": "divider/divider__horizontal__type-dashed__light.png",
+      "state": "static",
+      "w": 384,
+      "h": 70,
+      "mode": "light",
+      "story": "components-divider--playground",
+      "args": {
+        "type": "dashed"
+      },
+      "lato": true
+    },
+    {
+      "file": "divider/divider__horizontal__type-dotted__dark.png",
+      "state": "static",
+      "w": 384,
+      "h": 70,
+      "mode": "dark",
+      "story": "components-divider--playground",
+      "args": {
+        "type": "dotted"
+      },
+      "lato": true
+    },
+    {
+      "file": "divider/divider__horizontal__type-dotted__light.png",
+      "state": "static",
+      "w": 384,
+      "h": 70,
+      "mode": "light",
+      "story": "components-divider--playground",
+      "args": {
+        "type": "dotted"
+      },
+      "lato": true
+    },
+    {
+      "file": "divider/divider__horizontal__type-solid__dark.png",
+      "state": "static",
+      "w": 384,
+      "h": 70,
+      "mode": "dark",
+      "story": "components-divider--playground",
+      "args": {
+        "type": "solid"
+      },
+      "lato": true
+    },
+    {
+      "file": "divider/divider__horizontal__type-solid__light.png",
+      "state": "static",
+      "w": 384,
+      "h": 70,
+      "mode": "light",
+      "story": "components-divider--playground",
+      "args": {
+        "type": "solid"
+      },
+      "lato": true
+    },
+    {
+      "file": "divider/divider__vertical__content__align-center__dark.png",
+      "state": "static",
+      "w": 384,
+      "h": 120,
+      "mode": "dark",
+      "story": "components-divider--playground",
+      "args": {
+        "layout": "vertical",
+        "align": "center",
+        "content": true
+      },
+      "lato": true
+    },
+    {
+      "file": "divider/divider__vertical__content__align-center__light.png",
+      "state": "static",
+      "w": 384,
+      "h": 120,
+      "mode": "light",
+      "story": "components-divider--playground",
+      "args": {
+        "layout": "vertical",
+        "align": "center",
+        "content": true
+      },
+      "lato": true
+    },
+    {
+      "file": "divider/divider__vertical__dark.png",
+      "state": "static",
+      "w": 384,
+      "h": 120,
+      "mode": "dark",
+      "story": "components-divider--playground",
+      "args": {
+        "layout": "vertical"
+      },
+      "lato": true
+    },
+    {
+      "file": "divider/divider__vertical__light.png",
+      "state": "static",
+      "w": 384,
+      "h": 120,
+      "mode": "light",
+      "story": "components-divider--playground",
+      "args": {
+        "layout": "vertical"
+      },
+      "lato": true
+    },
+    {
+      "file": "fileupload/fileupload__advanced__empty__state-default__dark.png",
+      "state": "default",
+      "w": 544,
+      "h": 100.84,
+      "mode": "dark",
+      "story": "components-fileupload--playground",
+      "args": {
+        "mode": "advanced"
+      },
+      "lato": true
+    },
+    {
+      "file": "fileupload/fileupload__advanced__empty__state-default__light.png",
+      "state": "default",
+      "w": 544,
+      "h": 100.84,
+      "mode": "light",
+      "story": "components-fileupload--playground",
+      "args": {
+        "mode": "advanced"
+      },
+      "lato": true
+    },
+    {
+      "file": "fileupload/fileupload__advanced__files__state-default__dark.png",
+      "state": "default",
+      "w": 544,
+      "h": 258.55,
+      "mode": "dark",
+      "story": "components-fileupload--playground",
+      "args": {
+        "mode": "advanced",
+        "files": true
+      },
+      "lato": true
+    },
+    {
+      "file": "fileupload/fileupload__advanced__files__state-default__light.png",
+      "state": "default",
+      "w": 544,
+      "h": 258.55,
+      "mode": "light",
+      "story": "components-fileupload--playground",
+      "args": {
+        "mode": "advanced",
+        "files": true
+      },
+      "lato": true
+    },
+    {
+      "file": "fileupload/fileupload__basic__state-default__dark.png",
+      "state": "default",
+      "w": 544,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-fileupload--playground",
+      "args": {
+        "mode": "basic"
+      },
+      "lato": true
+    },
+    {
+      "file": "fileupload/fileupload__basic__state-default__light.png",
+      "state": "default",
+      "w": 544,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-fileupload--playground",
+      "args": {
+        "mode": "basic"
+      },
+      "lato": true
+    },
+    {
+      "file": "fileupload/fileupload__basic__state-hover__dark.png",
+      "state": "hover",
+      "w": 544,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-fileupload--playground",
+      "args": {
+        "mode": "basic"
+      },
+      "lato": true
+    },
+    {
+      "file": "fileupload/fileupload__basic__state-hover__light.png",
+      "state": "hover",
+      "w": 544,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-fileupload--playground",
+      "args": {
+        "mode": "basic"
+      },
+      "lato": true
+    },
+    {
       "file": "iconfield/iconfield__iconposition-left__psize-base__variant-filled__state-default__dark.png",
       "state": "default",
       "w": 196.5,
@@ -12784,6 +15134,102 @@
       "args": {
         "iconPosition": "right",
         "pSize": "small"
+      },
+      "lato": true
+    },
+    {
+      "file": "inputgroup/inputgroup__row-button__state-default__dark.png",
+      "state": "default",
+      "w": 404,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-inputgroup--playground",
+      "args": {
+        "row": "button"
+      },
+      "lato": true
+    },
+    {
+      "file": "inputgroup/inputgroup__row-button__state-default__light.png",
+      "state": "default",
+      "w": 404,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-inputgroup--playground",
+      "args": {
+        "row": "button"
+      },
+      "lato": true
+    },
+    {
+      "file": "inputgroup/inputgroup__row-checkbox__state-default__dark.png",
+      "state": "default",
+      "w": 404,
+      "h": 33.5,
+      "mode": "dark",
+      "story": "components-inputgroup--playground",
+      "args": {
+        "row": "checkbox"
+      },
+      "lato": true
+    },
+    {
+      "file": "inputgroup/inputgroup__row-checkbox__state-default__light.png",
+      "state": "default",
+      "w": 404,
+      "h": 33.5,
+      "mode": "light",
+      "story": "components-inputgroup--playground",
+      "args": {
+        "row": "checkbox"
+      },
+      "lato": true
+    },
+    {
+      "file": "inputgroup/inputgroup__row-icon__state-default__dark.png",
+      "state": "default",
+      "w": 404,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-inputgroup--playground",
+      "args": {
+        "row": "icon"
+      },
+      "lato": true
+    },
+    {
+      "file": "inputgroup/inputgroup__row-icon__state-default__light.png",
+      "state": "default",
+      "w": 404,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-inputgroup--playground",
+      "args": {
+        "row": "icon"
+      },
+      "lato": true
+    },
+    {
+      "file": "inputgroup/inputgroup__row-multi__state-default__dark.png",
+      "state": "default",
+      "w": 404,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-inputgroup--playground",
+      "args": {
+        "row": "multi"
+      },
+      "lato": true
+    },
+    {
+      "file": "inputgroup/inputgroup__row-multi__state-default__light.png",
+      "state": "default",
+      "w": 404,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-inputgroup--playground",
+      "args": {
+        "row": "multi"
       },
       "lato": true
     },
@@ -16436,6 +18882,104 @@
       "lato": true
     },
     {
+      "file": "menubar/menubar__open-customers__state-hover__dark.png",
+      "state": "hover",
+      "w": 784,
+      "h": 260,
+      "mode": "dark",
+      "story": "components-menubar--playground",
+      "args": {
+        "search": false,
+        "tall": true
+      },
+      "lato": true
+    },
+    {
+      "file": "menubar/menubar__open-customers__state-hover__light.png",
+      "state": "hover",
+      "w": 784,
+      "h": 260,
+      "mode": "light",
+      "story": "components-menubar--playground",
+      "args": {
+        "search": false,
+        "tall": true
+      },
+      "lato": true
+    },
+    {
+      "file": "menubar/menubar__plain__item-quit__state-hover__dark.png",
+      "state": "hover",
+      "w": 784,
+      "h": 44,
+      "mode": "dark",
+      "story": "components-menubar--playground",
+      "args": {
+        "search": false
+      },
+      "lato": true
+    },
+    {
+      "file": "menubar/menubar__plain__item-quit__state-hover__light.png",
+      "state": "hover",
+      "w": 784,
+      "h": 44,
+      "mode": "light",
+      "story": "components-menubar--playground",
+      "args": {
+        "search": false
+      },
+      "lato": true
+    },
+    {
+      "file": "menubar/menubar__plain__state-default__dark.png",
+      "state": "default",
+      "w": 784,
+      "h": 44,
+      "mode": "dark",
+      "story": "components-menubar--playground",
+      "args": {
+        "search": false
+      },
+      "lato": true
+    },
+    {
+      "file": "menubar/menubar__plain__state-default__light.png",
+      "state": "default",
+      "w": 784,
+      "h": 44,
+      "mode": "light",
+      "story": "components-menubar--playground",
+      "args": {
+        "search": false
+      },
+      "lato": true
+    },
+    {
+      "file": "menubar/menubar__search__state-default__dark.png",
+      "state": "default",
+      "w": 784,
+      "h": 79,
+      "mode": "dark",
+      "story": "components-menubar--playground",
+      "args": {
+        "search": true
+      },
+      "lato": true
+    },
+    {
+      "file": "menubar/menubar__search__state-default__light.png",
+      "state": "default",
+      "w": 784,
+      "h": 79,
+      "mode": "light",
+      "story": "components-menubar--playground",
+      "args": {
+        "search": true
+      },
+      "lato": true
+    },
+    {
       "file": "message/message__severity-contrast__variant-default__size-base__dark.png",
       "state": "static",
       "w": 126.08,
@@ -17004,6 +19548,1166 @@
       "args": {
         "severity": "warn",
         "variant": "simple"
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-base__content-chips__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-base__content-chips__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-base__content-chips__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-base__content-chips__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-base__content-chips__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-base__content-chips__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-base__content-placeholder__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-base__content-placeholder__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-base__content-placeholder__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-base__content-placeholder__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-base__content-placeholder__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-base__content-placeholder__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "base",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-large__content-chips__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 45.39,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-large__content-chips__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 45.39,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-large__content-chips__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 45.39,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-large__content-chips__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 45.39,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-large__content-chips__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 45.39,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-large__content-chips__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 45.39,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-large__content-placeholder__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 38.39,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-large__content-placeholder__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 38.39,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-large__content-placeholder__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 38.39,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-large__content-placeholder__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 38.39,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-large__content-placeholder__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 38.39,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-large__content-placeholder__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 38.39,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "large",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-small__content-chips__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 34.19,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-small__content-chips__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 34.19,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-small__content-chips__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 34.19,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-small__content-chips__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 34.19,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-small__content-chips__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 34.19,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-small__content-chips__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 34.19,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-small__content-placeholder__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 27.19,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-small__content-placeholder__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 27.19,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-small__content-placeholder__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 27.19,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-small__content-placeholder__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 27.19,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-small__content-placeholder__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 27.19,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-filled__size-small__content-placeholder__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 27.19,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "filled",
+        "size": "small",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-chips__filter__state-open__dark.png",
+      "state": "open",
+      "w": 260,
+      "h": 360,
+      "mode": "dark",
+      "story": "components-multiselect--open",
+      "args": {
+        "selected": true,
+        "filter": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-chips__filter__state-open__light.png",
+      "state": "open",
+      "w": 260,
+      "h": 360,
+      "mode": "light",
+      "story": "components-multiselect--open",
+      "args": {
+        "selected": true,
+        "filter": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-chips__panel__state-open__dark.png",
+      "state": "open",
+      "w": 260,
+      "h": 360,
+      "mode": "dark",
+      "story": "components-multiselect--open",
+      "args": {
+        "selected": true,
+        "filter": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-chips__panel__state-open__light.png",
+      "state": "open",
+      "w": 260,
+      "h": 360,
+      "mode": "light",
+      "story": "components-multiselect--open",
+      "args": {
+        "selected": true,
+        "filter": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-chips__showclear__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "selected": true,
+        "showClear": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-chips__showclear__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "selected": true,
+        "showClear": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-chips__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-chips__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-chips__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-chips__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-chips__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-chips__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-comma__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "selected": true,
+        "chip": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-comma__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "selected": true,
+        "chip": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-placeholder__invalid__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "invalid": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-placeholder__invalid__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "invalid": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-placeholder__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-placeholder__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-placeholder__state-disabled__dark.png",
+      "state": "disabled",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "disabled": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-placeholder__state-disabled__light.png",
+      "state": "disabled",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "disabled": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-placeholder__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-placeholder__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-placeholder__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-base__content-placeholder__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "base",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-large__content-chips__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 45.39,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-large__content-chips__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 45.39,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-large__content-chips__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 45.39,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-large__content-chips__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 45.39,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-large__content-chips__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 45.39,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-large__content-chips__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 45.39,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-large__content-placeholder__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 38.39,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-large__content-placeholder__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 38.39,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-large__content-placeholder__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 38.39,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-large__content-placeholder__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 38.39,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-large__content-placeholder__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 38.39,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-large__content-placeholder__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 38.39,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "large",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-small__content-chips__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 34.19,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-small__content-chips__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 34.19,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-small__content-chips__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 34.19,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-small__content-chips__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 34.19,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-small__content-chips__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 34.19,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-small__content-chips__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 34.19,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small",
+        "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-small__content-placeholder__state-default__dark.png",
+      "state": "default",
+      "w": 252,
+      "h": 27.19,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-small__content-placeholder__state-default__light.png",
+      "state": "default",
+      "w": 252,
+      "h": 27.19,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-small__content-placeholder__state-focus__dark.png",
+      "state": "focus",
+      "w": 252,
+      "h": 27.19,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-small__content-placeholder__state-focus__light.png",
+      "state": "focus",
+      "w": 252,
+      "h": 27.19,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-small__content-placeholder__state-hover__dark.png",
+      "state": "hover",
+      "w": 252,
+      "h": 27.19,
+      "mode": "dark",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small",
+        "selected": false
+      },
+      "lato": true
+    },
+    {
+      "file": "multiselect/multiselect__variant-outlined__size-small__content-placeholder__state-hover__light.png",
+      "state": "hover",
+      "w": 252,
+      "h": 27.19,
+      "mode": "light",
+      "story": "components-multiselect--playground",
+      "args": {
+        "variant": "outlined",
+        "size": "small",
+        "selected": false
       },
       "lato": true
     },
@@ -20184,6 +23888,170 @@
       "lato": true
     },
     {
+      "file": "selectbutton/selectbutton__size-base__disabled__state-default__dark.png",
+      "state": "default",
+      "w": 253.19,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-selectbutton--playground",
+      "args": {
+        "disabled": true
+      },
+      "lato": true
+    },
+    {
+      "file": "selectbutton/selectbutton__size-base__disabled__state-default__light.png",
+      "state": "default",
+      "w": 253.19,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-selectbutton--playground",
+      "args": {
+        "disabled": true
+      },
+      "lato": true
+    },
+    {
+      "file": "selectbutton/selectbutton__size-base__icons__state-default__dark.png",
+      "state": "default",
+      "w": 130,
+      "h": 30,
+      "mode": "dark",
+      "story": "components-selectbutton--playground",
+      "args": {
+        "icons": true
+      },
+      "lato": true
+    },
+    {
+      "file": "selectbutton/selectbutton__size-base__icons__state-default__light.png",
+      "state": "default",
+      "w": 130,
+      "h": 30,
+      "mode": "light",
+      "story": "components-selectbutton--playground",
+      "args": {
+        "icons": true
+      },
+      "lato": true
+    },
+    {
+      "file": "selectbutton/selectbutton__size-base__invalid__state-default__dark.png",
+      "state": "default",
+      "w": 253.19,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-selectbutton--playground",
+      "args": {
+        "invalid": true
+      },
+      "lato": true
+    },
+    {
+      "file": "selectbutton/selectbutton__size-base__invalid__state-default__light.png",
+      "state": "default",
+      "w": 253.19,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-selectbutton--playground",
+      "args": {
+        "invalid": true
+      },
+      "lato": true
+    },
+    {
+      "file": "selectbutton/selectbutton__size-base__option-2__state-hover__dark.png",
+      "state": "hover",
+      "w": 253.19,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-selectbutton--playground",
+      "args": {},
+      "lato": true
+    },
+    {
+      "file": "selectbutton/selectbutton__size-base__option-2__state-hover__light.png",
+      "state": "hover",
+      "w": 253.19,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-selectbutton--playground",
+      "args": {},
+      "lato": true
+    },
+    {
+      "file": "selectbutton/selectbutton__size-base__state-default__dark.png",
+      "state": "default",
+      "w": 253.19,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-selectbutton--playground",
+      "args": {
+        "size": "base"
+      },
+      "lato": true
+    },
+    {
+      "file": "selectbutton/selectbutton__size-base__state-default__light.png",
+      "state": "default",
+      "w": 253.19,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-selectbutton--playground",
+      "args": {
+        "size": "base"
+      },
+      "lato": true
+    },
+    {
+      "file": "selectbutton/selectbutton__size-large__state-default__dark.png",
+      "state": "default",
+      "w": 273.86,
+      "h": 34.89,
+      "mode": "dark",
+      "story": "components-selectbutton--playground",
+      "args": {
+        "size": "large"
+      },
+      "lato": true
+    },
+    {
+      "file": "selectbutton/selectbutton__size-large__state-default__light.png",
+      "state": "default",
+      "w": 273.86,
+      "h": 34.89,
+      "mode": "light",
+      "story": "components-selectbutton--playground",
+      "args": {
+        "size": "large"
+      },
+      "lato": true
+    },
+    {
+      "file": "selectbutton/selectbutton__size-small__state-default__dark.png",
+      "state": "default",
+      "w": 232.56,
+      "h": 30.69,
+      "mode": "dark",
+      "story": "components-selectbutton--playground",
+      "args": {
+        "size": "small"
+      },
+      "lato": true
+    },
+    {
+      "file": "selectbutton/selectbutton__size-small__state-default__light.png",
+      "state": "default",
+      "w": 232.56,
+      "h": 30.69,
+      "mode": "light",
+      "story": "components-selectbutton--playground",
+      "args": {
+        "size": "small"
+      },
+      "lato": true
+    },
+    {
       "file": "sidebarmenu/sidebarmenu__active-chart__item-chart__state-hover__dark.png",
       "state": "hover",
       "w": 280,
@@ -20816,6 +24684,282 @@
       "story": "components-splitbutton--playground",
       "args": {
         "severity": "warn"
+      },
+      "lato": true
+    },
+    {
+      "file": "stepper/stepper__list__active-1__dark.png",
+      "state": "static",
+      "w": 624,
+      "h": 42,
+      "mode": "dark",
+      "story": "components-stepper--playground",
+      "args": {
+        "active": 1
+      },
+      "lato": true
+    },
+    {
+      "file": "stepper/stepper__list__active-1__light.png",
+      "state": "static",
+      "w": 624,
+      "h": 42,
+      "mode": "light",
+      "story": "components-stepper--playground",
+      "args": {
+        "active": 1
+      },
+      "lato": true
+    },
+    {
+      "file": "stepper/stepper__list__active-1__step-2__state-hover__dark.png",
+      "state": "hover",
+      "w": 624,
+      "h": 42,
+      "mode": "dark",
+      "story": "components-stepper--playground",
+      "args": {
+        "active": 1
+      },
+      "lato": true
+    },
+    {
+      "file": "stepper/stepper__list__active-1__step-2__state-hover__light.png",
+      "state": "hover",
+      "w": 624,
+      "h": 42,
+      "mode": "light",
+      "story": "components-stepper--playground",
+      "args": {
+        "active": 1
+      },
+      "lato": true
+    },
+    {
+      "file": "stepper/stepper__list__active-2__dark.png",
+      "state": "static",
+      "w": 624,
+      "h": 42,
+      "mode": "dark",
+      "story": "components-stepper--playground",
+      "args": {
+        "active": 2
+      },
+      "lato": true
+    },
+    {
+      "file": "stepper/stepper__list__active-2__light.png",
+      "state": "static",
+      "w": 624,
+      "h": 42,
+      "mode": "light",
+      "story": "components-stepper--playground",
+      "args": {
+        "active": 2
+      },
+      "lato": true
+    },
+    {
+      "file": "stepper/stepper__list__active-3__dark.png",
+      "state": "static",
+      "w": 624,
+      "h": 42,
+      "mode": "dark",
+      "story": "components-stepper--playground",
+      "args": {
+        "active": 3
+      },
+      "lato": true
+    },
+    {
+      "file": "stepper/stepper__list__active-3__light.png",
+      "state": "static",
+      "w": 624,
+      "h": 42,
+      "mode": "light",
+      "story": "components-stepper--playground",
+      "args": {
+        "active": 3
+      },
+      "lato": true
+    },
+    {
+      "file": "stepper/stepper__panels__active-2__dark.png",
+      "state": "static",
+      "w": 624,
+      "h": 212.59,
+      "mode": "dark",
+      "story": "components-stepper--playground",
+      "args": {
+        "active": 2,
+        "panels": true
+      },
+      "lato": true
+    },
+    {
+      "file": "stepper/stepper__panels__active-2__light.png",
+      "state": "static",
+      "w": 624,
+      "h": 212.59,
+      "mode": "light",
+      "story": "components-stepper--playground",
+      "args": {
+        "active": 2,
+        "panels": true
+      },
+      "lato": true
+    },
+    {
+      "file": "tabs/tabs__layout-list__disabled__state-default__dark.png",
+      "state": "default",
+      "w": 544,
+      "h": 45.8,
+      "mode": "dark",
+      "story": "components-tabs--playground",
+      "args": {
+        "layout": "list",
+        "disabled": true
+      },
+      "lato": true
+    },
+    {
+      "file": "tabs/tabs__layout-list__disabled__state-default__light.png",
+      "state": "default",
+      "w": 544,
+      "h": 45.8,
+      "mode": "light",
+      "story": "components-tabs--playground",
+      "args": {
+        "layout": "list",
+        "disabled": true
+      },
+      "lato": true
+    },
+    {
+      "file": "tabs/tabs__layout-list__icons-badge__state-default__dark.png",
+      "state": "default",
+      "w": 544,
+      "h": 50,
+      "mode": "dark",
+      "story": "components-tabs--playground",
+      "args": {
+        "layout": "list",
+        "icons": true,
+        "badge": true
+      },
+      "lato": true
+    },
+    {
+      "file": "tabs/tabs__layout-list__icons-badge__state-default__light.png",
+      "state": "default",
+      "w": 544,
+      "h": 50,
+      "mode": "light",
+      "story": "components-tabs--playground",
+      "args": {
+        "layout": "list",
+        "icons": true,
+        "badge": true
+      },
+      "lato": true
+    },
+    {
+      "file": "tabs/tabs__layout-list__icons-badge__tab-2__state-hover__dark.png",
+      "state": "hover",
+      "w": 544,
+      "h": 50,
+      "mode": "dark",
+      "story": "components-tabs--playground",
+      "args": {
+        "layout": "list",
+        "icons": true,
+        "badge": true
+      },
+      "lato": true
+    },
+    {
+      "file": "tabs/tabs__layout-list__icons-badge__tab-2__state-hover__light.png",
+      "state": "hover",
+      "w": 544,
+      "h": 50,
+      "mode": "light",
+      "story": "components-tabs--playground",
+      "args": {
+        "layout": "list",
+        "icons": true,
+        "badge": true
+      },
+      "lato": true
+    },
+    {
+      "file": "tabs/tabs__layout-list__state-default__dark.png",
+      "state": "default",
+      "w": 544,
+      "h": 45.8,
+      "mode": "dark",
+      "story": "components-tabs--playground",
+      "args": {
+        "layout": "list"
+      },
+      "lato": true
+    },
+    {
+      "file": "tabs/tabs__layout-list__state-default__light.png",
+      "state": "default",
+      "w": 544,
+      "h": 45.8,
+      "mode": "light",
+      "story": "components-tabs--playground",
+      "args": {
+        "layout": "list"
+      },
+      "lato": true
+    },
+    {
+      "file": "tabs/tabs__layout-list__tab-2__state-hover__dark.png",
+      "state": "hover",
+      "w": 544,
+      "h": 45.8,
+      "mode": "dark",
+      "story": "components-tabs--playground",
+      "args": {
+        "layout": "list"
+      },
+      "lato": true
+    },
+    {
+      "file": "tabs/tabs__layout-list__tab-2__state-hover__light.png",
+      "state": "hover",
+      "w": 544,
+      "h": 45.8,
+      "mode": "light",
+      "story": "components-tabs--playground",
+      "args": {
+        "layout": "list"
+      },
+      "lato": true
+    },
+    {
+      "file": "tabs/tabs__layout-panel__state-default__dark.png",
+      "state": "default",
+      "w": 544,
+      "h": 199.8,
+      "mode": "dark",
+      "story": "components-tabs--playground",
+      "args": {
+        "layout": "panel"
+      },
+      "lato": true
+    },
+    {
+      "file": "tabs/tabs__layout-panel__state-default__light.png",
+      "state": "default",
+      "w": 544,
+      "h": 199.8,
+      "mode": "light",
+      "story": "components-tabs--playground",
+      "args": {
+        "layout": "panel"
       },
       "lato": true
     },
@@ -22528,6 +26672,130 @@
       "lato": true
     },
     {
+      "file": "timeline/timeline__horizontal__align-top__dark.png",
+      "state": "static",
+      "w": 528,
+      "h": 88.55,
+      "mode": "dark",
+      "story": "components-timeline--playground",
+      "args": {
+        "layout": "horizontal",
+        "align": "top"
+      },
+      "lato": true
+    },
+    {
+      "file": "timeline/timeline__horizontal__align-top__light.png",
+      "state": "static",
+      "w": 528,
+      "h": 88.55,
+      "mode": "light",
+      "story": "components-timeline--playground",
+      "args": {
+        "layout": "horizontal",
+        "align": "top"
+      },
+      "lato": true
+    },
+    {
+      "file": "timeline/timeline__vertical__align-alternate__dark.png",
+      "state": "static",
+      "w": 528,
+      "h": 226.8,
+      "mode": "dark",
+      "story": "components-timeline--playground",
+      "args": {
+        "align": "alternate"
+      },
+      "lato": true
+    },
+    {
+      "file": "timeline/timeline__vertical__align-alternate__light.png",
+      "state": "static",
+      "w": 528,
+      "h": 226.8,
+      "mode": "light",
+      "story": "components-timeline--playground",
+      "args": {
+        "align": "alternate"
+      },
+      "lato": true
+    },
+    {
+      "file": "timeline/timeline__vertical__align-left__dark.png",
+      "state": "static",
+      "w": 528,
+      "h": 226.8,
+      "mode": "dark",
+      "story": "components-timeline--playground",
+      "args": {
+        "align": "left"
+      },
+      "lato": true
+    },
+    {
+      "file": "timeline/timeline__vertical__align-left__light.png",
+      "state": "static",
+      "w": 528,
+      "h": 226.8,
+      "mode": "light",
+      "story": "components-timeline--playground",
+      "args": {
+        "align": "left"
+      },
+      "lato": true
+    },
+    {
+      "file": "timeline/timeline__vertical__align-left__opposite__dark.png",
+      "state": "static",
+      "w": 528,
+      "h": 226.8,
+      "mode": "dark",
+      "story": "components-timeline--playground",
+      "args": {
+        "align": "left",
+        "opposite": true
+      },
+      "lato": true
+    },
+    {
+      "file": "timeline/timeline__vertical__align-left__opposite__light.png",
+      "state": "static",
+      "w": 528,
+      "h": 226.8,
+      "mode": "light",
+      "story": "components-timeline--playground",
+      "args": {
+        "align": "left",
+        "opposite": true
+      },
+      "lato": true
+    },
+    {
+      "file": "timeline/timeline__vertical__align-right__dark.png",
+      "state": "static",
+      "w": 528,
+      "h": 226.8,
+      "mode": "dark",
+      "story": "components-timeline--playground",
+      "args": {
+        "align": "right"
+      },
+      "lato": true
+    },
+    {
+      "file": "timeline/timeline__vertical__align-right__light.png",
+      "state": "static",
+      "w": 528,
+      "h": 226.8,
+      "mode": "light",
+      "story": "components-timeline--playground",
+      "args": {
+        "align": "right"
+      },
+      "lato": true
+    },
+    {
       "file": "toast/toast__severity-contrast__state-default__dark.png",
       "state": "default",
       "w": 350,
@@ -23372,6 +27640,272 @@
       "story": "components-toolbar--playground",
       "args": {
         "layout": "uikit"
+      },
+      "lato": true
+    },
+    {
+      "file": "tooltip/tooltip__position-bottom__state-hover__dark.png",
+      "state": "hover",
+      "w": 420,
+      "h": 160,
+      "mode": "dark",
+      "story": "components-tooltip--playground",
+      "args": {
+        "position": "bottom"
+      },
+      "lato": true
+    },
+    {
+      "file": "tooltip/tooltip__position-bottom__state-hover__light.png",
+      "state": "hover",
+      "w": 420,
+      "h": 160,
+      "mode": "light",
+      "story": "components-tooltip--playground",
+      "args": {
+        "position": "bottom"
+      },
+      "lato": true
+    },
+    {
+      "file": "tooltip/tooltip__position-left__state-hover__dark.png",
+      "state": "hover",
+      "w": 420,
+      "h": 160,
+      "mode": "dark",
+      "story": "components-tooltip--playground",
+      "args": {
+        "position": "left"
+      },
+      "lato": true
+    },
+    {
+      "file": "tooltip/tooltip__position-left__state-hover__light.png",
+      "state": "hover",
+      "w": 420,
+      "h": 160,
+      "mode": "light",
+      "story": "components-tooltip--playground",
+      "args": {
+        "position": "left"
+      },
+      "lato": true
+    },
+    {
+      "file": "tooltip/tooltip__position-right__state-hover__dark.png",
+      "state": "hover",
+      "w": 420,
+      "h": 160,
+      "mode": "dark",
+      "story": "components-tooltip--playground",
+      "args": {
+        "position": "right"
+      },
+      "lato": true
+    },
+    {
+      "file": "tooltip/tooltip__position-right__state-hover__light.png",
+      "state": "hover",
+      "w": 420,
+      "h": 160,
+      "mode": "light",
+      "story": "components-tooltip--playground",
+      "args": {
+        "position": "right"
+      },
+      "lato": true
+    },
+    {
+      "file": "tooltip/tooltip__position-top__long__state-hover__dark.png",
+      "state": "hover",
+      "w": 420,
+      "h": 160,
+      "mode": "dark",
+      "story": "components-tooltip--playground",
+      "args": {
+        "position": "top",
+        "long": true
+      },
+      "lato": true
+    },
+    {
+      "file": "tooltip/tooltip__position-top__long__state-hover__light.png",
+      "state": "hover",
+      "w": 420,
+      "h": 160,
+      "mode": "light",
+      "story": "components-tooltip--playground",
+      "args": {
+        "position": "top",
+        "long": true
+      },
+      "lato": true
+    },
+    {
+      "file": "tooltip/tooltip__position-top__state-hover__dark.png",
+      "state": "hover",
+      "w": 420,
+      "h": 160,
+      "mode": "dark",
+      "story": "components-tooltip--playground",
+      "args": {
+        "position": "top"
+      },
+      "lato": true
+    },
+    {
+      "file": "tooltip/tooltip__position-top__state-hover__light.png",
+      "state": "hover",
+      "w": 420,
+      "h": 160,
+      "mode": "light",
+      "story": "components-tooltip--playground",
+      "args": {
+        "position": "top"
+      },
+      "lato": true
+    },
+    {
+      "file": "tree/tree__selection-checkbox__dark.png",
+      "state": "static",
+      "w": 384,
+      "h": 262.5,
+      "mode": "dark",
+      "story": "components-tree--playground",
+      "args": {
+        "selection": "checkbox"
+      },
+      "lato": true
+    },
+    {
+      "file": "tree/tree__selection-checkbox__light.png",
+      "state": "static",
+      "w": 384,
+      "h": 262.5,
+      "mode": "light",
+      "story": "components-tree--playground",
+      "args": {
+        "selection": "checkbox"
+      },
+      "lato": true
+    },
+    {
+      "file": "tree/tree__selection-single__dark.png",
+      "state": "static",
+      "w": 384,
+      "h": 262.5,
+      "mode": "dark",
+      "story": "components-tree--playground",
+      "args": {
+        "selection": "single"
+      },
+      "lato": true
+    },
+    {
+      "file": "tree/tree__selection-single__light.png",
+      "state": "static",
+      "w": 384,
+      "h": 262.5,
+      "mode": "light",
+      "story": "components-tree--playground",
+      "args": {
+        "selection": "single"
+      },
+      "lato": true
+    },
+    {
+      "file": "tree/tree__selection-single__node-home__state-hover__dark.png",
+      "state": "hover",
+      "w": 384,
+      "h": 262.5,
+      "mode": "dark",
+      "story": "components-tree--playground",
+      "args": {
+        "selection": "single"
+      },
+      "lato": true
+    },
+    {
+      "file": "tree/tree__selection-single__node-home__state-hover__light.png",
+      "state": "hover",
+      "w": 384,
+      "h": 262.5,
+      "mode": "light",
+      "story": "components-tree--playground",
+      "args": {
+        "selection": "single"
+      },
+      "lato": true
+    },
+    {
+      "file": "treetable/treetable__checkbox__dark.png",
+      "state": "static",
+      "w": 624,
+      "h": 317.8,
+      "mode": "dark",
+      "story": "components-treetable--playground",
+      "args": {
+        "checkbox": true
+      },
+      "lato": true
+    },
+    {
+      "file": "treetable/treetable__checkbox__light.png",
+      "state": "static",
+      "w": 624,
+      "h": 317.8,
+      "mode": "light",
+      "story": "components-treetable--playground",
+      "args": {
+        "checkbox": true
+      },
+      "lato": true
+    },
+    {
+      "file": "treetable/treetable__plain__dark.png",
+      "state": "static",
+      "w": 624,
+      "h": 317.8,
+      "mode": "dark",
+      "story": "components-treetable--playground",
+      "args": {
+        "checkbox": false
+      },
+      "lato": true
+    },
+    {
+      "file": "treetable/treetable__plain__light.png",
+      "state": "static",
+      "w": 624,
+      "h": 317.8,
+      "mode": "light",
+      "story": "components-treetable--playground",
+      "args": {
+        "checkbox": false
+      },
+      "lato": true
+    },
+    {
+      "file": "treetable/treetable__plain__row-3__state-hover__dark.png",
+      "state": "hover",
+      "w": 624,
+      "h": 317.8,
+      "mode": "dark",
+      "story": "components-treetable--playground",
+      "args": {
+        "checkbox": false
+      },
+      "lato": true
+    },
+    {
+      "file": "treetable/treetable__plain__row-3__state-hover__light.png",
+      "state": "hover",
+      "w": 624,
+      "h": 317.8,
+      "mode": "light",
+      "story": "components-treetable--playground",
+      "args": {
+        "checkbox": false
       },
       "lato": true
     }

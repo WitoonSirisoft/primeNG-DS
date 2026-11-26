@@ -78,5 +78,61 @@
 | Menu Item | Label / Show icon / Icon | text / boolean / swap | `<p-menu>` item | MenuItem { label, icon } | no | none | 14 icons (Sakai pi-fw = 18) |
 | Menu Submenu Label | Label | text | `<p-menu>` group | MenuItem { label, items } | no | none | |
 | Menu Separator | — | — | `<p-menu>` | MenuItem { separator: true } | no | none | |
+| Sidebar Menu Item | State | default, hover, active, active-hover | Sakai `app-menuitem` (`ul a`) | :hover; routerLinkActive → a.active-route | no | none | #97, Sakai layout, not PrimeNG |
+| Sidebar Menu Item | Toggler | none, collapsed, expanded | Sakai `app-menuitem` | item has items; expanded = li.active-menuitem | no | none | expanded = Icon/angle-up |
+| Sidebar Menu Item | Level | 0, 1 | Sakai `app-menuitem` | nesting depth (ul ul li a margin-left 1rem) | no | none | levels 2–4 not built |
+| Sidebar Menu Item | Label / Show icon / Icon | text / boolean / swap | Sakai `app-menuitem` | MenuItem { label, icon } | no | none | icon slot 18 (pi-fw) |
+| Sidebar Section | Label | text | Sakai `.layout-menuitem-root-text` | root MenuItem { label, items } | no | none | |
+| Sidebar Menu | Expanded | false, true | Sakai `app-menu` (`.layout-sidebar`) | model (app.menu.ts) | no | none | prefilled exposed rows |
+| Tab | State | default, hover, active, disabled | `<p-tab>` | active = Tabs [value]; [disabled]; hover only when inactive + enabled | no | none | #98; focus not built |
+| Tab | Label / Show icon / Icon / Badge | text / boolean / swap / boolean | `<p-tab>` | tab content (label, `<i class="pi …">`, `<p-badge>`) | no | none | content flex + gap tabs.tab.gap |
+| Tab List | Show tab 4 / Show tab 5 | boolean | `<p-tablist>` | number of `<p-tab>` | no | none | tabs stretch to the tallest (badge → 50) |
+| Tabs | Content / Show content / Show slot / Slot | text / boolean / boolean / swap | `<p-tabs>` + `<p-tabpanels>` | `<p-tabpanel>` content | no | none | Tabs Slot (#84) |
+| Card | Title / Show title / Content / Show content / Show slot / Slot | text / boolean / text / boolean / boolean / swap | Sakai `<div class="card">` | title div + content | no | none | #100, Sakai layout |
+| Divider | Layout / Type / Align | horizontal, vertical / solid, dashed, dotted / start, center, end | `<p-divider>` | layout / type / align (left,center,right / top,center,bottom) | no | none | margins drawn as padding |
+| Divider | Content / Label | boolean / text | `<p-divider>` | projected content | no | none | text only |
+| Accordion Panel | State / Expanded | default, hover, disabled / false, true | `<p-accordion-panel>` | [disabled]; open = Accordion [value] | no | none | focus not built |
+| Accordion Panel | Header / Content / Show content / Show slot / Slot | text / text / boolean / boolean / swap | `<p-accordion-header>` / `<p-accordion-content>` | content | no | none | |
+| Accordion | Show panel 4 / Show panel 5 | boolean | `<p-accordion>` | number of panels; [multiple] | no | none | |
+| Avatar | Size / Shape / Content | normal, large, xlarge / square, circle / label, icon | `<p-avatar>` | size / shape / label or icon | no | none | #100; image not built |
+| Avatar | Label / Icon / Group border | text / swap / boolean | `<p-avatar>` | label / icon / inside p-avatargroup | no | none | |
+| Avatar Group | Size | normal, large, xlarge | `<p-avatargroup>` | avatars' size | no | none | 5 exposed avatars |
+| Chip | Removable / Label / Show icon / Icon | false, true / text / boolean / swap | `<p-chip>` | removable / label / icon | no | none | image not built |
+| Breadcrumb Item | State / Label / Show label / Show icon / Icon | default, hover / text / boolean / boolean / swap | `<p-breadcrumb>` | MenuItem { label, icon }; [home] | no | none | #100 |
+| Breadcrumb | — | — | `<p-breadcrumb [model] [home]>` | items + separators | no | none | Sakai demo prefilled |
+| Menubar Item | Level / State / Submenu | root, submenu / default, hover, active / false, true | `<p-menubar>` item | hover = focus; active = submenu open; items | no | none | focus not built |
+| Menubar Item | Label / Show icon / Icon | text / boolean / swap | `<p-menubar>` item | MenuItem { label, icon } | no | none | |
+| Menubar Submenu | Show item 3 / Show item 4 | boolean | `<p-menubar>` submenu | items | no | none | |
+| Menubar | Show end / End | boolean / swap | `<p-menubar>` | ng-template #end | no | none | mobile mode not built |
+| InputGroup Addon | Position | first, middle, after-input, last, last-after-input | `<p-inputgroup-addon>` | place in the group (borders / corners by CSS) | no | none | #101 |
+| InputGroup Addon | Show icon / Icon / Show text / Text / Show checkbox | boolean / swap / boolean / text / boolean | `<p-inputgroup-addon>` | addon content | no | none | |
+| InputGroup | Row | icon, multi, button, checkbox | `<p-inputgroup>` | Sakai demo rows | no | none | parts exposed |
+| SelectButton Option | State / Size | default, hover, checked, disabled / small, base, large | `<p-selectbutton>` option (ToggleButton) | checked = selected | no | none | focus not built |
+| SelectButton Option | Label / Show label / Show icon / Icon | text / boolean / boolean / swap | `<p-selectbutton>` | optionLabel / #item template | no | none | |
+| SelectButton | Size / Invalid / Disabled | small, base, large / false, true / false, true | `<p-selectbutton>` | [size] / [invalid] / [disabled] | no | none | Show option 4 / 5 |
+| MultiSelect | Size / Variant / State / Invalid / Content | as Select / placeholder, chips, value | `<p-multiselect>` | [size] [variant] [invalid] [disabled]; display chip / comma | partly | none | #101 |
+| MultiSelect | Placeholder / Value / Show clear | text / text / boolean | `<p-multiselect>` | placeholder / selected labels / showClear | no | none | |
+| MultiSelect Option | State / Label | default, focus, selected, selected-focus / text | `<p-multiselect>` option | focus / selected | no | none | checkbox inside |
+| MultiSelect Panel | Show header / Show option 6 | boolean | `<p-multiselect>` overlay | filter / showToggleAll; options | no | none | |
+| AutoComplete | Size / Variant / State / Invalid / Content | as Select / placeholder, value, chips | `<p-autocomplete [dropdown]>` | pSize, variant, invalid, disabled; [multiple] | partly | none | panel = Select Panel |
+| AutoComplete | Placeholder / Value | text | `<p-autocomplete>` | placeholder / selected item | no | none | |
+| FileUpload | Mode / Files | advanced, basic / false, true | `<p-fileupload>` | mode; files chosen | no | none | #101 |
+| FileUpload | Empty text / File name | text | `<p-fileupload>` | #empty template / basic chosen file | no | none | |
+| FileUpload File | Name / Size / Show thumbnail / Show divider | text / text / boolean / boolean | `<p-fileupload>` file row | file name / formatSize / previewWidth | no | none | badge + remove exposed |
+| Tooltip | Position / Text | top, right, bottom, left / text | `pTooltip` | tooltipPosition / pTooltip | no | none | #102 |
+| Timeline Event | Layout / Align / Position | vertical, horizontal / start, end / middle, last | `<p-timeline>` event | layout / align / last item | no | none | Content, Opposite, Show opposite |
+| Timeline | Align | left, right, alternate, horizontal | `<p-timeline>` | align / layout | no | none | 4 events exposed |
+| Step | State / Position / Number / Title | default, active, completed / middle, last / text / text | `<p-step>` | value vs active / last | no | none | |
+| Stepper | Active / Show panels | 1, 2, 3 / boolean | `<p-stepper>` | value / p-step-panels | no | none | Slot for panel content |
+| Tree Node | Toggle / State / Label / Icon / Show checkbox | expanded, collapsed, leaf / default, hover, selected / text / swap / boolean | `<p-tree>` node | node.expanded, leaf / selection / node.label / node.icon / selectionMode checkbox | no | none | #102; Checkbox exposed |
+| Tree | Selection | single, checkbox | `<p-tree>` | selectionMode | no | none | nodes exposed |
+| TreeTable Toggler Cell | Toggle / Level / Text / Show checkbox | expanded, collapsed, leaf / 0, 1, 2 / text / boolean | `<p-treetable-toggler>` cell | rowNode.node.expanded / rowNode.level / field / selectionMode checkbox | no | none | indent 16 px per level |
+| TreeTable Header Cell / Body Cell | Text | text | `<p-treetable>` th / td | column header / field | no | none | |
+| TreeTable Row | State | default, hover, selected | `<p-treetable>` tr | hover / selection | no | none | cells exposed |
+| TreeTable | Selection | plain, checkbox | `<p-treetable>` | selectionMode | no | none | rows exposed |
+| DataView | Layout / Show header | list, grid / boolean | `<p-dataview>` | layout / #header | no | none | #102; items exposed |
+| DataView List Item / Grid Item | Category / Name / Rating / Price (+ Position first/other on list) | text | Sakai List demo #list / #grid template | item fields | no | none | Sakai markup, not PrimeNG |
+| Chart | Type | line, bar, pie, doughnut | `<p-chart>` (Chart.js) | type (data / options drawn as a static picture) | no | none | #102; legend items exposed |
+| Chart Legend Item | Style / Label | box, outlined, point / text | Chart.js legend | dataset type + usePointStyle / dataset.label | no | none | Swatch colour override |
 | Scrollbar | Direction | horizontal, vertical | none (browser native scrollbar) | [scrollable] / scrollHeight / overflow | no | none | design-only, #88; thumb via instance padding |
 | Button Icon | Severity / Variant / Size / State / Rounded | as Button | `<p-button>` | icon only (no label) | no | none | #85 |

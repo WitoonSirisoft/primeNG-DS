@@ -1,6 +1,6 @@
 # Report: Batch 2 · Menu — 2026-11-26
 
-Status: **built, waiting for review** (on `02 Components`). Decisions #95, #96.
+Status: **APPROVED 2026-11-26 (visual 5)** (on `02 Components`). Decisions #95, #96.
 Generator: `scripts/figma-menu.mjs` (`npm run figma:menu`; first build used `-- --fresh`, no sync helper) → `22-menu-1.js`; example `22-menu-example.js`. Update in place (#68) = run without `--fresh`.
 Story: `menu.stories.ts` (layout plain | overlay | popup; disabled). Captures: plain, plain-hover, overlay, overlay-disabled, popup × Light + Dark.
 

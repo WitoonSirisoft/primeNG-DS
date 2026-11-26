@@ -149,7 +149,7 @@ const aliasName = (ref) => {
     return fname(ref);
 };
 const shadowFx = (s) => {
-    if (s.trim() === 'none') return [];
+    if (/^(inset\s+)?none$/.test(s.trim())) return []; // 'inset none' = inset {focus-ring.shadow} when that is none (tabs.tabpanel, #98)
     const parts = [];
     let depth = 0, cur = '';
     for (const ch of s) {
@@ -263,6 +263,11 @@ for (const l of leaves) {
         continue;
     }
 
+    if (type === 'string' && Object.values(vals).every((v) => /^(unset|inherit|initial)$/.test(String(v).trim()))) {
+        // CSS keyword, no value of its own (fileupload.header.border-color: unset, #101): nothing to store in Figma
+        plan.skipped.push({ token: path, reason: `CSS keyword ${Object.values(vals)[0]}: no value (inherits); not a variable` });
+        continue;
+    }
     if (type === 'string' && /border-radius$/.test(path) && Object.values(vals).every((v) => /^\d+(\.\d+)?%$/.test(String(v).trim()))) {
         // percent radius (50% = circle): Figma variables can't hold percent; the component draws the circle itself (like Badge Circle, #47)
         plan.skipped.push({ token: path, reason: `percent radius ${Object.values(vals)[0]}: built as a circle in the component` });
@@ -271,6 +276,11 @@ for (const l of leaves) {
     if (type === 'string' && /text-transform$/.test(path)) {
         // Figma variables can't drive text case; the text style sets textCase from it (#97)
         plan.skipped.push({ token: path, reason: `text-transform ${Object.values(vals)[0]}: applied as the text style's textCase` });
+        continue;
+    }
+    if (type === 'string' && Object.values(vals).every((v) => /^-?\d+(\.\d+)?(px|rem)$/.test(String(v).trim()))) {
+        // plain length typed as string by the theme (e.g. tabs.active-bar.bottom "-1px", #98): treat as a dimension
+        add(col, { name, type: 'FLOAT', scope: scopeKey(col, path, 'FLOAT'), values: Object.fromEntries(modes.map((m) => [m, dims(String(vals[m]))[0]])), codeSyntax: css, description: src });
         continue;
     }
     const conv = { fontWeight: Number, number: Number, duration: seconds, strokeStyle: String, fontFamily: String }[type];

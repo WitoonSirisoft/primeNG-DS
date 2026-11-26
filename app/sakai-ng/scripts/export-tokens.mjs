@@ -20,7 +20,7 @@ const arg = (n, d) => {
     return a ? a.slice(n.length + 3) : d;
 };
 const OUT = resolve(APP, arg('out', '../../tokens/base/tokens.json'));
-const COMPONENTS = arg('components', 'button,inputtext,tag,badge,textarea,select,inputnumber,checkbox,radiobutton,toggleswitch,password,iconfield,message,datepicker,datatable,paginator,toolbar,splitbutton,dialog,confirmdialog,toast,menu').split(','); // batch 2: datatable + paginator (#80), toolbar + splitbutton (#89/#90), dialog + confirmdialog (#91–#93), toast (#94), menu (#95) // batch 1 added 2026-11-24 (#60)
+const COMPONENTS = arg('components', 'button,inputtext,tag,badge,textarea,select,inputnumber,checkbox,radiobutton,toggleswitch,password,iconfield,message,datepicker,datatable,paginator,toolbar,splitbutton,dialog,confirmdialog,toast,menu,tabs,accordion,divider,avatar,chip,breadcrumb,menubar,inputgroup,togglebutton,selectbutton,multiselect,autocomplete,fileupload,progressbar,tooltip,timeline,stepper,tree,treetable,dataview').split(','); // batch 2: datatable + paginator (#80), toolbar + splitbutton (#89/#90), dialog + confirmdialog (#91–#93), toast (#94), menu (#95), tabs (#98), batch 3 accordion/divider/avatar/chip/breadcrumb/menubar (#100), forms 2 (#101) // batch 1 added 2026-11-24 (#60)
 const ROOT_FONT_PX = 14; // DECISIONS #15
 const MODES = ['light', 'dark'];
 
@@ -125,6 +125,38 @@ async function sakaiTypography() {
     S('layout.menu.toggler.size', `${parseFloat(tog) / 100}rem`, `.layout-submenu-toggler { font-size: ${tog} } of the 1rem link text`);
     S('layout.menu.item.active-font-weight', mget(/&\.active-route\s*\{\s*font-weight:\s*([^;]+);/, '.active-route { font-weight }'), 'ul a.active-route { font-weight }');
     S('layout.menu.submenu.indent', mget(/overflow: hidden;[\s\S]*?li\s*\{\s*a\s*\{\s*margin-left:\s*([^;]+);/, 'ul ul li a { margin-left }'), 'ul ul li a { margin-left } (first nested level)');
+    add('typography.strong.font-weight', '700', 'browser default: b, strong { font-weight: bold } (Sakai content uses <b>, e.g. the Divider "OR")');
+    // Sakai layout card (#100): .card in _utils.scss; card title = the Tailwind classes Sakai pages use ('font-semibold text-xl mb-4')
+    const SAKAI_UTILS = 'src/assets/layout/_utils.scss';
+    const ucss = await readFile(SAKAI_UTILS, 'utf8');
+    const card = (ucss.match(/\n\.card\s*\{([^{}]*)/) || [])[1];
+    if (!card) throw new Error(`Sakai card: .card { } not found in ${SAKAI_UTILS}. Sakai changed; update export-tokens.mjs.`);
+    const cprop = (pr) => { const m = card.match(new RegExp(`(?:^|[;\\s])${pr}\\s*:\\s*([^;]+);`)); if (!m) throw new Error(`Sakai card: .card { ${pr} } not found`); return m[1].trim(); };
+    add('layout.card.padding', cprop('padding'), `${SAKAI_UTILS}: .card { padding }`);
+    add('layout.card.gap', cprop('margin-bottom'), `${SAKAI_UTILS}: .card { margin-bottom } (space between stacked cards)`);
+    const TW = 'Sakai page markup (Tailwind): <div class="font-semibold text-xl mb-4"> card title';
+    add('layout.card.title.font-size', '1.25rem', `${TW}: text-xl font-size`);
+    add('layout.card.title.line-height', '1.4', `${TW}: text-xl line-height 1.75rem / 1.25rem`);
+    add('layout.card.title.font-weight', '600', `${TW}: font-semibold`);
+    add('layout.card.title.margin-bottom', '1rem', `${TW}: mb-4`);
+    // Sakai DataView demo (#102): item text = Tailwind classes in listdemo (text-sm / text-lg / text-xl / text-2xl, font-medium / font-semibold)
+    const DV = 'Sakai List demo (Tailwind)';
+    add('layout.dataview.meta.font-size', '0.875rem', `${DV}: text-sm (category, rating)`);
+    add('layout.dataview.meta.line-height', '1.4286', `${DV}: text-sm line-height 1.25rem / 0.875rem`);
+    add('layout.dataview.meta.font-weight', '500', `${DV}: font-medium`);
+    add('layout.dataview.name.font-size', '1.125rem', `${DV}: text-lg (product name)`);
+    add('layout.dataview.name.line-height', '1.5556', `${DV}: text-lg line-height 1.75rem / 1.125rem`);
+    add('layout.dataview.name.font-weight', '500', `${DV}: font-medium`);
+    add('layout.dataview.price.font-size', '1.25rem', `${DV}: text-xl (list price)`);
+    add('layout.dataview.price.line-height', '1.4', `${DV}: text-xl line-height 1.75rem / 1.25rem`);
+    add('layout.dataview.price.font-weight', '600', `${DV}: font-semibold`);
+    add('layout.dataview.price-lg.font-size', '1.5rem', `${DV}: text-2xl (grid price)`);
+    add('layout.dataview.price-lg.line-height', '1.3333', `${DV}: text-2xl line-height 2rem / 1.5rem`);
+    // Charts (#102): Chart.js draws its own text (Chart.defaults.font: 12px, line-height 1.2); Figma uses Lato (user choice) and the docs tell devs to set Chart.defaults.font.family
+    const CJ = 'Chart.js defaults (canvas text, not CSS)';
+    add('layout.chart.font-size', '12px', `${CJ}: Chart.defaults.font.size`);
+    add('layout.chart.line-height', '1.2', `${CJ}: Chart.defaults.font.lineHeight`);
+    add('layout.chart.tick-font-weight', '500', 'Sakai Chart demo: bar x-axis ticks font { weight: 500 }');
     return { tokens: t, fallback: families.slice(1).join(', ') };
 }
 const sakai = await sakaiTypography();

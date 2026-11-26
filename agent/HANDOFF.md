@@ -123,7 +123,7 @@ User was asked to say **"go"** to continue Button:
 - Captured 2026-11-26. Built: Menu Item 284:4008 (3), Submenu Label 284:4020, Separator 284:4022, Menu 284:4024 (Popup 2); doc 285:16629; examples 99 Sandbox 285:16350. Sizes match the browser (192.6 / 130 / 130).
 - New token typography/menu-item-label/line-height (#96) + text style Menu/Item label: 1,365 vars, fp 9712a1e2 (Figma fingerprint not re-run yet), 32 text styles.
 - Generator `npm run figma:menu` (update in place) / `-- --fresh` (first build only). Report agent/REPORT_MENU.md.
-- WAITING: Witoon reviews and scores Menu. NEXT: Tabs (batch 2), later TieredMenu. Suggest a fresh session from this file.
+- Menu APPROVED (5) 2026-11-26.
 
 
 ## Sidebar Menu (batch 2, #97 planned) — 2026-11-26
@@ -133,4 +133,78 @@ User was asked to say **"go"** to continue Button:
 - Story sidebarmenu.stories.ts (static AppMenuitem DOM; args active chart|login|none, expanded); capture plan sidebarmenuPlan, root .layout-sidebar. Storybook build OK.
 - User chose: read Sakai sizes into tokens. export-tokens reads _menu.scss → 13 Semantic layout/menu/* + layout/sidebar/* variables (pushed: patches/batch2-sidebar-vars.js); text styles Sidebar/Section (12, 700, UPPER via new textCase support) + Sidebar/Item active (700) (patches/batch2-sidebar-textstyles.js). Figma: 1,378 vars, fp e2a97c66 (verified in Figma), 34 text styles.
 - Also fixed: figma-variables "Derived from null" description for shorthands without a CSS variable.
-- WAITING: `npm run capture -- --only=sidebarmenu`. Then generator figma-sidebarmenu.mjs (Sidebar Menu Item: State default/hover/active/active-hover × Toggler none/collapsed/expanded × Level 0/1; Section; prefilled Sidebar Menu), DECISIONS #97.
+- Captured 2026-11-26 (10 images). Built on 02 Components: Sidebar Menu Item 287:4039 (24), Sidebar Section 287:4231, Sidebar Menu 287:4234 (Expanded false/true); doc 288:6429; 99 Sandbox examples 288:5510 (5 capture states × Light/Dark), stress 288:6187. Sizes: sidebar 280×312 (browser 311.56), item 38 (37.8), section 35 (35.4). 0 unbound paints (115). DECISIONS #97 (proposed). Report agent/REPORT_SIDEBARMENU.md.
+- Generator `npm run figma:sidebarmenu` (update in place) / `-- --fresh` (used for the first build). Update-in-place path not run yet (same pattern as Menu).
+- APPROVED 2026-11-26: Menu 5, Sidebar Menu 5 (Level 1 enough, no focus state; #97 accepted). NEXT: Tabs (batch 2), later TieredMenu.
+
+## Tabs (batch 2, #98) — 2026-11-26
+- Scope (Witoon): Tab (default/hover/active/disabled; Label, Show icon/Icon, Badge) + Tab List (3 tabs, exposed) + Tabs (list + panel hug slot). No focus. Scrollable nav buttons later.
+- Tokens pushed (patches/batch2-tabs.js): 53 tabs/* vars → **1,431, fp 570691ab (checked in Figma)**; text style Tabs/Tab label (patches/batch2-tabs-textstyle.js) → 35. Nav-button effect styles (Light/Dark) in plan, not pushed (not built yet).
+- Fixes: figma-variables + figma-verify treat a plain length typed as string (-1px) as FLOAT; shadowFx 'inset none' = none.
+- Story tabs.stories.ts (layout panel | list; icons; badge; disabled); tabsPlan (6 shots × 2 modes); ROOTS + .p-tabs. Storybook build OK (built to $HOME/sbout on the VM: VM can't delete storybook-static).
+- Captured 2026-11-26 (12). Built on 02 Components (fresh): Tab 294:4166 (4), Tab List 294:4190, Tabs 294:4222, Tabs Slot 294:4163 (clone of Dialog Slot); doc 295:6756; 99 Sandbox examples 295:6361 (6 capture states × Light/Dark), stress 295:6649. Sizes: tab 84.5×46 (84×45.8), list with badge 50 (50), Tabs 544×200 (199.8). 0 unbound paints (55). Report agent/REPORT_TABS.md.
+- Lessons: a boolean's default doesn't hide the main layer (set visible=false too); instances don't expose layers hidden in the main → use Show booleans; resize() after counterAxisSizingMode='AUTO' makes it fixed → set layoutSizingVertical='HUG' after resize.
+- Generator `npm run figma:tabs` (update in place) / `-- --fresh`; update path not run yet.
+- APPROVED 2026-11-26: Tabs 5 (up to 5 tabs enough).
+- Button content slot SKIPPED (#99): build it only when a real screen needs custom/two-line button content.
+- **BATCH 2 COMPLETE.** NEXT: Witoon publishes the library (v0.4.0), then agree the batch 3 list (content/nav: e.g. Card, Panel/Accordion, Breadcrumb, TieredMenu, Avatar).
+
+## Batch 3 (#100) — 2026-11-26
+- Scope: Sakai Card, Accordion, Divider, Avatar + AvatarGroup, Chip, Breadcrumb, Menubar. Forms 2 next batch.
+- Tokens pushed (patches/batch3-semantic.js, batch3-components.js + effect style menubar/submenu/shadow inline): **1,585 vars, fp 336a132b ✅**, 36 effect styles, 35 text styles. export-tokens reads .card from _utils.scss + card title (Tailwind literals) → layout/card/*.
+- Stories: card, accordion, divider, avatar, chip, breadcrumb, menubar (.stories.ts). Capture plans *Plan; ROOTS + .sb-capture (wrapper to capture overflow: stacked cards, open menubar submenu), .card, .p-accordion, .p-divider, .p-avatar-group, .p-avatar, .p-chip, .p-breadcrumb, .p-menubar. Storybook build OK (VM: $HOME/sbout2).
+- Text styles still to add when building: Card/Title (layout/card/title/*), Accordion header (600), Chip/Avatar labels.
+- Captured 7 (divider failed for empty dividers: 0 height → story now captures the .sb-capture wrapper; re-capture `--only=divider` pending).
+- Group 1 BUILT (fresh): Card 299:4189 (+Card Slot), Divider 299:4195 (18), Accordion Panel 299:4270 (6, +Accordion Slot), Accordion 299:4312; docs 300:7246/7252/7257; examples 300:6658, stress 300:7172. Generator figma-content.mjs + figma-content.body.js (plugin code in its own file; npm run figma:content). Text styles Card/Title, Accordion/Header, Body/Strong (+ typography/strong/font-weight) → 1,586 vars, 38 text styles (fingerprint not re-run after the +1 var). Report agent/REPORT_BATCH3_CONTENT.md.
+- Lessons: frame with only hidden flow children keeps its size → 0-size Spacer; horizontal child frame needs layoutSizingHorizontal='FILL' (layoutAlign STRETCH alone keeps hug for SPACE_BETWEEN).
+- Divider re-captured + compared (dashed [2.5,2.5] measured). **Group 1 APPROVED 2026-11-26 (Card, Divider, Accordion: visual 5).**
+- Group 2 BUILT (fresh): Avatar 306:4212 (12), Avatar Group 306:4255 (3), Chip 306:4304 (2); docs 307:7362 / 307:7377 (shared format + a11y); examples 307:7003, stress 307:7288. Generator figma-display.mjs + .body.js (npm run figma:display). Text styles Avatar/Label sm|lg|xl → 41. Sizes = browser. Report agent/REPORT_BATCH3_DISPLAY.md.
+- **Group 2 APPROVED 2026-11-26 (visual 5 ×3).**
+- Group 3 BUILT (fresh): Breadcrumb Item 309:4246 (2), Separator 309:4254, Breadcrumb 309:4257, Menubar Item 309:4298 (12), Menubar Submenu 309:4358, Menubar 309:4381 (End = IconField left/base); docs 310:8183 / 310:8198; examples 310:7271, stress 310:8080. Generator figma-nav.mjs + .body.js (npm run figma:nav). capture-screenshots: clickSel option; menubar story arg wide; plan open-customers = click + hover New; + search-wide. Report agent/REPORT_BATCH3_NAV.md.
+- **Group 3 APPROVED 2026-11-26 (visual 5 ×2). BATCH 3 COMPLETE** (Card, Divider, Accordion, Avatar(+Group), Chip, Breadcrumb, Menubar). Open item (optional): menubar open-submenu capture still closed + search-wide shot missing after re-run → clickSel now on .p-menubar-item-content; re-run `--only=menubar` sometime and compare the submenu.
+- NEXT: Forms 2 (InputGroup, MultiSelect, SelectButton, AutoComplete, FileUpload) — scope questions first.
+- 2026-11-26: doc frames Sidebar Menu 288:6429, Tabs 295:6756, Card 300:7246, Divider 300:7252, Accordion 300:7257 rebuilt in the shared doc format (Heading/H4 title, Body/Base muted subtitle, Heading/H6 sections Set / Properties → code / How to use / Text / Accessibility / Known gaps, 620 wide, content/background) with a computed contrast Accessibility section (Light/Dark ratios from variables). Light fails (Aura primary on white 2.54): Sidebar active, Tabs active label + bar. Accessibility also added (2026-11-26) to Scrollbar 253:9905, SplitButton 260:13797, Toolbar 260:13808, Dialog 267:3995 (inserted before their last section). All 26 doc frames now have it.
+- RULE for new docs: always use this format and compute contrast in Figma (fg over bg per mode).
+
+## Forms 2 (#101) — 2026-11-26
+- Scope: InputGroup, SelectButton, MultiSelect, AutoComplete, FileUpload (answers in #101).
+- Tokens pushed (patches/forms2-components.js, compact push): **1,791 vars, fp c8d47f3a ✅**. figma-variables: CSS keyword values (unset/inherit/initial) skipped.
+- NOTE: figma:plan now writes components into 03–07 (07-components-5.js); effect styles = 08-effect-styles.js, text styles = 09-text-styles.js. Stale: old calls/07-effect-styles.js + 08-text-styles.js deleted 2026-11-26.
+- Stories: inputgroup (4 Sakai rows), selectbutton, multiselect (+Open), autocomplete (+Open), fileupload (host sets 2 files) .stories.ts; plans *Plan; ROOTS + .p-inputgroup .p-selectbutton .p-multiselect .p-autocomplete .p-fileupload. Storybook build OK ($HOME/sbout3 on the VM).
+- Captured 2026-11-26 (one shot dropped: autocomplete panel hover with value selected did not open). NOW: group 1 (InputGroup + SelectButton) → group 2 (MultiSelect + AutoComplete) → group 3 (FileUpload).
+- Group 1 BUILT (fresh): InputGroup Addon 317:4332 (5), InputGroup 317:4358 (4), SelectButton Option 317:4419 (12), SelectButton 317:4480 (12, + Disabled axis); docs 318:8498 / 318:8513; examples 318:7978, stress 318:8415. Generator figma-forms2a.mjs + .body.js (npm run figma:forms2a). Styles: ToggleButton/Label sm|base|lg (44 text styles), 5 effect styles (togglebutton checked shadow, multiselect / autocomplete field + overlay). Report agent/REPORT_FORMS2_A.md.
+- Known for group 3: FileUpload 'files' capture shows no files (100.84 = empty) → story host must set files differently.
+- **Forms 2 group 1 APPROVED 2026-11-26 (visual 5 ×2).**
+- Group 2 BUILT (fresh): MultiSelect 321:4469 (144), AutoComplete 322:4997 (144), MultiSelect Option 322:6439 (4), MultiSelect Panel 322:6458; AutoComplete panel = Select Panel; docs 323:9529 / 323:9544; examples 323:8873, stress 323:9462. Generator figma-forms2b.mjs + .body.js (npm run figma:forms2b, 3 calls). Report agent/REPORT_FORMS2_B.md.
+- Library v0.4.0 published by Witoon (covers batch 2, batch 3, Forms 2 groups 1–2).
+- **Group 2 APPROVED 2026-11-26 (visual 5 ×2).** Group 3 BUILT (fresh): FileUpload 324:5569 (3), FileUpload File 324:5548; doc 325:9409; examples 325:8968. Generator figma-fileupload.mjs + .body.js (npm run figma:fileupload). Story fixed (PNG files; accept=image/* validates). Report agent/REPORT_FORMS2_C.md.
+- **FileUpload APPROVED (5). FORMS 2 COMPLETE 2026-11-26.** NEXT: review the unbuilt Sakai components list (Timeline, Drawer, Tooltip/Popover, Slider, Rating, Listbox, Tree, DataView, Splitter, ContextMenu/MegaMenu/PanelMenu, FloatLabel, Charts, + deferred Panel/Fieldset, Skeleton, ProgressBar, OverlayBadge, TieredMenu, Stepper) → batch 4 layout patterns → batch 5 templates.
+
+## Extras (#102) — 2026-11-26
+- Scope: Tooltip, Timeline, Stepper | Tree, TreeTable | DataView | Charts.
+- Tokens pushed (compact push; data from calls 0x-components-*): +220 vars → **2,011, fp b953aadd ✅**; effect styles tooltip/shadow, timeline/event-marker/content/inset-shadow, stepper/step-number/shadow (44).
+- Stories: tooltip (hover, .sb-capture wrapper), timeline, stepper (+panels), tree, treetable, dataview (Sakai list/grid markup, CDN images), chart (Sakai chartdemo colours, animation off; .sb-capture). Plans *Plan; ROOTS + .p-timeline .p-stepper .p-treetable .p-tree .p-dataview. Storybook build OK ($HOME/sbout5).
+- WAITING: Witoon runs `npm run capture -- --only=tooltip,timeline,stepper,tree,treetable,dataview,chart`. Then group 1 Tooltip + Timeline + Stepper → 2 Tree + TreeTable → 3 DataView → 4 Charts.
+
+### Extras group 1 built — 2026-11-26
+Tooltip 328:5660, Timeline Event 328:5677, Timeline 328:5746, Step 328:5891, Stepper 328:5927 (+Slot 328:5924). Examples 329:9382, stress 329:10254, docs 329:10322/10337/10352. 0 unbound of 208. REPORT_EXTRAS_1.md. APPROVED (visual 5).
+Lessons: REF needs the node appended inside the component first; separator in auto layout → layoutSizing FILL (not layoutAlign); wrapping text needs maxWidth on the text node.
+
+### Extras group 2 built — 2026-11-26
+Tree Node 333:5840, Tree 333:5907, TreeTable Header Cell 333:6049, Body Cell 333:6051, Toggler Cell 333:6054, Row 333:6118, TreeTable 333:6155. Examples 334:2, stress 334:1886, docs 335:2 / 335:17. 0 unbound of 226; contrast all pass. REPORT_EXTRAS_2.md. APPROVED (visual 5).
+Lessons: selected (color-mix) backgrounds need the Background layer + bound opacity (#25) — a solid fill gave dark contrast 1.76; text that can be long → fixed component width + text FILL/HEIGHT; generator placeholders: use replaceAll and keep the literal markers out of the body's header comment (fixed in extras1 + tree; older generators still replace the first match only — check before reusing).
+
+### Extras group 3 built — 2026-11-26
+User chose: DataView frame + Sakai items, image placeholders, existing variables + DataView text styles. New tokens layout/dataview/* (11) + text styles DataView/Meta|Name|Price|Price lg — pushed after the user's explicit "push" (the tool blocks variable pushes without it): **2,022 vars, fp 2c42e249 ✅**, 50 text styles.
+DataView List Item 338:6114, Grid Item 338:6214, DataView 338:6264; examples 339:2, stress 339:1218, doc 339:1464. 0 unbound of 78. REPORT_EXTRAS_3.md. APPROVED (visual 5).
+Lessons: Figma frames include strokes in layout here (strokesIncludedInLayout true) → CSS border + padding = padding only; text with percent line height rounds to whole px.
+NEXT: group 4 Charts (Chart.js look, Sakai colours).
+
+### Extras group 4 · Charts — in progress 2026-11-26
+User chose: Chart set (Type line/bar/pie/doughnut, Sakai data as vectors) + parts (Legend item, axis labels); font Lato 12 (docs: set Chart.defaults.font.family); Sakai colours (primary/500|200, indigo|purple|teal/500).
+First chart capture was wrong (story read CSS vars before PrimeNG injected the theme → Chart.js default / black colours). Story fixed: sb-chart wrapper waits for --p-primary-500, .sb-capture appears only when ready. Storybook build OK ($HOME/sbout6).
+Tokens (repo): layout/chart/font-size 12, line-height 1.2, tick-font-weight 500 + text styles Chart/Label, Chart/Label medium → pushed with the user's "push": **2,025 vars, fp 991981f3 ✅**, 52 text styles.
+Capture redone (Sakai colours OK). BUILT: Chart Legend Item 341:6452, Chart 341:6462; examples 342:2, stress 342:857, doc 342:981. 0 unbound of 137. REPORT_EXTRAS_4.md. APPROVED (visual 5). **EXTRAS (#102) COMPLETE.**
+Lessons: Figma re-bases vectorPaths to the curve bounds (control points excluded) → set the path in absolute coords and re-anchor on the first point; arcs via ellipse arcData.
+After approval: EXTRAS (#102) COMPLETE → batch 4 layout patterns, batch 5 templates (ask the user).
+

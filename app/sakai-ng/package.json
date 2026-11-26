@@ -28,7 +28,19 @@
         "figma:toolbar": "node scripts/figma-toolbar.mjs",
         "figma:dialog": "node scripts/figma-dialog.mjs",
         "figma:toast": "node scripts/figma-toast.mjs",
-        "figma:menu": "node scripts/figma-menu.mjs"
+        "figma:menu": "node scripts/figma-menu.mjs",
+        "figma:sidebarmenu": "node scripts/figma-sidebarmenu.mjs",
+        "figma:tabs": "node scripts/figma-tabs.mjs",
+        "figma:content": "node scripts/figma-content.mjs",
+        "figma:display": "node scripts/figma-display.mjs",
+        "figma:nav": "node scripts/figma-nav.mjs",
+        "figma:forms2a": "node scripts/figma-forms2a.mjs",
+        "figma:forms2b": "node scripts/figma-forms2b.mjs",
+        "figma:fileupload": "node scripts/figma-fileupload.mjs",
+        "figma:extras1": "node scripts/figma-extras1.mjs",
+        "figma:tree": "node scripts/figma-tree.mjs",
+        "figma:dataview": "node scripts/figma-dataview.mjs",
+        "figma:chart": "node scripts/figma-chart.mjs"
     },
     "private": true,
     "dependencies": {
