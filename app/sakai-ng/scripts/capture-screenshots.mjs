@@ -197,6 +197,65 @@ function selectPlan() {
     p.push({ ...pl('select', 'select', { empty: true }, ['variant-outlined', 'size-base', 'content-placeholder', 'empty'], ['open'], 'playground'), story: 'components-select--open' });
     return p;
 }
+// Batch 2 (#80–#83): DataTable (Sakai CRUD replica) + Paginator
+function datatablePlan() {
+    const p = [];
+    for (const size of SIZES) p.push(pl('datatable', 'datatable', { size }, [`size-${size}`], ['default']));
+    p.push({ ...pl('datatable', 'datatable', {}, ['size-base', 'row-2'], ['hover']), hoverSel: 'tbody tr:nth-child(2) td:nth-child(3)' });
+    p.push({ ...pl('datatable', 'datatable', {}, ['size-base', 'header-price'], ['hover']), hoverSel: 'th[psortablecolumn="price"]' });
+    p.push(pl('datatable', 'datatable', { selected: true }, ['size-base', 'selected'], ['default']));
+    p.push(pl('datatable', 'datatable', { sorted: true }, ['size-base', 'sorted-name'], ['default']));
+    p.push(pl('datatable', 'datatable', { striped: true }, ['size-base', 'striped'], ['default']));
+    p.push(pl('datatable', 'datatable', { gridlines: true }, ['size-base', 'gridlines'], ['default']));
+    return p;
+}
+function paginatorPlan() {
+    const p = [];
+    p.push(pl('paginator', 'paginator', { first: 0 }, ['page-1'], ['default']));
+    p.push(pl('paginator', 'paginator', { first: 20 }, ['page-3'], ['default']));
+    p.push({ ...pl('paginator', 'paginator', { first: 20 }, ['page-3', 'page-4'], ['hover']), hoverSel: '.p-paginator-page:not(.p-paginator-page-selected) >> nth=2' });
+    p.push(pl('paginator', 'paginator', { first: 20, report: true }, ['page-3', 'report'], ['default']));
+    return p;
+}
+// Batch 2 (#89/#90): Toolbar (Sakai CRUD + UI Kit replicas) + SplitButton
+function toolbarPlan() {
+    return ['crud', 'uikit'].map((layout) => pl('toolbar', 'toolbar', { layout }, [`layout-${layout}`], ['default']));
+}
+function splitbuttonPlan() {
+    const p = [];
+    for (const severity of SEVERITIES) p.push(pl('splitbutton', 'splitbutton', { severity }, [`severity-${severity}`, 'size-base', 'variant-solid'], ['default']));
+    for (const severity of ['primary', 'secondary']) for (const v of ['outlined', 'text']) p.push(pl('splitbutton', 'splitbutton', { severity, [v]: true }, [`severity-${severity}`, 'size-base', `variant-${v}`], ['default']));
+    for (const size of ['small', 'large']) p.push(pl('splitbutton', 'splitbutton', { size }, ['severity-primary', `size-${size}`, 'variant-solid'], ['default']));
+    p.push(pl('splitbutton', 'splitbutton', { rounded: true }, ['severity-primary', 'size-base', 'variant-solid', 'rounded'], ['default']));
+    p.push(pl('splitbutton', 'splitbutton', { outlined: true, rounded: true }, ['severity-primary', 'size-base', 'variant-outlined', 'rounded'], ['default']));
+    p.push(pl('splitbutton', 'splitbutton', { raised: true }, ['severity-primary', 'size-base', 'variant-solid', 'raised'], ['default']));
+    p.push(pl('splitbutton', 'splitbutton', { disabled: true }, ['severity-primary', 'size-base', 'variant-solid'], ['disabled']));
+    p.push({ ...pl('splitbutton', 'splitbutton', {}, ['severity-primary', 'size-base', 'variant-solid', 'main'], ['hover']), hoverSel: '.p-splitbutton-button' });
+    p.push({ ...pl('splitbutton', 'splitbutton', {}, ['severity-primary', 'size-base', 'variant-solid', 'dropdown'], ['hover']), hoverSel: '.p-splitbutton-dropdown' });
+    p.push({ ...pl('splitbutton', 'splitbutton', { outlined: true }, ['severity-primary', 'size-base', 'variant-outlined', 'main'], ['hover']), hoverSel: '.p-splitbutton-button' });
+    return p;
+}
+// Batch 2 (#91–#93): Dialog + ConfirmDialog (overlays: the root is the dialog box, the mask is not captured)
+function dialogPlan() {
+    const p = [];
+    for (const layout of ['product', 'simple']) p.push(pl('dialog', 'dialog', { layout }, [`layout-${layout}`], ['default']));
+    p.push(pl('dialog', 'dialog', { layout: 'simple', closable: false }, ['layout-simple', 'no-close'], ['default']));
+    p.push(pl('dialog', 'dialog', { layout: 'simple', header: false }, ['layout-simple', 'no-header'], ['default']));
+    p.push({ ...pl('dialog', 'dialog', { layout: 'simple' }, ['layout-simple', 'close'], ['hover']), hoverSel: '.p-dialog-close-button' });
+    return p;
+}
+function confirmdialogPlan() {
+    return [pl('confirmdialog', 'confirmdialog', {}, ['crud-delete'], ['default'])];
+}
+// Batch 2 (#94): Toast — one sticky toast; the root is the message box (.p-toast-message)
+function toastPlan() {
+    const p = [];
+    for (const severity of ['info', 'success', 'warn', 'error', 'secondary', 'contrast']) p.push(pl('toast', 'toast', { severity }, [`severity-${severity}`], ['default']));
+    p.push(pl('toast', 'toast', { severity: 'info', detail: false }, ['severity-info', 'no-detail'], ['default']));
+    p.push(pl('toast', 'toast', { severity: 'info', closable: false }, ['severity-info', 'no-close'], ['default']));
+    p.push({ ...pl('toast', 'toast', { severity: 'info' }, ['severity-info', 'close'], ['hover']), hoverSel: '.p-toast-close-button' });
+    return p;
+}
 function messagePlan() {
     const p = [];
     for (const severity of ['success', 'info', 'warn', 'error', 'secondary', 'contrast'])
@@ -221,7 +280,7 @@ function datepickerPlan() {
     return p;
 }
 const PLANS = { button: buttonPlan, inputtext: inputtextPlan, tag: tagPlan, textarea: textareaPlan, password: passwordPlan, iconfield: iconfieldPlan, inputnumber: inputnumberPlan,
-    checkbox: () => choicePlan('checkbox', 'checkbox'), radiobutton: () => choicePlan('radiobutton', 'radiobutton'), toggleswitch: () => choicePlan('toggleswitch', 'toggleswitch'), select: selectPlan, message: messagePlan, datepicker: datepickerPlan };
+    checkbox: () => choicePlan('checkbox', 'checkbox'), radiobutton: () => choicePlan('radiobutton', 'radiobutton'), toggleswitch: () => choicePlan('toggleswitch', 'toggleswitch'), select: selectPlan, message: messagePlan, datepicker: datepickerPlan, datatable: datatablePlan, paginator: paginatorPlan, toolbar: toolbarPlan, splitbutton: splitbuttonPlan, dialog: dialogPlan, confirmdialog: confirmdialogPlan, toast: toastPlan };
 
 // ---------------------------------------------------------------------------
 // Storybook URL building. Arg values: '!undefined' / '!true' / '!false' are Storybook URL specials.
@@ -265,7 +324,7 @@ function serve(root) {
 // ---------------------------------------------------------------------------
 // Capture one plan entry in one mode.
 // ---------------------------------------------------------------------------
-const ROOTS = '.p-button, .p-inputtext, .p-tag, .p-textarea, .p-select, .p-inputnumber, .p-checkbox, .p-radiobutton, .p-toggleswitch, .p-password, .p-iconfield, .p-message, .p-datepicker'; // component roots (outer first in document order)
+const ROOTS = '.p-button, .p-inputtext, .p-tag, .p-textarea, .p-select, .p-inputnumber, .p-checkbox, .p-radiobutton, .p-toggleswitch, .p-password, .p-iconfield, .p-message, .p-datepicker, .p-datatable, .p-paginator, .p-toolbar, .p-splitbutton, .p-dialog, .p-toast-message'; // component roots (outer first in document order)
 const rootSel = (cell) => ROOTS.split(', ').map((r) => `${cell} ${r}`).join(', ');
 const FREEZE_CSS = '*,*::before,*::after{animation-play-state:paused!important;animation-delay:0s!important;transition:none!important;caret-color:transparent!important}';
 

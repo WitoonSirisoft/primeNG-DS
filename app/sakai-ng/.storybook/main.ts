@@ -5,6 +5,7 @@ const config: StorybookConfig = {
     stories: ['../src/stories/**/*.mdx', '../src/stories/**/*.stories.@(ts)'],
     addons: ['@storybook/addon-docs', '@storybook/addon-a11y'],
     framework: '@storybook/angular-vite',
+    staticDirs: ['../public'], // Sakai demo images (DataTable story, batch 2)
     // Mirror the "@/*" -> "src/*" path alias from tsconfig.json so Sakai's Sass imports (@use '@/assets/...') resolve
     viteFinal: async (viteConfig) => {
         viteConfig.resolve ??= {};

@@ -36,6 +36,9 @@ async function syCopy(o,n,inInst,root){
  if(o.type!=='TEXT'&&(Math.abs(o.width-n.width)>0.001||Math.abs(o.height-n.height)>0.001))try{o.resize(n.width,n.height);SY.writes++;}catch(e){}
  for(const k of ['primaryAxisSizingMode','counterAxisSizingMode'])if(k in n)tryset(o,k,n[k]);
  for(const k of SYP)if(k in n&&n[k]!==figma.mixed)tryset(o,k,n[k]);
+ // Figma: setting one side weight can reset the others, so when any side differs write all four in order
+ const SW=['strokeTopWeight','strokeRightWeight','strokeBottomWeight','strokeLeftWeight'];
+ if('strokeTopWeight' in n&&SW.some(k=>o[k]!==n[k])){for(const k of SW)o[k]=n[k];SY.writes++;}
  if(o.type==='TEXT'){
   if(n.textStyleId&&n.textStyleId!==figma.mixed){if(o.textStyleId!==n.textStyleId){await figma.loadFontAsync(n.fontName);await o.setTextStyleIdAsync(n.textStyleId);SY.writes++;}}
   else for(const k of ['fontSize','lineHeight','letterSpacing'])tryset(o,k,n[k]);

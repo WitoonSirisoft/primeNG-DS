@@ -21,7 +21,13 @@
         "figma:datepicker": "node scripts/figma-datepicker.mjs",
         "figma:toggles": "node scripts/figma-toggles.mjs",
         "figma:select": "node scripts/figma-select.mjs",
-        "figma:message": "node scripts/figma-message.mjs"
+        "figma:message": "node scripts/figma-message.mjs",
+        "figma:datatable": "node scripts/figma-datatable.mjs",
+        "figma:scrollbar": "node scripts/figma-scrollbar.mjs",
+        "figma:splitbutton": "node scripts/figma-splitbutton.mjs",
+        "figma:toolbar": "node scripts/figma-toolbar.mjs",
+        "figma:dialog": "node scripts/figma-dialog.mjs",
+        "figma:toast": "node scripts/figma-toast.mjs"
     },
     "private": true,
     "dependencies": {

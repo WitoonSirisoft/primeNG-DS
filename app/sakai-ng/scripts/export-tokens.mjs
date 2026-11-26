@@ -20,7 +20,7 @@ const arg = (n, d) => {
     return a ? a.slice(n.length + 3) : d;
 };
 const OUT = resolve(APP, arg('out', '../../tokens/base/tokens.json'));
-const COMPONENTS = arg('components', 'button,inputtext,tag,badge,textarea,select,inputnumber,checkbox,radiobutton,toggleswitch,password,iconfield,message,datepicker').split(','); // batch 1 added 2026-11-24 (#60)
+const COMPONENTS = arg('components', 'button,inputtext,tag,badge,textarea,select,inputnumber,checkbox,radiobutton,toggleswitch,password,iconfield,message,datepicker,datatable,paginator,toolbar,splitbutton,dialog,confirmdialog,toast').split(','); // batch 2: datatable + paginator (#80), toolbar + splitbutton (#89/#90), dialog + confirmdialog (#91–#93), toast (#94) // batch 1 added 2026-11-24 (#60)
 const ROOT_FONT_PX = 14; // DECISIONS #15
 const MODES = ['light', 'dark'];
 
@@ -157,7 +157,7 @@ function typeOf(path, resolved) {
     if (/duration/.test(path)) return 'duration';
     if (/(^|-)style$/.test(leaf)) return 'strokeStyle';
     if (/^(#|rgba?\(|hsla?\(|color-mix\(|transparent$)/i.test(resolved)) return 'color';
-    if (/^-?[\d.]+(rem|px|em)?$/.test(resolved) && /width|height|size|radius|padding|gap|offset|gutter|margin/.test(path)) return 'dimension';
+    if (/^-?[\d.]+(rem|px|em)?$/.test(resolved) && /width|height|size|radius|padding|gap|offset|gutter|margin|blur/.test(path)) return 'dimension'; // blur: toast.blur (#94)
     if (/^(-?[\d.]+(rem|px|em)?\s+)+-?[\d.]+(rem|px|em)?$/.test(resolved)) return 'dimension';
     return 'string';
 }

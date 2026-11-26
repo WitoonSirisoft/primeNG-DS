@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T04:26:49.815Z",
+  "generated": "2026-11-25T10:08:11.988Z",
   "source": {
     "tokens": "tokens/base/tokens.json",
     "theme": null
@@ -7,11 +7,11 @@
   "counts": {
     "Primitives": 248,
     "Semantic": 163,
-    "Components": 680,
-    "effectStyles": 23,
-    "textStyles": 25,
-    "derived": 127,
-    "skipped": 27
+    "Components": 930,
+    "effectStyles": 35,
+    "textStyles": 30,
+    "derived": 203,
+    "skipped": 40
   },
   "calls": [
     {
@@ -32,15 +32,19 @@
     },
     {
       "file": "calls/05-components-3.js",
-      "chars": 11523
+      "chars": 43861
     },
     {
-      "file": "calls/06-effect-styles.js",
-      "chars": 4937
+      "file": "calls/06-components-4.js",
+      "chars": 3355
     },
     {
-      "file": "calls/07-text-styles.js",
-      "chars": 10355
+      "file": "calls/07-effect-styles.js",
+      "chars": 7019
+    },
+    {
+      "file": "calls/08-text-styles.js",
+      "chars": 12141
     }
   ],
   "plan": {
@@ -15342,6 +15346,3270 @@
           "description": ""
         },
         {
+          "name": "datatable/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "content/border-color"
+            },
+            "Dark": {
+              "a": "surface/800"
+            }
+          },
+          "codeSyntax": "--p-datatable-border-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/body-cell/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "datatable/border-color"
+            },
+            "Dark": {
+              "a": "datatable/border-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-body-cell-border-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/body-cell/lg/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-body-cell-lg-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datatable/body-cell/lg/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 17.5,
+            "Dark": 17.5
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-body-cell-lg-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datatable/body-cell/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 10.5,
+            "Dark": 10.5
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-body-cell-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datatable/body-cell/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-body-cell-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datatable/body-cell/selected-border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "primary/100"
+            },
+            "Dark": {
+              "a": "primary/900"
+            }
+          },
+          "codeSyntax": "--p-datatable-body-cell-selected-border-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/body-cell/sm/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 5.25,
+            "Dark": 5.25
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-body-cell-sm-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datatable/body-cell/sm/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-body-cell-sm-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datatable/column-footer/font-weight",
+          "type": "FLOAT",
+          "scope": "fw",
+          "values": {
+            "Light": 600,
+            "Dark": 600
+          },
+          "codeSyntax": "--p-datatable-column-footer-font-weight",
+          "description": ""
+        },
+        {
+          "name": "datatable/column-resizer/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": "--p-datatable-column-resizer-width",
+          "description": ""
+        },
+        {
+          "name": "datatable/column-title/font-weight",
+          "type": "FLOAT",
+          "scope": "fw",
+          "values": {
+            "Light": 600,
+            "Dark": 600
+          },
+          "codeSyntax": "--p-datatable-column-title-font-weight",
+          "description": ""
+        },
+        {
+          "name": "datatable/drop-point/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "primary/color"
+            },
+            "Dark": {
+              "a": "primary/color"
+            }
+          },
+          "codeSyntax": "--p-datatable-drop-point-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/constraint-list/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "list/gap"
+            },
+            "Dark": {
+              "a": "list/gap"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-constraint-list-gap",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/constraint-list/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "list/padding-y"
+            },
+            "Dark": {
+              "a": "list/padding-y"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-filter-constraint-list-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datatable/filter/constraint-list/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "list/padding-x"
+            },
+            "Dark": {
+              "a": "list/padding-x"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-filter-constraint-list-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datatable/filter/constraint/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "list/option/border-radius"
+            },
+            "Dark": {
+              "a": "list/option/border-radius"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-constraint-border-radius",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/constraint/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "list/option/color"
+            },
+            "Dark": {
+              "a": "list/option/color"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-constraint-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/constraint/focus-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "list/option/focus-background"
+            },
+            "Dark": {
+              "a": "list/option/focus-background"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-constraint-focus-background",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/constraint/focus-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "list/option/focus-color"
+            },
+            "Dark": {
+              "a": "list/option/focus-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-constraint-focus-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/constraint/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "list/option/padding-y"
+            },
+            "Dark": {
+              "a": "list/option/padding-y"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-filter-constraint-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datatable/filter/constraint/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "list/option/padding-x"
+            },
+            "Dark": {
+              "a": "list/option/padding-x"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-filter-constraint-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datatable/filter/constraint/selected-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "list/option/selected-background"
+            },
+            "Dark": {
+              "a": "list/option/selected-background"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-constraint-selected-background",
+          "description": "Aliases a color-mix token. Apply with layer opacity bound to datatable/filter/constraint/selected-background-opacity."
+        },
+        {
+          "name": "datatable/filter/constraint/selected-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "list/option/selected-color"
+            },
+            "Dark": {
+              "a": "list/option/selected-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-constraint-selected-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/constraint/selected-focus-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "list/option/selected-focus-background"
+            },
+            "Dark": {
+              "a": "list/option/selected-focus-background"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-constraint-selected-focus-background",
+          "description": "Aliases a color-mix token. Apply with layer opacity bound to datatable/filter/constraint/selected-focus-background-opacity."
+        },
+        {
+          "name": "datatable/filter/constraint/selected-focus-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "list/option/selected-focus-color"
+            },
+            "Dark": {
+              "a": "list/option/selected-focus-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-constraint-selected-focus-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/constraint/separator/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "content/border-color"
+            },
+            "Dark": {
+              "a": "content/border-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-constraint-separator-border-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/inline-gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": "--p-datatable-filter-inline-gap",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/overlay-popover/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "overlay/popover/background"
+            },
+            "Dark": {
+              "a": "overlay/popover/background"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-overlay-popover-background",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/overlay-popover/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "overlay/popover/border-color"
+            },
+            "Dark": {
+              "a": "overlay/popover/border-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-overlay-popover-border-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/overlay-popover/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "overlay/popover/border-radius"
+            },
+            "Dark": {
+              "a": "overlay/popover/border-radius"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-overlay-popover-border-radius",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/overlay-popover/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "overlay/popover/color"
+            },
+            "Dark": {
+              "a": "overlay/popover/color"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-overlay-popover-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/overlay-popover/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": "--p-datatable-filter-overlay-popover-gap",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/overlay-popover/padding",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "overlay/popover/padding"
+            },
+            "Dark": {
+              "a": "overlay/popover/padding"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-overlay-popover-padding",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/overlay-select/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "overlay/select/background"
+            },
+            "Dark": {
+              "a": "overlay/select/background"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-overlay-select-background",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/overlay-select/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "overlay/select/border-color"
+            },
+            "Dark": {
+              "a": "overlay/select/border-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-overlay-select-border-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/overlay-select/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "overlay/select/border-radius"
+            },
+            "Dark": {
+              "a": "overlay/select/border-radius"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-overlay-select-border-radius",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/overlay-select/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "overlay/select/color"
+            },
+            "Dark": {
+              "a": "overlay/select/color"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-overlay-select-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/filter/rule/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "content/border-color"
+            },
+            "Dark": {
+              "a": "content/border-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-filter-rule-border-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/footer-cell/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "content/background"
+            },
+            "Dark": {
+              "a": "content/background"
+            }
+          },
+          "codeSyntax": "--p-datatable-footer-cell-background",
+          "description": ""
+        },
+        {
+          "name": "datatable/footer-cell/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "datatable/border-color"
+            },
+            "Dark": {
+              "a": "datatable/border-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-footer-cell-border-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/footer-cell/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "content/color"
+            },
+            "Dark": {
+              "a": "content/color"
+            }
+          },
+          "codeSyntax": "--p-datatable-footer-cell-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/footer-cell/lg/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-footer-cell-lg-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datatable/footer-cell/lg/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 17.5,
+            "Dark": 17.5
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-footer-cell-lg-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datatable/footer-cell/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 10.5,
+            "Dark": 10.5
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-footer-cell-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datatable/footer-cell/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-footer-cell-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datatable/footer-cell/sm/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 5.25,
+            "Dark": 5.25
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-footer-cell-sm-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datatable/footer-cell/sm/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-footer-cell-sm-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datatable/footer/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "content/background"
+            },
+            "Dark": {
+              "a": "content/background"
+            }
+          },
+          "codeSyntax": "--p-datatable-footer-background",
+          "description": ""
+        },
+        {
+          "name": "datatable/footer/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "datatable/border-color"
+            },
+            "Dark": {
+              "a": "datatable/border-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-footer-border-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/footer/border-width-top",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-footer-border-width (4-value shorthand, top)."
+        },
+        {
+          "name": "datatable/footer/border-width-right",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-footer-border-width (4-value shorthand, right)."
+        },
+        {
+          "name": "datatable/footer/border-width-bottom",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 1,
+            "Dark": 1
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-footer-border-width (4-value shorthand, bottom)."
+        },
+        {
+          "name": "datatable/footer/border-width-left",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-footer-border-width (4-value shorthand, left)."
+        },
+        {
+          "name": "datatable/footer/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "content/color"
+            },
+            "Dark": {
+              "a": "content/color"
+            }
+          },
+          "codeSyntax": "--p-datatable-footer-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/footer/lg/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-footer-lg-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datatable/footer/lg/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 17.5,
+            "Dark": 17.5
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-footer-lg-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datatable/footer/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 10.5,
+            "Dark": 10.5
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-footer-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datatable/footer/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-footer-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datatable/footer/sm/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 5.25,
+            "Dark": 5.25
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-footer-sm-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datatable/footer/sm/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-footer-sm-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datatable/header-cell/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "content/background"
+            },
+            "Dark": {
+              "a": "content/background"
+            }
+          },
+          "codeSyntax": "--p-datatable-header-cell-background",
+          "description": ""
+        },
+        {
+          "name": "datatable/header-cell/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "datatable/border-color"
+            },
+            "Dark": {
+              "a": "datatable/border-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-header-cell-border-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/header-cell/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "content/color"
+            },
+            "Dark": {
+              "a": "content/color"
+            }
+          },
+          "codeSyntax": "--p-datatable-header-cell-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/header-cell/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "focus-ring/color"
+            },
+            "Dark": {
+              "a": "focus-ring/color"
+            }
+          },
+          "codeSyntax": "--p-datatable-header-cell-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/header-cell/focus-ring/offset",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": -1,
+            "Dark": -1
+          },
+          "codeSyntax": "--p-datatable-header-cell-focus-ring-offset",
+          "description": ""
+        },
+        {
+          "name": "datatable/header-cell/focus-ring/style",
+          "type": "STRING",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/style"
+            },
+            "Dark": {
+              "a": "focus-ring/style"
+            }
+          },
+          "codeSyntax": "--p-datatable-header-cell-focus-ring-style",
+          "description": ""
+        },
+        {
+          "name": "datatable/header-cell/focus-ring/width",
+          "type": "FLOAT",
+          "scope": "sw",
+          "values": {
+            "Light": {
+              "a": "focus-ring/width"
+            },
+            "Dark": {
+              "a": "focus-ring/width"
+            }
+          },
+          "codeSyntax": "--p-datatable-header-cell-focus-ring-width",
+          "description": ""
+        },
+        {
+          "name": "datatable/header-cell/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": "--p-datatable-header-cell-gap",
+          "description": ""
+        },
+        {
+          "name": "datatable/header-cell/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "content/hover-background"
+            },
+            "Dark": {
+              "a": "content/hover-background"
+            }
+          },
+          "codeSyntax": "--p-datatable-header-cell-hover-background",
+          "description": ""
+        },
+        {
+          "name": "datatable/header-cell/hover-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "content/hover-color"
+            },
+            "Dark": {
+              "a": "content/hover-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-header-cell-hover-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/header-cell/lg/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-header-cell-lg-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datatable/header-cell/lg/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 17.5,
+            "Dark": 17.5
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-header-cell-lg-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datatable/header-cell/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 10.5,
+            "Dark": 10.5
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-header-cell-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datatable/header-cell/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-header-cell-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datatable/header-cell/selected-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "highlight/background"
+            },
+            "Dark": {
+              "a": "highlight/background"
+            }
+          },
+          "codeSyntax": "--p-datatable-header-cell-selected-background",
+          "description": "Aliases a color-mix token. Apply with layer opacity bound to datatable/header-cell/selected-background-opacity."
+        },
+        {
+          "name": "datatable/header-cell/selected-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "highlight/color"
+            },
+            "Dark": {
+              "a": "highlight/color"
+            }
+          },
+          "codeSyntax": "--p-datatable-header-cell-selected-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/header-cell/sm/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 5.25,
+            "Dark": 5.25
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-header-cell-sm-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datatable/header-cell/sm/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-header-cell-sm-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datatable/header/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "content/background"
+            },
+            "Dark": {
+              "a": "content/background"
+            }
+          },
+          "codeSyntax": "--p-datatable-header-background",
+          "description": ""
+        },
+        {
+          "name": "datatable/header/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "datatable/border-color"
+            },
+            "Dark": {
+              "a": "datatable/border-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-header-border-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/header/border-width-top",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-header-border-width (4-value shorthand, top)."
+        },
+        {
+          "name": "datatable/header/border-width-right",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-header-border-width (4-value shorthand, right)."
+        },
+        {
+          "name": "datatable/header/border-width-bottom",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 1,
+            "Dark": 1
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-header-border-width (4-value shorthand, bottom)."
+        },
+        {
+          "name": "datatable/header/border-width-left",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-header-border-width (4-value shorthand, left)."
+        },
+        {
+          "name": "datatable/header/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "content/color"
+            },
+            "Dark": {
+              "a": "content/color"
+            }
+          },
+          "codeSyntax": "--p-datatable-header-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/header/lg/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-header-lg-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datatable/header/lg/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 17.5,
+            "Dark": 17.5
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-header-lg-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datatable/header/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 10.5,
+            "Dark": 10.5
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-header-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datatable/header/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-header-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datatable/header/sm/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 5.25,
+            "Dark": 5.25
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-header-sm-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "datatable/header/sm/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-header-sm-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "datatable/loading-icon/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 28,
+            "Dark": 28
+          },
+          "codeSyntax": "--p-datatable-loading-icon-size",
+          "description": ""
+        },
+        {
+          "name": "datatable/paginator-bottom/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "datatable/border-color"
+            },
+            "Dark": {
+              "a": "datatable/border-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-paginator-bottom-border-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/paginator-bottom/border-width-top",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-paginator-bottom-border-width (4-value shorthand, top)."
+        },
+        {
+          "name": "datatable/paginator-bottom/border-width-right",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-paginator-bottom-border-width (4-value shorthand, right)."
+        },
+        {
+          "name": "datatable/paginator-bottom/border-width-bottom",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 1,
+            "Dark": 1
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-paginator-bottom-border-width (4-value shorthand, bottom)."
+        },
+        {
+          "name": "datatable/paginator-bottom/border-width-left",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-paginator-bottom-border-width (4-value shorthand, left)."
+        },
+        {
+          "name": "datatable/paginator-top/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "datatable/border-color"
+            },
+            "Dark": {
+              "a": "datatable/border-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-paginator-top-border-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/paginator-top/border-width-top",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-paginator-top-border-width (4-value shorthand, top)."
+        },
+        {
+          "name": "datatable/paginator-top/border-width-right",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-paginator-top-border-width (4-value shorthand, right)."
+        },
+        {
+          "name": "datatable/paginator-top/border-width-bottom",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 1,
+            "Dark": 1
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-paginator-top-border-width (4-value shorthand, bottom)."
+        },
+        {
+          "name": "datatable/paginator-top/border-width-left",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-datatable-paginator-top-border-width (4-value shorthand, left)."
+        },
+        {
+          "name": "datatable/resize-indicator/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "primary/color"
+            },
+            "Dark": {
+              "a": "primary/color"
+            }
+          },
+          "codeSyntax": "--p-datatable-resize-indicator-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/resize-indicator/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 1,
+            "Dark": 1
+          },
+          "codeSyntax": "--p-datatable-resize-indicator-width",
+          "description": ""
+        },
+        {
+          "name": "datatable/row-toggle-button/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "text/muted-color"
+            },
+            "Dark": {
+              "a": "text/muted-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-toggle-button-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/row-toggle-button/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "focus-ring/color"
+            },
+            "Dark": {
+              "a": "focus-ring/color"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-toggle-button-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/row-toggle-button/focus-ring/offset",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/offset"
+            },
+            "Dark": {
+              "a": "focus-ring/offset"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-toggle-button-focus-ring-offset",
+          "description": ""
+        },
+        {
+          "name": "datatable/row-toggle-button/focus-ring/style",
+          "type": "STRING",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/style"
+            },
+            "Dark": {
+              "a": "focus-ring/style"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-toggle-button-focus-ring-style",
+          "description": ""
+        },
+        {
+          "name": "datatable/row-toggle-button/focus-ring/width",
+          "type": "FLOAT",
+          "scope": "sw",
+          "values": {
+            "Light": {
+              "a": "focus-ring/width"
+            },
+            "Dark": {
+              "a": "focus-ring/width"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-toggle-button-focus-ring-width",
+          "description": ""
+        },
+        {
+          "name": "datatable/row-toggle-button/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "content/hover-background"
+            },
+            "Dark": {
+              "a": "content/hover-background"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-toggle-button-hover-background",
+          "description": ""
+        },
+        {
+          "name": "datatable/row-toggle-button/hover-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "text/color"
+            },
+            "Dark": {
+              "a": "text/color"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-toggle-button-hover-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/row-toggle-button/selected-hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "content/background"
+            },
+            "Dark": {
+              "a": "content/background"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-toggle-button-selected-hover-background",
+          "description": ""
+        },
+        {
+          "name": "datatable/row-toggle-button/selected-hover-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "primary/color"
+            },
+            "Dark": {
+              "a": "primary/color"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-toggle-button-selected-hover-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/row-toggle-button/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 24.5,
+            "Dark": 24.5
+          },
+          "codeSyntax": "--p-datatable-row-toggle-button-size",
+          "description": ""
+        },
+        {
+          "name": "datatable/row/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "content/background"
+            },
+            "Dark": {
+              "a": "content/background"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-background",
+          "description": ""
+        },
+        {
+          "name": "datatable/row/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "content/color"
+            },
+            "Dark": {
+              "a": "content/color"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/row/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "focus-ring/color"
+            },
+            "Dark": {
+              "a": "focus-ring/color"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/row/focus-ring/offset",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": -1,
+            "Dark": -1
+          },
+          "codeSyntax": "--p-datatable-row-focus-ring-offset",
+          "description": ""
+        },
+        {
+          "name": "datatable/row/focus-ring/style",
+          "type": "STRING",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/style"
+            },
+            "Dark": {
+              "a": "focus-ring/style"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-focus-ring-style",
+          "description": ""
+        },
+        {
+          "name": "datatable/row/focus-ring/width",
+          "type": "FLOAT",
+          "scope": "sw",
+          "values": {
+            "Light": {
+              "a": "focus-ring/width"
+            },
+            "Dark": {
+              "a": "focus-ring/width"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-focus-ring-width",
+          "description": ""
+        },
+        {
+          "name": "datatable/row/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "content/hover-background"
+            },
+            "Dark": {
+              "a": "content/hover-background"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-hover-background",
+          "description": ""
+        },
+        {
+          "name": "datatable/row/hover-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "content/hover-color"
+            },
+            "Dark": {
+              "a": "content/hover-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-hover-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/row/selected-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "highlight/background"
+            },
+            "Dark": {
+              "a": "highlight/background"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-selected-background",
+          "description": "Aliases a color-mix token. Apply with layer opacity bound to datatable/row/selected-background-opacity."
+        },
+        {
+          "name": "datatable/row/selected-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "highlight/color"
+            },
+            "Dark": {
+              "a": "highlight/color"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-selected-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/row/striped-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/50"
+            },
+            "Dark": {
+              "a": "surface/950"
+            }
+          },
+          "codeSyntax": "--p-datatable-row-striped-background",
+          "description": ""
+        },
+        {
+          "name": "datatable/sort-icon/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "text/muted-color"
+            },
+            "Dark": {
+              "a": "text/muted-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-sort-icon-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/sort-icon/hover-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "text/hover-muted-color"
+            },
+            "Dark": {
+              "a": "text/hover-muted-color"
+            }
+          },
+          "codeSyntax": "--p-datatable-sort-icon-hover-color",
+          "description": ""
+        },
+        {
+          "name": "datatable/sort-icon/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 12.25,
+            "Dark": 12.25
+          },
+          "codeSyntax": "--p-datatable-sort-icon-size",
+          "description": ""
+        },
+        {
+          "name": "datatable/transition-duration",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "transition-duration"
+            },
+            "Dark": {
+              "a": "transition-duration"
+            }
+          },
+          "codeSyntax": "--p-datatable-transition-duration",
+          "description": "Seconds. Not used by static Figma components; kept for code parity."
+        },
+        {
+          "name": "paginator/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "content/background"
+            },
+            "Dark": {
+              "a": "content/background"
+            }
+          },
+          "codeSyntax": "--p-paginator-background",
+          "description": ""
+        },
+        {
+          "name": "paginator/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "content/border-radius"
+            },
+            "Dark": {
+              "a": "content/border-radius"
+            }
+          },
+          "codeSyntax": "--p-paginator-border-radius",
+          "description": ""
+        },
+        {
+          "name": "paginator/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "content/color"
+            },
+            "Dark": {
+              "a": "content/color"
+            }
+          },
+          "codeSyntax": "--p-paginator-color",
+          "description": ""
+        },
+        {
+          "name": "paginator/current-page-report/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "text/muted-color"
+            },
+            "Dark": {
+              "a": "text/muted-color"
+            }
+          },
+          "codeSyntax": "--p-paginator-current-page-report-color",
+          "description": ""
+        },
+        {
+          "name": "paginator/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 3.5,
+            "Dark": 3.5
+          },
+          "codeSyntax": "--p-paginator-gap",
+          "description": ""
+        },
+        {
+          "name": "paginator/jump-to-page-input/max-width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 35,
+            "Dark": 35
+          },
+          "codeSyntax": "--p-paginator-jump-to-page-input-max-width",
+          "description": ""
+        },
+        {
+          "name": "paginator/nav-button/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Dark": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "codeSyntax": "--p-paginator-nav-button-background",
+          "description": ""
+        },
+        {
+          "name": "paginator/nav-button/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "text/muted-color"
+            },
+            "Dark": {
+              "a": "text/muted-color"
+            }
+          },
+          "codeSyntax": "--p-paginator-nav-button-color",
+          "description": ""
+        },
+        {
+          "name": "paginator/nav-button/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "focus-ring/color"
+            },
+            "Dark": {
+              "a": "focus-ring/color"
+            }
+          },
+          "codeSyntax": "--p-paginator-nav-button-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "paginator/nav-button/focus-ring/offset",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/offset"
+            },
+            "Dark": {
+              "a": "focus-ring/offset"
+            }
+          },
+          "codeSyntax": "--p-paginator-nav-button-focus-ring-offset",
+          "description": ""
+        },
+        {
+          "name": "paginator/nav-button/focus-ring/style",
+          "type": "STRING",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/style"
+            },
+            "Dark": {
+              "a": "focus-ring/style"
+            }
+          },
+          "codeSyntax": "--p-paginator-nav-button-focus-ring-style",
+          "description": ""
+        },
+        {
+          "name": "paginator/nav-button/focus-ring/width",
+          "type": "FLOAT",
+          "scope": "sw",
+          "values": {
+            "Light": {
+              "a": "focus-ring/width"
+            },
+            "Dark": {
+              "a": "focus-ring/width"
+            }
+          },
+          "codeSyntax": "--p-paginator-nav-button-focus-ring-width",
+          "description": ""
+        },
+        {
+          "name": "paginator/nav-button/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 35,
+            "Dark": 35
+          },
+          "codeSyntax": "--p-paginator-nav-button-height",
+          "description": ""
+        },
+        {
+          "name": "paginator/nav-button/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "content/hover-background"
+            },
+            "Dark": {
+              "a": "content/hover-background"
+            }
+          },
+          "codeSyntax": "--p-paginator-nav-button-hover-background",
+          "description": ""
+        },
+        {
+          "name": "paginator/nav-button/hover-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "text/hover-muted-color"
+            },
+            "Dark": {
+              "a": "text/hover-muted-color"
+            }
+          },
+          "codeSyntax": "--p-paginator-nav-button-hover-color",
+          "description": ""
+        },
+        {
+          "name": "paginator/nav-button/selected-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "highlight/background"
+            },
+            "Dark": {
+              "a": "highlight/background"
+            }
+          },
+          "codeSyntax": "--p-paginator-nav-button-selected-background",
+          "description": "Aliases a color-mix token. Apply with layer opacity bound to paginator/nav-button/selected-background-opacity."
+        },
+        {
+          "name": "paginator/nav-button/selected-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "highlight/color"
+            },
+            "Dark": {
+              "a": "highlight/color"
+            }
+          },
+          "codeSyntax": "--p-paginator-nav-button-selected-color",
+          "description": ""
+        },
+        {
+          "name": "paginator/nav-button/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 35,
+            "Dark": 35
+          },
+          "codeSyntax": "--p-paginator-nav-button-width",
+          "description": ""
+        },
+        {
+          "name": "paginator/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-paginator-padding (2-value shorthand, y)."
+        },
+        {
+          "name": "paginator/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-paginator-padding (2-value shorthand, x)."
+        },
+        {
+          "name": "paginator/transition-duration",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "transition-duration"
+            },
+            "Dark": {
+              "a": "transition-duration"
+            }
+          },
+          "codeSyntax": "--p-paginator-transition-duration",
+          "description": "Seconds. Not used by static Figma components; kept for code parity."
+        },
+        {
+          "name": "toolbar/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "content/background"
+            },
+            "Dark": {
+              "a": "content/background"
+            }
+          },
+          "codeSyntax": "--p-toolbar-background",
+          "description": ""
+        },
+        {
+          "name": "toolbar/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "content/border-color"
+            },
+            "Dark": {
+              "a": "content/border-color"
+            }
+          },
+          "codeSyntax": "--p-toolbar-border-color",
+          "description": ""
+        },
+        {
+          "name": "toolbar/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "content/border-radius"
+            },
+            "Dark": {
+              "a": "content/border-radius"
+            }
+          },
+          "codeSyntax": "--p-toolbar-border-radius",
+          "description": ""
+        },
+        {
+          "name": "toolbar/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "content/color"
+            },
+            "Dark": {
+              "a": "content/color"
+            }
+          },
+          "codeSyntax": "--p-toolbar-color",
+          "description": ""
+        },
+        {
+          "name": "toolbar/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": "--p-toolbar-gap",
+          "description": ""
+        },
+        {
+          "name": "toolbar/padding",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 10.5,
+            "Dark": 10.5
+          },
+          "codeSyntax": "--p-toolbar-padding",
+          "description": ""
+        },
+        {
+          "name": "splitbutton/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "form-field/border-radius"
+            },
+            "Dark": {
+              "a": "form-field/border-radius"
+            }
+          },
+          "codeSyntax": "--p-splitbutton-border-radius",
+          "description": ""
+        },
+        {
+          "name": "splitbutton/rounded-border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": 28,
+            "Dark": 28
+          },
+          "codeSyntax": "--p-splitbutton-rounded-border-radius",
+          "description": ""
+        },
+        {
+          "name": "dialog/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "overlay/modal/background"
+            },
+            "Dark": {
+              "a": "overlay/modal/background"
+            }
+          },
+          "codeSyntax": "--p-dialog-background",
+          "description": ""
+        },
+        {
+          "name": "dialog/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "overlay/modal/border-color"
+            },
+            "Dark": {
+              "a": "overlay/modal/border-color"
+            }
+          },
+          "codeSyntax": "--p-dialog-border-color",
+          "description": ""
+        },
+        {
+          "name": "dialog/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "overlay/modal/border-radius"
+            },
+            "Dark": {
+              "a": "overlay/modal/border-radius"
+            }
+          },
+          "codeSyntax": "--p-dialog-border-radius",
+          "description": ""
+        },
+        {
+          "name": "dialog/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "overlay/modal/color"
+            },
+            "Dark": {
+              "a": "overlay/modal/color"
+            }
+          },
+          "codeSyntax": "--p-dialog-color",
+          "description": ""
+        },
+        {
+          "name": "dialog/content/padding-top",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-dialog-content-padding (4-value shorthand, top)."
+        },
+        {
+          "name": "dialog/content/padding-right",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "overlay/modal/padding"
+            },
+            "Dark": {
+              "a": "overlay/modal/padding"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-dialog-content-padding (4-value shorthand, right)."
+        },
+        {
+          "name": "dialog/content/padding-bottom",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "overlay/modal/padding"
+            },
+            "Dark": {
+              "a": "overlay/modal/padding"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-dialog-content-padding (4-value shorthand, bottom)."
+        },
+        {
+          "name": "dialog/content/padding-left",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "overlay/modal/padding"
+            },
+            "Dark": {
+              "a": "overlay/modal/padding"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-dialog-content-padding (4-value shorthand, left)."
+        },
+        {
+          "name": "dialog/footer/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": "--p-dialog-footer-gap",
+          "description": ""
+        },
+        {
+          "name": "dialog/footer/padding-top",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-dialog-footer-padding (4-value shorthand, top)."
+        },
+        {
+          "name": "dialog/footer/padding-right",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "overlay/modal/padding"
+            },
+            "Dark": {
+              "a": "overlay/modal/padding"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-dialog-footer-padding (4-value shorthand, right)."
+        },
+        {
+          "name": "dialog/footer/padding-bottom",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "overlay/modal/padding"
+            },
+            "Dark": {
+              "a": "overlay/modal/padding"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-dialog-footer-padding (4-value shorthand, bottom)."
+        },
+        {
+          "name": "dialog/footer/padding-left",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "overlay/modal/padding"
+            },
+            "Dark": {
+              "a": "overlay/modal/padding"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-dialog-footer-padding (4-value shorthand, left)."
+        },
+        {
+          "name": "dialog/header/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": "--p-dialog-header-gap",
+          "description": ""
+        },
+        {
+          "name": "dialog/header/padding",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "overlay/modal/padding"
+            },
+            "Dark": {
+              "a": "overlay/modal/padding"
+            }
+          },
+          "codeSyntax": "--p-dialog-header-padding",
+          "description": ""
+        },
+        {
+          "name": "dialog/title/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": 17.5,
+            "Dark": 17.5
+          },
+          "codeSyntax": "--p-dialog-title-font-size",
+          "description": ""
+        },
+        {
+          "name": "dialog/title/font-weight",
+          "type": "FLOAT",
+          "scope": "fw",
+          "values": {
+            "Light": 600,
+            "Dark": 600
+          },
+          "codeSyntax": "--p-dialog-title-font-weight",
+          "description": ""
+        },
+        {
+          "name": "confirmdialog/content/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": "--p-confirmdialog-content-gap",
+          "description": ""
+        },
+        {
+          "name": "confirmdialog/icon/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "overlay/modal/color"
+            },
+            "Dark": {
+              "a": "overlay/modal/color"
+            }
+          },
+          "codeSyntax": "--p-confirmdialog-icon-color",
+          "description": ""
+        },
+        {
+          "name": "confirmdialog/icon/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 28,
+            "Dark": 28
+          },
+          "codeSyntax": "--p-confirmdialog-icon-size",
+          "description": ""
+        },
+        {
+          "name": "toast/blur",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": 1.5,
+            "Dark": 10
+          },
+          "codeSyntax": "--p-toast-blur",
+          "description": ""
+        },
+        {
+          "name": "toast/border-radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": {
+              "a": "content/border-radius"
+            },
+            "Dark": {
+              "a": "content/border-radius"
+            }
+          },
+          "codeSyntax": "--p-toast-border-radius",
+          "description": ""
+        },
+        {
+          "name": "toast/border-width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 1,
+            "Dark": 1
+          },
+          "codeSyntax": "--p-toast-border-width",
+          "description": ""
+        },
+        {
+          "name": "toast/close-button/focus-ring/offset",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/offset"
+            },
+            "Dark": {
+              "a": "focus-ring/offset"
+            }
+          },
+          "codeSyntax": "--p-toast-close-button-focus-ring-offset",
+          "description": ""
+        },
+        {
+          "name": "toast/close-button/focus-ring/style",
+          "type": "STRING",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "focus-ring/style"
+            },
+            "Dark": {
+              "a": "focus-ring/style"
+            }
+          },
+          "codeSyntax": "--p-toast-close-button-focus-ring-style",
+          "description": ""
+        },
+        {
+          "name": "toast/close-button/focus-ring/width",
+          "type": "FLOAT",
+          "scope": "sw",
+          "values": {
+            "Light": {
+              "a": "focus-ring/width"
+            },
+            "Dark": {
+              "a": "focus-ring/width"
+            }
+          },
+          "codeSyntax": "--p-toast-close-button-focus-ring-width",
+          "description": ""
+        },
+        {
+          "name": "toast/close-button/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 24.5,
+            "Dark": 24.5
+          },
+          "codeSyntax": "--p-toast-close-button-height",
+          "description": ""
+        },
+        {
+          "name": "toast/close-button/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 24.5,
+            "Dark": 24.5
+          },
+          "codeSyntax": "--p-toast-close-button-width",
+          "description": ""
+        },
+        {
+          "name": "toast/close-icon/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": "--p-toast-close-icon-size",
+          "description": ""
+        },
+        {
+          "name": "toast/content/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": "--p-toast-content-gap",
+          "description": ""
+        },
+        {
+          "name": "toast/content/padding",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": {
+              "a": "overlay/popover/padding"
+            },
+            "Dark": {
+              "a": "overlay/popover/padding"
+            }
+          },
+          "codeSyntax": "--p-toast-content-padding",
+          "description": ""
+        },
+        {
+          "name": "toast/contrast/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/900"
+            },
+            "Dark": {
+              "a": "surface/0"
+            }
+          },
+          "codeSyntax": "--p-toast-contrast-background",
+          "description": ""
+        },
+        {
+          "name": "toast/contrast/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "surface/950"
+            },
+            "Dark": {
+              "a": "surface/100"
+            }
+          },
+          "codeSyntax": "--p-toast-contrast-border-color",
+          "description": ""
+        },
+        {
+          "name": "toast/contrast/close-button/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "surface/50"
+            },
+            "Dark": {
+              "a": "surface/950"
+            }
+          },
+          "codeSyntax": "--p-toast-contrast-close-button-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "toast/contrast/close-button/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/800"
+            },
+            "Dark": {
+              "a": "surface/100"
+            }
+          },
+          "codeSyntax": "--p-toast-contrast-close-button-hover-background",
+          "description": ""
+        },
+        {
+          "name": "toast/contrast/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/50"
+            },
+            "Dark": {
+              "a": "surface/950"
+            }
+          },
+          "codeSyntax": "--p-toast-contrast-color",
+          "description": ""
+        },
+        {
+          "name": "toast/contrast/detail-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/0"
+            },
+            "Dark": {
+              "a": "surface/950"
+            }
+          },
+          "codeSyntax": "--p-toast-contrast-detail-color",
+          "description": ""
+        },
+        {
+          "name": "toast/detail/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": 12.25,
+            "Dark": 12.25
+          },
+          "codeSyntax": "--p-toast-detail-font-size",
+          "description": ""
+        },
+        {
+          "name": "toast/detail/font-weight",
+          "type": "FLOAT",
+          "scope": "fw",
+          "values": {
+            "Light": 500,
+            "Dark": 500
+          },
+          "codeSyntax": "--p-toast-detail-font-weight",
+          "description": ""
+        },
+        {
+          "name": "toast/error/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "red/50"
+            },
+            "Dark": {
+              "a": "red/500"
+            }
+          },
+          "codeSyntax": "--p-toast-error-background",
+          "description": "Aura: --p-toast-error-background uses color-mix (transparent overlay). Apply with layer opacity bound to toast/error/background-opacity."
+        },
+        {
+          "name": "toast/error/background-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": 95,
+            "Dark": 16
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-toast-error-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "toast/error/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "red/200"
+            },
+            "Dark": {
+              "a": "red/700"
+            }
+          },
+          "codeSyntax": "--p-toast-error-border-color",
+          "description": "Aura: --p-toast-error-border-color uses color-mix (transparent overlay). Apply with layer opacity bound to toast/error/border-color-opacity."
+        },
+        {
+          "name": "toast/error/border-color-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": 100,
+            "Dark": 36
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-toast-error-border-color: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "toast/error/close-button/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "red/600"
+            },
+            "Dark": {
+              "a": "red/500"
+            }
+          },
+          "codeSyntax": "--p-toast-error-close-button-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "toast/error/close-button/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "red/100"
+            },
+            "Dark": [
+              1,
+              1,
+              1,
+              0.05
+            ]
+          },
+          "codeSyntax": "--p-toast-error-close-button-hover-background",
+          "description": ""
+        },
+        {
+          "name": "toast/error/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "red/600"
+            },
+            "Dark": {
+              "a": "red/500"
+            }
+          },
+          "codeSyntax": "--p-toast-error-color",
+          "description": ""
+        },
+        {
+          "name": "toast/error/detail-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/700"
+            },
+            "Dark": {
+              "a": "surface/0"
+            }
+          },
+          "codeSyntax": "--p-toast-error-detail-color",
+          "description": ""
+        },
+        {
+          "name": "toast/icon/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 15.75,
+            "Dark": 15.75
+          },
+          "codeSyntax": "--p-toast-icon-size",
+          "description": ""
+        },
+        {
+          "name": "toast/info/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "blue/50"
+            },
+            "Dark": {
+              "a": "blue/500"
+            }
+          },
+          "codeSyntax": "--p-toast-info-background",
+          "description": "Aura: --p-toast-info-background uses color-mix (transparent overlay). Apply with layer opacity bound to toast/info/background-opacity."
+        },
+        {
+          "name": "toast/info/background-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": 95,
+            "Dark": 16
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-toast-info-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "toast/info/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "blue/200"
+            },
+            "Dark": {
+              "a": "blue/700"
+            }
+          },
+          "codeSyntax": "--p-toast-info-border-color",
+          "description": "Aura: --p-toast-info-border-color uses color-mix (transparent overlay). Apply with layer opacity bound to toast/info/border-color-opacity."
+        },
+        {
+          "name": "toast/info/border-color-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": 100,
+            "Dark": 36
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-toast-info-border-color: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "toast/info/close-button/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "blue/600"
+            },
+            "Dark": {
+              "a": "blue/500"
+            }
+          },
+          "codeSyntax": "--p-toast-info-close-button-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "toast/info/close-button/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "blue/100"
+            },
+            "Dark": [
+              1,
+              1,
+              1,
+              0.05
+            ]
+          },
+          "codeSyntax": "--p-toast-info-close-button-hover-background",
+          "description": ""
+        },
+        {
+          "name": "toast/info/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "blue/600"
+            },
+            "Dark": {
+              "a": "blue/500"
+            }
+          },
+          "codeSyntax": "--p-toast-info-color",
+          "description": ""
+        },
+        {
+          "name": "toast/info/detail-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/700"
+            },
+            "Dark": {
+              "a": "surface/0"
+            }
+          },
+          "codeSyntax": "--p-toast-info-detail-color",
+          "description": ""
+        },
+        {
+          "name": "toast/secondary/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/100"
+            },
+            "Dark": {
+              "a": "surface/800"
+            }
+          },
+          "codeSyntax": "--p-toast-secondary-background",
+          "description": ""
+        },
+        {
+          "name": "toast/secondary/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "surface/200"
+            },
+            "Dark": {
+              "a": "surface/700"
+            }
+          },
+          "codeSyntax": "--p-toast-secondary-border-color",
+          "description": ""
+        },
+        {
+          "name": "toast/secondary/close-button/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "surface/600"
+            },
+            "Dark": {
+              "a": "surface/300"
+            }
+          },
+          "codeSyntax": "--p-toast-secondary-close-button-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "toast/secondary/close-button/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "surface/200"
+            },
+            "Dark": {
+              "a": "surface/700"
+            }
+          },
+          "codeSyntax": "--p-toast-secondary-close-button-hover-background",
+          "description": ""
+        },
+        {
+          "name": "toast/secondary/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/600"
+            },
+            "Dark": {
+              "a": "surface/300"
+            }
+          },
+          "codeSyntax": "--p-toast-secondary-color",
+          "description": ""
+        },
+        {
+          "name": "toast/secondary/detail-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/700"
+            },
+            "Dark": {
+              "a": "surface/0"
+            }
+          },
+          "codeSyntax": "--p-toast-secondary-detail-color",
+          "description": ""
+        },
+        {
+          "name": "toast/success/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "green/50"
+            },
+            "Dark": {
+              "a": "green/500"
+            }
+          },
+          "codeSyntax": "--p-toast-success-background",
+          "description": "Aura: --p-toast-success-background uses color-mix (transparent overlay). Apply with layer opacity bound to toast/success/background-opacity."
+        },
+        {
+          "name": "toast/success/background-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": 95,
+            "Dark": 16
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-toast-success-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "toast/success/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "green/200"
+            },
+            "Dark": {
+              "a": "green/700"
+            }
+          },
+          "codeSyntax": "--p-toast-success-border-color",
+          "description": "Aura: --p-toast-success-border-color uses color-mix (transparent overlay). Apply with layer opacity bound to toast/success/border-color-opacity."
+        },
+        {
+          "name": "toast/success/border-color-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": 100,
+            "Dark": 36
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-toast-success-border-color: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "toast/success/close-button/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "green/600"
+            },
+            "Dark": {
+              "a": "green/500"
+            }
+          },
+          "codeSyntax": "--p-toast-success-close-button-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "toast/success/close-button/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "green/100"
+            },
+            "Dark": [
+              1,
+              1,
+              1,
+              0.05
+            ]
+          },
+          "codeSyntax": "--p-toast-success-close-button-hover-background",
+          "description": ""
+        },
+        {
+          "name": "toast/success/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "green/600"
+            },
+            "Dark": {
+              "a": "green/500"
+            }
+          },
+          "codeSyntax": "--p-toast-success-color",
+          "description": ""
+        },
+        {
+          "name": "toast/success/detail-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/700"
+            },
+            "Dark": {
+              "a": "surface/0"
+            }
+          },
+          "codeSyntax": "--p-toast-success-detail-color",
+          "description": ""
+        },
+        {
+          "name": "toast/summary/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": "--p-toast-summary-font-size",
+          "description": ""
+        },
+        {
+          "name": "toast/summary/font-weight",
+          "type": "FLOAT",
+          "scope": "fw",
+          "values": {
+            "Light": 500,
+            "Dark": 500
+          },
+          "codeSyntax": "--p-toast-summary-font-weight",
+          "description": ""
+        },
+        {
+          "name": "toast/text/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": "--p-toast-text-gap",
+          "description": ""
+        },
+        {
+          "name": "toast/transition-duration",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": {
+              "a": "transition-duration"
+            },
+            "Dark": {
+              "a": "transition-duration"
+            }
+          },
+          "codeSyntax": "--p-toast-transition-duration",
+          "description": "Seconds. Not used by static Figma components; kept for code parity."
+        },
+        {
+          "name": "toast/warn/background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "yellow/50"
+            },
+            "Dark": {
+              "a": "yellow/500"
+            }
+          },
+          "codeSyntax": "--p-toast-warn-background",
+          "description": "Aura: --p-toast-warn-background uses color-mix (transparent overlay). Apply with layer opacity bound to toast/warn/background-opacity."
+        },
+        {
+          "name": "toast/warn/background-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": 95,
+            "Dark": 16
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-toast-warn-background: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "toast/warn/border-color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "yellow/200"
+            },
+            "Dark": {
+              "a": "yellow/700"
+            }
+          },
+          "codeSyntax": "--p-toast-warn-border-color",
+          "description": "Aura: --p-toast-warn-border-color uses color-mix (transparent overlay). Apply with layer opacity bound to toast/warn/border-color-opacity."
+        },
+        {
+          "name": "toast/warn/border-color-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": 100,
+            "Dark": 36
+          },
+          "codeSyntax": null,
+          "description": "Derived from --p-toast-warn-border-color: opacity of the color-mix per mode (100 = no mix). Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "toast/warn/close-button/focus-ring/color",
+          "type": "COLOR",
+          "scope": "st",
+          "values": {
+            "Light": {
+              "a": "yellow/600"
+            },
+            "Dark": {
+              "a": "yellow/500"
+            }
+          },
+          "codeSyntax": "--p-toast-warn-close-button-focus-ring-color",
+          "description": ""
+        },
+        {
+          "name": "toast/warn/close-button/hover-background",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": {
+              "a": "yellow/100"
+            },
+            "Dark": [
+              1,
+              1,
+              1,
+              0.05
+            ]
+          },
+          "codeSyntax": "--p-toast-warn-close-button-hover-background",
+          "description": ""
+        },
+        {
+          "name": "toast/warn/color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "yellow/600"
+            },
+            "Dark": {
+              "a": "yellow/500"
+            }
+          },
+          "codeSyntax": "--p-toast-warn-color",
+          "description": ""
+        },
+        {
+          "name": "toast/warn/detail-color",
+          "type": "COLOR",
+          "scope": "tx",
+          "values": {
+            "Light": {
+              "a": "surface/700"
+            },
+            "Dark": {
+              "a": "surface/0"
+            }
+          },
+          "codeSyntax": "--p-toast-warn-detail-color",
+          "description": ""
+        },
+        {
+          "name": "toast/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 350,
+            "Dark": 350
+          },
+          "codeSyntax": "--p-toast-width",
+          "description": ""
+        },
+        {
           "name": "button/focus-ring-radius",
           "type": "FLOAT",
           "scope": "r",
@@ -15452,6 +18720,49 @@
           "description": "Derived (no CSS variable): DESIGN-ONLY, not in Aura or code (#71): toggleswitch.handle.size + 0.25rem."
         },
         {
+          "name": "scrollbar/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "DESIGN-ONLY, not in Aura or code (#88): thumb thickness (macOS overlay scrollbar). The browser draws its own native scrollbar."
+        },
+        {
+          "name": "scrollbar/inset",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 2,
+            "Dark": 2
+          },
+          "codeSyntax": null,
+          "description": "DESIGN-ONLY, not in Aura or code (#88): gap between thumb and the edge (macOS overlay scrollbar). The browser draws its own native scrollbar."
+        },
+        {
+          "name": "scrollbar/thumb-color",
+          "type": "COLOR",
+          "scope": "bg",
+          "values": {
+            "Light": [
+              0,
+              0,
+              0,
+              0.5
+            ],
+            "Dark": [
+              1,
+              1,
+              1,
+              0.5
+            ]
+          },
+          "codeSyntax": null,
+          "description": "DESIGN-ONLY, not in Aura or code (#88): thumb colour: black 50% on light, white 50% on dark (macOS overlay scrollbar). The browser draws its own native scrollbar."
+        },
+        {
           "name": "iconfield/input-padding",
           "type": "FLOAT",
           "scope": "g",
@@ -15544,6 +18855,51 @@
           "description": "Derived: opacity of datepicker/date/range-selected-background, inherited from the color-mix token it aliases. Percent in Figma (CSS fraction x100)."
         },
         {
+          "name": "datatable/header-cell/selected-background-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": {
+              "a": "highlight/background-opacity"
+            },
+            "Dark": {
+              "a": "highlight/background-opacity"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived: opacity of datatable/header-cell/selected-background, inherited from the color-mix token it aliases. Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "datatable/row/selected-background-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": {
+              "a": "highlight/background-opacity"
+            },
+            "Dark": {
+              "a": "highlight/background-opacity"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived: opacity of datatable/row/selected-background, inherited from the color-mix token it aliases. Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "paginator/nav-button/selected-background-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": {
+              "a": "highlight/background-opacity"
+            },
+            "Dark": {
+              "a": "highlight/background-opacity"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived: opacity of paginator/nav-button/selected-background, inherited from the color-mix token it aliases. Percent in Figma (CSS fraction x100)."
+        },
+        {
           "name": "select/option/selected-background-opacity",
           "type": "FLOAT",
           "scope": "op",
@@ -15572,6 +18928,36 @@
           },
           "codeSyntax": null,
           "description": "Derived: opacity of select/option/selected-focus-background, inherited from the color-mix token it aliases. Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "datatable/filter/constraint/selected-background-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": {
+              "a": "list/option/selected-background-opacity"
+            },
+            "Dark": {
+              "a": "list/option/selected-background-opacity"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived: opacity of datatable/filter/constraint/selected-background, inherited from the color-mix token it aliases. Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "datatable/filter/constraint/selected-focus-background-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": {
+              "a": "list/option/selected-focus-background-opacity"
+            },
+            "Dark": {
+              "a": "list/option/selected-focus-background-opacity"
+            }
+          },
+          "codeSyntax": null,
+          "description": "Derived: opacity of datatable/filter/constraint/selected-focus-background, inherited from the color-mix token it aliases. Percent in Figma (CSS fraction x100)."
         }
       ]
     },
@@ -16129,6 +19515,299 @@
           }
         ],
         "description": "Token datepicker.panel.shadow (--p-datepicker-panel-shadow), alias of overlay.popover.shadow"
+      },
+      {
+        "name": "datatable/filter/overlay-popover/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 6,
+            "spread": -1,
+            "color": [
+              0,
+              0,
+              0,
+              0.1
+            ]
+          },
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 2,
+            "blur": 4,
+            "spread": -2,
+            "color": [
+              0,
+              0,
+              0,
+              0.1
+            ]
+          }
+        ],
+        "description": "Token datatable.filter.overlay-popover.shadow (--p-datatable-filter-overlay-popover-shadow), alias of overlay.popover.shadow"
+      },
+      {
+        "name": "datatable/filter/overlay-select/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 6,
+            "spread": -1,
+            "color": [
+              0,
+              0,
+              0,
+              0.1
+            ]
+          },
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 2,
+            "blur": 4,
+            "spread": -2,
+            "color": [
+              0,
+              0,
+              0,
+              0.1
+            ]
+          }
+        ],
+        "description": "Token datatable.filter.overlay-select.shadow (--p-datatable-filter-overlay-select-shadow), alias of overlay.select.shadow"
+      },
+      {
+        "name": "splitbutton/raised-shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 3,
+            "blur": 1,
+            "spread": -2,
+            "color": [
+              0,
+              0,
+              0,
+              0.2
+            ]
+          },
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 2,
+            "blur": 2,
+            "spread": 0,
+            "color": [
+              0,
+              0,
+              0,
+              0.14
+            ]
+          },
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 1,
+            "blur": 5,
+            "spread": 0,
+            "color": [
+              0,
+              0,
+              0,
+              0.12
+            ]
+          }
+        ],
+        "description": "Token splitbutton.raised-shadow (--p-splitbutton-raised-shadow)"
+      },
+      {
+        "name": "dialog/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 20,
+            "blur": 25,
+            "spread": -5,
+            "color": [
+              0,
+              0,
+              0,
+              0.1
+            ]
+          },
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 8,
+            "blur": 10,
+            "spread": -6,
+            "color": [
+              0,
+              0,
+              0,
+              0.1
+            ]
+          }
+        ],
+        "description": "Token dialog.shadow (--p-dialog-shadow), alias of overlay.modal.shadow"
+      },
+      {
+        "name": "toast/contrast/shadow (Light)",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 8,
+            "spread": 0,
+            "color": [
+              0.0078,
+              0.0235,
+              0.0902,
+              0.04
+            ]
+          }
+        ],
+        "description": "Token toast.contrast.shadow (--p-toast-contrast-shadow), Light mode"
+      },
+      {
+        "name": "toast/contrast/shadow (Dark)",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 8,
+            "spread": 0,
+            "color": [
+              0.0353,
+              0.0353,
+              0.0431,
+              0.04
+            ]
+          }
+        ],
+        "description": "Token toast.contrast.shadow (--p-toast-contrast-shadow), Dark mode"
+      },
+      {
+        "name": "toast/error/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 8,
+            "spread": 0,
+            "color": [
+              0.9373,
+              0.2667,
+              0.2667,
+              0.04
+            ]
+          }
+        ],
+        "description": "Token toast.error.shadow (--p-toast-error-shadow)"
+      },
+      {
+        "name": "toast/info/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 8,
+            "spread": 0,
+            "color": [
+              0.2314,
+              0.5098,
+              0.9647,
+              0.04
+            ]
+          }
+        ],
+        "description": "Token toast.info.shadow (--p-toast-info-shadow)"
+      },
+      {
+        "name": "toast/secondary/shadow (Light)",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 8,
+            "spread": 0,
+            "color": [
+              0.3922,
+              0.4549,
+              0.5451,
+              0.04
+            ]
+          }
+        ],
+        "description": "Token toast.secondary.shadow (--p-toast-secondary-shadow), Light mode"
+      },
+      {
+        "name": "toast/secondary/shadow (Dark)",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 8,
+            "spread": 0,
+            "color": [
+              0.4431,
+              0.4431,
+              0.4784,
+              0.04
+            ]
+          }
+        ],
+        "description": "Token toast.secondary.shadow (--p-toast-secondary-shadow), Dark mode"
+      },
+      {
+        "name": "toast/success/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 8,
+            "spread": 0,
+            "color": [
+              0.1333,
+              0.7725,
+              0.3686,
+              0.04
+            ]
+          }
+        ],
+        "description": "Token toast.success.shadow (--p-toast-success-shadow)"
+      },
+      {
+        "name": "toast/warn/shadow",
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "x": 0,
+            "y": 4,
+            "blur": 8,
+            "spread": 0,
+            "color": [
+              0.9176,
+              0.702,
+              0.0314,
+              0.04
+            ]
+          }
+        ],
+        "description": "Token toast.warn.shadow (--p-toast-warn-shadow)"
       }
     ],
     "skipped": [
@@ -16238,6 +19917,58 @@
       },
       {
         "token": "datepicker.dropdown.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "datatable.header-cell.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "datatable.row-toggle-button.border-radius",
+        "reason": "percent radius 50%: built as a circle in the component"
+      },
+      {
+        "token": "datatable.row-toggle-button.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "datatable.row.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "paginator.nav-button.border-radius",
+        "reason": "percent radius 50%: built as a circle in the component"
+      },
+      {
+        "token": "paginator.nav-button.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "toast.close-button.border-radius",
+        "reason": "percent radius 50%: built as a circle in the component"
+      },
+      {
+        "token": "toast.contrast.close-button.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "toast.error.close-button.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "toast.info.close-button.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "toast.secondary.close-button.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "toast.success.close-button.focus-ring.shadow",
+        "reason": "shadow is \"none\": no effect style needed"
+      },
+      {
+        "token": "toast.warn.close-button.focus-ring.shadow",
         "reason": "shadow is \"none\": no effect style needed"
       }
     ],
@@ -16768,6 +20499,346 @@
         "rule": "4-value split"
       },
       {
+        "token": "datatable.body-cell.lg.padding",
+        "derived": "datatable.body-cell.lg.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.body-cell.lg.padding",
+        "derived": "datatable.body-cell.lg.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.body-cell.padding",
+        "derived": "datatable.body-cell.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.body-cell.padding",
+        "derived": "datatable.body-cell.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.body-cell.sm.padding",
+        "derived": "datatable.body-cell.sm.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.body-cell.sm.padding",
+        "derived": "datatable.body-cell.sm.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.filter.constraint-list.padding",
+        "derived": "datatable.filter.constraint-list.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.filter.constraint-list.padding",
+        "derived": "datatable.filter.constraint-list.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.filter.constraint.padding",
+        "derived": "datatable.filter.constraint.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.filter.constraint.padding",
+        "derived": "datatable.filter.constraint.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.footer-cell.lg.padding",
+        "derived": "datatable.footer-cell.lg.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.footer-cell.lg.padding",
+        "derived": "datatable.footer-cell.lg.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.footer-cell.padding",
+        "derived": "datatable.footer-cell.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.footer-cell.padding",
+        "derived": "datatable.footer-cell.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.footer-cell.sm.padding",
+        "derived": "datatable.footer-cell.sm.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.footer-cell.sm.padding",
+        "derived": "datatable.footer-cell.sm.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.footer.border-width",
+        "derived": "datatable.footer.border-width-top",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datatable.footer.border-width",
+        "derived": "datatable.footer.border-width-right",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datatable.footer.border-width",
+        "derived": "datatable.footer.border-width-bottom",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datatable.footer.border-width",
+        "derived": "datatable.footer.border-width-left",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datatable.footer.lg.padding",
+        "derived": "datatable.footer.lg.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.footer.lg.padding",
+        "derived": "datatable.footer.lg.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.footer.padding",
+        "derived": "datatable.footer.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.footer.padding",
+        "derived": "datatable.footer.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.footer.sm.padding",
+        "derived": "datatable.footer.sm.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.footer.sm.padding",
+        "derived": "datatable.footer.sm.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.header-cell.lg.padding",
+        "derived": "datatable.header-cell.lg.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.header-cell.lg.padding",
+        "derived": "datatable.header-cell.lg.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.header-cell.padding",
+        "derived": "datatable.header-cell.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.header-cell.padding",
+        "derived": "datatable.header-cell.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.header-cell.sm.padding",
+        "derived": "datatable.header-cell.sm.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.header-cell.sm.padding",
+        "derived": "datatable.header-cell.sm.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.header.border-width",
+        "derived": "datatable.header.border-width-top",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datatable.header.border-width",
+        "derived": "datatable.header.border-width-right",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datatable.header.border-width",
+        "derived": "datatable.header.border-width-bottom",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datatable.header.border-width",
+        "derived": "datatable.header.border-width-left",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datatable.header.lg.padding",
+        "derived": "datatable.header.lg.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.header.lg.padding",
+        "derived": "datatable.header.lg.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.header.padding",
+        "derived": "datatable.header.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.header.padding",
+        "derived": "datatable.header.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.header.sm.padding",
+        "derived": "datatable.header.sm.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.header.sm.padding",
+        "derived": "datatable.header.sm.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "datatable.paginator-bottom.border-width",
+        "derived": "datatable.paginator-bottom.border-width-top",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datatable.paginator-bottom.border-width",
+        "derived": "datatable.paginator-bottom.border-width-right",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datatable.paginator-bottom.border-width",
+        "derived": "datatable.paginator-bottom.border-width-bottom",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datatable.paginator-bottom.border-width",
+        "derived": "datatable.paginator-bottom.border-width-left",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datatable.paginator-top.border-width",
+        "derived": "datatable.paginator-top.border-width-top",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datatable.paginator-top.border-width",
+        "derived": "datatable.paginator-top.border-width-right",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datatable.paginator-top.border-width",
+        "derived": "datatable.paginator-top.border-width-bottom",
+        "rule": "4-value split"
+      },
+      {
+        "token": "datatable.paginator-top.border-width",
+        "derived": "datatable.paginator-top.border-width-left",
+        "rule": "4-value split"
+      },
+      {
+        "token": "paginator.padding",
+        "derived": "paginator.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "paginator.padding",
+        "derived": "paginator.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "dialog.content.padding",
+        "derived": "dialog.content.padding-top",
+        "rule": "4-value split"
+      },
+      {
+        "token": "dialog.content.padding",
+        "derived": "dialog.content.padding-right",
+        "rule": "4-value split"
+      },
+      {
+        "token": "dialog.content.padding",
+        "derived": "dialog.content.padding-bottom",
+        "rule": "4-value split"
+      },
+      {
+        "token": "dialog.content.padding",
+        "derived": "dialog.content.padding-left",
+        "rule": "4-value split"
+      },
+      {
+        "token": "dialog.footer.padding",
+        "derived": "dialog.footer.padding-top",
+        "rule": "4-value split"
+      },
+      {
+        "token": "dialog.footer.padding",
+        "derived": "dialog.footer.padding-right",
+        "rule": "4-value split"
+      },
+      {
+        "token": "dialog.footer.padding",
+        "derived": "dialog.footer.padding-bottom",
+        "rule": "4-value split"
+      },
+      {
+        "token": "dialog.footer.padding",
+        "derived": "dialog.footer.padding-left",
+        "rule": "4-value split"
+      },
+      {
+        "token": "toast.error.background",
+        "derived": "toast.error.background-opacity",
+        "rule": "color-mix opacity"
+      },
+      {
+        "token": "toast.error.border-color",
+        "derived": "toast.error.border-color-opacity",
+        "rule": "color-mix opacity"
+      },
+      {
+        "token": "toast.info.background",
+        "derived": "toast.info.background-opacity",
+        "rule": "color-mix opacity"
+      },
+      {
+        "token": "toast.info.border-color",
+        "derived": "toast.info.border-color-opacity",
+        "rule": "color-mix opacity"
+      },
+      {
+        "token": "toast.success.background",
+        "derived": "toast.success.background-opacity",
+        "rule": "color-mix opacity"
+      },
+      {
+        "token": "toast.success.border-color",
+        "derived": "toast.success.border-color-opacity",
+        "rule": "color-mix opacity"
+      },
+      {
+        "token": "toast.warn.background",
+        "derived": "toast.warn.background-opacity",
+        "rule": "color-mix opacity"
+      },
+      {
+        "token": "toast.warn.border-color",
+        "derived": "toast.warn.border-color-opacity",
+        "rule": "color-mix opacity"
+      },
+      {
         "token": "button.border-radius",
         "derived": "button.focus-ring-radius",
         "rule": "focus-ring radius"
@@ -16816,6 +20887,21 @@
         "token": "toggleswitch.lg.handle-size",
         "derived": "toggleswitch.lg.handle-size",
         "rule": "group b"
+      },
+      {
+        "token": "scrollbar.size",
+        "derived": "scrollbar.size",
+        "rule": "design-only scrollbar"
+      },
+      {
+        "token": "scrollbar.inset",
+        "derived": "scrollbar.inset",
+        "rule": "design-only scrollbar"
+      },
+      {
+        "token": "scrollbar.thumb-color",
+        "derived": "scrollbar.thumb-color",
+        "rule": "design-only scrollbar"
       },
       {
         "token": "iconfield.input-padding",
@@ -16868,6 +20954,21 @@
         "rule": "inherited color-mix opacity"
       },
       {
+        "token": "datatable.header-cell.selected-background",
+        "derived": "datatable.header-cell.selected-background-opacity",
+        "rule": "inherited color-mix opacity"
+      },
+      {
+        "token": "datatable.row.selected-background",
+        "derived": "datatable.row.selected-background-opacity",
+        "rule": "inherited color-mix opacity"
+      },
+      {
+        "token": "paginator.nav-button.selected-background",
+        "derived": "paginator.nav-button.selected-background-opacity",
+        "rule": "inherited color-mix opacity"
+      },
+      {
         "token": "select.option.selected-background",
         "derived": "select.option.selected-background-opacity",
         "rule": "inherited color-mix opacity"
@@ -16875,6 +20976,16 @@
       {
         "token": "select.option.selected-focus-background",
         "derived": "select.option.selected-focus-background-opacity",
+        "rule": "inherited color-mix opacity"
+      },
+      {
+        "token": "datatable.filter.constraint.selected-background",
+        "derived": "datatable.filter.constraint.selected-background-opacity",
+        "rule": "inherited color-mix opacity"
+      },
+      {
+        "token": "datatable.filter.constraint.selected-focus-background",
+        "derived": "datatable.filter.constraint.selected-focus-background-opacity",
         "rule": "inherited color-mix opacity"
       }
     ],
@@ -17203,6 +21314,71 @@
           "fontWeight": "message/text/font-weight"
         },
         "description": "CSS: .p-message-lg .p-message-text. Size message/text/lg/font-size (--p-message-text-lg-font-size), weight message/text/font-weight (--p-message-text-font-weight), line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "DataTable/Column title",
+        "family": "Lato",
+        "style": "SemiBold",
+        "size": 14,
+        "lineHeightPercent": 120,
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "typography/base/font-size",
+          "fontWeight": "datatable/column-title/font-weight"
+        },
+        "description": "CSS: .p-datatable-column-title. Size typography/base/font-size, weight datatable/column-title/font-weight (--p-datatable-column-title-font-weight), line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "DataTable/Column footer",
+        "family": "Lato",
+        "style": "SemiBold",
+        "size": 14,
+        "lineHeightPercent": 120,
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "typography/base/font-size",
+          "fontWeight": "datatable/column-footer/font-weight"
+        },
+        "description": "CSS: .p-datatable-tfoot > tr > td (column footer). Size typography/base/font-size, weight datatable/column-footer/font-weight (--p-datatable-column-footer-font-weight), line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "Dialog/Title",
+        "family": "Lato",
+        "style": "SemiBold",
+        "size": 17.5,
+        "lineHeightPercent": 120,
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "dialog/title/font-size",
+          "fontWeight": "dialog/title/font-weight"
+        },
+        "description": "CSS: .p-dialog-title. Size dialog/title/font-size (--p-dialog-title-font-size), weight dialog/title/font-weight (--p-dialog-title-font-weight), line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "Toast/Summary",
+        "family": "Lato",
+        "style": "Medium",
+        "size": 14,
+        "lineHeightPercent": 120,
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "toast/summary/font-size",
+          "fontWeight": "toast/summary/font-weight"
+        },
+        "description": "CSS: .p-toast-summary. Size toast/summary/font-size (--p-toast-summary-font-size), weight toast/summary/font-weight (--p-toast-summary-font-weight), line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "Toast/Detail",
+        "family": "Lato",
+        "style": "Medium",
+        "size": 12.25,
+        "lineHeightPercent": 120,
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "toast/detail/font-size",
+          "fontWeight": "toast/detail/font-weight"
+        },
+        "description": "CSS: .p-toast-detail. Size toast/detail/font-size (--p-toast-detail-font-size), weight toast/detail/font-weight (--p-toast-detail-font-weight), line-height 1.2 (typography/base/line-height)."
       }
     ]
   }

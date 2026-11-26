@@ -240,6 +240,9 @@ for (const l of leaves) {
                     aliasName(mm[1]);
                     outs[m] = ts.map((s) => ({ a: fname(`${mm[1]}-${s}`) }));
                 } else outs[m] = [{ a: aliasName(mm[1]) }];
+            } else if (/\{/.test(v) && v.trim().split(/\s+/).length > 1) {
+                // shorthand mixing literals and aliases, e.g. dialog.content.padding "0 {overlay.modal.padding} {..} {..}" (#91): one value per part
+                outs[m] = v.trim().split(/\s+/).map((p) => { const a = p.match(ALIAS); return a ? { a: aliasName(a[1]) } : dims(p)[0]; });
             } else outs[m] = dims(v);
             const n = outs[m].length;
             if (parts !== null && parts !== n) throw new Error(`${path}: different value counts per mode`);
@@ -311,6 +314,18 @@ for (const l of leaves) {
         if (known.has(name)) throw new Error(`Derived name clash ${name}`);
         add('components', { name: fname(name), type: 'FLOAT', scope, values: Object.fromEntries(MODES.components.map((m) => [m, r4(f(m))])), codeSyntax: null, description: `Derived (no CSS variable): ${rule}.` });
         plan.derived.push({ token: name, derived: name, rule: 'group b' });
+    }
+}
+// design-only (Batch 2, DECISIONS #88): overflow scrollbar, macOS overlay look. PrimeNG DataTable uses the browser's native scrollbar (no Aura tokens).
+{
+    for (const [name, type, scope, values, rule] of [
+        ['scrollbar.size', 'FLOAT', 'wh', { Light: 7, Dark: 7 }, 'thumb thickness (macOS overlay scrollbar)'],
+        ['scrollbar.inset', 'FLOAT', 'g', { Light: 2, Dark: 2 }, 'gap between thumb and the edge (macOS overlay scrollbar)'],
+        ['scrollbar.thumb-color', 'COLOR', 'bg', { Light: [0, 0, 0, 0.5], Dark: [1, 1, 1, 0.5] }, 'thumb colour: black 50% on light, white 50% on dark (macOS overlay scrollbar)']
+    ]) {
+        if (known.has(name)) throw new Error(`Design-only name clash ${name}`);
+        add('components', { name: fname(name), type, scope, values, codeSyntax: null, description: `DESIGN-ONLY, not in Aura or code (#88): ${rule}. The browser draws its own native scrollbar.` });
+        plan.derived.push({ token: name, derived: name, rule: 'design-only scrollbar' });
     }
 }
 // derived: padding of a field next to an inline icon or button (Group A, DECISIONS #61). Aura CSS uses base form-field values for every size.
@@ -505,7 +520,7 @@ for (const col of Object.keys(plan.collections)) {
 }
 // Shadows drawn on elements that can be see-through (outlined/text buttons) need Figma's 'show behind transparent areas',
 // or Figma draws no shadow at all (CSS box-shadow still draws around a transparent element). DECISIONS #40.
-const SHOW_BEHIND = new Set([]); // #40 used it for button/raised-shadow; superseded by #42 (Raised is solid-only in Figma)
+const SHOW_BEHIND = new Set(['toast/info/shadow', 'toast/success/shadow', 'toast/warn/shadow', 'toast/error/shadow', 'toast/secondary/shadow (Light)', 'toast/secondary/shadow (Dark)', 'toast/contrast/shadow (Light)', 'toast/contrast/shadow (Dark)']); // #94: toast shadow sits on a transparent layer (CSS box-shadow ignores the see-through background) // #40 used it for button/raised-shadow; superseded by #42 (Raised is solid-only in Figma)
 const styleRows = plan.effectStyles.map((s) => [s.name, s.effects.map((e) => [e.type, e.x, e.y, e.blur, e.spread, e.color]), s.description, SHOW_BEHIND.has(s.name)]);
 calls.push({ file: `${String(calls.length + 1).padStart(2, '0')}-effect-styles.js`, code: `const D=${JSON.stringify({ styles: styleRows })};\n${EFFECTS}` });
 

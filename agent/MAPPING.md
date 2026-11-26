@@ -50,3 +50,28 @@
 | Message | Text | text | `<p-message>` | content | no | none |  |
 | Message | Show icon | boolean | `<p-message>` | [icon] | no | none | icon per severity, design default (#78/#79) |
 | Message | Closable | boolean | `<p-message>` | [closable] | no | none | hover/focus not built (#77) |
+| DataTable Header Cell | Size | small, base, large | `<p-table>` | size | no | none |  |
+| DataTable Header Cell | Sort | none, unsorted, ascending, descending | `<p-table>` th | pSortableColumn + p-sortIcon | no | none | none = not sortable |
+| DataTable Header Cell | Title | fit, wrap | `<p-table>` th | (layout only: long title wraps, icon on next line) | no | none | design-only choice, #87 |
+| DataTable Header Cell | State | default, hover | `<p-table>` th | :hover (unsorted only) | no | none |  |
+| DataTable Header Cell / Body Cell | Gridlines | boolean | `<p-table>` | [showGridlines] | no | none | last column / row borders by hand |
+| DataTable Body Cell | Row | default, hover, selected | `<p-table>` tr | [(selection)] / :hover | no | none | set on every cell of the row |
+| DataTable Body Cell | Striped | boolean | `<p-table>` | [stripedRows] | no | none | odd rows |
+| DataTable cells | Text / Show text | text | `<p-table>` | cell content | no | none |  |
+| DataTable cells | Show content / Content | swap | `<p-table>` | #body / #header template | no | none | swap targets must hug (#84) |
+| DataTable Header | Title / Show search | text / boolean | `<p-table>` | #caption template | no | none | Sakai CRUD layout |
+| DataTable Footer | Text | text | `<p-table>` | #footer template | no | none |  |
+| Paginator | Report | boolean | `<p-paginator>` | showCurrentPageReport + rowsPerPageOptions | no | none |  |
+| Paginator Button | Type / State / Label | first, prev, page, next, last | `<p-paginator>` | page links / nav | no | none |  |
+| SplitButton | Severity / Variant / Size / Rounded | as Button | `<p-splitbutton>` | severity / [outlined] [text] / size / [rounded] | no | none | #90 |
+| SplitButton | Raised | boolean | `<p-splitbutton>` | [raised] | no | none | shadow on the container |
+| SplitButton | Button / Dropdown (exposed) | nested Button | `<p-splitbutton>` | label, icon / dropdownIcon, [buttonDisabled] / [menuButtonDisabled] | no | none | State per part |
+| Toolbar | Show start / center / end | boolean | `<p-toolbar>` | #start / #center / #end templates | no | none | #89; items exposed |
+| Dialog | Header / Show header / Closable | text / boolean | `<p-dialog>` | header / [showHeader] / [closable] | no | none | #91 |
+| Dialog | Content / Show footer | swap / boolean | `<p-dialog>` | content (#content) / #footer template | no | none | footer Cancel + Save exposed |
+| ConfirmDialog | Header / Message / Icon / Closable | text / text / swap / boolean | `<p-confirmdialog>` | confirm({ header, message, icon }) / closable | no | none | #93; No + Yes exposed (rejectLabel / acceptLabel) |
+| Dialog Mask | — | — | modal mask | [modal] | no | none | #92 design aid |
+| Toast | Severity | info, success, warn, error, secondary, contrast | `<p-toast>` | add({ severity }) | no | none | #94 |
+| Toast | Summary / Detail / Show detail / Show icon / Closable | text / boolean | `<p-toast>` | add({ summary, detail, closable }) | no | none | icon per severity |
+| Scrollbar | Direction | horizontal, vertical | none (browser native scrollbar) | [scrollable] / scrollHeight / overflow | no | none | design-only, #88; thumb via instance padding |
+| Button Icon | Severity / Variant / Size / State / Rounded | as Button | `<p-button>` | icon only (no label) | no | none | #85 |

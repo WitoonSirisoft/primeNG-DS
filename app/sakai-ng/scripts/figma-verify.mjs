@@ -113,6 +113,8 @@ for (const { col, path, v } of rows) {
         ['toggleswitch/lg/width', (m) => pxv('toggleswitch.width', m) + 7], ['toggleswitch/lg/height', (m) => pxv('toggleswitch.height', m) + 3.5], ['toggleswitch/lg/handle-size', (m) => pxv('toggleswitch.handle.size', m) + 3.5]])
         lines.push(`C|${name}|F|${+f('light').toFixed(4)}|${+f('dark').toFixed(4)}`);
 }
+// design-only scrollbar (DECISIONS #88)
+lines.push('C|scrollbar/size|F|7|7', 'C|scrollbar/inset|F|2|2', 'C|scrollbar/thumb-color|C|00000080|ffffff80');
 // text styles: expected values from the browser-resolved values, independent of the generator
 const byPath = new Map(rows.map((r) => [r.path, r.v]));
 const resOf = (p) => { const r = byPath.get(p).$extensions.primeng.resolved; return r && typeof r === 'object' ? r.light : r; };

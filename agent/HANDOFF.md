@@ -88,3 +88,32 @@ User was asked to say **"go"** to continue Button:
 - Cloud container has Playwright Chromium; a built Storybook copy is at `/home/claude/verify/data/storybook-static` (serve with `verify/scripts/serve.py <dir> 6006`) — this container is session-local and will NOT exist for a new account; rebuild with `npm run build-storybook` + stage files if needed.
 - Figma API notes: **never format one label bound to a TEXT component property** (setRangeTextDecoration etc.): Figma copies that formatting (decoration, size) to every label bound to the property in the set (#48). Reads in the same call right after edits can be stale; verify in a separate call. **bound paints: store the resolved colour as the paint's colour** (Figma renders a bound STROKE with the stored placeholder colour, e.g. black, until refreshed; fills refresh; modes still switch correctly); to give a bound paint an opacity build it explicitly `{type,color,opacity,boundVariables}` (object spread `{...paint}` silently keeps opacity 1); load fonts before text; lineHeight/letterSpacing are `{value,unit}`; paint opacity can't bind, layer opacity can; text styles can bind fontFamily/fontSize/fontWeight; ALL_FILLS scope can't combine with other fill scopes; float32 rounding → compare numbers with tolerance; Lato styles: Regular, Medium, SemiBold, Bold.
 - PrimeIcons: use the font (`primeicons/fonts/primeicons.ttf`, 314 glyphs, upem 1024, ascent 960); icon box = advance×14/1024 × 14 (check = 14.875×14). raw-svg is a different 24px drawing — don't use.
+
+## DataTable progress (batch 2)
+- Built on 02 Components: DataTable Slot 223:3491 (hug, #84), Header Cell 223:3495 (30), Body Cell 223:3724 (36), DataTable Header 224:3582, Footer 224:3631, Paginator Button 224:3650, Paginator 224:3723. 0 unbound paints.
+- Example: 99 Sandbox 226:1526 (helpers 226:1259). 986 wide (= capture), header row 39.5 (40), image rows 64.67 (64), paginator 49 (49).
+- Fixed: figma-sync writes all 4 stroke sides when any differs (Figma resets other sides when one is set to 0). 33 cells patched.
+- #84 (proposed): slot swap targets must hug; a fixed-size component swapped into a slot keeps the slot's size.
+- DONE #85: Button Icon set 230:725 (864, verify 0 errors; sizes 28/35/42). Built with faster direct-build calls (72/call; generator calls 07-button-icon-*.js are the re-run path). Loading variants: no Icon swap link (same as Button).
+- Example rebuilt: 243:2330 (helpers 243:1752); row actions 35×35 — matches capture.
+- #84 recorded.
+- DONE: stress 244:1694, doc frames 246:1588 / 246:1601, REPORT_DATATABLE, MAPPING + COMPONENTS rows 14–16, #86 superseded by #87 (Header Cell Title fit/wrap, 54). APPROVED visual 5 (DataTable, Paginator, Button Icon). Scrollbar (#88) built: set 251:6309, doc 253:9905, examples 253:9049 / 253:9146; variables 1,250 fp f4eea6d2. Scrollbar APPROVED (5). Then batch 2: Toolbar, Dialog, ConfirmDialog, Toast, Menu, Tabs.
+
+## Toolbar + SplitButton (batch 2, #89/#90)
+- Tokens pushed (patch batch2-toolbar-splitbutton.js): 1,258 vars fp 460521ca; effect style splitbutton/raised-shadow (26).
+- Stories: toolbar.stories.ts (layout crud | uikit), splitbutton.stories.ts; capture plans toolbarPlan / splitbuttonPlan; ROOTS + .p-toolbar, .p-splitbutton. Storybook build OK.
+- Built: SplitButton 256:6309 (144, 0 errors), Toolbar 260:9764; docs 260:13797 / 260:13808; compare 259:13611, example 260:12789, stress 260:13008; agent/REPORT_TOOLBAR.md. APPROVED (5).
+
+## Dialog + ConfirmDialog (batch 2, #91–#93)
+- Tokens pushed (patch batch2-dialog.js): 1,278 vars fp f672a14d. figma-variables.mjs: shorthand mixing literals + aliases supported.
+- Stories dialog.stories.ts (layout product | simple, closable, header), confirmdialog.stories.ts (CRUD delete). Capture plans dialogPlan / confirmdialogPlan; ROOTS + .p-dialog. Storybook build OK.
+- Built: Dialog 264:9848, ConfirmDialog 264:9902, Mask 264:9846, Slot 264:9843; doc 267:3995; examples 266:13746 / 266:13938; stress 266:15277; agent/REPORT_DIALOG.md. APPROVED (5).
+- Figma quirk (#91 fix 5): never set a Button Icon swap to the icon it already has — the icon colour resets to the icon's default. Generators: compare main ids before swapping.
+- OPEN: the in-place sync did not copy the corrected Save icon fill (0 writes) — cause not found yet (possibly paint on a layer two instances deep). Fixed directly in Figma; check figma-sync.mjs before the next re-run of 20-dialog-1.js.
+
+## Toast (batch 2, #94)
+- Tokens pushed (patches batch2-toast.js + batch2-toast-effects.js): 1,341 vars fp 979b2158; 34 effect styles; text styles 30.
+- figma:plan call files renumbered (06-components-4, 07-effect-styles, 08-text-styles). Old 06-effect-styles.js / 07-text-styles.js deleted 2026-11-26.
+- Story toast.stories.ts (severity, detail, closable; sticky); toastPlan; ROOTS + .p-toast-message. Storybook build OK.
+- Built: Toast 271:9918 (6); examples 273:14153 / 273:14244 / 273:14306; agent/REPORT_TOAST.md. APPROVED (5). NEXT: Menu, Tabs.
+

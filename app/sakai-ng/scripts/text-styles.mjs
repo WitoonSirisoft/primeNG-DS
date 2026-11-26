@@ -36,7 +36,12 @@ export const TEXT_STYLES = [
     { name: 'Select/Group', ...BASE, size: 'typography.base.font-size', weight: 'select.option-group.font-weight', css: '.p-select-option-group' },
     { name: 'Message/Text sm', ...BASE, size: 'message.text.sm.font-size', weight: 'message.text.font-weight', css: '.p-message-sm .p-message-text' },
     { name: 'Message/Text base', ...BASE, size: 'message.text.font-size', weight: 'message.text.font-weight', css: '.p-message-text' },
-    { name: 'Message/Text lg', ...BASE, size: 'message.text.lg.font-size', weight: 'message.text.font-weight', css: '.p-message-lg .p-message-text' }
+    { name: 'Message/Text lg', ...BASE, size: 'message.text.lg.font-size', weight: 'message.text.font-weight', css: '.p-message-lg .p-message-text' },
+    { name: 'DataTable/Column title', ...BASE, size: 'typography.base.font-size', weight: 'datatable.column-title.font-weight', css: '.p-datatable-column-title' },
+    { name: 'DataTable/Column footer', ...BASE, size: 'typography.base.font-size', weight: 'datatable.column-footer.font-weight', css: '.p-datatable-tfoot > tr > td (column footer)' },
+    { name: 'Dialog/Title', ...BASE, size: 'dialog.title.font-size', weight: 'dialog.title.font-weight', css: '.p-dialog-title' },
+    { name: 'Toast/Summary', ...BASE, size: 'toast.summary.font-size', weight: 'toast.summary.font-weight', css: '.p-toast-summary' },
+    { name: 'Toast/Detail', ...BASE, size: 'toast.detail.font-size', weight: 'toast.detail.font-weight', css: '.p-toast-detail' }
 ];
 /** Figma font style for a CSS weight (Lato in Figma: Thin, Light, Regular, Medium, SemiBold, Bold, ExtraBold, Black). */
 export const WEIGHT_STYLE = { 100: 'Thin', 300: 'Light', 400: 'Regular', 500: 'Medium', 600: 'SemiBold', 700: 'Bold', 800: 'ExtraBold', 900: 'Black' };

@@ -1,18 +1,19 @@
 const D={"A":{"severity":["primary","secondary","success","info","warn","danger","help","contrast"],"variant":["solid","outlined","text"],"size":["small","base","large"],"state":["default","hover","focus","active","disabled","loading"],"rounded":["false","true"]},"on":["severity","variant","size","state","rounded"],"set":"main","setName":"Button","desc":"","props":["Label","Show label","Icon left","Icon right","Icon","Raised","Badge"],"F":{"gap":"button/gap","rw":"button/focus-ring/width","dop":"disabled-opacity","bsz":"button/badge-size","shadow":"button/raised-shadow","icon":"Icon/check","spinner":"Icon/primeng-spinner"},"from":192,"to":240};
 function variants(A,on,has,SET){
 const vals=a=>SET!=='main'||on.includes(a)?A[a]:[A[a][a==='size'?1:0]];const ix=(a,v)=>vals(a).indexOf(v);
-const SZ={small:{px:'button/sm/padding-x',py:'button/sm/padding-y',ts:'Button/Label sm',ih:'button/sm/font-size',mh:'button/sm/line-height'},
-base:{px:'button/padding-x',py:'button/padding-y',ts:'Button/Label base',ih:'typography/base/font-size',mh:'button/line-height'},
-large:{px:'button/lg/padding-x',py:'button/lg/padding-y',ts:'Button/Label lg',ih:'button/lg/font-size',mh:'button/lg/line-height'}};
+const SZ={small:{px:'button/sm/padding-x',py:'button/sm/padding-y',ts:'Button/Label sm',ih:'button/sm/font-size',mh:'button/sm/line-height',iw:'button/sm/icon-only-width'},
+base:{px:'button/padding-x',py:'button/padding-y',ts:'Button/Label base',ih:'typography/base/font-size',mh:'button/line-height',iw:'button/icon-only-width'},
+large:{px:'button/lg/padding-x',py:'button/lg/padding-y',ts:'Button/Label lg',ih:'button/lg/font-size',mh:'button/lg/line-height',iw:'button/lg/icon-only-width'}};
 const RD={'false':['button/border-radius','button/focus-ring-radius'],'true':['button/rounded-border-radius','button/rounded-focus-ring-radius']};
 const CW=130,CH=64,PAD=24,out=[];
 const base=(size,state,rounded)=>{const k=state==='hover'||state==='active'?state:'default';return {k,sz:SZ[size],rd:RD[rounded],f:state==='focus',d:state==='disabled'||state==='loading',l:state==='loading',
  dir:'H',s1:'Icon left',s2:'Icon right',v1:state==='loading',v2:false,so:0,sb:'button/primary/background',rg:'button/primary/focus-ring/color',bo:null,ul:false,badge:false};};
 const put=(it,row,col)=>{it.x=PAD+col*CW;it.y=PAD+row*CH;out.push(it);};
 const solid=(it,sev)=>{const p=x=>it.k==='default'?x:it.k+'-'+x;it.bg='button/'+sev+'/'+p('background');it.st='button/'+sev+'/'+p('border-color');it.fg='button/'+sev+'/'+p('color');it.so=1;it.sb='button/'+sev+'/background';it.rg='button/'+sev+'/focus-ring/color';};
-if(SET==='main'){
+if(SET==='main'||SET==='icon'){
  for(const sev of vals('severity'))for(const variant of vals('variant'))for(const rounded of vals('rounded'))for(const size of vals('size'))for(const state of vals('state')){
   const it=base(size,state,rounded);it.n='Severity='+sev+', Variant='+variant+', Size='+size+', State='+state+', Rounded='+rounded;it.badge=true;
+  if(SET==='icon'){it.io=true;it.v1=true;it.circ=rounded==='true';if(it.circ)it.rd=[it.sz.iw,it.rd[1]];} // .p-button-icon-only(.p-button-rounded)
   if(variant==='solid')solid(it,sev);
   else{const pre='button/'+variant+'/'+sev,o=pre+'/'+it.k+'-background-opacity';it.bg=it.k==='default'?null:pre+'/'+it.k+'-background';
    it.bo=it.k!=='default'&&has(o)?o:null;it.st=variant==='outlined'?pre+'/border-color':null;it.fg=pre+'/color';it.sb='button/'+sev+'/background';it.rg='button/'+sev+'/focus-ring/color';}
@@ -84,6 +85,9 @@ async function syCopy(o,n,inInst,root){
  if(o.type!=='TEXT'&&(Math.abs(o.width-n.width)>0.001||Math.abs(o.height-n.height)>0.001))try{o.resize(n.width,n.height);SY.writes++;}catch(e){}
  for(const k of ['primaryAxisSizingMode','counterAxisSizingMode'])if(k in n)tryset(o,k,n[k]);
  for(const k of SYP)if(k in n&&n[k]!==figma.mixed)tryset(o,k,n[k]);
+ // Figma: setting one side weight can reset the others, so when any side differs write all four in order
+ const SW=['strokeTopWeight','strokeRightWeight','strokeBottomWeight','strokeLeftWeight'];
+ if('strokeTopWeight' in n&&SW.some(k=>o[k]!==n[k])){for(const k of SW)o[k]=n[k];SY.writes++;}
  if(o.type==='TEXT'){
   if(n.textStyleId&&n.textStyleId!==figma.mixed){if(o.textStyleId!==n.textStyleId){await figma.loadFontAsync(n.fontName);await o.setTextStyleIdAsync(n.textStyleId);SY.writes++;}}
   else for(const k of ['fontSize','lineHeight','letterSpacing'])tryset(o,k,n[k]);
@@ -110,15 +114,18 @@ async function syncKids(parent,olds,news,inInst){const used=new Set();const fina
 
 async function build(c,it){const tmp=figma.createComponent();figma.currentPage.appendChild(tmp);tmp.name=c.name;REFS.clear();
  try{await build0(tmp,it);await syCopy(c,tmp,false,true);c.x=tmp.x;c.y=tmp.y;}finally{tmp.remove();}}
+const RF=(n,o)=>{const r={};for(const k in o)if(o[k])r[k]=o[k];if(Object.keys(r).length)REF(n,r);}; // drop properties this set does not have
 async function build0(c,it){CUR=c; // update in place (#68): build() in lib/figma-sync.mjs keeps old layers and syncs
 const S=it.sz,R=it.rd;
  c.layoutMode=it.dir==='V'?'VERTICAL':'HORIZONTAL';c.primaryAxisAlignItems='CENTER';c.counterAxisAlignItems='CENTER';c.primaryAxisSizingMode='AUTO';c.counterAxisSizingMode='AUTO';c.clipsContent=false;c.fills=[];
  for(const k of ['paddingTop','paddingBottom'])c.setBoundVariable(k,V(S.py));for(const k of ['paddingLeft','paddingRight'])c.setBoundVariable(k,V(S.px));
  c.setBoundVariable('itemSpacing',V(D.F.gap));rad(c,V(R[0]));
+ if(it.io){for(const k of ['paddingLeft','paddingRight','itemSpacing']){c.setBoundVariable(k,null);c[k]=0;}c.primaryAxisSizingMode='FIXED';c.setBoundVariable('width',V(S.iw));
+  if(it.circ){c.counterAxisSizingMode='FIXED';c.setBoundVariable('height',V(S.iw));}} // icon only: width 2.5rem, padding-x 0, gap 0; rounded: height 2.5rem
  c.strokes=[it.st?paint(V(it.st)):CLEAR];c.strokeWeight=1;c.strokeAlign='INSIDE';
  if(it.d)c.setBoundVariable('opacity',V(D.F.dop));else{c.setBoundVariable('opacity',null);c.opacity=1;}
  const [s1,i1]=slot(c,it.s1,it.spin===1?IC[D.F.spinner]:IC[D.F.icon],S,it.fg,it.dir);
- const t=figma.createText();t.name='Label';c.appendChild(t);await t.setTextStyleIdAsync(TS[S.ts].id);t.characters='Button';t.fills=[paint(V(it.fg))];/* no per-variant text formatting: Figma copies formatting of a label bound to the 'Label' property to every variant (#48) */
+ const t=figma.createText();t.name='Label';c.appendChild(t);await t.setTextStyleIdAsync(TS[S.ts].id);t.characters='Button';t.fills=[paint(V(it.fg))];if(it.io)t.visible=false;/* no per-variant text formatting: Figma copies formatting of a label bound to the 'Label' property to every variant (#48) */
  let bi=null;if(it.badge){bi=BADGE.createInstance();bi.name='Badge';c.appendChild(bi);bi.setBoundVariable('minWidth',V(D.F.bsz));bi.setBoundVariable('height',V(D.F.bsz));bi.visible=false;}
  const [s2,i2]=slot(c,it.s2,it.spin===2?IC[D.F.spinner]:IC[D.F.icon],S,it.fg,it.dir);
  s1.visible=it.v1;s2.visible=it.v2; // property defaults before absolute layers are sized
@@ -127,11 +134,11 @@ const S=it.sz,R=it.rd;
  const bg=figma.createRectangle();bg.name='Background';abs(c,bg,0);c.insertChild(sh?1:0,bg);rad(bg,V(R[0]));bg.fills=it.bg?[paint(V(it.bg))]:[];if(it.bo)bg.setBoundVariable('opacity',V(it.bo));
  const fr=figma.createFrame();fr.name='Focus ring';fr.fills=[];abs(c,fr,3);fr.clipsContent=false;rad(fr,V(R[1]));
  fr.strokes=[paint(V(it.rg))];fr.strokeAlign='INSIDE';for(const k of ['strokeTopWeight','strokeBottomWeight','strokeLeftWeight','strokeRightWeight'])fr.setBoundVariable(k,V(D.F.rw));fr.visible=it.f;
- REF(t,{characters:K['Label'],visible:K['Show label']});if(sh)REF(sh,{visible:K['Raised']});
- if(bi){REF(bi,{visible:K['Badge']});bi.isExposedInstance=true;}
- if(it.dir==='V'){if(it.spin!==1)REF(i1,{mainComponent:K['Icon']});if(it.spin!==2)REF(i2,{mainComponent:K['Icon']});}
- else if(!it.l){REF(s1,{visible:K['Icon left']});REF(i1,{mainComponent:K['Icon']});
-  REF(s2,{visible:K['Icon right']});REF(i2,{mainComponent:K['Icon']});}
+ RF(t,{characters:K['Label'],visible:K['Show label']});if(sh)RF(sh,{visible:K['Raised']});
+ if(bi){RF(bi,{visible:K['Badge']});bi.isExposedInstance=true;}
+ if(it.dir==='V'){if(it.spin!==1)RF(i1,{mainComponent:K['Icon']});if(it.spin!==2)RF(i2,{mainComponent:K['Icon']});}
+ else if(!it.l){RF(s1,{visible:K['Icon left']});RF(i1,{mainComponent:K['Icon']});
+  RF(s2,{visible:K['Icon right']});RF(i2,{mainComponent:K['Icon']});}
  c.x=it.x;c.y=it.y;}
 const byName={};for(const c of set.children)byName[c.name]=c;
 for(const it of IT){let c=byName[it.n];if(c){ids.rebuilt.push(c.id);}else{c=figma.createComponent();c.name=it.n;set.appendChild(c);ids.created.push(c.id);}await build(c,it);}
