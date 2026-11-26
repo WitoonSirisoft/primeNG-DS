@@ -27,7 +27,8 @@
         "figma:splitbutton": "node scripts/figma-splitbutton.mjs",
         "figma:toolbar": "node scripts/figma-toolbar.mjs",
         "figma:dialog": "node scripts/figma-dialog.mjs",
-        "figma:toast": "node scripts/figma-toast.mjs"
+        "figma:toast": "node scripts/figma-toast.mjs",
+        "figma:menu": "node scripts/figma-menu.mjs"
     },
     "private": true,
     "dependencies": {

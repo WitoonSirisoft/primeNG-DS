@@ -109,11 +109,19 @@ User was asked to say **"go"** to continue Button:
 - Stories dialog.stories.ts (layout product | simple, closable, header), confirmdialog.stories.ts (CRUD delete). Capture plans dialogPlan / confirmdialogPlan; ROOTS + .p-dialog. Storybook build OK.
 - Built: Dialog 264:9848, ConfirmDialog 264:9902, Mask 264:9846, Slot 264:9843; doc 267:3995; examples 266:13746 / 266:13938; stress 266:15277; agent/REPORT_DIALOG.md. APPROVED (5).
 - Figma quirk (#91 fix 5): never set a Button Icon swap to the icon it already has — the icon colour resets to the icon's default. Generators: compare main ids before swapping.
-- OPEN: the in-place sync did not copy the corrected Save icon fill (0 writes) — cause not found yet (possibly paint on a layer two instances deep). Fixed directly in Figma; check figma-sync.mjs before the next re-run of 20-dialog-1.js.
+- RESOLVED 2026-11-26: the sync skipped the Save icon because swapping an icon renames the nested instance ("Icon" → "Icon/check") and syncKids matched by name only. figma-sync.mjs now pairs leftovers inside instances by type + order; all generator calls regenerated. Verified on the Dialog Save icon (broken on purpose, repaired by the fallback).
 
 ## Toast (batch 2, #94)
 - Tokens pushed (patches batch2-toast.js + batch2-toast-effects.js): 1,341 vars fp 979b2158; 34 effect styles; text styles 30.
 - figma:plan call files renumbered (06-components-4, 07-effect-styles, 08-text-styles). Old 06-effect-styles.js / 07-text-styles.js deleted 2026-11-26.
 - Story toast.stories.ts (severity, detail, closable; sticky); toastPlan; ROOTS + .p-toast-message. Storybook build OK.
-- Built: Toast 271:9918 (6); examples 273:14153 / 273:14244 / 273:14306; agent/REPORT_TOAST.md. APPROVED (5). NEXT: Menu, Tabs.
+- Built: Toast 271:9918 (6); examples 273:14153 / 273:14244 / 273:14306; agent/REPORT_TOAST.md. APPROVED (5).
+
+## Menu (batch 2, #95)
+- Tokens pushed (patch batch2-menu.js): 1,364 vars fp b623b808; effect style menu/shadow (35); text style Menu/Submenu label (31).
+- Story menu.stories.ts (layout plain | overlay | popup, disabled); menuPlan; ROOTS + .p-menu. Storybook build OK.
+- Captured 2026-11-26. Built: Menu Item 284:4008 (3), Submenu Label 284:4020, Separator 284:4022, Menu 284:4024 (Popup 2); doc 285:16629; examples 99 Sandbox 285:16350. Sizes match the browser (192.6 / 130 / 130).
+- New token typography/menu-item-label/line-height (#96) + text style Menu/Item label: 1,365 vars, fp 9712a1e2 (Figma fingerprint not re-run yet), 32 text styles.
+- Generator `npm run figma:menu` (update in place) / `-- --fresh` (first build only). Report agent/REPORT_MENU.md.
+- WAITING: Witoon reviews and scores Menu. NEXT: Tabs (batch 2), later TieredMenu. Suggest a fresh session from this file.
 

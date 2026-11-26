@@ -1,4 +1,4 @@
-# 1341 variables, fingerprint 979b2158
+# 1365 variables, fingerprint 9712a1e2
 P|amber/50|C|fffbebff|fffbebff
 P|amber/100|C|fef3c7ff|fef3c7ff
 P|amber/200|C|fde68aff|fde68aff
@@ -409,6 +409,7 @@ S|typography/heading/h4/font-size|F|21|21
 S|typography/heading/h5/font-size|F|17.5|17.5
 S|typography/heading/h6/font-size|F|14|14
 S|typography/heading/line-height|F|1.5|1.5
+S|typography/menu-item-label/line-height|F|1|1
 S|typography/paragraph/line-height|F|1.5|1.5
 C|button/badge-size|F|14|14
 C|button/border-radius|F|6|6
@@ -1320,6 +1321,29 @@ C|toast/warn/close-button/hover-background|C|fef9c3ff|ffffff0d
 C|toast/warn/color|C|ca8a04ff|eab308ff
 C|toast/warn/detail-color|C|334155ff|ffffffff
 C|toast/width|F|350|350
+C|menu/background|C|ffffffff|18181bff
+C|menu/border-color|C|e2e8f0ff|3f3f46ff
+C|menu/border-radius|F|6|6
+C|menu/color|C|334155ff|ffffffff
+C|menu/item/border-radius|F|4|4
+C|menu/item/color|C|334155ff|ffffffff
+C|menu/item/focus-background|C|f1f5f9ff|27272aff
+C|menu/item/focus-color|C|1e293bff|ffffffff
+C|menu/item/gap|F|7|7
+C|menu/item/icon/color|C|94a3b8ff|71717aff
+C|menu/item/icon/focus-color|C|64748bff|a1a1aaff
+C|menu/item/padding-y|F|7|7
+C|menu/item/padding-x|F|10.5|10.5
+C|menu/list/gap|F|2|2
+C|menu/list/padding-y|F|3.5|3.5
+C|menu/list/padding-x|F|3.5|3.5
+C|menu/separator/border-color|C|e2e8f0ff|3f3f46ff
+C|menu/submenu-label/background|C|00000000|00000000
+C|menu/submenu-label/color|C|64748bff|a1a1aaff
+C|menu/submenu-label/font-weight|F|600|600
+C|menu/submenu-label/padding-y|F|7|7
+C|menu/submenu-label/padding-x|F|10.5|10.5
+C|menu/transition-duration|F|0.2|0.2
 C|button/focus-ring-radius|F|9|9
 C|button/rounded-focus-ring-radius|F|31|31
 C|button/line-height|F|16.8|16.8

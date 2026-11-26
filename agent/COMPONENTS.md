@@ -28,3 +28,4 @@ Rules: build one component at a time with a review gate (PILOT_CHECKLIST 5.1). N
 | 21 | ConfirmDialog | `<p-confirmdialog>` | reviewed (visual 5) | Witoon | | 02 Components: ConfirmDialog 264:9902 | agent/REPORT_DIALOG.md | #93 |
 | 22 | Dialog Mask | modal mask | reviewed (visual 5) | Witoon | | 02 Components: Dialog Mask 264:9846 | agent/REPORT_DIALOG.md | #92, design aid |
 | 23 | Toast | `<p-toast>` | reviewed (visual 5) | Witoon | | 02 Components: Toast 271:9918 | agent/REPORT_TOAST.md | 6 (#94); doc 273:14861; examples 273:14153 / 273:14244, stress 273:14306 |
+| 24 | Menu | `<p-menu>` | built, waiting for review | Witoon | | 02 Components: Menu 284:4024; parts Menu Item 284:4008, Submenu Label 284:4020, Separator 284:4022 | agent/REPORT_MENU.md | #95, #96; doc 285:16629; examples 285:16350 |

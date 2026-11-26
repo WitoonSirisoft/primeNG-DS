@@ -73,5 +73,10 @@
 | Dialog Mask | — | — | modal mask | [modal] | no | none | #92 design aid |
 | Toast | Severity | info, success, warn, error, secondary, contrast | `<p-toast>` | add({ severity }) | no | none | #94 |
 | Toast | Summary / Detail / Show detail / Show icon / Closable | text / boolean | `<p-toast>` | add({ summary, detail, closable }) | no | none | icon per severity |
+| Menu | Popup | false, true | `<p-menu>` | [popup]="true" (adds menu.shadow) | no | none | #95 |
+| Menu Item | State | default, focus, disabled | `<p-menu>` item | focus = keyboard focus / hover; MenuItem.disabled | no | none | #95 |
+| Menu Item | Label / Show icon / Icon | text / boolean / swap | `<p-menu>` item | MenuItem { label, icon } | no | none | 14 icons (Sakai pi-fw = 18) |
+| Menu Submenu Label | Label | text | `<p-menu>` group | MenuItem { label, items } | no | none | |
+| Menu Separator | — | — | `<p-menu>` | MenuItem { separator: true } | no | none | |
 | Scrollbar | Direction | horizontal, vertical | none (browser native scrollbar) | [scrollable] / scrollHeight / overflow | no | none | design-only, #88; thumb via instance padding |
 | Button Icon | Severity / Variant / Size / State / Rounded | as Button | `<p-button>` | icon only (no label) | no | none | #85 |

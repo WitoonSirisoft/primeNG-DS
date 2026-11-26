@@ -20,7 +20,7 @@ const arg = (n, d) => {
     return a ? a.slice(n.length + 3) : d;
 };
 const OUT = resolve(APP, arg('out', '../../tokens/base/tokens.json'));
-const COMPONENTS = arg('components', 'button,inputtext,tag,badge,textarea,select,inputnumber,checkbox,radiobutton,toggleswitch,password,iconfield,message,datepicker,datatable,paginator,toolbar,splitbutton,dialog,confirmdialog,toast').split(','); // batch 2: datatable + paginator (#80), toolbar + splitbutton (#89/#90), dialog + confirmdialog (#91–#93), toast (#94) // batch 1 added 2026-11-24 (#60)
+const COMPONENTS = arg('components', 'button,inputtext,tag,badge,textarea,select,inputnumber,checkbox,radiobutton,toggleswitch,password,iconfield,message,datepicker,datatable,paginator,toolbar,splitbutton,dialog,confirmdialog,toast,menu').split(','); // batch 2: datatable + paginator (#80), toolbar + splitbutton (#89/#90), dialog + confirmdialog (#91–#93), toast (#94), menu (#95) // batch 1 added 2026-11-24 (#60)
 const ROOT_FONT_PX = 14; // DECISIONS #15
 const MODES = ['light', 'dark'];
 
@@ -98,6 +98,11 @@ async function sakaiTypography() {
     add('typography.heading.font-weight', decl(SAKAI_TYPO, H, 'font-weight'), `${SAKAI_TYPO}: h1-h6 { font-weight }`);
     add('typography.heading.line-height', decl(SAKAI_TYPO, H, 'line-height'), `${SAKAI_TYPO}: h1-h6 { line-height }`);
     for (const h of ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']) add(`typography.heading.${h}.font-size`, decl(SAKAI_TYPO, h, 'font-size'), `${SAKAI_TYPO}: ${h} { font-size }`);
+    // PrimeNG component CSS sets a few line-heights that are not design tokens; read them from the style so a text style can use them
+    const menuCss = await readFile('node_modules/@primeuix/styles/dist/menu/index.mjs', 'utf8');
+    const mlh = menuCss.match(/\.p-menu-item-label\s*\{[^}]*?line-height:\s*([^;]+);/);
+    if (!mlh) throw new Error('PrimeNG menu: .p-menu-item-label { line-height } not found. PrimeNG changed; update export-tokens.mjs.');
+    add('typography.menu-item-label.line-height', mlh[1].trim(), '@primeuix/styles menu: .p-menu-item-label { line-height }');
     return { tokens: t, fallback: families.slice(1).join(', ') };
 }
 const sakai = await sakaiTypography();

@@ -256,6 +256,15 @@ function toastPlan() {
     p.push({ ...pl('toast', 'toast', { severity: 'info' }, ['severity-info', 'close'], ['hover']), hoverSel: '.p-toast-close-button' });
     return p;
 }
+// Batch 2 (#95): Menu (Sakai UI Kit menus)
+function menuPlan() {
+    const p = [];
+    for (const layout of ['plain', 'overlay', 'popup']) p.push(pl('menu', 'menu', { layout }, [`layout-${layout}`], ['default']));
+    p.push(pl('menu', 'menu', { layout: 'overlay', disabled: true }, ['layout-overlay', 'item-2'], ['disabled']));
+    p.push({ ...pl('menu', 'menu', { layout: 'overlay' }, ['layout-overlay', 'item-1'], ['hover']), hoverSel: '.p-menu-item-content >> nth=0' });
+    p.push({ ...pl('menu', 'menu', { layout: 'plain' }, ['layout-plain', 'item-1'], ['hover']), hoverSel: '.p-menu-item-content >> nth=0' });
+    return p;
+}
 function messagePlan() {
     const p = [];
     for (const severity of ['success', 'info', 'warn', 'error', 'secondary', 'contrast'])
@@ -280,7 +289,7 @@ function datepickerPlan() {
     return p;
 }
 const PLANS = { button: buttonPlan, inputtext: inputtextPlan, tag: tagPlan, textarea: textareaPlan, password: passwordPlan, iconfield: iconfieldPlan, inputnumber: inputnumberPlan,
-    checkbox: () => choicePlan('checkbox', 'checkbox'), radiobutton: () => choicePlan('radiobutton', 'radiobutton'), toggleswitch: () => choicePlan('toggleswitch', 'toggleswitch'), select: selectPlan, message: messagePlan, datepicker: datepickerPlan, datatable: datatablePlan, paginator: paginatorPlan, toolbar: toolbarPlan, splitbutton: splitbuttonPlan, dialog: dialogPlan, confirmdialog: confirmdialogPlan, toast: toastPlan };
+    checkbox: () => choicePlan('checkbox', 'checkbox'), radiobutton: () => choicePlan('radiobutton', 'radiobutton'), toggleswitch: () => choicePlan('toggleswitch', 'toggleswitch'), select: selectPlan, message: messagePlan, datepicker: datepickerPlan, datatable: datatablePlan, paginator: paginatorPlan, toolbar: toolbarPlan, splitbutton: splitbuttonPlan, dialog: dialogPlan, confirmdialog: confirmdialogPlan, toast: toastPlan, menu: menuPlan };
 
 // ---------------------------------------------------------------------------
 // Storybook URL building. Arg values: '!undefined' / '!true' / '!false' are Storybook URL specials.
@@ -324,7 +333,7 @@ function serve(root) {
 // ---------------------------------------------------------------------------
 // Capture one plan entry in one mode.
 // ---------------------------------------------------------------------------
-const ROOTS = '.p-button, .p-inputtext, .p-tag, .p-textarea, .p-select, .p-inputnumber, .p-checkbox, .p-radiobutton, .p-toggleswitch, .p-password, .p-iconfield, .p-message, .p-datepicker, .p-datatable, .p-paginator, .p-toolbar, .p-splitbutton, .p-dialog, .p-toast-message'; // component roots (outer first in document order)
+const ROOTS = '.p-button, .p-inputtext, .p-tag, .p-textarea, .p-select, .p-inputnumber, .p-checkbox, .p-radiobutton, .p-toggleswitch, .p-password, .p-iconfield, .p-message, .p-datepicker, .p-datatable, .p-paginator, .p-toolbar, .p-splitbutton, .p-dialog, .p-toast-message, .p-menu'; // component roots (outer first in document order)
 const rootSel = (cell) => ROOTS.split(', ').map((r) => `${cell} ${r}`).join(', ');
 const FREEZE_CSS = '*,*::before,*::after{animation-play-state:paused!important;animation-delay:0s!important;transition:none!important;caret-color:transparent!important}';
 

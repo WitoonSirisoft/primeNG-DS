@@ -41,7 +41,9 @@ export const TEXT_STYLES = [
     { name: 'DataTable/Column footer', ...BASE, size: 'typography.base.font-size', weight: 'datatable.column-footer.font-weight', css: '.p-datatable-tfoot > tr > td (column footer)' },
     { name: 'Dialog/Title', ...BASE, size: 'dialog.title.font-size', weight: 'dialog.title.font-weight', css: '.p-dialog-title' },
     { name: 'Toast/Summary', ...BASE, size: 'toast.summary.font-size', weight: 'toast.summary.font-weight', css: '.p-toast-summary' },
-    { name: 'Toast/Detail', ...BASE, size: 'toast.detail.font-size', weight: 'toast.detail.font-weight', css: '.p-toast-detail' }
+    { name: 'Toast/Detail', ...BASE, size: 'toast.detail.font-size', weight: 'toast.detail.font-weight', css: '.p-toast-detail' },
+    { name: 'Menu/Submenu label', ...BASE, size: 'typography.base.font-size', weight: 'menu.submenu-label.font-weight', css: '.p-menu-submenu-label' },
+    { name: 'Menu/Item label', ...BASE, size: 'typography.base.font-size', weight: 'typography.base.font-weight', lineHeight: 'typography.menu-item-label.line-height', css: '.p-menu-item-label' }
 ];
 /** Figma font style for a CSS weight (Lato in Figma: Thin, Light, Regular, Medium, SemiBold, Bold, ExtraBold, Black). */
 export const WEIGHT_STYLE = { 100: 'Thin', 300: 'Light', 400: 'Regular', 500: 'Medium', 600: 'SemiBold', 700: 'Bold', 800: 'ExtraBold', 900: 'Black' };

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T10:05:43.610Z",
+  "generated": "2026-11-26T03:24:07.787Z",
   "settings": {
     "viewport": {
       "width": 1280,
@@ -17,7 +17,7 @@
     "@angular/core": "21.2.26",
     "storybook": "10.6.7"
   },
-  "count": 1664,
+  "count": 1676,
   "images": [
     {
       "file": "button/button__severity-contrast__size-base__style-outlined__state-active__dark.png",
@@ -16287,6 +16287,152 @@
       "mode": "light",
       "story": "components-inputtext--with-label-and-helper",
       "args": {},
+      "lato": true
+    },
+    {
+      "file": "menu/menu__layout-overlay__item-1__state-hover__dark.png",
+      "state": "hover",
+      "w": 284,
+      "h": 130,
+      "mode": "dark",
+      "story": "components-menu--playground",
+      "args": {
+        "layout": "overlay"
+      },
+      "lato": true
+    },
+    {
+      "file": "menu/menu__layout-overlay__item-1__state-hover__light.png",
+      "state": "hover",
+      "w": 284,
+      "h": 130,
+      "mode": "light",
+      "story": "components-menu--playground",
+      "args": {
+        "layout": "overlay"
+      },
+      "lato": true
+    },
+    {
+      "file": "menu/menu__layout-overlay__item-2__state-disabled__dark.png",
+      "state": "disabled",
+      "w": 284,
+      "h": 130,
+      "mode": "dark",
+      "story": "components-menu--playground",
+      "args": {
+        "layout": "overlay",
+        "disabled": true
+      },
+      "lato": true
+    },
+    {
+      "file": "menu/menu__layout-overlay__item-2__state-disabled__light.png",
+      "state": "disabled",
+      "w": 284,
+      "h": 130,
+      "mode": "light",
+      "story": "components-menu--playground",
+      "args": {
+        "layout": "overlay",
+        "disabled": true
+      },
+      "lato": true
+    },
+    {
+      "file": "menu/menu__layout-overlay__state-default__dark.png",
+      "state": "default",
+      "w": 284,
+      "h": 130,
+      "mode": "dark",
+      "story": "components-menu--playground",
+      "args": {
+        "layout": "overlay"
+      },
+      "lato": true
+    },
+    {
+      "file": "menu/menu__layout-overlay__state-default__light.png",
+      "state": "default",
+      "w": 284,
+      "h": 130,
+      "mode": "light",
+      "story": "components-menu--playground",
+      "args": {
+        "layout": "overlay"
+      },
+      "lato": true
+    },
+    {
+      "file": "menu/menu__layout-plain__item-1__state-hover__dark.png",
+      "state": "hover",
+      "w": 284,
+      "h": 192.59,
+      "mode": "dark",
+      "story": "components-menu--playground",
+      "args": {
+        "layout": "plain"
+      },
+      "lato": true
+    },
+    {
+      "file": "menu/menu__layout-plain__item-1__state-hover__light.png",
+      "state": "hover",
+      "w": 284,
+      "h": 192.59,
+      "mode": "light",
+      "story": "components-menu--playground",
+      "args": {
+        "layout": "plain"
+      },
+      "lato": true
+    },
+    {
+      "file": "menu/menu__layout-plain__state-default__dark.png",
+      "state": "default",
+      "w": 284,
+      "h": 192.59,
+      "mode": "dark",
+      "story": "components-menu--playground",
+      "args": {
+        "layout": "plain"
+      },
+      "lato": true
+    },
+    {
+      "file": "menu/menu__layout-plain__state-default__light.png",
+      "state": "default",
+      "w": 284,
+      "h": 192.59,
+      "mode": "light",
+      "story": "components-menu--playground",
+      "args": {
+        "layout": "plain"
+      },
+      "lato": true
+    },
+    {
+      "file": "menu/menu__layout-popup__state-default__dark.png",
+      "state": "default",
+      "w": 175,
+      "h": 130,
+      "mode": "dark",
+      "story": "components-menu--playground",
+      "args": {
+        "layout": "popup"
+      },
+      "lato": true
+    },
+    {
+      "file": "menu/menu__layout-popup__state-default__light.png",
+      "state": "default",
+      "w": 175,
+      "h": 130,
+      "mode": "light",
+      "story": "components-menu--playground",
+      "args": {
+        "layout": "popup"
+      },
       "lato": true
     },
     {

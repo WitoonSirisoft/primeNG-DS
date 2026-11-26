@@ -1,18 +1,19 @@
 const D={"A":{"severity":["primary","secondary","success","info","warn","danger","help","contrast"],"variant":["solid","outlined","text"],"size":["small","base","large"],"state":["default","hover","focus","active","disabled","loading"],"rounded":["false","true"]},"on":["severity","variant","size","state","rounded"],"set":"vertical","setName":"Button Vertical","desc":" | Code: iconPos=\"top\" | \"bottom\" (primary solid; combine with severity/variant in code)","props":["Label","Show label","Icon","Raised"],"F":{"gap":"button/gap","rw":"button/focus-ring/width","dop":"disabled-opacity","bsz":"button/badge-size","shadow":"button/raised-shadow","icon":"Icon/check","spinner":"Icon/primeng-spinner"},"from":0,"to":36};
 function variants(A,on,has,SET){
 const vals=a=>SET!=='main'||on.includes(a)?A[a]:[A[a][a==='size'?1:0]];const ix=(a,v)=>vals(a).indexOf(v);
-const SZ={small:{px:'button/sm/padding-x',py:'button/sm/padding-y',ts:'Button/Label sm',ih:'button/sm/font-size',mh:'button/sm/line-height'},
-base:{px:'button/padding-x',py:'button/padding-y',ts:'Button/Label base',ih:'typography/base/font-size',mh:'button/line-height'},
-large:{px:'button/lg/padding-x',py:'button/lg/padding-y',ts:'Button/Label lg',ih:'button/lg/font-size',mh:'button/lg/line-height'}};
+const SZ={small:{px:'button/sm/padding-x',py:'button/sm/padding-y',ts:'Button/Label sm',ih:'button/sm/font-size',mh:'button/sm/line-height',iw:'button/sm/icon-only-width'},
+base:{px:'button/padding-x',py:'button/padding-y',ts:'Button/Label base',ih:'typography/base/font-size',mh:'button/line-height',iw:'button/icon-only-width'},
+large:{px:'button/lg/padding-x',py:'button/lg/padding-y',ts:'Button/Label lg',ih:'button/lg/font-size',mh:'button/lg/line-height',iw:'button/lg/icon-only-width'}};
 const RD={'false':['button/border-radius','button/focus-ring-radius'],'true':['button/rounded-border-radius','button/rounded-focus-ring-radius']};
 const CW=130,CH=64,PAD=24,out=[];
 const base=(size,state,rounded)=>{const k=state==='hover'||state==='active'?state:'default';return {k,sz:SZ[size],rd:RD[rounded],f:state==='focus',d:state==='disabled'||state==='loading',l:state==='loading',
  dir:'H',s1:'Icon left',s2:'Icon right',v1:state==='loading',v2:false,so:0,sb:'button/primary/background',rg:'button/primary/focus-ring/color',bo:null,ul:false,badge:false};};
 const put=(it,row,col)=>{it.x=PAD+col*CW;it.y=PAD+row*CH;out.push(it);};
 const solid=(it,sev)=>{const p=x=>it.k==='default'?x:it.k+'-'+x;it.bg='button/'+sev+'/'+p('background');it.st='button/'+sev+'/'+p('border-color');it.fg='button/'+sev+'/'+p('color');it.so=1;it.sb='button/'+sev+'/background';it.rg='button/'+sev+'/focus-ring/color';};
-if(SET==='main'){
+if(SET==='main'||SET==='icon'){
  for(const sev of vals('severity'))for(const variant of vals('variant'))for(const rounded of vals('rounded'))for(const size of vals('size'))for(const state of vals('state')){
   const it=base(size,state,rounded);it.n='Severity='+sev+', Variant='+variant+', Size='+size+', State='+state+', Rounded='+rounded;it.badge=true;
+  if(SET==='icon'){it.io=true;it.v1=true;it.circ=rounded==='true';if(it.circ)it.rd=[it.sz.iw,it.rd[1]];} // .p-button-icon-only(.p-button-rounded)
   if(variant==='solid')solid(it,sev);
   else{const pre='button/'+variant+'/'+sev,o=pre+'/'+it.k+'-background-opacity';it.bg=it.k==='default'?null:pre+'/'+it.k+'-background';
    it.bo=it.k!=='default'&&has(o)?o:null;it.st=variant==='outlined'?pre+'/border-color':null;it.fg=pre+'/color';it.sb='button/'+sev+'/background';it.rg='button/'+sev+'/focus-ring/color';}
@@ -48,8 +49,8 @@ const RAD=['topLeftRadius','topRightRadius','bottomLeftRadius','bottomRightRadiu
 const clear=q=>!!q&&q.type==='SOLID'&&q.opacity===0&&!(q.boundVariables&&q.boundVariables.color);
 for(const it of IT){const c=by[it.n];if(!c){E(it,'missing');continue;}const S=it.sz,R=it.rd,g=n=>c.findOne(x=>x.name===n);
  eq(it,'direction',c.layoutMode,it.dir==='V'?'VERTICAL':'HORIZONTAL');
- for(const k of ['paddingTop','paddingBottom'])eq(it,k,await b(c,k),S.py);for(const k of ['paddingLeft','paddingRight'])eq(it,k,await b(c,k),S.px);
- eq(it,'gap',await b(c,'itemSpacing'),D.F.gap);for(const k of RAD)eq(it,k,await b(c,k),R[0]);
+ for(const k of ['paddingTop','paddingBottom'])eq(it,k,await b(c,k),S.py);for(const k of ['paddingLeft','paddingRight'])eq(it,k,await b(c,k),it.io?null:S.px);
+ eq(it,'gap',await b(c,'itemSpacing'),it.io?null:D.F.gap);if(it.io){eq(it,'width',await b(c,'width'),S.iw);eq(it,'height',await b(c,'height'),it.circ?S.iw:null);eq(it,'label hidden',c.findOne(x=>x.name==='Label').visible,false);}for(const k of RAD)eq(it,k,await b(c,k),R[0]);
  eq(it,'stroke',it.st?await pv(c.strokes[0]):(clear(c.strokes[0])?'transparent':'not transparent'),it.st||'transparent');
  eq(it,'opacity',await b(c,'opacity'),it.d?D.F.dop:null);
  const bg=g('Background');eq(it,'bg',bg.fills.length?await pv(bg.fills[0]):null,it.bg);eq(it,'bgOpacity',await b(bg,'opacity'),it.bo);
