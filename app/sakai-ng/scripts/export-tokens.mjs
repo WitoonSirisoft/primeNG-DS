@@ -103,6 +103,28 @@ async function sakaiTypography() {
     const mlh = menuCss.match(/\.p-menu-item-label\s*\{[^}]*?line-height:\s*([^;]+);/);
     if (!mlh) throw new Error('PrimeNG menu: .p-menu-item-label { line-height } not found. PrimeNG changed; update export-tokens.mjs.');
     add('typography.menu-item-label.line-height', mlh[1].trim(), '@primeuix/styles menu: .p-menu-item-label { line-height }');
+    // Sakai layout sidebar menu (#97): nested SCSS, read with targeted patterns from _menu.scss
+    const SAKAI_MENU = 'src/assets/layout/_menu.scss';
+    const mcss = await readFile(SAKAI_MENU, 'utf8');
+    const mget = (re, what) => { const m = mcss.match(re); if (!m) throw new Error(`Sakai menu: ${what} not found in ${SAKAI_MENU}. Sakai changed; update export-tokens.mjs.`); return m[1].trim(); };
+    const block = (sel) => mget(new RegExp(`${sel}\\s*\\{([^{}]*)`), `${sel} { }`);
+    const prop = (b, pr, what) => { const m = b.match(new RegExp(`(?:^|[;\\s])${pr}\\s*:\\s*([^;]+);`)); if (!m) throw new Error(`Sakai menu: ${what} { ${pr} } not found. Sakai changed; update export-tokens.mjs.`); return m[1].trim(); };
+    const side = block('\\.layout-sidebar'), root = block('\\.layout-menuitem-root-text');
+    const link = mget(/\n\s*a \{\s*(display: flex;[^{}]*)/, 'ul a { display: flex }');
+    const S = (p, v, css) => add(p, v, `${SAKAI_MENU}: ${css}`);
+    S('layout.sidebar.width', prop(side, 'width', '.layout-sidebar'), '.layout-sidebar { width }');
+    S('layout.sidebar.padding', prop(side, 'padding', '.layout-sidebar'), '.layout-sidebar { padding }');
+    S('layout.menu.root-text.font-size', prop(root, 'font-size', 'root-text'), '.layout-menuitem-root-text { font-size }');
+    S('layout.menu.root-text.font-weight', prop(root, 'font-weight', 'root-text'), '.layout-menuitem-root-text { font-weight }');
+    S('layout.menu.root-text.text-transform', prop(root, 'text-transform', 'root-text'), '.layout-menuitem-root-text { text-transform }');
+    S('layout.menu.root-text.margin', prop(root, 'margin', 'root-text'), '.layout-menuitem-root-text { margin }');
+    S('layout.menu.item.padding', prop(link, 'padding', 'ul a'), 'ul a { padding }');
+    S('layout.menu.item.icon-gap', mget(/\.layout-menuitem-icon\s*\{[^}]*?margin-right:\s*([^;]+);/, '.layout-menuitem-icon { margin-right }'), '.layout-menuitem-icon { margin-right }');
+    const tog = mget(/\.layout-submenu-toggler\s*\{\s*font-size:\s*([^;]+);/, '.layout-submenu-toggler { font-size }');
+    if (!/^\d+(\.\d+)?%$/.test(tog)) throw new Error(`Sakai menu: toggler font-size ${tog} is not a percent; update export-tokens.mjs`);
+    S('layout.menu.toggler.size', `${parseFloat(tog) / 100}rem`, `.layout-submenu-toggler { font-size: ${tog} } of the 1rem link text`);
+    S('layout.menu.item.active-font-weight', mget(/&\.active-route\s*\{\s*font-weight:\s*([^;]+);/, '.active-route { font-weight }'), 'ul a.active-route { font-weight }');
+    S('layout.menu.submenu.indent', mget(/overflow: hidden;[\s\S]*?li\s*\{\s*a\s*\{\s*margin-left:\s*([^;]+);/, 'ul ul li a { margin-left }'), 'ul ul li a { margin-left } (first nested level)');
     return { tokens: t, fallback: families.slice(1).join(', ') };
 }
 const sakai = await sakaiTypography();
@@ -162,7 +184,7 @@ function typeOf(path, resolved) {
     if (/duration/.test(path)) return 'duration';
     if (/(^|-)style$/.test(leaf)) return 'strokeStyle';
     if (/^(#|rgba?\(|hsla?\(|color-mix\(|transparent$)/i.test(resolved)) return 'color';
-    if (/^-?[\d.]+(rem|px|em)?$/.test(resolved) && /width|height|size|radius|padding|gap|offset|gutter|margin|blur/.test(path)) return 'dimension'; // blur: toast.blur (#94)
+    if (/^-?[\d.]+(rem|px|em)?$/.test(resolved) && /width|height|size|radius|padding|gap|offset|gutter|margin|blur|indent/.test(path)) return 'dimension'; // blur: toast.blur (#94); indent: layout.menu.submenu.indent (#97)
     if (/^(-?[\d.]+(rem|px|em)?\s+)+-?[\d.]+(rem|px|em)?$/.test(resolved)) return 'dimension';
     return 'string';
 }

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-26T03:24:07.787Z",
+  "generated": "2026-11-26T03:49:52.878Z",
   "settings": {
     "viewport": {
       "width": 1280,
@@ -17,7 +17,7 @@
     "@angular/core": "21.2.26",
     "storybook": "10.6.7"
   },
-  "count": 1676,
+  "count": 1686,
   "images": [
     {
       "file": "button/button__severity-contrast__size-base__style-outlined__state-active__dark.png",
@@ -20180,6 +20180,136 @@
         "variant": "outlined",
         "size": "small",
         "selected": true
+      },
+      "lato": true
+    },
+    {
+      "file": "sidebarmenu/sidebarmenu__active-chart__item-chart__state-hover__dark.png",
+      "state": "hover",
+      "w": 280,
+      "h": 311.56,
+      "mode": "dark",
+      "story": "components-sidebarmenu--playground",
+      "args": {
+        "active": "chart",
+        "expanded": false
+      },
+      "lato": true
+    },
+    {
+      "file": "sidebarmenu/sidebarmenu__active-chart__item-chart__state-hover__light.png",
+      "state": "hover",
+      "w": 280,
+      "h": 311.56,
+      "mode": "light",
+      "story": "components-sidebarmenu--playground",
+      "args": {
+        "active": "chart",
+        "expanded": false
+      },
+      "lato": true
+    },
+    {
+      "file": "sidebarmenu/sidebarmenu__active-chart__item-timeline__state-hover__dark.png",
+      "state": "hover",
+      "w": 280,
+      "h": 311.56,
+      "mode": "dark",
+      "story": "components-sidebarmenu--playground",
+      "args": {
+        "active": "chart",
+        "expanded": false
+      },
+      "lato": true
+    },
+    {
+      "file": "sidebarmenu/sidebarmenu__active-chart__item-timeline__state-hover__light.png",
+      "state": "hover",
+      "w": 280,
+      "h": 311.56,
+      "mode": "light",
+      "story": "components-sidebarmenu--playground",
+      "args": {
+        "active": "chart",
+        "expanded": false
+      },
+      "lato": true
+    },
+    {
+      "file": "sidebarmenu/sidebarmenu__active-chart__state-default__dark.png",
+      "state": "default",
+      "w": 280,
+      "h": 311.56,
+      "mode": "dark",
+      "story": "components-sidebarmenu--playground",
+      "args": {
+        "active": "chart",
+        "expanded": false
+      },
+      "lato": true
+    },
+    {
+      "file": "sidebarmenu/sidebarmenu__active-chart__state-default__light.png",
+      "state": "default",
+      "w": 280,
+      "h": 311.56,
+      "mode": "light",
+      "story": "components-sidebarmenu--playground",
+      "args": {
+        "active": "chart",
+        "expanded": false
+      },
+      "lato": true
+    },
+    {
+      "file": "sidebarmenu/sidebarmenu__expanded__active-login__state-default__dark.png",
+      "state": "default",
+      "w": 280,
+      "h": 424.95,
+      "mode": "dark",
+      "story": "components-sidebarmenu--playground",
+      "args": {
+        "active": "login",
+        "expanded": true
+      },
+      "lato": true
+    },
+    {
+      "file": "sidebarmenu/sidebarmenu__expanded__active-login__state-default__light.png",
+      "state": "default",
+      "w": 280,
+      "h": 424.95,
+      "mode": "light",
+      "story": "components-sidebarmenu--playground",
+      "args": {
+        "active": "login",
+        "expanded": true
+      },
+      "lato": true
+    },
+    {
+      "file": "sidebarmenu/sidebarmenu__expanded__item-error__state-hover__dark.png",
+      "state": "hover",
+      "w": 280,
+      "h": 424.95,
+      "mode": "dark",
+      "story": "components-sidebarmenu--playground",
+      "args": {
+        "active": "login",
+        "expanded": true
+      },
+      "lato": true
+    },
+    {
+      "file": "sidebarmenu/sidebarmenu__expanded__item-error__state-hover__light.png",
+      "state": "hover",
+      "w": 280,
+      "h": 424.95,
+      "mode": "light",
+      "story": "components-sidebarmenu--playground",
+      "args": {
+        "active": "login",
+        "expanded": true
       },
       "lato": true
     },

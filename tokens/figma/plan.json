@@ -1,17 +1,17 @@
 {
-  "generated": "2026-11-26T03:27:37.161Z",
+  "generated": "2026-11-26T03:48:39.976Z",
   "source": {
     "tokens": "tokens/base/tokens.json",
     "theme": null
   },
   "counts": {
     "Primitives": 248,
-    "Semantic": 164,
+    "Semantic": 177,
     "Components": 953,
     "effectStyles": 36,
-    "textStyles": 32,
-    "derived": 209,
-    "skipped": 40
+    "textStyles": 34,
+    "derived": 215,
+    "skipped": 41
   },
   "calls": [
     {
@@ -20,7 +20,7 @@
     },
     {
       "file": "calls/02-semantic-1.js",
-      "chars": 21977
+      "chars": 24458
     },
     {
       "file": "calls/03-components-1.js",
@@ -44,7 +44,7 @@
     },
     {
       "file": "calls/08-text-styles.js",
-      "chars": 12794
+      "chars": 13917
     }
   ],
   "plan": {
@@ -4800,6 +4800,149 @@
           },
           "codeSyntax": "--p-icon-size",
           "description": ""
+        },
+        {
+          "name": "layout/menu/item/active-font-weight",
+          "type": "FLOAT",
+          "scope": "fw",
+          "values": {
+            "Light": 700,
+            "Dark": 700
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: src/assets/layout/_menu.scss: ul a.active-route { font-weight }."
+        },
+        {
+          "name": "layout/menu/item/icon-gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: src/assets/layout/_menu.scss: .layout-menuitem-icon { margin-right }."
+        },
+        {
+          "name": "layout/menu/item/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 10.5,
+            "Dark": 10.5
+          },
+          "codeSyntax": null,
+          "description": "Derived from layout/menu/item/padding (2-value shorthand, y). Not a PrimeNG token (no CSS variable). Source: src/assets/layout/_menu.scss: ul a { padding }."
+        },
+        {
+          "name": "layout/menu/item/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": null,
+          "description": "Derived from layout/menu/item/padding (2-value shorthand, x). Not a PrimeNG token (no CSS variable). Source: src/assets/layout/_menu.scss: ul a { padding }."
+        },
+        {
+          "name": "layout/menu/root-text/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": 11.998,
+            "Dark": 11.998
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: src/assets/layout/_menu.scss: .layout-menuitem-root-text { font-size }."
+        },
+        {
+          "name": "layout/menu/root-text/font-weight",
+          "type": "FLOAT",
+          "scope": "fw",
+          "values": {
+            "Light": 700,
+            "Dark": 700
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: src/assets/layout/_menu.scss: .layout-menuitem-root-text { font-weight }."
+        },
+        {
+          "name": "layout/menu/root-text/margin-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 10.5,
+            "Dark": 10.5
+          },
+          "codeSyntax": null,
+          "description": "Derived from layout/menu/root-text/margin (2-value shorthand, y). Not a PrimeNG token (no CSS variable). Source: src/assets/layout/_menu.scss: .layout-menuitem-root-text { margin }."
+        },
+        {
+          "name": "layout/menu/root-text/margin-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from layout/menu/root-text/margin (2-value shorthand, x). Not a PrimeNG token (no CSS variable). Source: src/assets/layout/_menu.scss: .layout-menuitem-root-text { margin }."
+        },
+        {
+          "name": "layout/menu/submenu/indent",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: src/assets/layout/_menu.scss: ul ul li a { margin-left } (first nested level)."
+        },
+        {
+          "name": "layout/menu/toggler/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 10.5,
+            "Dark": 10.5
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: src/assets/layout/_menu.scss: .layout-submenu-toggler { font-size: 75% } of the 1rem link text."
+        },
+        {
+          "name": "layout/sidebar/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Derived from layout/sidebar/padding (2-value shorthand, y). Not a PrimeNG token (no CSS variable). Source: src/assets/layout/_menu.scss: .layout-sidebar { padding }."
+        },
+        {
+          "name": "layout/sidebar/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 21,
+            "Dark": 21
+          },
+          "codeSyntax": null,
+          "description": "Derived from layout/sidebar/padding (2-value shorthand, x). Not a PrimeNG token (no CSS variable). Source: src/assets/layout/_menu.scss: .layout-sidebar { padding }."
+        },
+        {
+          "name": "layout/sidebar/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 280,
+            "Dark": 280
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: src/assets/layout/_menu.scss: .layout-sidebar { width }."
         },
         {
           "name": "list/gap",
@@ -20208,6 +20351,10 @@
         "reason": "shadow is \"none\": no effect style needed"
       },
       {
+        "token": "layout.menu.root-text.text-transform",
+        "reason": "text-transform uppercase: applied as the text style's textCase"
+      },
+      {
         "token": "button.contrast.focus-ring.shadow",
         "reason": "shadow is \"none\": no effect style needed"
       },
@@ -20370,6 +20517,36 @@
         "token": "highlight.focus-background",
         "derived": "highlight.focus-background-opacity",
         "rule": "color-mix opacity"
+      },
+      {
+        "token": "layout.menu.item.padding",
+        "derived": "layout.menu.item.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "layout.menu.item.padding",
+        "derived": "layout.menu.item.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "layout.menu.root-text.margin",
+        "derived": "layout.menu.root-text.margin-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "layout.menu.root-text.margin",
+        "derived": "layout.menu.root-text.margin-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "layout.sidebar.padding",
+        "derived": "layout.sidebar.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "layout.sidebar.padding",
+        "derived": "layout.sidebar.padding-x",
+        "rule": "2-value split"
       },
       {
         "token": "list.header.padding",
@@ -21414,6 +21591,7 @@
         "style": "Bold",
         "size": 35,
         "lineHeightPercent": 150,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "typography/heading/h1/font-size",
@@ -21427,6 +21605,7 @@
         "style": "Bold",
         "size": 28,
         "lineHeightPercent": 150,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "typography/heading/h2/font-size",
@@ -21440,6 +21619,7 @@
         "style": "Bold",
         "size": 24.5,
         "lineHeightPercent": 150,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "typography/heading/h3/font-size",
@@ -21453,6 +21633,7 @@
         "style": "Bold",
         "size": 21,
         "lineHeightPercent": 150,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "typography/heading/h4/font-size",
@@ -21466,6 +21647,7 @@
         "style": "Bold",
         "size": 17.5,
         "lineHeightPercent": 150,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "typography/heading/h5/font-size",
@@ -21479,6 +21661,7 @@
         "style": "Bold",
         "size": 14,
         "lineHeightPercent": 150,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "typography/heading/h6/font-size",
@@ -21492,6 +21675,7 @@
         "style": "Regular",
         "size": 14,
         "lineHeightPercent": 150,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "typography/base/font-size",
@@ -21505,6 +21689,7 @@
         "style": "Regular",
         "size": 14,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "typography/base/font-size",
@@ -21518,6 +21703,7 @@
         "style": "Medium",
         "size": 12.25,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "button/sm/font-size",
@@ -21531,6 +21717,7 @@
         "style": "Medium",
         "size": 14,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "typography/base/font-size",
@@ -21544,6 +21731,7 @@
         "style": "Medium",
         "size": 15.75,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "button/lg/font-size",
@@ -21557,6 +21745,7 @@
         "style": "Regular",
         "size": 12.25,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "inputtext/sm/font-size",
@@ -21570,6 +21759,7 @@
         "style": "Regular",
         "size": 14,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "typography/base/font-size",
@@ -21583,6 +21773,7 @@
         "style": "Regular",
         "size": 15.75,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "inputtext/lg/font-size",
@@ -21596,6 +21787,7 @@
         "style": "Bold",
         "size": 12.25,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "tag/font-size",
@@ -21609,6 +21801,7 @@
         "style": "Regular",
         "size": 12.25,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "textarea/sm/font-size",
@@ -21622,6 +21815,7 @@
         "style": "Regular",
         "size": 14,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "typography/base/font-size",
@@ -21635,6 +21829,7 @@
         "style": "Regular",
         "size": 15.75,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "textarea/lg/font-size",
@@ -21648,6 +21843,7 @@
         "style": "Regular",
         "size": 12.25,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "select/sm/font-size",
@@ -21661,6 +21857,7 @@
         "style": "Regular",
         "size": 14,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "typography/base/font-size",
@@ -21674,6 +21871,7 @@
         "style": "Regular",
         "size": 15.75,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "select/lg/font-size",
@@ -21687,6 +21885,7 @@
         "style": "SemiBold",
         "size": 14,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "typography/base/font-size",
@@ -21700,6 +21899,7 @@
         "style": "Medium",
         "size": 12.25,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "message/text/sm/font-size",
@@ -21713,6 +21913,7 @@
         "style": "Medium",
         "size": 14,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "message/text/font-size",
@@ -21726,6 +21927,7 @@
         "style": "Medium",
         "size": 15.75,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "message/text/lg/font-size",
@@ -21739,6 +21941,7 @@
         "style": "SemiBold",
         "size": 14,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "typography/base/font-size",
@@ -21752,6 +21955,7 @@
         "style": "SemiBold",
         "size": 14,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "typography/base/font-size",
@@ -21765,6 +21969,7 @@
         "style": "SemiBold",
         "size": 17.5,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "dialog/title/font-size",
@@ -21778,6 +21983,7 @@
         "style": "Medium",
         "size": 14,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "toast/summary/font-size",
@@ -21791,6 +21997,7 @@
         "style": "Medium",
         "size": 12.25,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "toast/detail/font-size",
@@ -21804,6 +22011,7 @@
         "style": "SemiBold",
         "size": 14,
         "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "typography/base/font-size",
@@ -21817,12 +22025,41 @@
         "style": "Regular",
         "size": 14,
         "lineHeightPercent": 100,
+        "textCase": "ORIGINAL",
         "bind": {
           "fontFamily": "font-family",
           "fontSize": "typography/base/font-size",
           "fontWeight": "typography/base/font-weight"
         },
         "description": "CSS: .p-menu-item-label. Size typography/base/font-size, weight typography/base/font-weight, line-height 1 (typography/menu-item-label/line-height)."
+      },
+      {
+        "name": "Sidebar/Section",
+        "family": "Lato",
+        "style": "Bold",
+        "size": 11.998,
+        "lineHeightPercent": 120,
+        "textCase": "UPPER",
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "layout/menu/root-text/font-size",
+          "fontWeight": "layout/menu/root-text/font-weight"
+        },
+        "description": "CSS: Sakai _menu.scss: .layout-menuitem-root-text. Size layout/menu/root-text/font-size, weight layout/menu/root-text/font-weight, line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "Sidebar/Item active",
+        "family": "Lato",
+        "style": "Bold",
+        "size": 14,
+        "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "typography/base/font-size",
+          "fontWeight": "layout/menu/item/active-font-weight"
+        },
+        "description": "CSS: Sakai _menu.scss: ul a.active-route. Size typography/base/font-size, weight layout/menu/item/active-font-weight, line-height 1.2 (typography/base/line-height)."
       }
     ]
   }

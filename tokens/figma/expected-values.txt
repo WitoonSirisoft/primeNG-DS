@@ -1,4 +1,4 @@
-# 1365 variables, fingerprint 9712a1e2
+# 1378 variables, fingerprint e2a97c66
 P|amber/50|C|fffbebff|fffbebff
 P|amber/100|C|fef3c7ff|fef3c7ff
 P|amber/200|C|fde68aff|fde68aff
@@ -299,6 +299,19 @@ S|highlight/focus-background|C|d1fae5ff|34d399ff
 S|highlight/focus-background-opacity|F|100|24
 S|highlight/focus-color|C|065f46ff|ffffffde
 S|icon-size|F|14|14
+S|layout/menu/item/active-font-weight|F|700|700
+S|layout/menu/item/icon-gap|F|7|7
+S|layout/menu/item/padding-y|F|10.5|10.5
+S|layout/menu/item/padding-x|F|14|14
+S|layout/menu/root-text/font-size|F|11.998|11.998
+S|layout/menu/root-text/font-weight|F|700|700
+S|layout/menu/root-text/margin-y|F|10.5|10.5
+S|layout/menu/root-text/margin-x|F|0|0
+S|layout/menu/submenu/indent|F|14|14
+S|layout/menu/toggler/size|F|10.5|10.5
+S|layout/sidebar/padding-y|F|7|7
+S|layout/sidebar/padding-x|F|21|21
+S|layout/sidebar/width|F|280|280
 S|list/gap|F|2|2
 S|list/header/padding-top|F|7|7
 S|list/header/padding-right|F|14|14

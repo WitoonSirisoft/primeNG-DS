@@ -43,7 +43,9 @@ export const TEXT_STYLES = [
     { name: 'Toast/Summary', ...BASE, size: 'toast.summary.font-size', weight: 'toast.summary.font-weight', css: '.p-toast-summary' },
     { name: 'Toast/Detail', ...BASE, size: 'toast.detail.font-size', weight: 'toast.detail.font-weight', css: '.p-toast-detail' },
     { name: 'Menu/Submenu label', ...BASE, size: 'typography.base.font-size', weight: 'menu.submenu-label.font-weight', css: '.p-menu-submenu-label' },
-    { name: 'Menu/Item label', ...BASE, size: 'typography.base.font-size', weight: 'typography.base.font-weight', lineHeight: 'typography.menu-item-label.line-height', css: '.p-menu-item-label' }
+    { name: 'Menu/Item label', ...BASE, size: 'typography.base.font-size', weight: 'typography.base.font-weight', lineHeight: 'typography.menu-item-label.line-height', css: '.p-menu-item-label' },
+    { name: 'Sidebar/Section', ...BASE, size: 'layout.menu.root-text.font-size', weight: 'layout.menu.root-text.font-weight', textCase: 'layout.menu.root-text.text-transform', css: 'Sakai _menu.scss: .layout-menuitem-root-text' },
+    { name: 'Sidebar/Item active', ...BASE, size: 'typography.base.font-size', weight: 'layout.menu.item.active-font-weight', css: 'Sakai _menu.scss: ul a.active-route' }
 ];
 /** Figma font style for a CSS weight (Lato in Figma: Thin, Light, Regular, Medium, SemiBold, Bold, ExtraBold, Black). */
 export const WEIGHT_STYLE = { 100: 'Thin', 300: 'Light', 400: 'Regular', 500: 'Medium', 600: 'SemiBold', 700: 'Bold', 800: 'ExtraBold', 900: 'Black' };

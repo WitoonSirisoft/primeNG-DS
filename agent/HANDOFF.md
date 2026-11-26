@@ -125,3 +125,12 @@ User was asked to say **"go"** to continue Button:
 - Generator `npm run figma:menu` (update in place) / `-- --fresh` (first build only). Report agent/REPORT_MENU.md.
 - WAITING: Witoon reviews and scores Menu. NEXT: Tabs (batch 2), later TieredMenu. Suggest a fresh session from this file.
 
+
+## Sidebar Menu (batch 2, #97 planned) — 2026-11-26
+- User review of Menu: Sakai sidebar (active route, collapsible group) is missing → it is Sakai's layout menu (app.menuitem.ts + assets/layout/_menu.scss), not p-menu. Menu (p-menu) stays as built.
+- User chose: new Sidebar Menu component; states default, hover, active route, active + hover; 1 level of collapsible group; capture.
+- Colours map to Aura semantic: text/color, primary/color, content/hover-background, overlay/popover/background, content/border-radius. Sizes are Sakai literals (root text 0.857rem 700 uppercase, margin 0.75rem 0; item padding 0.75rem 1rem; icon margin 0.5rem; toggler 75%; sub-item margin-left 1rem; sidebar 20rem, padding 0.5rem 1.5rem).
+- Story sidebarmenu.stories.ts (static AppMenuitem DOM; args active chart|login|none, expanded); capture plan sidebarmenuPlan, root .layout-sidebar. Storybook build OK.
+- User chose: read Sakai sizes into tokens. export-tokens reads _menu.scss → 13 Semantic layout/menu/* + layout/sidebar/* variables (pushed: patches/batch2-sidebar-vars.js); text styles Sidebar/Section (12, 700, UPPER via new textCase support) + Sidebar/Item active (700) (patches/batch2-sidebar-textstyles.js). Figma: 1,378 vars, fp e2a97c66 (verified in Figma), 34 text styles.
+- Also fixed: figma-variables "Derived from null" description for shorthands without a CSS variable.
+- WAITING: `npm run capture -- --only=sidebarmenu`. Then generator figma-sidebarmenu.mjs (Sidebar Menu Item: State default/hover/active/active-hover × Toggler none/collapsed/expanded × Level 0/1; Section; prefilled Sidebar Menu), DECISIONS #97.

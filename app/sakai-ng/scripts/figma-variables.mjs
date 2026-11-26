@@ -257,7 +257,7 @@ for (const l of leaves) {
         sides.forEach((s, i) => {
             const dpath = `${path}-${s}`;
             if (known.has(dpath)) throw new Error(`Derived name clash ${dpath}`);
-            add(col, { name: fname(dpath), type: 'FLOAT', scope: 'g', values: Object.fromEntries(modes.map((m) => [m, outs[m][i]])), codeSyntax: null, description: `Derived from ${css} (${parts}-value shorthand, ${s}).` });
+            add(col, { name: fname(dpath), type: 'FLOAT', scope: 'g', values: Object.fromEntries(modes.map((m) => [m, outs[m][i]])), codeSyntax: null, description: `Derived from ${css || fname(path)} (${parts}-value shorthand, ${s}).${src ? " " + src : ""}` });
             plan.derived.push({ token: path, derived: dpath, rule: `${parts}-value split` });
         });
         continue;
@@ -266,6 +266,11 @@ for (const l of leaves) {
     if (type === 'string' && /border-radius$/.test(path) && Object.values(vals).every((v) => /^\d+(\.\d+)?%$/.test(String(v).trim()))) {
         // percent radius (50% = circle): Figma variables can't hold percent; the component draws the circle itself (like Badge Circle, #47)
         plan.skipped.push({ token: path, reason: `percent radius ${Object.values(vals)[0]}: built as a circle in the component` });
+        continue;
+    }
+    if (type === 'string' && /text-transform$/.test(path)) {
+        // Figma variables can't drive text case; the text style sets textCase from it (#97)
+        plan.skipped.push({ token: path, reason: `text-transform ${Object.values(vals)[0]}: applied as the text style's textCase` });
         continue;
     }
     const conv = { fontWeight: Number, number: Number, duration: seconds, strokeStyle: String, fontFamily: String }[type];
@@ -402,6 +407,7 @@ plan.textStyles = TEXT_STYLES.map((t) => {
         style,
         size: final(t.size, 'dim'),
         lineHeightPercent: r4(ratio * 100),
+        textCase: t.textCase ? { uppercase: 'UPPER', lowercase: 'LOWER', capitalize: 'TITLE', none: 'ORIGINAL' }[final(t.textCase, 'str')] : 'ORIGINAL',
         bind: { fontFamily: fname(t.family), fontSize: fname(t.size), fontWeight: fname(t.weight) },
         description: `CSS: ${t.css}. Size ${ref(t.size)}, weight ${ref(t.weight)}, line-height ${ratio} (${fname(t.lineHeight)}).`
     };
@@ -475,11 +481,12 @@ for(const f of fonts){if(!avail.some(a=>a.fontName.family===f.family&&a.fontName
 if(errors.length)return {errors};
 await Promise.all(fonts.map(f=>figma.loadFontAsync(f)));
 const styles=await figma.getLocalTextStylesAsync();const byName=new Map(styles.map(s=>[s.name,s]));let created=0,updated=0,unchanged=0;const ids=[];const bound={};
-for(const [n,family,style,size,lh,bind,desc] of D.styles){let s=byName.get(n);let isNew=false;if(!s){s=figma.createTextStyle();s.name=n;created++;isNew=true;}
+for(const [n,family,style,size,lh,bind,desc,tc] of D.styles){let s=byName.get(n);let isNew=false;if(!s){s=figma.createTextStyle();s.name=n;created++;isNew=true;}
 let ch=false;
 if(s.fontName.family!==family||s.fontName.style!==style){s.fontName={family,style};ch=true;}
 if(Math.abs(s.fontSize-size)>1e-4){s.fontSize=size;ch=true;}
 if(s.lineHeight.unit!=='PERCENT'||Math.abs(s.lineHeight.value-lh)>1e-3){s.lineHeight={unit:'PERCENT',value:lh};ch=true;}
+if(s.textCase!==(tc||'ORIGINAL')){s.textCase=tc||'ORIGINAL';ch=true;}
 if(s.letterSpacing.unit!=='PERCENT'||s.letterSpacing.value!==0){s.letterSpacing={unit:'PERCENT',value:0};ch=true;}
 if(s.description!==desc){s.description=desc;ch=true;}
 bound[n]={};
@@ -524,7 +531,7 @@ const SHOW_BEHIND = new Set(['toast/info/shadow', 'toast/success/shadow', 'toast
 const styleRows = plan.effectStyles.map((s) => [s.name, s.effects.map((e) => [e.type, e.x, e.y, e.blur, e.spread, e.color]), s.description, SHOW_BEHIND.has(s.name)]);
 calls.push({ file: `${String(calls.length + 1).padStart(2, '0')}-effect-styles.js`, code: `const D=${JSON.stringify({ styles: styleRows })};\n${EFFECTS}` });
 
-const textRows = plan.textStyles.map((t) => [t.name, t.family, t.style, t.size, t.lineHeightPercent, t.bind, t.description]);
+const textRows = plan.textStyles.map((t) => [t.name, t.family, t.style, t.size, t.lineHeightPercent, t.bind, t.description, t.textCase]);
 calls.push({ file: `${String(calls.length + 1).padStart(2, '0')}-text-styles.js`, code: `const D=${JSON.stringify({ styles: textRows })};\n${TEXT}` });
 
 for (const c of calls) if (c.code.length > 50000) throw new Error(`${c.file} is ${c.code.length} chars (limit 50,000)`);
