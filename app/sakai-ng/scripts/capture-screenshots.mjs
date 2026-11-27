@@ -266,6 +266,28 @@ function sidebarmenuPlan() {
     p.push({ ...pl('sidebarmenu', 'sidebarmenu', { active: 'login', expanded: true }, ['expanded', 'item-error'], ['hover']), hoverSel: '.layout-root-submenulist ul a >> nth=1' });
     return p;
 }
+// Batch 4 patterns (#103): app shell desktop (static sidebar, ≥ 992 wide) and mobile (< 992: sidebar hidden, topbar menu button)
+function appshellPlan() {
+    return [
+        { ...pl('appshell', 'appshell', { device: 'desktop' }, ['device-desktop'], ['default']), viewport: { width: 1500, height: 1000 } },
+        { ...pl('appshell', 'appshell', { device: 'mobile' }, ['device-mobile'], ['default']), viewport: { width: 420, height: 900 } }
+    ];
+}
+// Batch 4 pattern 2 (#103): Form Field (vertical / horizontal × default / help / invalid) + the Sakai Form Layout demo (story 'layout')
+function formfieldPlan() {
+    const p = [];
+    for (const layout of ['vertical', 'horizontal']) for (const state of ['default', 'help', 'invalid']) p.push(pl('formfield', 'formfield', { layout, state }, [`layout-${layout}`, `state-${state}`], ['static']));
+    p.push({ ...pl('formfield', 'formfield', {}, ['formlayout'], ['static']), story: 'components-formfield--layout' });
+    return p;
+}
+// Batch 5 templates (#104): Sakai full-screen pages (login, access, error, notfound) at 1440 × 900
+function authpagesPlan() {
+    return ['login', 'access', 'error', 'notfound'].map((page) => ({ ...pl('authpages', 'authpages', { page }, [`page-${page}`], ['static']), viewport: { width: 1500, height: 1000 } }));
+}
+// Batch 5 template (#105): Sakai Dashboard page at the App Shell content width; wait for the chart
+function dashboardPlan() {
+    return [{ ...pl('dashboard', 'dashboard', {}, ['page'], ['static']), viewport: { width: 1500, height: 1600 }, wait: 3000 }];
+}
 // Extras (#102): Tooltip, Timeline, Stepper, Tree, TreeTable, DataView, Chart
 function tooltipPlan() {
     const p = ['top', 'right', 'bottom', 'left'].map((position) => ({ ...pl('tooltip', 'tooltip', { position }, [`position-${position}`], ['hover']), hoverSel: '.p-button' }));
@@ -431,7 +453,7 @@ function datepickerPlan() {
     return p;
 }
 const PLANS = { button: buttonPlan, inputtext: inputtextPlan, tag: tagPlan, textarea: textareaPlan, password: passwordPlan, iconfield: iconfieldPlan, inputnumber: inputnumberPlan,
-    checkbox: () => choicePlan('checkbox', 'checkbox'), radiobutton: () => choicePlan('radiobutton', 'radiobutton'), toggleswitch: () => choicePlan('toggleswitch', 'toggleswitch'), select: selectPlan, message: messagePlan, datepicker: datepickerPlan, datatable: datatablePlan, paginator: paginatorPlan, toolbar: toolbarPlan, splitbutton: splitbuttonPlan, dialog: dialogPlan, confirmdialog: confirmdialogPlan, toast: toastPlan, menu: menuPlan, sidebarmenu: sidebarmenuPlan, tabs: tabsPlan, card: cardPlan, accordion: accordionPlan, divider: dividerPlan, avatar: avatarPlan, chip: chipPlan, breadcrumb: breadcrumbPlan, menubar: menubarPlan, inputgroup: inputgroupPlan, selectbutton: selectbuttonPlan, multiselect: multiselectPlan, autocomplete: autocompletePlan, fileupload: fileuploadPlan, tooltip: tooltipPlan, timeline: timelinePlan, stepper: stepperPlan, tree: treePlan, treetable: treetablePlan, dataview: dataviewPlan, chart: chartPlan };
+    checkbox: () => choicePlan('checkbox', 'checkbox'), radiobutton: () => choicePlan('radiobutton', 'radiobutton'), toggleswitch: () => choicePlan('toggleswitch', 'toggleswitch'), select: selectPlan, message: messagePlan, datepicker: datepickerPlan, datatable: datatablePlan, paginator: paginatorPlan, toolbar: toolbarPlan, splitbutton: splitbuttonPlan, dialog: dialogPlan, confirmdialog: confirmdialogPlan, toast: toastPlan, menu: menuPlan, sidebarmenu: sidebarmenuPlan, tabs: tabsPlan, card: cardPlan, accordion: accordionPlan, divider: dividerPlan, avatar: avatarPlan, chip: chipPlan, breadcrumb: breadcrumbPlan, menubar: menubarPlan, inputgroup: inputgroupPlan, selectbutton: selectbuttonPlan, multiselect: multiselectPlan, autocomplete: autocompletePlan, fileupload: fileuploadPlan, tooltip: tooltipPlan, timeline: timelinePlan, stepper: stepperPlan, tree: treePlan, treetable: treetablePlan, dataview: dataviewPlan, chart: chartPlan, appshell: appshellPlan, formfield: formfieldPlan, authpages: authpagesPlan, dashboard: dashboardPlan };
 
 // ---------------------------------------------------------------------------
 // Storybook URL building. Arg values: '!undefined' / '!true' / '!false' are Storybook URL specials.
@@ -484,12 +506,14 @@ async function captureEntry(context, base, entry, mode) {
     const errors = [];
     page.on('pageerror', (e) => errors.push(String(e)));
     try {
+        if (entry.viewport) await page.setViewportSize(entry.viewport); // media queries follow the page width (app shell desktop / mobile)
         await page.goto(storyUrl(base, entry.story, entry.args, mode), { waitUntil: 'load' });
         const cellSel = `[data-cell="${entry.cell ?? 'playground'}"]`;
         await page.waitForSelector(rootSel(cellSel), { timeout: 15000 });
         await page.evaluate(() => document.fonts.ready);
         const lato = await page.evaluate(() => [...document.fonts].some((f) => /lato/i.test(f.family) && f.status === 'loaded') && document.fonts.check('14px Lato'));
         if (!lato && !ALLOW_MISSING_FONT) throw new Error('Lato did not load (fonts.cdnfonts.com unreachable?). Refusing to capture invalid references.');
+        if (entry.wait) await page.waitForTimeout(entry.wait); // canvas charts / delayed widgets (dashboard)
         // let finite enter animations (e.g. p-message fade-in) finish before freezing; infinite ones (spinner) are skipped
         await page.evaluate(() => Promise.race([Promise.all(document.getAnimations().filter((a) => a.effect?.getTiming().iterations !== Infinity).map((a) => a.finished.catch(() => {}))), new Promise((r) => setTimeout(r, 2000))]));
         await page.addStyleTag({ content: FREEZE_CSS });

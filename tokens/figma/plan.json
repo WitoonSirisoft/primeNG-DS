@@ -1,16 +1,16 @@
 {
-  "generated": "2026-11-26T10:06:12.406Z",
+  "generated": "2026-11-27T07:07:16.066Z",
   "source": {
     "tokens": "tokens/base/tokens.json",
     "theme": null
   },
   "counts": {
     "Primitives": 248,
-    "Semantic": 198,
+    "Semantic": 262,
     "Components": 1579,
     "effectStyles": 47,
-    "textStyles": 52,
-    "derived": 364,
+    "textStyles": 62,
+    "derived": 374,
     "skipped": 65
   },
   "calls": [
@@ -20,7 +20,7 @@
     },
     {
       "file": "calls/02-semantic-1.js",
-      "chars": 28440
+      "chars": 38562
     },
     {
       "file": "calls/03-components-1.js",
@@ -48,7 +48,7 @@
     },
     {
       "file": "calls/09-text-styles.js",
-      "chars": 20283
+      "chars": 23841
     }
   ],
   "plan": {
@@ -4806,6 +4806,338 @@
           "description": ""
         },
         {
+          "name": "layout/auth/access/color",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": {
+              "a": "orange/500"
+            },
+            "Dark": {
+              "a": "orange/500"
+            }
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/auth/background",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": {
+              "a": "surface/50"
+            },
+            "Dark": {
+              "a": "surface/950"
+            }
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/auth/card/background",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": {
+              "a": "surface/0"
+            },
+            "Dark": {
+              "a": "surface/900"
+            }
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/auth/card/padding",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 70,
+            "Dark": 70
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai auth / notfound pages: card py-20 sm:px-20."
+        },
+        {
+          "name": "layout/auth/card/radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": 53,
+            "Dark": 53
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai auth / notfound pages: card border-radius."
+        },
+        {
+          "name": "layout/auth/divider/color",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": {
+              "a": "surface/300"
+            },
+            "Dark": {
+              "a": "surface/500"
+            }
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/auth/error/color",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": {
+              "a": "pink/500"
+            },
+            "Dark": {
+              "a": "pink/500"
+            }
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/auth/frame/padding",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 4.2,
+            "Dark": 4.2
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai auth / notfound pages: gradient frame padding (border width)."
+        },
+        {
+          "name": "layout/auth/frame/radius",
+          "type": "FLOAT",
+          "scope": "r",
+          "values": {
+            "Light": 56,
+            "Dark": 56
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai auth / notfound pages: gradient frame border-radius."
+        },
+        {
+          "name": "layout/auth/gradient/access-end",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": [
+              0.9686,
+              0.5843,
+              0.1882,
+              0
+            ],
+            "Dark": [
+              0.9686,
+              0.5843,
+              0.1882,
+              0
+            ]
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/auth/gradient/access-start",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": [
+              0.9686,
+              0.5843,
+              0.1882,
+              0.4
+            ],
+            "Dark": [
+              0.9686,
+              0.5843,
+              0.1882,
+              0.4
+            ]
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/auth/gradient/error-start",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": [
+              0.9137,
+              0.1176,
+              0.3882,
+              0.4
+            ],
+            "Dark": [
+              0.9137,
+              0.1176,
+              0.3882,
+              0.4
+            ]
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/auth/gradient/notfound-opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": 40,
+            "Dark": 40
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai auth / notfound pages: 404 gradient start color-mix(primary, transparent 60%) → primary at 40% (layer opacity), end --surface-ground. Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "layout/auth/gradient/transparent",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": [
+              0.1294,
+              0.5882,
+              0.9529,
+              0
+            ],
+            "Dark": [
+              0.1294,
+              0.5882,
+              0.9529,
+              0
+            ]
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/auth/heading/color",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": {
+              "a": "surface/900"
+            },
+            "Dark": {
+              "a": "surface/0"
+            }
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/auth/heading/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": 42,
+            "Dark": 42
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai auth / notfound pages: text-5xl / lg:text-5xl (h1)."
+        },
+        {
+          "name": "layout/auth/heading/font-weight",
+          "type": "FLOAT",
+          "scope": "fw",
+          "values": {
+            "Light": 700,
+            "Dark": 700
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai auth / notfound pages: font-bold (h1, 404 code)."
+        },
+        {
+          "name": "layout/auth/heading/line-height",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": 1.2,
+            "Dark": 1.2
+          },
+          "codeSyntax": null,
+          "description": "CSS unitless ratio. Text styles use it as a percent line height (1.5 = 150%). Not a PrimeNG token (no CSS variable). Source: Sakai auth / notfound pages: h1 line-height 1.2 from Sakai _typography.scss (unlayered, wins over Tailwind text-5xl leading 1; also margin 1.5rem 0 1rem)."
+        },
+        {
+          "name": "layout/auth/label/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": 17.5,
+            "Dark": 17.5
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai auth / notfound pages: text-xl (Login labels, 404 link texts at lg)."
+        },
+        {
+          "name": "layout/auth/label/line-height",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": 1.4,
+            "Dark": 1.4
+          },
+          "codeSyntax": null,
+          "description": "CSS unitless ratio. Text styles use it as a percent line height (1.5 = 150%). Not a PrimeNG token (no CSS variable). Source: Sakai auth / notfound pages: text-xl line-height 1.75rem / 1.25rem."
+        },
+        {
+          "name": "layout/auth/text/color",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": {
+              "a": "surface/600"
+            },
+            "Dark": {
+              "a": "surface/200"
+            }
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/auth/title/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": 26.25,
+            "Dark": 26.25
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai auth / notfound pages: text-3xl (Login title, 404 code)."
+        },
+        {
+          "name": "layout/auth/title/font-weight",
+          "type": "FLOAT",
+          "scope": "fw",
+          "values": {
+            "Light": 500,
+            "Dark": 500
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai auth / notfound pages: font-medium (Login title, labels, subtitle)."
+        },
+        {
+          "name": "layout/auth/title/line-height",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": 1.2,
+            "Dark": 1.2
+          },
+          "codeSyntax": null,
+          "description": "CSS unitless ratio. Text styles use it as a percent line height (1.5 = 150%). Not a PrimeNG token (no CSS variable). Source: Sakai auth / notfound pages: text-3xl line-height 2.25rem / 1.875rem."
+        },
+        {
           "name": "layout/card/gap",
           "type": "FLOAT",
           "scope": "g",
@@ -4903,6 +5235,185 @@
           },
           "codeSyntax": null,
           "description": "Not a PrimeNG token (no CSS variable). Source: Sakai Chart demo: bar x-axis ticks font { weight: 500 }."
+        },
+        {
+          "name": "layout/dashboard/text/secondary",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": {
+              "a": "surface/700"
+            },
+            "Dark": {
+              "a": "surface/100"
+            }
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/dashboard/text/strong",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": {
+              "a": "surface/900"
+            },
+            "Dark": {
+              "a": "surface/0"
+            }
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/dashboard/tile/blue",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": {
+              "a": "blue/100"
+            },
+            "Dark": {
+              "a": "blue/400"
+            }
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/dashboard/tile/cyan",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": {
+              "a": "cyan/100"
+            },
+            "Dark": {
+              "a": "cyan/400"
+            }
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/dashboard/tile/green",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": {
+              "a": "green/100"
+            },
+            "Dark": {
+              "a": "green/400"
+            }
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/dashboard/tile/opacity",
+          "type": "FLOAT",
+          "scope": "op",
+          "values": {
+            "Light": 100,
+            "Dark": 10
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai dashboard widgets: dark:bg-*-400/10 → 10% in Dark, 100% in Light (layer opacity on the tile background). Percent in Figma (CSS fraction x100)."
+        },
+        {
+          "name": "layout/dashboard/tile/orange",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": {
+              "a": "orange/100"
+            },
+            "Dark": {
+              "a": "orange/400"
+            }
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/dashboard/tile/pink",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": {
+              "a": "pink/100"
+            },
+            "Dark": {
+              "a": "pink/400"
+            }
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/dashboard/tile/purple",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": {
+              "a": "purple/100"
+            },
+            "Dark": {
+              "a": "purple/400"
+            }
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/dashboard/track/background",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": {
+              "a": "surface/300"
+            },
+            "Dark": {
+              "a": "surface/500"
+            }
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/dashboard/value/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": 17.5,
+            "Dark": 17.5
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai dashboard widgets: text-xl (stat values)."
+        },
+        {
+          "name": "layout/dashboard/value/font-weight",
+          "type": "FLOAT",
+          "scope": "fw",
+          "values": {
+            "Light": 500,
+            "Dark": 500
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai dashboard widgets: font-medium (stat values, labels, product names, percentages)."
+        },
+        {
+          "name": "layout/dashboard/value/line-height",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": 1.4,
+            "Dark": 1.4
+          },
+          "codeSyntax": null,
+          "description": "CSS unitless ratio. Text styles use it as a percent line height (1.5 = 150%). Not a PrimeNG token (no CSS variable). Source: Sakai dashboard widgets: text-xl line-height 1.75rem / 1.25rem."
         },
         {
           "name": "layout/dataview/meta/font-size",
@@ -5026,6 +5537,138 @@
           "description": "CSS unitless ratio. Text styles use it as a percent line height (1.5 = 150%). Not a PrimeNG token (no CSS variable). Source: Sakai List demo (Tailwind): text-xl line-height 1.75rem / 1.25rem."
         },
         {
+          "name": "layout/footer/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai layout _footer.scss: .layout-footer { gap }."
+        },
+        {
+          "name": "layout/footer/padding-top",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": null,
+          "description": "Derived from layout/footer/padding (4-value shorthand, top). Not a PrimeNG token (no CSS variable). Source: Sakai layout _footer.scss: .layout-footer { padding }."
+        },
+        {
+          "name": "layout/footer/padding-right",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from layout/footer/padding (4-value shorthand, right). Not a PrimeNG token (no CSS variable). Source: Sakai layout _footer.scss: .layout-footer { padding }."
+        },
+        {
+          "name": "layout/footer/padding-bottom",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": null,
+          "description": "Derived from layout/footer/padding (4-value shorthand, bottom). Not a PrimeNG token (no CSS variable). Source: Sakai layout _footer.scss: .layout-footer { padding }."
+        },
+        {
+          "name": "layout/footer/padding-left",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from layout/footer/padding (4-value shorthand, left). Not a PrimeNG token (no CSS variable). Source: Sakai layout _footer.scss: .layout-footer { padding }."
+        },
+        {
+          "name": "layout/form/help/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": 11.2,
+            "Dark": 11.2
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Tailwind preflight: small { font-size: 80% } (Sakai Form Layout help text)."
+        },
+        {
+          "name": "layout/main/content/padding-bottom",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 28,
+            "Dark": 28
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai layout _main.scss: .layout-main { padding-bottom }."
+        },
+        {
+          "name": "layout/main/offset",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": 308,
+            "Dark": 308
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai layout _responsive.scss: .layout-static .layout-main-container { margin-left } (desktop, sidebar open)."
+        },
+        {
+          "name": "layout/main/padding-top",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 84,
+            "Dark": 84
+          },
+          "codeSyntax": null,
+          "description": "Derived from layout/main/padding (4-value shorthand, top). Not a PrimeNG token (no CSS variable). Source: Sakai layout _main.scss: .layout-main-container { padding } (top clears the fixed topbar)."
+        },
+        {
+          "name": "layout/main/padding-right",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 28,
+            "Dark": 28
+          },
+          "codeSyntax": null,
+          "description": "Derived from layout/main/padding (4-value shorthand, right). Not a PrimeNG token (no CSS variable). Source: Sakai layout _main.scss: .layout-main-container { padding } (top clears the fixed topbar)."
+        },
+        {
+          "name": "layout/main/padding-bottom",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from layout/main/padding (4-value shorthand, bottom). Not a PrimeNG token (no CSS variable). Source: Sakai layout _main.scss: .layout-main-container { padding } (top clears the fixed topbar)."
+        },
+        {
+          "name": "layout/main/padding-left",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 28,
+            "Dark": 28
+          },
+          "codeSyntax": null,
+          "description": "Derived from layout/main/padding (4-value shorthand, left). Not a PrimeNG token (no CSS variable). Source: Sakai layout _main.scss: .layout-main-container { padding } (top clears the fixed topbar)."
+        },
+        {
           "name": "layout/menu/item/active-font-weight",
           "type": "FLOAT",
           "scope": "fw",
@@ -5136,6 +5779,17 @@
           "description": "Not a PrimeNG token (no CSS variable). Source: src/assets/layout/_menu.scss: .layout-submenu-toggler { font-size: 75% } of the 1rem link text."
         },
         {
+          "name": "layout/sidebar/left",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": 28,
+            "Dark": 28
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: src/assets/layout/_menu.scss: .layout-sidebar { left }."
+        },
+        {
           "name": "layout/sidebar/padding-y",
           "type": "FLOAT",
           "scope": "g",
@@ -5158,6 +5812,17 @@
           "description": "Derived from layout/sidebar/padding (2-value shorthand, x). Not a PrimeNG token (no CSS variable). Source: src/assets/layout/_menu.scss: .layout-sidebar { padding }."
         },
         {
+          "name": "layout/sidebar/top",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": 84,
+            "Dark": 84
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: src/assets/layout/_menu.scss: .layout-sidebar { top } (below the topbar; height = 100vh - 2 × top + topbar)."
+        },
+        {
           "name": "layout/sidebar/width",
           "type": "FLOAT",
           "scope": "wh",
@@ -5167,6 +5832,153 @@
           },
           "codeSyntax": null,
           "description": "Not a PrimeNG token (no CSS variable). Source: src/assets/layout/_menu.scss: .layout-sidebar { width }."
+        },
+        {
+          "name": "layout/surface-ground",
+          "type": "COLOR",
+          "scope": "sem",
+          "values": {
+            "Light": {
+              "a": "surface/100"
+            },
+            "Dark": {
+              "a": "surface/950"
+            }
+          },
+          "codeSyntax": null,
+          "description": ""
+        },
+        {
+          "name": "layout/topbar/action/icon-size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 17.5,
+            "Dark": 17.5
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai layout _topbar.scss: .layout-topbar-action i { font-size }."
+        },
+        {
+          "name": "layout/topbar/action/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 35,
+            "Dark": 35
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai layout _topbar.scss: .layout-topbar-action { width / height }."
+        },
+        {
+          "name": "layout/topbar/actions/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 14,
+            "Dark": 14
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai layout _topbar.scss: .layout-topbar-actions { gap } (also menu content / config menu)."
+        },
+        {
+          "name": "layout/topbar/height",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 56,
+            "Dark": 56
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai layout _topbar.scss: .layout-topbar { height }."
+        },
+        {
+          "name": "layout/topbar/logo-container/width",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 280,
+            "Dark": 280
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai layout _topbar.scss: .layout-topbar-logo-container { width }."
+        },
+        {
+          "name": "layout/topbar/logo/font-size",
+          "type": "FLOAT",
+          "scope": "fs",
+          "values": {
+            "Light": 21,
+            "Dark": 21
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai layout _topbar.scss: .layout-topbar-logo { font-size }."
+        },
+        {
+          "name": "layout/topbar/logo/font-weight",
+          "type": "FLOAT",
+          "scope": "fw",
+          "values": {
+            "Light": 500,
+            "Dark": 500
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai layout _topbar.scss: .layout-topbar-logo { font-weight }."
+        },
+        {
+          "name": "layout/topbar/logo/gap",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai layout _topbar.scss: .layout-topbar-logo { gap }."
+        },
+        {
+          "name": "layout/topbar/logo/size",
+          "type": "FLOAT",
+          "scope": "wh",
+          "values": {
+            "Light": 42,
+            "Dark": 42
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai layout _topbar.scss: .layout-topbar-logo svg { width }."
+        },
+        {
+          "name": "layout/topbar/menu-button/margin-right",
+          "type": "FLOAT",
+          "scope": "h",
+          "values": {
+            "Light": 7,
+            "Dark": 7
+          },
+          "codeSyntax": null,
+          "description": "Not a PrimeNG token (no CSS variable). Source: Sakai layout _topbar.scss: .layout-menu-button { margin-right }."
+        },
+        {
+          "name": "layout/topbar/padding-y",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 0,
+            "Dark": 0
+          },
+          "codeSyntax": null,
+          "description": "Derived from layout/topbar/padding (2-value shorthand, y). Not a PrimeNG token (no CSS variable). Source: Sakai layout _topbar.scss: .layout-topbar { padding }."
+        },
+        {
+          "name": "layout/topbar/padding-x",
+          "type": "FLOAT",
+          "scope": "g",
+          "values": {
+            "Light": 28,
+            "Dark": 28
+          },
+          "codeSyntax": null,
+          "description": "Derived from layout/topbar/padding (2-value shorthand, x). Not a PrimeNG token (no CSS variable). Source: Sakai layout _topbar.scss: .layout-topbar { padding }."
         },
         {
           "name": "list/gap",
@@ -29660,6 +30472,46 @@
         "rule": "color-mix opacity"
       },
       {
+        "token": "layout.footer.padding",
+        "derived": "layout.footer.padding-top",
+        "rule": "4-value split"
+      },
+      {
+        "token": "layout.footer.padding",
+        "derived": "layout.footer.padding-right",
+        "rule": "4-value split"
+      },
+      {
+        "token": "layout.footer.padding",
+        "derived": "layout.footer.padding-bottom",
+        "rule": "4-value split"
+      },
+      {
+        "token": "layout.footer.padding",
+        "derived": "layout.footer.padding-left",
+        "rule": "4-value split"
+      },
+      {
+        "token": "layout.main.padding",
+        "derived": "layout.main.padding-top",
+        "rule": "4-value split"
+      },
+      {
+        "token": "layout.main.padding",
+        "derived": "layout.main.padding-right",
+        "rule": "4-value split"
+      },
+      {
+        "token": "layout.main.padding",
+        "derived": "layout.main.padding-bottom",
+        "rule": "4-value split"
+      },
+      {
+        "token": "layout.main.padding",
+        "derived": "layout.main.padding-left",
+        "rule": "4-value split"
+      },
+      {
         "token": "layout.menu.item.padding",
         "derived": "layout.menu.item.padding-y",
         "rule": "2-value split"
@@ -29687,6 +30539,16 @@
       {
         "token": "layout.sidebar.padding",
         "derived": "layout.sidebar.padding-x",
+        "rule": "2-value split"
+      },
+      {
+        "token": "layout.topbar.padding",
+        "derived": "layout.topbar.padding-y",
+        "rule": "2-value split"
+      },
+      {
+        "token": "layout.topbar.padding",
+        "derived": "layout.topbar.padding-x",
         "rule": "2-value split"
       },
       {
@@ -32030,6 +32892,146 @@
           "fontWeight": "layout/card/title/font-weight"
         },
         "description": "CSS: Sakai card title: font-semibold text-xl (#100). Size layout/card/title/font-size, weight layout/card/title/font-weight, line-height 1.4 (layout/card/title/line-height)."
+      },
+      {
+        "name": "Form/Help",
+        "family": "Lato",
+        "style": "Regular",
+        "size": 11.2,
+        "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "layout/form/help/font-size",
+          "fontWeight": "typography/base/font-weight"
+        },
+        "description": "CSS: Tailwind preflight small (80%): help text under a form field (#103). Size layout/form/help/font-size, weight typography/base/font-weight, line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "Dashboard/Value",
+        "family": "Lato",
+        "style": "Medium",
+        "size": 17.5,
+        "lineHeightPercent": 140,
+        "textCase": "ORIGINAL",
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "layout/dashboard/value/font-size",
+          "fontWeight": "layout/dashboard/value/font-weight"
+        },
+        "description": "CSS: Sakai dashboard stat value: font-medium text-xl (#105). Size layout/dashboard/value/font-size, weight layout/dashboard/value/font-weight, line-height 1.4 (layout/dashboard/value/line-height)."
+      },
+      {
+        "name": "Dashboard/Label",
+        "family": "Lato",
+        "style": "Medium",
+        "size": 14,
+        "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "typography/base/font-size",
+          "fontWeight": "layout/dashboard/value/font-weight"
+        },
+        "description": "CSS: Sakai dashboard: font-medium (stat labels, product names, percentages, TODAY) (#105). Size typography/base/font-size, weight layout/dashboard/value/font-weight, line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "Auth/Title",
+        "family": "Lato",
+        "style": "Medium",
+        "size": 26.25,
+        "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "layout/auth/title/font-size",
+          "fontWeight": "layout/auth/title/font-weight"
+        },
+        "description": "CSS: Sakai Login: text-3xl font-medium (#105). Size layout/auth/title/font-size, weight layout/auth/title/font-weight, line-height 1.2 (layout/auth/title/line-height)."
+      },
+      {
+        "name": "Auth/Subtitle",
+        "family": "Lato",
+        "style": "Medium",
+        "size": 14,
+        "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "typography/base/font-size",
+          "fontWeight": "layout/auth/title/font-weight"
+        },
+        "description": "CSS: Sakai Login: font-medium text-muted-color (#105). Size typography/base/font-size, weight layout/auth/title/font-weight, line-height 1.2 (typography/base/line-height)."
+      },
+      {
+        "name": "Auth/Label",
+        "family": "Lato",
+        "style": "Medium",
+        "size": 17.5,
+        "lineHeightPercent": 140,
+        "textCase": "ORIGINAL",
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "layout/auth/label/font-size",
+          "fontWeight": "layout/auth/title/font-weight"
+        },
+        "description": "CSS: Sakai Login labels / 404 link titles: text-xl font-medium (#105). Size layout/auth/label/font-size, weight layout/auth/title/font-weight, line-height 1.4 (layout/auth/label/line-height)."
+      },
+      {
+        "name": "Auth/Text lg",
+        "family": "Lato",
+        "style": "Regular",
+        "size": 17.5,
+        "lineHeightPercent": 140,
+        "textCase": "ORIGINAL",
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "layout/auth/label/font-size",
+          "fontWeight": "typography/base/font-weight"
+        },
+        "description": "CSS: Sakai 404 link texts: lg:text-xl (#105). Size layout/auth/label/font-size, weight typography/base/font-weight, line-height 1.4 (layout/auth/label/line-height)."
+      },
+      {
+        "name": "Auth/Heading",
+        "family": "Lato",
+        "style": "Bold",
+        "size": 42,
+        "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "layout/auth/heading/font-size",
+          "fontWeight": "layout/auth/heading/font-weight"
+        },
+        "description": "CSS: Sakai Access / Error / 404 h1: text-5xl font-bold (#105). Size layout/auth/heading/font-size, weight layout/auth/heading/font-weight, line-height 1.2 (layout/auth/heading/line-height)."
+      },
+      {
+        "name": "Auth/Code",
+        "family": "Lato",
+        "style": "Bold",
+        "size": 26.25,
+        "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "layout/auth/title/font-size",
+          "fontWeight": "layout/auth/heading/font-weight"
+        },
+        "description": "CSS: Sakai 404 code: text-3xl font-bold text-primary (#105). Size layout/auth/title/font-size, weight layout/auth/heading/font-weight, line-height 1.2 (layout/auth/title/line-height)."
+      },
+      {
+        "name": "Topbar/Logo",
+        "family": "Lato",
+        "style": "Medium",
+        "size": 21,
+        "lineHeightPercent": 120,
+        "textCase": "ORIGINAL",
+        "bind": {
+          "fontFamily": "font-family",
+          "fontSize": "layout/topbar/logo/font-size",
+          "fontWeight": "layout/topbar/logo/font-weight"
+        },
+        "description": "CSS: Sakai _topbar.scss: .layout-topbar-logo (app name) (#103). Size layout/topbar/logo/font-size, weight layout/topbar/logo/font-weight, line-height 1.2 (typography/base/line-height)."
       },
       {
         "name": "Chart/Label",

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-26T10:07:27.309Z",
+  "generated": "2026-11-27T07:07:59.586Z",
   "settings": {
     "viewport": {
       "width": 1280,
@@ -17,7 +17,7 @@
     "@angular/core": "21.2.26",
     "storybook": "10.6.7"
   },
-  "count": 2032,
+  "count": 2060,
   "images": [
     {
       "file": "accordion/accordion__open-0__disabled__state-default__dark.png",
@@ -138,6 +138,150 @@
       "story": "components-accordion--playground",
       "args": {
         "open": "none"
+      },
+      "lato": true
+    },
+    {
+      "file": "appshell/appshell__device-desktop__state-default__dark.png",
+      "state": "default",
+      "w": 1440,
+      "h": 900,
+      "mode": "dark",
+      "story": "components-appshell--playground",
+      "args": {
+        "device": "desktop"
+      },
+      "lato": true
+    },
+    {
+      "file": "appshell/appshell__device-desktop__state-default__light.png",
+      "state": "default",
+      "w": 1440,
+      "h": 900,
+      "mode": "light",
+      "story": "components-appshell--playground",
+      "args": {
+        "device": "desktop"
+      },
+      "lato": true
+    },
+    {
+      "file": "appshell/appshell__device-mobile__state-default__dark.png",
+      "state": "default",
+      "w": 390,
+      "h": 844,
+      "mode": "dark",
+      "story": "components-appshell--playground",
+      "args": {
+        "device": "mobile"
+      },
+      "lato": true
+    },
+    {
+      "file": "appshell/appshell__device-mobile__state-default__light.png",
+      "state": "default",
+      "w": 390,
+      "h": 844,
+      "mode": "light",
+      "story": "components-appshell--playground",
+      "args": {
+        "device": "mobile"
+      },
+      "lato": true
+    },
+    {
+      "file": "authpages/authpages__page-access__dark.png",
+      "state": "static",
+      "w": 1440,
+      "h": 900,
+      "mode": "dark",
+      "story": "components-authpages--playground",
+      "args": {
+        "page": "access"
+      },
+      "lato": true
+    },
+    {
+      "file": "authpages/authpages__page-access__light.png",
+      "state": "static",
+      "w": 1440,
+      "h": 900,
+      "mode": "light",
+      "story": "components-authpages--playground",
+      "args": {
+        "page": "access"
+      },
+      "lato": true
+    },
+    {
+      "file": "authpages/authpages__page-error__dark.png",
+      "state": "static",
+      "w": 1440,
+      "h": 900,
+      "mode": "dark",
+      "story": "components-authpages--playground",
+      "args": {
+        "page": "error"
+      },
+      "lato": true
+    },
+    {
+      "file": "authpages/authpages__page-error__light.png",
+      "state": "static",
+      "w": 1440,
+      "h": 900,
+      "mode": "light",
+      "story": "components-authpages--playground",
+      "args": {
+        "page": "error"
+      },
+      "lato": true
+    },
+    {
+      "file": "authpages/authpages__page-login__dark.png",
+      "state": "static",
+      "w": 1440,
+      "h": 900,
+      "mode": "dark",
+      "story": "components-authpages--playground",
+      "args": {
+        "page": "login"
+      },
+      "lato": true
+    },
+    {
+      "file": "authpages/authpages__page-login__light.png",
+      "state": "static",
+      "w": 1440,
+      "h": 900,
+      "mode": "light",
+      "story": "components-authpages--playground",
+      "args": {
+        "page": "login"
+      },
+      "lato": true
+    },
+    {
+      "file": "authpages/authpages__page-notfound__dark.png",
+      "state": "static",
+      "w": 1440,
+      "h": 900,
+      "mode": "dark",
+      "story": "components-authpages--playground",
+      "args": {
+        "page": "notfound"
+      },
+      "lato": true
+    },
+    {
+      "file": "authpages/authpages__page-notfound__light.png",
+      "state": "static",
+      "w": 1440,
+      "h": 900,
+      "mode": "light",
+      "story": "components-authpages--playground",
+      "args": {
+        "page": "notfound"
       },
       "lato": true
     },
@@ -13076,6 +13220,26 @@
       "lato": true
     },
     {
+      "file": "dashboard/dashboard__page__dark.png",
+      "state": "static",
+      "w": 1076,
+      "h": 1229.98,
+      "mode": "dark",
+      "story": "components-dashboard--playground",
+      "args": {},
+      "lato": true
+    },
+    {
+      "file": "dashboard/dashboard__page__light.png",
+      "state": "static",
+      "w": 1076,
+      "h": 1229.98,
+      "mode": "light",
+      "story": "components-dashboard--playground",
+      "args": {},
+      "lato": true
+    },
+    {
       "file": "datatable/datatable__size-base__gridlines__state-default__dark.png",
       "state": "default",
       "w": 1092,
@@ -14618,6 +14782,182 @@
       "story": "components-fileupload--playground",
       "args": {
         "mode": "basic"
+      },
+      "lato": true
+    },
+    {
+      "file": "formfield/formfield__formlayout__dark.png",
+      "state": "static",
+      "w": 1060,
+      "h": 913.59,
+      "mode": "dark",
+      "story": "components-formfield--layout",
+      "args": {},
+      "lato": true
+    },
+    {
+      "file": "formfield/formfield__formlayout__light.png",
+      "state": "static",
+      "w": 1060,
+      "h": 913.59,
+      "mode": "light",
+      "story": "components-formfield--layout",
+      "args": {},
+      "lato": true
+    },
+    {
+      "file": "formfield/formfield__layout-horizontal__state-default__dark.png",
+      "state": "static",
+      "w": 404,
+      "h": 32.8,
+      "mode": "dark",
+      "story": "components-formfield--playground",
+      "args": {
+        "layout": "horizontal",
+        "state": "default"
+      },
+      "lato": true
+    },
+    {
+      "file": "formfield/formfield__layout-horizontal__state-default__light.png",
+      "state": "static",
+      "w": 404,
+      "h": 32.8,
+      "mode": "light",
+      "story": "components-formfield--playground",
+      "args": {
+        "layout": "horizontal",
+        "state": "default"
+      },
+      "lato": true
+    },
+    {
+      "file": "formfield/formfield__layout-horizontal__state-help__dark.png",
+      "state": "static",
+      "w": 404,
+      "h": 53.23,
+      "mode": "dark",
+      "story": "components-formfield--playground",
+      "args": {
+        "layout": "horizontal",
+        "state": "help"
+      },
+      "lato": true
+    },
+    {
+      "file": "formfield/formfield__layout-horizontal__state-help__light.png",
+      "state": "static",
+      "w": 404,
+      "h": 53.23,
+      "mode": "light",
+      "story": "components-formfield--playground",
+      "args": {
+        "layout": "horizontal",
+        "state": "help"
+      },
+      "lato": true
+    },
+    {
+      "file": "formfield/formfield__layout-horizontal__state-invalid__dark.png",
+      "state": "static",
+      "w": 404,
+      "h": 54.48,
+      "mode": "dark",
+      "story": "components-formfield--playground",
+      "args": {
+        "layout": "horizontal",
+        "state": "invalid"
+      },
+      "lato": true
+    },
+    {
+      "file": "formfield/formfield__layout-horizontal__state-invalid__light.png",
+      "state": "static",
+      "w": 404,
+      "h": 54.48,
+      "mode": "light",
+      "story": "components-formfield--playground",
+      "args": {
+        "layout": "horizontal",
+        "state": "invalid"
+      },
+      "lato": true
+    },
+    {
+      "file": "formfield/formfield__layout-vertical__state-default__dark.png",
+      "state": "static",
+      "w": 404,
+      "h": 56.59,
+      "mode": "dark",
+      "story": "components-formfield--playground",
+      "args": {
+        "layout": "vertical",
+        "state": "default"
+      },
+      "lato": true
+    },
+    {
+      "file": "formfield/formfield__layout-vertical__state-default__light.png",
+      "state": "static",
+      "w": 404,
+      "h": 56.59,
+      "mode": "light",
+      "story": "components-formfield--playground",
+      "args": {
+        "layout": "vertical",
+        "state": "default"
+      },
+      "lato": true
+    },
+    {
+      "file": "formfield/formfield__layout-vertical__state-help__dark.png",
+      "state": "static",
+      "w": 404,
+      "h": 77.03,
+      "mode": "dark",
+      "story": "components-formfield--playground",
+      "args": {
+        "layout": "vertical",
+        "state": "help"
+      },
+      "lato": true
+    },
+    {
+      "file": "formfield/formfield__layout-vertical__state-help__light.png",
+      "state": "static",
+      "w": 404,
+      "h": 77.03,
+      "mode": "light",
+      "story": "components-formfield--playground",
+      "args": {
+        "layout": "vertical",
+        "state": "help"
+      },
+      "lato": true
+    },
+    {
+      "file": "formfield/formfield__layout-vertical__state-invalid__dark.png",
+      "state": "static",
+      "w": 404,
+      "h": 78.28,
+      "mode": "dark",
+      "story": "components-formfield--playground",
+      "args": {
+        "layout": "vertical",
+        "state": "invalid"
+      },
+      "lato": true
+    },
+    {
+      "file": "formfield/formfield__layout-vertical__state-invalid__light.png",
+      "state": "static",
+      "w": 404,
+      "h": 78.28,
+      "mode": "light",
+      "story": "components-formfield--playground",
+      "args": {
+        "layout": "vertical",
+        "state": "invalid"
       },
       "lato": true
     },

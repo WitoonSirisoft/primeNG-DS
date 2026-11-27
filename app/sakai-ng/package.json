@@ -40,7 +40,9 @@
         "figma:extras1": "node scripts/figma-extras1.mjs",
         "figma:tree": "node scripts/figma-tree.mjs",
         "figma:dataview": "node scripts/figma-dataview.mjs",
-        "figma:chart": "node scripts/figma-chart.mjs"
+        "figma:chart": "node scripts/figma-chart.mjs",
+        "figma:appshell": "node scripts/figma-appshell.mjs",
+        "figma:formfield": "node scripts/figma-formfield.mjs"
     },
     "private": true,
     "dependencies": {

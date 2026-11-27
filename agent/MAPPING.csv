@@ -106,3 +106,19 @@ DataView,Layout / Show header,list / grid / boolean,<p-dataview>,layout / #heade
 DataView List Item / Grid Item,Category / Name / Rating / Price (+ Position first/other on list),text,Sakai List demo #list / #grid template,item fields,no,none,"Sakai markup, not PrimeNG"
 Chart,Type,line / bar / pie / doughnut,<p-chart> (Chart.js),type (data / options drawn as a static picture),no,none,#102; legend items exposed
 Chart Legend Item,Style / Label,box / outlined / point / text,Chart.js legend,dataset type + usePointStyle / dataset.label,no,none,Swatch colour override
+Topbar,Device / App name / Logo,desktop / mobile / text / swap,Sakai <app-topbar>,viewport >= 992 / logo text / logo svg,no,none,#103; actions exposed
+Topbar Action,State / Icon,default / hover / highlight / swap,Sakai .layout-topbar-action,hover / .layout-topbar-action-highlight / icon,no,none,
+Layout Footer,Text / Link,text,Sakai <app-footer>,footer content,no,none,
+App Shell,Device,desktop / mobile,Sakai <app-layout> (.layout-static),viewport >= 992,no,none,pattern on 03 Patterns
+Form Field,Layout / Label / Show label / Control / Show help / Help text / Show error,vertical / horizontal / text / boolean / swap / boolean / text / boolean,"<label> + control + <small> / <p-message severity=error size=small variant=simple>",markup / label text / sr-only / control / help / [invalid] + message,no,none,#103; Control + Error exposed
+Form Layout,—,—,Sakai formlayoutdemo.ts,page markup,no,none,pattern on 03 Patterns
+CRUD Page,State,list / edit / delete,Sakai pages/crud (p-toolbar + p-table + p-dialog + p-confirmdialog),productDialog / confirmationService.confirm,no,none,#103; pattern on 03 Patterns
+App Shell,Content,swap,Sakai .layout-main <router-outlet>,routed page,no,none,added for page patterns
+Page Header,Title / Subtitle / Show breadcrumb / Show subtitle / Show actions,text / boolean,new composition: <p-breadcrumb> + <h4> + <p> + <p-button>,markup,no,none,#103; not from Sakai
+Filter Bar,Show chips,boolean,new composition: <p-iconfield> + <p-select> + <p-button text> + <p-chip removable>,markup,no,none,#103; not from Sakai
+Empty State,Type,no-data / no-results / error,new composition (DataTable #emptymessage or page content),state,no,none,#103; not from Sakai
+Auth Page,Page,login / access / error / notfound,Sakai pages/auth/*.ts + pages/notfound/notfound.ts,route,no,none,#105; template on 04 Templates
+Floating Configurator,—,—,Sakai <app-floating-configurator>,toggleDarkMode / palette,no,none,#105
+App Page,Page / Device,empty / crud / dashboard / desktop / mobile,Sakai routed pages in app.layout,route,no,none,#105; template on 04 Templates
+Stat Card,Color,blue / orange / cyan / purple,Sakai statswidget.ts,widget markup,no,none,#105
+Recent Sales / Best Selling Products / Revenue Stream / Notifications / Dashboard Content,—,—,Sakai dashboard widgets,widget markup,no,none,#105; patterns on 03 Patterns
